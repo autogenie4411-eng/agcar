@@ -10701,7 +10701,7 @@ const vehicleCatalog = [
 
   // Google Apps Script를 웹앱으로 배포한 뒤 아래 주소만 교체하세요.
   // 예: https://script.google.com/macros/s/AKfycb.../exec
-  const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwbN9KUT6PaeO9vvmGYcmLNAM7a6zu5_lDse_P_iilkBzKGOSauNSPcwBGMvgUYUaMP/exec";
+  const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz83apb702cy88vK0PRbKrqxJJwTstFNMwz-41j8zx2xqK5pPXmr9ml6BT6kJzI3qr9/exec";
 
   /* =========================================================
     방문 유입 로그 + 실제 사이트 체류시간 측정
