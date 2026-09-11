@@ -3315,8 +3315,8 @@ body:has(.wizard-page) {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 77%;
-    transform: translateX(1px) scale(1.08);
+    object-position: center 59%;
+    transform: translateX(-1px) scale(1.14);
     transform-origin: center center;
     margin: 0 auto;
 }
