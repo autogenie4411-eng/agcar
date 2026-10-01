@@ -1,9 +1,9 @@
 {
   "source": "https://www.agautoplan.com/review",
-  "generatedAt": "2026-09-28T05:49:56.200Z",
+  "generatedAt": "2026-10-01T06:28:35.523Z",
   "recentDays": 62,
   "order": "board-visible-order-newest-first",
-  "count": 70,
+  "count": 66,
   "reviews": [
     {
       "id": "174669824",
@@ -115,8 +115,8 @@
       "brand": "",
       "model": "아반떼 2027년형",
       "manager": "김장현 차장 ❤️❤️",
-      "color": "",
-      "method": "",
+      "color": "(외장) 에코트로닉 그레이펄 / (내장) 블랙원톤",
+      "method": "개인 / 렌트",
       "date": "2026-09-18",
       "image": "https://cdn.imweb.me/thumbnail/20260921/c5cd6814d0c38.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=174566227&t=board",
@@ -862,58 +862,6 @@
       "image": "https://cdn.imweb.me/thumbnail/20260803/acadf9580ab20.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Njt9&bmode=view&idx=172834245&t=board",
       "sourceOrder": 65
-    },
-    {
-      "id": "172763265",
-      "title": "그랜저 개인사업자 렌트 출고 후기입니다.",
-      "brand": "",
-      "model": "그랜저",
-      "manager": "엄세훈 차장 ❤️❤️",
-      "color": "(외장) 세레니티 화이트 / (내장) 인디고 브라운 투톤",
-      "method": "개인사업자 / 렌트",
-      "date": "2026-07-28",
-      "image": "https://cdn.imweb.me/thumbnail/20260730/d09f8754edf76.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Njt9&bmode=view&idx=172763265&t=board",
-      "sourceOrder": 66
-    },
-    {
-      "id": "172763264",
-      "title": "싼타페 하이브리드 개인 렌트 출고 후기입니다.",
-      "brand": "",
-      "model": "싼타페 HEV 7인승 AWD",
-      "manager": "엄세훈 차장 ❤️❤️",
-      "color": "(외장) 에코트로닉 그레이펄 / (내장) 블랙",
-      "method": "개인 / 렌트",
-      "date": "2026-07-28",
-      "image": "https://cdn.imweb.me/thumbnail/20260730/fa89302b9aba3.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Njt9&bmode=view&idx=172763264&t=board",
-      "sourceOrder": 67
-    },
-    {
-      "id": "172763263",
-      "title": "봉고3 법인 리스 출고 후기입니다.",
-      "brand": "",
-      "model": "봉고3 1톤 더블캡 초장축",
-      "manager": "이병수 차장 ❤️❤️",
-      "color": "(외장) 클리어화이트 / (내장) 그레이블랙투톤",
-      "method": "법인 / 리스",
-      "date": "2026-07-28",
-      "image": "https://cdn.imweb.me/thumbnail/20260730/57554f8379d6a.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Njt9&bmode=view&idx=172763263&t=board",
-      "sourceOrder": 68
-    },
-    {
-      "id": "172763262",
-      "title": "봉고3 법인 리스 출고 후기입니다.",
-      "brand": "",
-      "model": "봉고3 1톤 더블캡 초장축",
-      "manager": "이병수 차장 ❤️❤️",
-      "color": "(외장) 클리어화이트 / (내장) 그레이블랙투톤",
-      "method": "법인 / 리스",
-      "date": "2026-07-28",
-      "image": "https://cdn.imweb.me/thumbnail/20260730/18fc7b8f89282.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Njt9&bmode=view&idx=172763262&t=board",
-      "sourceOrder": 69
     }
   ]
 }
