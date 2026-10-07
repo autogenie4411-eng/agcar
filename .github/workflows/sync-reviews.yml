@@ -5,9 +5,19 @@ on:
   schedule:
     # 매주 월요일/목요일 오전 9:30 (KST)
     - cron: '30 0 * * 1,4'
+  push:
+    branches:
+      - main
+    # Actions가 reviews.json만 갱신해 다시 push했을 때 자기 자신이 재실행되는 것을 방지
+    paths-ignore:
+      - 'data/reviews.json'
 
 permissions:
   contents: write
+
+concurrency:
+  group: sync-reviews-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   sync-reviews:
