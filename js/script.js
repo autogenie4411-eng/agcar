@@ -12553,13 +12553,45 @@ const vehicleCatalog = [
     return !hasRepeatedBothGroups && !blockedNumbers.includes(subscriberNumber);
   }
 
+  // 견적 단계 이동과 브라우저 뒤로가기/앞으로가기를 동기화합니다.
+  const WIZARD_HISTORY_KEY = "autogenieWizardStep";
+
+  function rememberWizardStep() {
+    const previous = window.history.state || {};
+    window.history.replaceState(
+      { ...previous, [WIZARD_HISTORY_KEY]: { ...state } }, "", window.location.href
+    );
+  }
+
+  function recordWizardStep() {
+    const previous = window.history.state || {};
+    window.history.pushState(
+      { ...previous, [WIZARD_HISTORY_KEY]: { ...state } }, "", window.location.href
+    );
+  }
+
+  function navigateWizardStep(targetStep) {
+    if (targetStep === state.step) return;
+    rememberWizardStep();
+    state.step = targetStep;
+    state.maxReachedStep = Math.max(state.maxReachedStep, targetStep);
+    recordWizardStep();
+    render();
+    scrollToEstimate();
+  }
+
+  window.addEventListener("popstate", event => {
+    const saved = event.state?.[WIZARD_HISTORY_KEY];
+    if (!saved || !Number.isInteger(saved.step) || saved.step < 1 || saved.step > 4) return;
+    Object.assign(state, saved);
+    render();
+    scrollToEstimate();
+  });
+
   function moveToConsultStep() {
     // 1·2단계에서 바로 견적 신청을 선택하면 정보입력 단계로 이동합니다.
     // 선택하지 않은 항목은 STEP 04 요약에서 "상담 후 결정"으로 표시합니다.
-    state.step = 4;
-    state.maxReachedStep = Math.max(state.maxReachedStep, 4);
-    render();
-    scrollToEstimate();
+    navigateWizardStep(4);
   }
 
   function validateCurrentStep() {
@@ -12786,16 +12818,12 @@ const vehicleCatalog = [
     if (!Number.isInteger(targetStep)) return;
     if (targetStep > state.maxReachedStep) return;
 
-    state.step = targetStep;
-    render();
-    scrollToEstimate();
+    navigateWizardStep(targetStep);
   });
 
   backButton.addEventListener("click", () => {
     if (state.step > 1) {
-      state.step -= 1;
-      render();
-      scrollToEstimate();
+      navigateWizardStep(state.step - 1);
     }
   });
 
@@ -12807,10 +12835,7 @@ const vehicleCatalog = [
     if (!validateCurrentStep()) return;
 
     if (state.step < 4) {
-      state.step += 1;
-      state.maxReachedStep = Math.max(state.maxReachedStep, state.step);
-      render();
-      scrollToEstimate();
+      navigateWizardStep(state.step + 1);
       return;
     }
 
@@ -12842,4 +12867,5 @@ const vehicleCatalog = [
   });
 
   render();
+  rememberWizardStep();
 })();
