@@ -8089,3 +8089,141 @@ body.loader-active {
 .customer-care__hours {
     margin-top: 11px;
 }
+
+
+/* 오토지니 출고 후기 - 견적 단계 이탈 없는 자체 상세 팝업 */
+body.review-dialog-open { overflow: hidden; }
+.autogenie-review-dialog { position:fixed; inset:0; width:min(780px,calc(100% - 36px)); max-width:none; max-height:min(90dvh,920px); margin:auto; padding:0; border:0; border-radius:18px; color:#152441; background:#fff; box-shadow:0 22px 90px #0c23475c; overflow:hidden; }
+.autogenie-review-dialog::backdrop { background:rgba(12,25,49,.66); backdrop-filter:blur(3px); }
+.review-detail-panel { display:flex; flex-direction:column; max-height:min(90dvh,920px); }
+.review-detail-head { padding:24px 28px 18px; display:flex; justify-content:space-between; gap:20px; flex:none; border-bottom:1px solid #edf1f7; }
+.review-detail-eyebrow { display:block; font-size:11px; color:#326bfa; font-weight:800; letter-spacing:.07em; margin-bottom:8px; }
+.review-detail-head h2 { font-size:22px; line-height:1.45; margin:0 0 9px; font-weight:800; word-break:keep-all; }
+.review-detail-head time { font-size:12px; color:#8792a8; }
+.review-detail-close { border:0; background:#f1f5fc; color:#24344e; width:36px; height:36px; border-radius:50%; font-size:27px; line-height:1; cursor:pointer; flex:none; }
+.review-detail-scroll { padding:20px 28px 30px; overflow-y:auto; min-height:0; overscroll-behavior:contain; }
+.review-detail-photo { position:relative; border-radius:12px; overflow:hidden; background:#f3f6fa; text-align:center; }
+.review-detail-photo>img { display:block; width:100%; max-height:450px; object-fit:contain; }
+.review-detail-photo>button { position:absolute; top:50%; transform:translateY(-50%); background:#12203bc0; color:#fff; border:0; width:35px; height:35px; border-radius:50%; font-size:28px; cursor:pointer; }
+.review-detail-photo>button[data-review-image-shift="-1"] { left:12px; }
+.review-detail-photo>button[data-review-image-shift="1"] { right:12px; }
+.review-detail-count { position:absolute; right:12px; bottom:10px; color:white; background:#152642c0; padding:5px 10px; border-radius:20px; font-size:11px; }
+.review-detail-thumbs { display:flex; gap:7px; overflow-x:auto; margin-top:10px; padding-bottom:4px; }
+.review-detail-thumbs button { width:86px; height:60px; flex:none; background:#f1f4f9; padding:0; border:2px solid transparent; border-radius:7px; overflow:hidden; cursor:pointer; }
+.review-detail-thumbs button.is-selected { border-color:#316cff; }
+.review-detail-thumbs img { width:100%; height:100%; object-fit:cover; }
+.review-detail-spec { display:flex; flex-wrap:wrap; gap:7px; margin:20px 0; }
+.review-detail-spec span { background:#f1f5fd; color:#426397; padding:7px 10px; border-radius:6px; font-size:12px; line-height:1.5; }
+.review-detail-body { color:#36455d; font-size:14px; line-height:1.9; overflow-wrap:anywhere; white-space:normal; }
+.review-detail-body p { margin:0 0 16px; }
+@media(max-width:600px) {
+ .autogenie-review-dialog { width:100%; height:100dvh; max-height:100dvh; border-radius:0; }
+ .review-detail-panel { max-height:100dvh; height:100%; }
+ .review-detail-head { padding:18px 18px 15px; }
+ .review-detail-head h2 { font-size:17px; }
+ .review-detail-scroll { padding:15px 18px 24px; }
+ .review-detail-photo>img { max-height:55dvh; }
+ .review-detail-body { font-size:13px; }
+}
+
+/* 출고 후기: 이미지와 문단을 원본 작성 순서로 출력하는 블로그형 레이아웃 */
+.review-detail-panel--blog .review-detail-head { padding-bottom:16px; }
+.review-blog-scroll { padding:28px 28px 42px; }
+.review-blog-article { max-width:630px; margin:0 auto; color:#2d3b51; font-size:14px; line-height:2.1; overflow-wrap:anywhere; }
+.review-blog-article p { margin:0 0 26px; white-space:pre-wrap; text-align:center; }
+.review-blog-photo { margin:16px auto 30px; text-align:center; }
+.review-blog-photo img { display:block; margin:auto; width:auto; max-width:100%; height:auto; border-radius:3px; }
+@media(max-width:600px) {
+ .review-blog-scroll { padding:22px 16px 32px; }
+ .review-blog-article { font-size:13px; line-height:1.95; }
+ .review-blog-article p { margin-bottom:22px; }
+ .review-blog-photo { margin:12px auto 25px; }
+}
+
+/* 리뷰 상세 - 수집한 원본 HTML의 문단 서식을 우선하고, 사이트 공통 p 스타일을 상속하지 않음 */
+.review-blog-article { max-width:700px; margin:0 auto; font-size:initial; line-height:normal; color:inherit; }
+.review-blog-article .review-original-content { width:100%; max-width:100%; }
+.review-blog-article .review-original-content * { box-sizing:border-box; }
+.review-blog-article .review-original-content p { margin:0; white-space:inherit; text-align:inherit; }
+.review-blog-article .review-original-content img { max-width:100% !important; height:auto !important; object-fit:contain; border-radius:0; }
+.review-blog-article .review-original-content figure { max-width:100%; }
+.review-blog-article .review-original-content table { max-width:100%; }
+@media(max-width:600px) {
+  .review-blog-article .review-original-content { overflow-wrap:break-word; }
+  .review-blog-article .review-original-content img { max-width:100% !important; }
+}
+
+/* 후기 상세 팝업: 원본 서식을 유지하면서 사진/문단의 시각적 간격 보완 */
+.review-detail-close {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+.review-blog-article .review-original-content img {
+  display: block;
+  margin: 0 auto;
+}
+.review-blog-article .review-original-content img + img { margin-top: 18px; }
+.review-blog-article .review-original-content figure { margin: 18px auto 26px; }
+.review-blog-article .review-original-content figure + figure { margin-top: 18px; }
+.review-blog-article .review-original-content p:has(> img) { margin-top: 18px; margin-bottom: 22px; }
+.review-blog-article .review-original-content p:has(> img) + p:has(> img) { margin-top: 18px; }
+.review-blog-article .review-original-content p:not(:has(img)) + p:has(img),
+.review-blog-article .review-original-content div:not(:has(img)) + div:has(> img) { margin-top: 24px; }
+.review-blog-article .review-original-content p:has(img) + p:not(:has(img)) { margin-top: 24px; }
+@media (max-width: 600px) {
+  .review-blog-article .review-original-content { font-size: 13px; line-height: 1.75; }
+  .review-blog-article .review-original-content [style*="font-size"] { font-size: 13px !important; }
+  .review-blog-article .review-original-content img + img,
+  .review-blog-article .review-original-content figure + figure { margin-top: 14px; }
+  .review-blog-article .review-original-content p:has(> img) { margin-top: 14px; margin-bottom: 18px; }
+  .review-blog-article .review-original-content p:not(:has(img)) + p:has(img) { margin-top: 20px; }
+  .review-detail-close { font-size: 24px; }
+}
+
+/* 출고 후기 상세: 원본 문단 서식을 보존하고, 사진 앞뒤에 한 줄 여백 확보 */
+.review-blog-article .review-original-content img {
+  margin-block: 22px !important;
+}
+/* 이미지가 연속될 때에는 여백이 두 배로 늘어나지 않도록 조정 */
+.review-blog-article .review-original-content img + img {
+  margin-top: 0 !important;
+}
+.review-blog-article .review-original-content :is(p, div, figure):has(> img) + :is(p, div, figure):has(> img) > img {
+  margin-top: 0 !important;
+}
+@media (max-width: 600px) {
+  .review-blog-article .review-original-content img {
+    margin-block: 18px !important;
+  }
+}
+
+/* 후기 팝업 - 모바일 글자 크기만 소폭 상향 (13px → 14px) */
+@media (max-width: 600px) {
+  .review-blog-article,
+  .review-blog-article .review-original-content {
+    font-size: 14px;
+  }
+  .review-blog-article .review-original-content [style*="font-size"] {
+    font-size: 14px !important;
+  }
+}
+
+/* 후기 팝업: 제목/날짜 아래 첫 사진과의 간격만 축소 */
+.review-detail-panel--blog .review-blog-scroll {
+  padding-top: 14px;
+}
+.review-blog-article .review-leading-media {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+@media (max-width: 600px) {
+  .review-detail-panel--blog .review-blog-scroll {
+    padding-top: 12px;
+  }
+}
