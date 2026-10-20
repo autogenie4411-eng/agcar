@@ -8227,3 +8227,34 @@ body.review-dialog-open { overflow: hidden; }
     padding-top: 12px;
   }
 }
+
+
+/* 출고 후기 전체보기 목록 - 메인 최근 3개월 슬라이더와 별개 */
+.review-all-panel { min-height: min(480px, 90dvh); }
+.review-all-panel .review-detail-head { align-items: flex-start; }
+.review-all-panel .review-detail-head h2 { margin-bottom: 4px; }
+.review-all-count { font-size: 13px; color: #708097; line-height: 1.6; margin: 0; }
+.review-all-scroll { flex: 1; overflow-y: auto; padding-top: 22px; }
+.review-all-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.review-all-card { display: flex; gap: 13px; min-width: 0; min-height: 123px; padding: 12px; border: 1px solid #e8edf4; border-radius: 12px; color: inherit; text-decoration: none; background: #fff; transition: border-color .18s, box-shadow .18s; }
+.review-all-card:hover, .review-all-card:focus-visible { border-color: #82a7f6; box-shadow: 0 5px 18px #203d7312; }
+.review-all-card__photo { display: flex; flex: 0 0 112px; align-items: center; justify-content: center; height: 96px; overflow: hidden; border-radius: 8px; background: #eff3f8; }
+.review-all-card__photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.review-all-card__empty { padding: 0 9px; color: #8491a4; font-size: 11px; text-align: center; }
+.review-all-card__info { display: flex; flex: 1; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
+.review-all-card__info strong { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; color: #17273c; font-size: 13px; line-height: 1.5; word-break: keep-all; }
+.review-all-card__info time { font-size: 11px; color: #8290a4; }
+.review-all-card__link { margin-top: auto; color: var(--blue, #326bfa); font-size: 12px; font-weight: 700; }
+.review-all-empty { padding: 56px 10px; text-align: center; color: #728196; font-size: 14px; }
+.review-back-list { display: inline-flex; align-items: center; gap: 5px; margin: 0 0 12px; padding: 4px 0; border: 0; background: transparent; color: #386fe8; font-size: 12px; font-weight: 800; cursor: pointer; }
+.review-back-list:hover { text-decoration: underline; }
+@media (max-width: 600px) {
+  .review-all-panel { min-height: 0; }
+  .review-all-grid { grid-template-columns: minmax(0, 1fr); gap: 9px; }
+  .review-all-scroll { padding: 14px 14px 28px; }
+  .review-all-card { min-height: 105px; gap: 12px; padding: 10px; }
+  .review-all-card__photo { flex-basis: 105px; height: 86px; }
+}
+@media (max-width: 360px) {
+  .review-all-card__photo { flex-basis: 87px; height: 82px; }
+}

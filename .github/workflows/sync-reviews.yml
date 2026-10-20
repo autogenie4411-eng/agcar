@@ -22,7 +22,7 @@ concurrency:
 jobs:
   sync-reviews:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     env:
       # 상대 날짜(오늘/어제/n일 전)를 한국 날짜 기준으로 해석
       TZ: Asia/Seoul
@@ -40,7 +40,7 @@ jobs:
           npm install --no-save playwright@1.55.0
           npx playwright install --with-deps chromium
 
-      - name: Collect recent reviews
+      - name: Collect annual review archive
         run: node scripts/sync-reviews.mjs
 
       - name: Commit updated reviews
