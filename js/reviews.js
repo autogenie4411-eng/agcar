@@ -490,6 +490,13 @@
       dialog.showModal();
     }
     document.body.classList.add('review-dialog-open');
+    // 열릴 때 자동 포커스가 닫기 버튼에 걸려 검은 원형 테두리가 생기지 않도록
+    // 후기 제목으로 포커스를 이동합니다. 탭 키로 닫기 버튼에 접근할 수 있습니다.
+    const heading = dialog.querySelector('.review-detail-head h2');
+    if (heading) {
+      heading.setAttribute('tabindex', '-1');
+      heading.focus({ preventScroll: true });
+    }
   }
 
   function allReviewCard(review) {
@@ -498,7 +505,7 @@
     const photo = String(review.image || '').trim();
     return `<a class="review-all-card" href="#review-detail" data-review-open="${escapeHtml(reviewKey(review))}">
       <span class="review-all-card__photo">${photo ? `<img src="${escapeHtml(photo)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : '<span class="review-all-card__empty">후기 이미지 준비 중</span>'}</span>
-      <span class="review-all-card__info"><strong>${title}</strong><time>${date}</time><span class="review-all-card__link">후기 보기 →</span></span>
+      <span class="review-all-card__info"><strong>${title}</strong><time>${date}</time></span>
     </a>`;
   }
 
@@ -514,7 +521,7 @@
     dialog.setAttribute('aria-label', '오토지니 전체 출고 후기 목록');
     dialog.innerHTML = `<div class="review-detail-panel review-all-panel">
       <header class="review-detail-head"><div><span class="review-detail-eyebrow">REAL DELIVERY REVIEW</span>
-      <h2>${escapeHtml(periodTitle)}</h2><p class="review-all-count">전체 출고 후기 ${allReviews.length}건</p></div>
+      <h2>오토지니 실제 출고 후기</h2><p class="review-all-count">${escapeHtml(periodTitle)} · 원하는 후기를 선택해 주세요.</p></div>
       <button type="button" class="review-detail-close" data-review-close aria-label="전체 후기 닫기">×</button></header>
       <div class="review-detail-scroll review-all-scroll">
         ${allReviews.length ? `<div class="review-all-grid">${allReviews.map(allReviewCard).join('')}</div>` : '<p class="review-all-empty">해당 기간에 등록된 출고 후기가 없습니다.</p>'}
@@ -674,7 +681,7 @@
     articleHtml = normalizeReviewArticleStart(articleHtml);
 
     dialog.innerHTML = `<div class="review-detail-panel review-detail-panel--blog">
-      <header class="review-detail-head"><div>${reviewDetailFromList ? '<button type="button" class="review-back-list" data-review-back-list>← 전체 후기 목록</button>' : ''}<span class="review-detail-eyebrow">REAL DELIVERY REVIEW</span>
+      <header class="review-detail-head"><div>${reviewDetailFromList ? '<button type="button" class="review-back-list" data-review-back-list>← 후기 목록</button>' : ''}<span class="review-detail-eyebrow">REAL DELIVERY REVIEW</span>
       <h2>${escapeHtml(cleanReviewTitle(review.title))}</h2><time>${escapeHtml(formatReviewDate(review.date))}</time></div>
       <button type="button" class="review-detail-close" data-review-close aria-label="후기 닫기">×</button></header>
       <div class="review-detail-scroll review-blog-scroll"><article class="review-blog-article">${articleHtml}</article></div>
