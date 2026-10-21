@@ -8534,3 +8534,14 @@ body.review-dialog-open { overflow: hidden; }
     right: 16px !important;
   }
 }
+
+/* 2026-10-21 | 모바일 후기 팝업 제목: 자동 포커스 시 파란 테두리 제거 */
+/* reviews.js의 제목 포커스(접근성/스크롤 유지)는 변경하지 않음 */
+.autogenie-review-dialog .review-detail-head h2:focus,
+.autogenie-review-dialog .review-detail-head h2:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.autogenie-review-dialog .review-detail-head h2 {
+  -webkit-tap-highlight-color: transparent;
+}
