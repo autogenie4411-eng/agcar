@@ -8453,3 +8453,84 @@ body.review-dialog-open { overflow: hidden; }
   font-weight: 500;
   line-height: 1 !important;
 }
+
+/* 2026-10-21 | 출고 후기 목록/상세: 닫기 버튼 기준 통일 및 포커스 테두리 정리 */
+/* dialog에 브라우저가 부여하는 파란 사각형 포커스 아웃라인만 제거 */
+.autogenie-review-dialog,
+.autogenie-review-dialog:focus,
+.autogenie-review-dialog:focus-visible {
+  outline: none !important;
+}
+
+/* 세 가지 진입 경로(목록, 메인 후기 상세, 목록에서 상세)의 헤더 기준 통일 */
+.autogenie-review-dialog :is(.review-detail-head, .review-gallery-head) {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 78px 18px 26px;
+  box-sizing: border-box;
+}
+.autogenie-review-dialog :is(.review-detail-head, .review-gallery-head) > div {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* 제목이 2줄 이상이어도 닫기 버튼의 상단/우측 좌표는 변하지 않음 */
+.autogenie-review-dialog .review-detail-close {
+  position: absolute !important;
+  top: 24px !important;
+  right: 26px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: none !important;
+  width: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #f1f5fc !important;
+  color: #27364d !important;
+  box-shadow: none !important;
+  outline: none !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+  transform: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  cursor: pointer;
+  z-index: 1;
+}
+/* 마우스 클릭 후 파란색 포커스 박스가 남지 않도록 처리 */
+.autogenie-review-dialog .review-detail-close:focus,
+.autogenie-review-dialog .review-detail-close:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* 후기 카드는 파란 포커스 대신 중립색 키보드 포커스만 제공 */
+.autogenie-review-dialog :is(.review-all-card, .review-gallery-card__button, .review-back-list, .review-detail-back):focus:not(:focus-visible) {
+  outline: none !important;
+}
+.autogenie-review-dialog :is(.review-all-card, .review-gallery-card__button, .review-back-list, .review-detail-back):focus-visible {
+  outline: 2px solid #7d8999 !important;
+  outline-offset: 2px;
+}
+@media (max-width: 600px) {
+  .autogenie-review-dialog :is(.review-detail-head, .review-gallery-head) {
+    padding: 18px 68px 16px 16px;
+    gap: 12px;
+  }
+  .autogenie-review-dialog .review-detail-close {
+    top: 18px !important;
+    right: 16px !important;
+  }
+}
