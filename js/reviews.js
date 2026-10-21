@@ -509,6 +509,62 @@
     </a>`;
   }
 
+  // 전체 후기 목록의 스크롤 영역에만 적용: 상세 페이지/메인 화면 스크롤은 변경하지 않음.
+  function setupReviewScrollTop(dialog, scrollSelector) {
+    const scrollArea = dialog.querySelector(scrollSelector);
+    const topButton = dialog.querySelector('[data-review-scroll-top]');
+    if (!scrollArea || !topButton) return;
+
+    const updateVisibility = () => {
+      topButton.hidden = scrollArea.scrollTop < 280 ||
+        scrollArea.scrollHeight <= scrollArea.clientHeight + 1;
+    };
+    scrollArea.addEventListener('scroll', updateVisibility, { passive: true });
+
+    // 모바일 브라우저마다 scrollTo({ behavior: 'smooth' })의 속도/동작이 달라
+    // 후기 목록 내부의 scrollTop을 프레임별로 직접 보간한다.
+    let scrollAnimationId = null;
+    const stopScrollAnimation = () => {
+      if (scrollAnimationId !== null) {
+        cancelAnimationFrame(scrollAnimationId);
+        scrollAnimationId = null;
+      }
+    };
+    // 스크롤 중 사용자가 직접 조작하면 애니메이션을 중단한다.
+    scrollArea.addEventListener('touchstart', stopScrollAnimation, { passive: true });
+    scrollArea.addEventListener('wheel', stopScrollAnimation, { passive: true });
+    scrollArea.addEventListener('pointerdown', stopScrollAnimation, { passive: true });
+
+    topButton.addEventListener('click', () => {
+      stopScrollAnimation();
+      const startTop = scrollArea.scrollTop;
+      if (startTop <= 0) return;
+
+      const duration = Math.min(1200, Math.max(800, startTop * 0.075));
+      let startTime = null;
+      const animateToTop = timestamp => {
+        if (!scrollArea.isConnected) {
+          scrollAnimationId = null;
+          return;
+        }
+        if (startTime === null) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        // easeInOutCubic: 천천히 출발해 가속하고 도착할 때 감속한다.
+        const eased = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        scrollArea.scrollTop = startTop * (1 - eased);
+        if (progress < 1) scrollAnimationId = requestAnimationFrame(animateToTop);
+        else {
+          scrollArea.scrollTop = 0;
+          scrollAnimationId = null;
+        }
+      };
+      scrollAnimationId = requestAnimationFrame(animateToTop);
+    });
+    updateVisibility();
+  }
+
   function showAllReviews(restoreScroll = false) {
     const dialog = ensureReviewDialog();
     const { year, firstYear } = reviewPeriod();
@@ -526,9 +582,11 @@
       <div class="review-detail-scroll review-all-scroll">
         ${allReviews.length ? `<div class="review-all-grid">${allReviews.map(allReviewCard).join('')}</div>` : '<p class="review-all-empty">해당 기간에 등록된 출고 후기가 없습니다.</p>'}
       </div>
+      <button type="button" class="review-scroll-top" data-review-scroll-top aria-label="후기 목록 맨 위로 이동" title="맨 위로" hidden><span aria-hidden="true">↑</span></button>
     </div>`;
     showReviewDialog(dialog);
     dialog.querySelector('.review-all-scroll').scrollTop = restoreScroll ? reviewListScrollTop : 0;
+    setupReviewScrollTop(dialog, '.review-all-scroll');
     dialog.querySelectorAll('.review-all-card__photo img').forEach(img => {
       img.addEventListener('error', () => {
         const slot = img.closest('.review-all-card__photo');
