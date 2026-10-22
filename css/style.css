@@ -8626,3 +8626,74 @@ body.review-dialog-open { overflow: hidden; }
     font-size: 24px;
   }
 }
+/* 출고 후기 하단 → 후기 속 차량 목록 CTA (PC / 모바일 공통) */
+.review-vehicle-link {
+  box-sizing: border-box;
+  max-width: 700px;
+  margin: 32px auto 0;
+  padding: 22px 24px;
+  border: 1px solid #e0e8f6;
+  border-radius: 16px;
+  background: #f7faff;
+  text-align: left;
+}
+.review-vehicle-link__eyebrow {
+  margin: 0 0 8px;
+  color: #326bfa;
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 800;
+  letter-spacing: .075em;
+}
+.review-vehicle-link__title {
+  display: block;
+  color: #172b4b;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 800;
+  word-break: keep-all;
+}
+.review-vehicle-link__desc {
+  display: block;
+  margin-top: 5px;
+  color: #62728a;
+  font-size: 13px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+.review-vehicle-link__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: 1px solid #326bfa;
+  border-radius: 10px;
+  background: #326bfa;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.review-vehicle-link__button:hover { background: #2459e7; border-color: #2459e7; }
+.review-vehicle-link__button:active { transform: translateY(1px); }
+.review-vehicle-link__button:focus-visible { outline: 3px solid #9fbbff; outline-offset: 3px; }
+.review-vehicle-link__arrow { font-size: 21px; font-weight: 500; line-height: 1; }
+/* 선택은 사용자가 직접 하며, 추천 차종만 목록에서 시각적으로 강조 */
+.vehicle-card-item.review-vehicle-target:not(.active) {
+  border-color: #326bfa;
+  background: #edf3ff;
+  box-shadow: 0 0 0 2px rgba(50,107,250,.12);
+}
+@media (max-width: 600px) {
+  .review-vehicle-link { margin-top: 26px; padding: 18px 16px; border-radius: 14px; }
+  .review-vehicle-link__title { font-size: 15px; }
+  .review-vehicle-link__desc { font-size: 12px; }
+  .review-vehicle-link__button { min-height: 48px; margin-top: 14px; padding: 12px 14px; font-size: 13px; }
+}

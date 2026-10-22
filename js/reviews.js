@@ -237,6 +237,18 @@
   let reviewReturnScroll = null;
   let activeReviewImages = [];
   let activeReviewImageIndex = 0;
+  let activeReviewVehicle = null;
+  let pendingReviewVehicle = null;
+
+  function navigateToPendingReviewVehicle() {
+    if (!pendingReviewVehicle) return;
+    const target = pendingReviewVehicle;
+    pendingReviewVehicle = null;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      window.autogenieReviewVehicleBridge?.openVehicleList(target);
+    }));
+  }
+
   let hiddenAfterBrandSelection = false;
   let sourceRefreshStarted = false;
   let reviewSwiper = null;
@@ -445,6 +457,13 @@
         closeReviewDialog();
         return;
       }
+      if (event.target.closest('[data-review-vehicle-go]')) {
+        if (!activeReviewVehicle) return;
+        pendingReviewVehicle = activeReviewVehicle;
+        closeReviewDialog();
+        if (!reviewHistoryActive) navigateToPendingReviewVehicle();
+        return;
+      }
       if (event.target.closest('[data-review-back-list]')) {
         showAllReviews(true);
         return;
@@ -610,6 +629,7 @@
       reviewClosingFromPopstate = false;
       restoreReviewScroll();
     }
+    navigateToPendingReviewVehicle();
   }, true);
 
   // GitHub Actions가 저장한 원본 후기 HTML을 브라우저에서도 한 번 더 제한적으로 정제한다.
@@ -738,11 +758,23 @@
 
     articleHtml = normalizeReviewArticleStart(articleHtml);
 
+    activeReviewVehicle = window.autogenieReviewVehicleBridge?.findReviewVehicle(review) || null;
+    const reviewVehicleCta = activeReviewVehicle ? `
+      <div class="review-vehicle-link" role="group" aria-label="후기 차량 보러가기">
+        <p class="review-vehicle-link__eyebrow">REVIEW TO VEHICLE</p>
+        <strong class="review-vehicle-link__title">후기 속 차량이 궁금하신가요?</strong>
+        <span class="review-vehicle-link__desc">${escapeHtml(activeReviewVehicle.brandName)} ${escapeHtml(activeReviewVehicle.carName)} 차량을 확인해 보세요.</span>
+        <button type="button" class="review-vehicle-link__button" data-review-vehicle-go>
+          <span>${escapeHtml(activeReviewVehicle.carName)} 차량 보러가기</span>
+          <span class="review-vehicle-link__arrow" aria-hidden="true">→</span>
+        </button>
+      </div>` : '';
+
     dialog.innerHTML = `<div class="review-detail-panel review-detail-panel--blog">
       <header class="review-detail-head"><div>${reviewDetailFromList ? '<button type="button" class="review-back-list" data-review-back-list>← 후기 목록</button>' : ''}<span class="review-detail-eyebrow">REAL DELIVERY REVIEW</span>
       <h2>${escapeHtml(cleanReviewTitle(review.title))}</h2><time>${escapeHtml(formatReviewDate(review.date))}</time></div>
       <button type="button" class="review-detail-close" data-review-close aria-label="후기 닫기">×</button></header>
-      <div class="review-detail-scroll review-blog-scroll"><article class="review-blog-article">${articleHtml}</article></div>
+      <div class="review-detail-scroll review-blog-scroll"><article class="review-blog-article">${articleHtml}</article>${reviewVehicleCta}</div>
     </div>`;
     showReviewDialog(dialog);
     dialog.querySelector('.review-detail-scroll')?.scrollTo(0, 0);

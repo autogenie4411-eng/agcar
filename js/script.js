@@ -10620,6 +10620,111 @@ const vehicleCatalog = [
     cars: brand.cars.map(car => car.name)
   }));
 
+  const MARKETS_FOR_REVIEWS =  ["domestic", "import"];
+
+  // 출고 후기 → STEP 01 차량 목록 연결. 현재 등록된 차량만 연결하고,
+  // 후기의 모델명/제목을 함께 확인해 일반/하이브리드/전기 모델 혼선을 방지합니다.
+  const reviewVehicleNormalize = text => String(text || "")
+    .toLocaleLowerCase("ko-KR")
+    .replace(/h[.\s-]*e[.\s-]*v\b|hybrid/gi, "하이브리드")
+    .replace(/[^a-z0-9가-힣]/g, "");
+
+  function findVehicleFromReview(review) {
+    if (!review || typeof review !== "object") return null;
+    const modelText = reviewVehicleNormalize(review.model);
+    const titleText = reviewVehicleNormalize(review.title);
+    const both = `${modelText} ${titleText}`;
+    if (!modelText && !titleText) return null;
+
+    const wantsHybrid = /하이브리드|hev|hybrid|e[-\s]?tech/i.test(`${review.model || ""} ${review.title || ""}`);
+    const wantsElectric = /(?:\bEV\b|일렉트릭|일렉트리파이드|전동화|전기차|EVX)/i.test(`${review.model || ""} ${review.title || ""}`);
+    let best = null;
+
+    const brandAliases = {
+      "메르세데스벤츠": "벤츠", "mercedesbenz": "벤츠",
+      "kg모빌리티": "KGM", "쌍용": "KGM", "쌍용자동차": "KGM"
+    };
+    const explicitBrand = reviewVehicleNormalize(review.brand);
+    const normalizedBrand = reviewVehicleNormalize(brandAliases[explicitBrand] || review.brand);
+    const maybachReview = /maybach|마이바흐/i.test(`${review.model || ""} ${review.title || ""}`);
+    const importAliases = {
+      "벤츠": {
+        "E클래스 아방가르드": ["E200", "E300", "E250", "E220", "E클래스"],
+        "E클래스 익스클루시브": ["E200 익스클루시브", "E300 익스클루시브", "E클래스 익스클루시브"],
+        "S클래스": ["S450", "S500", "S580"],
+        "마이바흐 GLS": ["MAYBACH GLS", "GLS 600", "GLS600"]
+      }
+    };
+
+    for (const brand of vehicleCatalog.filter(item => MARKETS_FOR_REVIEWS.includes(item.market))) {
+      if (normalizedBrand && normalizedBrand !== reviewVehicleNormalize(brand.name)) continue;
+      for (const car of brand.cars) {
+        const name = car.name;
+        // 마이바흐는 일반 GLS와 구분해 연결합니다.
+        if (brand.name === "벤츠" && maybachReview && !name.startsWith("마이바흐")) continue;
+
+        const hybrid = /하이브리드/.test(name);
+        const electric = /(?:\sEV$|\sEVX$|일렉트릭|일렉트리파이드)/i.test(name);
+        if (brand.market === "domestic" && (hybrid !== wantsHybrid || electric !== wantsElectric)) continue;
+
+        const exact = reviewVehicleNormalize(name);
+        const base = reviewVehicleNormalize(name
+          .replace(/\s+하이브리드(?:\s+E-Tech)?$/i, "")
+          .replace(/\s+(?:EV|EVX|일렉트릭)$/i, "")
+          .replace(/^일렉트리파이드\s+/i, ""));
+        const extraAliases = {
+          "포터2": ["포터"],
+          "렉스턴 뉴 아레나": ["렉스턴"],
+          "트랙스 크로스오버": ["트랙스"],
+          "팰리세이드": ["펠리세이드"]
+        };
+        const aliases = [exact, base, ...(extraAliases[name] || []).map(reviewVehicleNormalize),
+          ...((importAliases[brand.name] || {})[name] || []).map(reviewVehicleNormalize)]
+          .filter(word => word.length >= 2);
+        let score = 0;
+        for (const word of aliases) {
+          if (modelText.includes(word)) score = Math.max(score, 100 + word.length * 2 + (word === exact ? 30 : 0));
+          else if (titleText.includes(word)) score = Math.max(score, 60 + word.length * 2 + (word === exact ? 15 : 0));
+        }
+        if (!score) continue;
+        // 짧은 차종명(G80, K5 등)이 타 브랜드 모델명 안에서 우연히 겹치지 않도록 조정.
+        const explicitBrand = reviewVehicleNormalize(review.brand);
+        const registeredBrand = reviewVehicleNormalize(brand.name);
+        const isSameBrand = !explicitBrand || explicitBrand.includes(registeredBrand) ||
+          registeredBrand.includes(explicitBrand) ||
+          (brand.name === "KGM" && ["kg모빌리티", "쌍용", "쌍용자동차"].some(alias => explicitBrand.includes(alias)));
+        if (!isSameBrand) continue;
+        if (!best || score > best.score) best = { brandName: brand.name, carName: name, market: brand.market, score };
+      }
+    }
+    return best ? { brandName: best.brandName, carName: best.carName, market: best.market } : null;
+  }
+
+  function openReviewVehicleList(vehicle) {
+    if (!vehicle || typeof vehicle !== "object") return;
+    const brand = vehicleCatalog.find(item => item.name === vehicle.brandName && item.market === vehicle.market);
+    if (!brand || !brand.cars.some(car => car.name === vehicle.carName)) return;
+
+    // 후기에서 연결된 차종의 외장 색상 단계로 바로 이동합니다.
+    state.step = 1;
+    state.market = brand.market;
+    state.brandName = brand.name;
+    state.carName = vehicle.carName;
+    state.paintId = ""; // 외장 색상은 사용자가 직접 선택합니다.
+    resetSelectionsAfterVehicleChange();
+    rememberWizardStep();
+    render();
+
+    // 기존 차량 카드 클릭과 동일한 상세 영역 위치에 맞춰 이동합니다.
+    // 후기가 가진 색상 정보로 임의 선택하지 않고 선택 버튼을 노출합니다.
+    scrollToNextSelection(".wizard-car-card", "start", 76);
+  }
+
+  window.autogenieReviewVehicleBridge = {
+    findReviewVehicle: findVehicleFromReview,
+    openVehicleList: openReviewVehicleList
+  };
+
   const fallbackImage = "images/g_g90.png";
 
   /* ==============================
