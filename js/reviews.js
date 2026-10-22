@@ -717,7 +717,100 @@
     return host.innerHTML;
   }
 
+  // 이전 후기 하단 광고는 날짜/이미지 순서만으로 판별하지 않습니다.
+  // 같은 이미지가 여러 개의 서로 다른 과거 후기 *마지막*에 반복되는 경우에만 광고로 인식합니다.
+  // 이를 통해 마지막 차량 출고 사진과 그 아래 후기 문장을 그대로 보존합니다.
+  const LEGACY_REVIEW_AD_CUTOFF = '2026-09-18';
+  let legacyReviewAdImageKeys = new Set();
+  const explicitAdImagePattern = /(?:^|[\\/_?&.=-])(?:advertis(?:e|ement|ing)?|banner|promotion|promo|광고|배너)(?:[\\/_?&.=-]|$)/i;
+
+  function reviewImageKey(raw) {
+    try {
+      const url = new URL(String(raw || '').replace(/&amp;/gi, '&'), location.href);
+      if (!/^https?:$/.test(url.protocol)) return '';
+      const parts = url.pathname.split('/').filter(Boolean);
+      return `${url.hostname}/${parts.slice(-2).join('/')}`.toLowerCase();
+    } catch { return ''; }
+  }
+
+  function legacyReviewDate(review) {
+    const date = String(review?.date || '').slice(0, 10);
+    return /^\d{4}-\d{2}-\d{2}$/.test(date) && date < LEGACY_REVIEW_AD_CUTOFF;
+  }
+
+  function reviewArticleImageList(review) {
+    const html = String(review?.articleHtml || '');
+    if (html) {
+      const container = document.createElement('div');
+      container.innerHTML = html;
+      const urls = [...container.querySelectorAll('img[src]')]
+        .map(img => img.getAttribute('src') || '').filter(src => Boolean(reviewImageKey(src)));
+      if (urls.length) return urls;
+    }
+    const images = Array.isArray(review?.images) ? review.images.filter(src => Boolean(reviewImageKey(src))) : [];
+    if (images.length) return images;
+    return Array.isArray(review?.contentBlocks)
+      ? review.contentBlocks.filter(block => block?.type === 'image').map(block => block.url).filter(src => Boolean(reviewImageKey(src)))
+      : [];
+  }
+
+  function refreshLegacyReviewAdImageKeys(reviews) {
+    const imageToReviewIds = new Map();
+    for (const review of reviews) {
+      if (!legacyReviewDate(review)) continue;
+      const images = reviewArticleImageList(review);
+      if (images.length < 2) continue;
+      const key = reviewImageKey(images[images.length - 1]);
+      if (!key) continue;
+      if (!imageToReviewIds.has(key)) imageToReviewIds.set(key, new Set());
+      imageToReviewIds.get(key).add(String(review.id || review.url || review.title || ''));
+    }
+    // 최소 서로 다른 3개 후기 끝에서 발견되는 동일한 파일만 공통 광고로 처리합니다.
+    legacyReviewAdImageKeys = new Set([...imageToReviewIds]
+      .filter(([, reviewIds]) => reviewIds.size >= 3)
+      .map(([key]) => key));
+  }
+
+  function reviewWithoutTrailingAd(review) {
+    if (!legacyReviewDate(review) || review?.legacyAdRemoved) return review;
+    const articleImages = reviewArticleImageList(review);
+    if (articleImages.length < 2) return review;
+    const lastUrl = articleImages[articleImages.length - 1];
+    const lastKey = reviewImageKey(lastUrl);
+    if (!lastKey || (!legacyReviewAdImageKeys.has(lastKey) && !explicitAdImagePattern.test(lastUrl))) {
+      return review; // 광고로 확인되지 않은 마지막 차량 사진은 반드시 유지
+    }
+
+    let articleHtml = String(review.articleHtml || '');
+    if (articleHtml) {
+      const container = document.createElement('div');
+      container.innerHTML = articleHtml;
+      const images = [...container.querySelectorAll('img[src]')];
+      const lastImage = images.at(-1);
+      if (!lastImage || reviewImageKey(lastImage.getAttribute('src')) !== lastKey) return review;
+      // 마지막 광고 이미지만 제거하며, 다른 사진이나 이미지 뒤의 글은 삭제하지 않습니다.
+      // 빈 이미지 전용 래퍼만 정리하여 불필요한 공백을 방지합니다.
+      let parent = lastImage.parentElement;
+      lastImage.remove();
+      while (parent && parent !== container && /^(P|FIGURE|DIV|SPAN)$/.test(parent.tagName) &&
+        !(parent.textContent || '').replace(/[\u00a0\u200b\ufeff]/g, ' ').trim() &&
+        !parent.querySelector('img, hr, br, iframe, video, svg')) {
+        const next = parent.parentElement;
+        parent.remove();
+        parent = next;
+      }
+      articleHtml = container.innerHTML;
+    }
+
+    const images = Array.isArray(review.images) ? review.images.filter(src => reviewImageKey(src) !== lastKey) : review.images;
+    const contentBlocks = Array.isArray(review.contentBlocks)
+      ? review.contentBlocks.filter(block => block?.type !== 'image' || reviewImageKey(block.url) !== lastKey)
+      : review.contentBlocks;
+    return { ...review, articleHtml, images, contentBlocks, legacyAdRemoved: true };
+  }
+
   function openReview(review) {
+    review = reviewWithoutTrailingAd(review);
     const dialog = ensureReviewDialog();
     reviewDialogView = 'detail';
     dialog.setAttribute('aria-label', '오토지니 출고 후기 상세');
@@ -892,6 +985,7 @@
 
   function renderReviewList(items) {
     allReviews = prepareReviews(items);
+    refreshLegacyReviewAdImageKeys(allReviews);
     const reviews = rollingReviews(allReviews);
     renderedReviews = reviews;
 

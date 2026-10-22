@@ -10624,10 +10624,90 @@ const vehicleCatalog = [
 
   // 출고 후기 → STEP 01 차량 목록 연결. 현재 등록된 차량만 연결하고,
   // 후기의 모델명/제목을 함께 확인해 일반/하이브리드/전기 모델 혼선을 방지합니다.
+  // 후기의 차종명에 자주 쓰이는 다른 표기/오타를 공식 차량명으로 통일합니다.
+  // 일반 모델과 하이브리드/EV의 구분은 아래 차량 매칭 단계에서 계속 검사합니다.
   const reviewVehicleNormalize = text => String(text || "")
     .toLocaleLowerCase("ko-KR")
     .replace(/h[.\s-]*e[.\s-]*v\b|hybrid/gi, "하이브리드")
-    .replace(/[^a-z0-9가-힣]/g, "");
+    .replace(/[^a-z0-9가-힣]/g, "")
+    .replace(/펠리세이드|펠리사이드|팰리사이드|팔리세이드/g, "팰리세이드")
+    .replace(/소나타/g, "쏘나타")
+    .replace(/산타페/g, "싼타페")
+    .replace(/소렌토|쏘랭토/g, "쏘렌토")
+    .replace(/아반테/g, "아반떼")
+    .replace(/그렌저|그렌져|그랜져/g, "그랜저")
+    .replace(/투산/g, "투싼");
+
+  // 정확한 매칭에 실패한 경우에만 긴 차종명에서 1글자 오타를 허용합니다.
+  // 짧은 모델명(EV3/EV4, G80/G90 등)은 서로 혼동하기 쉬워 추측하지 않습니다.
+  function reviewVehicleOneEditApart(first, second) {
+    if (Math.abs(first.length - second.length) > 1 || first === second) return false;
+    let a = 0, b = 0, edits = 0;
+    while (a < first.length && b < second.length) {
+      if (first[a] === second[b]) { a++; b++; continue; }
+      if (++edits > 1) return false;
+      if (first.length >= second.length) a++;
+      if (second.length >= first.length) b++;
+    }
+    return edits + Number(a < first.length || b < second.length) === 1;
+  }
+
+  function reviewVehicleTypoScore(text, alias, sourceScore) {
+    if (!text || alias.length < 5) return 0;
+    // 모델명 또는 제목 앞부분(브랜드명이 포함될 수 있음)에서만 비교합니다.
+    for (let pos = 0; pos <= Math.min(12, text.length - 4); pos++) {
+      for (const size of [alias.length - 1, alias.length, alias.length + 1]) {
+        if (size < 4 || pos + size > text.length) continue;
+        if (reviewVehicleOneEditApart(text.slice(pos, pos + size), alias)) {
+          return sourceScore + alias.length * 2 - pos;
+        }
+      }
+    }
+    return 0;
+  }
+
+  function findVehicleByReviewTypo(review, modelText, titleText, wantsHybrid, wantsElectric) {
+    const explicitBrand = reviewVehicleNormalize(review.brand);
+    const brandAliases = {
+      "메르세데스벤츠": "벤츠", "mercedesbenz": "벤츠",
+      "kg모빌리티": "KGM", "쌍용": "KGM", "쌍용자동차": "KGM"
+    };
+    const normalizedBrand = reviewVehicleNormalize(brandAliases[explicitBrand] || review.brand);
+    const maybachReview = /maybach|마이바흐/i.test(`${review.model || ""} ${review.title || ""}`);
+    const markets = typeof MARKETS_FOR_REVIEWS === "undefined" ? [DEFAULT_MARKET] : MARKETS_FOR_REVIEWS;
+    const candidates = [];
+
+    for (const brand of vehicleCatalog.filter(item => markets.includes(item.market))) {
+      const registeredBrand = reviewVehicleNormalize(brand.name);
+      if (normalizedBrand && !normalizedBrand.includes(registeredBrand) &&
+          !registeredBrand.includes(normalizedBrand)) continue;
+      for (const car of brand.cars) {
+        const name = car.name;
+        if (brand.name === "벤츠" && maybachReview && !name.startsWith("마이바흐")) continue;
+        const hybrid = /하이브리드/.test(name);
+        const electric = /(?:\sEV$|\sEVX$|일렉트릭|일렉트리파이드)/i.test(name);
+        if (brand.market === "domestic" && (hybrid !== wantsHybrid || electric !== wantsElectric)) continue;
+        const baseName = name
+          .replace(/\s+하이브리드(?:\s+E-Tech)?$/i, "")
+          .replace(/\s+(?:EV|EVX|일렉트릭)$/i, "")
+          .replace(/^일렉트리파이드\s+/i, "");
+        const aliases = [...new Set([reviewVehicleNormalize(name), reviewVehicleNormalize(baseName)])];
+        let score = 0;
+        for (const alias of aliases) {
+          score = Math.max(score,
+            reviewVehicleTypoScore(modelText, alias, 100),
+            reviewVehicleTypoScore(titleText, alias, 60));
+        }
+        if (score) candidates.push({ brandName: brand.name, carName: name, market: brand.market, score });
+      }
+    }
+    candidates.sort((a, b) => b.score - a.score);
+    if (!candidates.length) return null;
+    // 비슷한 점수로 두 차량이 후보가 되면 잘못된 차량으로 보내지 않습니다.
+    if (candidates[1] && candidates[0].score - candidates[1].score < 8) return null;
+    const { brandName, carName, market } = candidates[0];
+    return { brandName, carName, market };
+  }
 
   function findVehicleFromReview(review) {
     if (!review || typeof review !== "object") return null;
@@ -10697,7 +10777,8 @@ const vehicleCatalog = [
         if (!best || score > best.score) best = { brandName: brand.name, carName: name, market: brand.market, score };
       }
     }
-    return best ? { brandName: best.brandName, carName: best.carName, market: best.market } : null;
+    return best ? { brandName: best.brandName, carName: best.carName, market: best.market } :
+      findVehicleByReviewTypo(review, modelText, titleText, wantsHybrid, wantsElectric);
   }
 
   function openReviewVehicleList(vehicle) {
