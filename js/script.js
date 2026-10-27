@@ -12690,6 +12690,33 @@ const vehicleCatalog = [
     showValidation("");
   }
 
+  // 기존 차단 이름/번호 규칙에 걸리는 경우에만 별도 경고문을 표시합니다.
+  function isBlockedEstimateIdentity(nameValue, phoneValue) {
+    const normalizedName = (nameValue || "").trim().toLowerCase().replace(/\s/g, "");
+    const blockedNames = [
+      "테스트", "홍길동", "아무개", "관리자", "운영자", "담당자",
+      "test", "tester", "admin", "administrator", "asdf", "qwer", "abc"
+    ];
+    const digits = (phoneValue || "").replace(/\D/g, "");
+    const subscriberNumber = digits.slice(digits.startsWith("02") ? 2 : 3);
+    const blockedNumbers = ["1234567", "7654321", "12341234", "12345678", "87654321"];
+    const middleNumber = subscriberNumber.slice(0, -4);
+    const lastNumber = subscriberNumber.slice(-4);
+    const isRepeatedGroup = number => number.length >= 3 && /^(\d)\1+$/.test(number);
+    return blockedNames.includes(normalizedName)
+      || blockedNumbers.includes(subscriberNumber)
+      || (isRepeatedGroup(middleNumber) && isRepeatedGroup(lastNumber));
+  }
+
+  const estimateBlockModal = document.getElementById("estimateBlockModal");
+  document.querySelectorAll("[data-estimate-block-close]").forEach(button => {
+    button.addEventListener("click", () => estimateBlockModal?.close());
+  });
+  function showEstimateBlockedWarning() {
+    if (estimateBlockModal?.showModal) estimateBlockModal.showModal();
+    else alert("견적 신청이 제한되었습니다. 동일한 허위 신청이 지속될 경우 법적 조치가 취해질 수 있습니다.");
+  }
+
   function isValidCustomerName(value) {
     const name = value.trim().replace(/\s+/g, " ");
     const normalizedName = name.toLowerCase().replace(/\s/g, "");
@@ -12854,6 +12881,11 @@ const vehicleCatalog = [
       if (isElectricVehicle() && !state.subsidyRegion) {
         showValidation("전기차 보조금 확인 지역을 선택해 주세요.");
         document.getElementById("subsidyRegionSelect")?.focus();
+        return false;
+      }
+
+      if (isBlockedEstimateIdentity(name.value, phone.value)) {
+        showEstimateBlockedWarning();
         return false;
       }
 

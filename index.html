@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261021-review-vehicle-link-v2">
+    <link rel="stylesheet" href="css/style.css?v=20261027-block-warning-20261021-review-vehicle-link-v2">
 </head>
 <body>
 
@@ -303,9 +303,24 @@
     </footer>
   </main>
 
+  <!-- 견적 신청 제한 안내 -->
+  <dialog class="estimate-block-modal" id="estimateBlockModal" aria-labelledby="estimateBlockTitle" aria-describedby="estimateBlockDescription">
+    <div class="estimate-block-modal__content">
+      <div class="estimate-block-modal__symbol" aria-hidden="true">!</div>
+      <h2 id="estimateBlockTitle">견적 신청이 제한되었습니다</h2>
+      <p class="estimate-block-modal__reason" id="estimateBlockDescription">반복적인 허위 견적 신청 및 서비스 이용 방해 행위가 확인되어 견적 신청이 제한되었습니다.</p>
+      <div class="estimate-block-modal__warning">
+        <strong>⚠ 법적 조치 안내</strong>
+        <p>동일한 행위가 지속될 경우 관련 법령에 따라 법적 조치가 취해질 수 있습니다.</p>
+      </div>
+      <p class="estimate-block-modal__support">정상적인 상담을 원하시는 경우 고객센터로 문의해 주세요.</p>
+      <button class="estimate-block-modal__confirm" type="button" data-estimate-block-close>확인</button>
+    </div>
+  </dialog>
+
   <script src="js/traffic-tracker.js?v=20261027"></script>
 
-  <script src="js/script.js?v=20261027-traffic-dashboard"></script>
+  <script src="js/script.js?v=20261027-block-warning-20261027-traffic-dashboard"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/reviews.js?v=20261022-review-full-ad-safe-v2"></script>
 

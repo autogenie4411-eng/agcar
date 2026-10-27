@@ -8697,3 +8697,19 @@ body.review-dialog-open { overflow: hidden; }
   .review-vehicle-link__desc { font-size: 12px; }
   .review-vehicle-link__button { min-height: 48px; margin-top: 14px; padding: 12px 14px; font-size: 13px; }
 }
+
+
+/* 차단 대상 견적 신청 경고 팝업 */
+.estimate-block-modal{position:fixed;inset:0;margin:auto;width:calc(100% - 32px);max-width:370px;max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:18px;background:#fff;color:#1f2937;box-shadow:0 20px 60px rgba(15,23,42,.22);overflow:auto}
+.estimate-block-modal::backdrop{background:rgba(15,23,42,.57)}
+.estimate-block-modal__content{box-sizing:border-box;padding:28px;text-align:center;font-family:inherit}
+.estimate-block-modal__symbol{display:flex;align-items:center;justify-content:center;width:54px;height:54px;margin:0 auto 12px;border-radius:50%;background:#fef2f2;color:#dc2626;font-size:31px;font-weight:700}
+.estimate-block-modal h2{margin:0;color:#111827;font-size:19px;line-height:1.45;font-weight:750;word-break:keep-all}
+.estimate-block-modal__reason{margin:24px 0 20px;font-size:14px;line-height:1.7;word-break:keep-all}
+.estimate-block-modal__warning{padding:16px;border-radius:12px;background:#fef2f2}
+.estimate-block-modal__warning strong{display:block;margin:0 0 10px;color:#b91c1c;font-size:14px;line-height:1.5}
+.estimate-block-modal__warning p{margin:0;color:#991b1b;font-size:14px;line-height:1.7;word-break:keep-all}
+.estimate-block-modal__support{margin:20px 0 24px;color:#6b7280;font-size:12px;line-height:1.7;word-break:keep-all}
+.estimate-block-modal__confirm{display:block;width:100%;min-height:46px;border:0;border-radius:9px;background:#326bfa;color:#fff;font:inherit;font-size:14px;font-weight:650;cursor:pointer}
+.estimate-block-modal__confirm:focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
+@media(max-width:480px){.estimate-block-modal__content{padding:24px}.estimate-block-modal h2{font-size:18px}}
