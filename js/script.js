@@ -11116,7 +11116,8 @@ const vehicleCatalog = [
       visitorId: getAutojiniVisitorId(),
       visitSessionId: autojiniVisitSessionId,
       deviceType: getDeviceType(),
-      browserName: getBrowserName()
+      browserName: getBrowserName(),
+      ...window.AutoGenieTraffic?.getFields()
     });
 
     if (success) {
@@ -12964,7 +12965,9 @@ const vehicleCatalog = [
 
       // 방문로그와 같은 방문자 ID를 사용해 고객이름을 연결합니다.
       visitorId: securityData.visitorId || "확인 불가",
-      elapsedSeconds: String(securityData.elapsedSeconds || 0)
+      visitSessionId: getOrCreateAutojiniVisitSessionId(),
+      elapsedSeconds: String(securityData.elapsedSeconds || 0),
+      ...window.AutoGenieTraffic?.getFields()
     });
 
     await fetch(GOOGLE_APPS_SCRIPT_URL, {
@@ -13032,6 +13035,7 @@ const vehicleCatalog = [
 
     try {
       await submitEstimateToGoogle();
+      window.AutoGenieTraffic?.trackConversion();
       state.submitted = true;
       render();
       scrollToEstimate();
