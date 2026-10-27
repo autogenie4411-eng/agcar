@@ -8090,814 +8090,368 @@ body.loader-active {
     margin-top: 11px;
 }
 
+
 /* 오토지니 출고 후기 - 견적 단계 이탈 없는 자체 상세 팝업 */
-body.review-dialog-open {
-    overflow: hidden;
-}
-.autogenie-review-dialog {
-    position: fixed;
-    inset: 0;
-    width: min(780px, calc(100% - 36px));
-    max-width: none;
-    max-height: min(90dvh, 920px);
-    margin: auto;
-    padding: 0;
-    border: 0;
-    border-radius: 18px;
-    color: #152441;
-    background: #fff;
-    box-shadow: 0 22px 90px #0c23475c;
-    overflow: hidden;
-}
-.autogenie-review-dialog::backdrop {
-    background: rgba(12, 25, 49, 0.66);
-    backdrop-filter: blur(3px);
-}
-.review-detail-panel {
-    display: flex;
-    flex-direction: column;
-    max-height: min(90dvh, 920px);
-}
-.review-detail-head {
-    padding: 24px 28px 18px;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex: none;
-    border-bottom: 1px solid #edf1f7;
-}
-.review-detail-eyebrow {
-    display: block;
-    font-size: 11px;
-    color: #326bfa;
-    font-weight: 800;
-    letter-spacing: 0.07em;
-    margin-bottom: 8px;
-}
-.review-detail-head h2 {
-    font-size: 22px;
-    line-height: 1.45;
-    margin: 0 0 9px;
-    font-weight: 800;
-    word-break: keep-all;
-}
-.review-detail-head time {
-    font-size: 12px;
-    color: #8792a8;
-}
-.review-detail-close {
-    border: 0;
-    background: #f1f5fc;
-    color: #24344e;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    font-size: 27px;
-    line-height: 1;
-    cursor: pointer;
-    flex: none;
-}
-.review-detail-scroll {
-    padding: 20px 28px 30px;
-    overflow-y: auto;
-    min-height: 0;
-    overscroll-behavior: contain;
-}
-.review-detail-photo {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #f3f6fa;
-    text-align: center;
-}
-.review-detail-photo > img {
-    display: block;
-    width: 100%;
-    max-height: 450px;
-    object-fit: contain;
-}
-.review-detail-photo > button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #12203bc0;
-    color: #fff;
-    border: 0;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    font-size: 28px;
-    cursor: pointer;
-}
-.review-detail-photo > button[data-review-image-shift="-1"] {
-    left: 12px;
-}
-.review-detail-photo > button[data-review-image-shift="1"] {
-    right: 12px;
-}
-.review-detail-count {
-    position: absolute;
-    right: 12px;
-    bottom: 10px;
-    color: white;
-    background: #152642c0;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 11px;
-}
-.review-detail-thumbs {
-    display: flex;
-    gap: 7px;
-    overflow-x: auto;
-    margin-top: 10px;
-    padding-bottom: 4px;
-}
-.review-detail-thumbs button {
-    width: 86px;
-    height: 60px;
-    flex: none;
-    background: #f1f4f9;
-    padding: 0;
-    border: 2px solid transparent;
-    border-radius: 7px;
-    overflow: hidden;
-    cursor: pointer;
-}
-.review-detail-thumbs button.is-selected {
-    border-color: #316cff;
-}
-.review-detail-thumbs img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.review-detail-spec {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin: 20px 0;
-}
-.review-detail-spec span {
-    background: #f1f5fd;
-    color: #426397;
-    padding: 7px 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    line-height: 1.5;
-}
-.review-detail-body {
-    color: #36455d;
-    font-size: 14px;
-    line-height: 1.9;
-    overflow-wrap: anywhere;
-    white-space: normal;
-}
-.review-detail-body p {
-    margin: 0 0 16px;
-}
-@media (max-width: 600px) {
-    .autogenie-review-dialog {
-        width: 100%;
-        height: 100dvh;
-        max-height: 100dvh;
-        border-radius: 0;
-    }
-    .review-detail-panel {
-        max-height: 100dvh;
-        height: 100%;
-    }
-    .review-detail-head {
-        padding: 18px 18px 15px;
-    }
-    .review-detail-head h2 {
-        font-size: 17px;
-    }
-    .review-detail-scroll {
-        padding: 15px 18px 24px;
-    }
-    .review-detail-photo > img {
-        max-height: 55dvh;
-    }
-    .review-detail-body {
-        font-size: 13px;
-    }
+body.review-dialog-open { overflow: hidden; }
+.autogenie-review-dialog { position:fixed; inset:0; width:min(780px,calc(100% - 36px)); max-width:none; max-height:min(90dvh,920px); margin:auto; padding:0; border:0; border-radius:18px; color:#152441; background:#fff; box-shadow:0 22px 90px #0c23475c; overflow:hidden; }
+.autogenie-review-dialog::backdrop { background:rgba(12,25,49,.66); backdrop-filter:blur(3px); }
+.review-detail-panel { display:flex; flex-direction:column; max-height:min(90dvh,920px); }
+.review-detail-head { padding:24px 28px 18px; display:flex; justify-content:space-between; gap:20px; flex:none; border-bottom:1px solid #edf1f7; }
+.review-detail-eyebrow { display:block; font-size:11px; color:#326bfa; font-weight:800; letter-spacing:.07em; margin-bottom:8px; }
+.review-detail-head h2 { font-size:22px; line-height:1.45; margin:0 0 9px; font-weight:800; word-break:keep-all; }
+.review-detail-head time { font-size:12px; color:#8792a8; }
+.review-detail-close { border:0; background:#f1f5fc; color:#24344e; width:36px; height:36px; border-radius:50%; font-size:27px; line-height:1; cursor:pointer; flex:none; }
+.review-detail-scroll { padding:20px 28px 30px; overflow-y:auto; min-height:0; overscroll-behavior:contain; }
+.review-detail-photo { position:relative; border-radius:12px; overflow:hidden; background:#f3f6fa; text-align:center; }
+.review-detail-photo>img { display:block; width:100%; max-height:450px; object-fit:contain; }
+.review-detail-photo>button { position:absolute; top:50%; transform:translateY(-50%); background:#12203bc0; color:#fff; border:0; width:35px; height:35px; border-radius:50%; font-size:28px; cursor:pointer; }
+.review-detail-photo>button[data-review-image-shift="-1"] { left:12px; }
+.review-detail-photo>button[data-review-image-shift="1"] { right:12px; }
+.review-detail-count { position:absolute; right:12px; bottom:10px; color:white; background:#152642c0; padding:5px 10px; border-radius:20px; font-size:11px; }
+.review-detail-thumbs { display:flex; gap:7px; overflow-x:auto; margin-top:10px; padding-bottom:4px; }
+.review-detail-thumbs button { width:86px; height:60px; flex:none; background:#f1f4f9; padding:0; border:2px solid transparent; border-radius:7px; overflow:hidden; cursor:pointer; }
+.review-detail-thumbs button.is-selected { border-color:#316cff; }
+.review-detail-thumbs img { width:100%; height:100%; object-fit:cover; }
+.review-detail-spec { display:flex; flex-wrap:wrap; gap:7px; margin:20px 0; }
+.review-detail-spec span { background:#f1f5fd; color:#426397; padding:7px 10px; border-radius:6px; font-size:12px; line-height:1.5; }
+.review-detail-body { color:#36455d; font-size:14px; line-height:1.9; overflow-wrap:anywhere; white-space:normal; }
+.review-detail-body p { margin:0 0 16px; }
+@media(max-width:600px) {
+ .autogenie-review-dialog { width:100%; height:100dvh; max-height:100dvh; border-radius:0; }
+ .review-detail-panel { max-height:100dvh; height:100%; }
+ .review-detail-head { padding:18px 18px 15px; }
+ .review-detail-head h2 { font-size:17px; }
+ .review-detail-scroll { padding:15px 18px 24px; }
+ .review-detail-photo>img { max-height:55dvh; }
+ .review-detail-body { font-size:13px; }
 }
 
 /* 출고 후기: 이미지와 문단을 원본 작성 순서로 출력하는 블로그형 레이아웃 */
-.review-detail-panel--blog .review-detail-head {
-    padding-bottom: 16px;
-}
-.review-blog-scroll {
-    padding: 28px 28px 42px;
-}
-.review-blog-article {
-    max-width: 630px;
-    margin: 0 auto;
-    color: #2d3b51;
-    font-size: 14px;
-    line-height: 2.1;
-    overflow-wrap: anywhere;
-}
-.review-blog-article p {
-    margin: 0 0 26px;
-    white-space: pre-wrap;
-    text-align: center;
-}
-.review-blog-photo {
-    margin: 16px auto 30px;
-    text-align: center;
-}
-.review-blog-photo img {
-    display: block;
-    margin: auto;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 3px;
-}
-@media (max-width: 600px) {
-    .review-blog-scroll {
-        padding: 22px 16px 32px;
-    }
-    .review-blog-article {
-        font-size: 13px;
-        line-height: 1.95;
-    }
-    .review-blog-article p {
-        margin-bottom: 22px;
-    }
-    .review-blog-photo {
-        margin: 12px auto 25px;
-    }
+.review-detail-panel--blog .review-detail-head { padding-bottom:16px; }
+.review-blog-scroll { padding:28px 28px 42px; }
+.review-blog-article { max-width:630px; margin:0 auto; color:#2d3b51; font-size:14px; line-height:2.1; overflow-wrap:anywhere; }
+.review-blog-article p { margin:0 0 26px; white-space:pre-wrap; text-align:center; }
+.review-blog-photo { margin:16px auto 30px; text-align:center; }
+.review-blog-photo img { display:block; margin:auto; width:auto; max-width:100%; height:auto; border-radius:3px; }
+@media(max-width:600px) {
+ .review-blog-scroll { padding:22px 16px 32px; }
+ .review-blog-article { font-size:13px; line-height:1.95; }
+ .review-blog-article p { margin-bottom:22px; }
+ .review-blog-photo { margin:12px auto 25px; }
 }
 
 /* 리뷰 상세 - 수집한 원본 HTML의 문단 서식을 우선하고, 사이트 공통 p 스타일을 상속하지 않음 */
-.review-blog-article {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: initial;
-    line-height: normal;
-    color: inherit;
-}
-.review-blog-article .review-original-content {
-    width: 100%;
-    max-width: 100%;
-}
-.review-blog-article .review-original-content * {
-    box-sizing: border-box;
-}
-.review-blog-article .review-original-content p {
-    margin: 0;
-    white-space: inherit;
-    text-align: inherit;
-}
-.review-blog-article .review-original-content img {
-    max-width: 100% !important;
-    height: auto !important;
-    object-fit: contain;
-    border-radius: 0;
-}
-.review-blog-article .review-original-content figure {
-    max-width: 100%;
-}
-.review-blog-article .review-original-content table {
-    max-width: 100%;
-}
-@media (max-width: 600px) {
-    .review-blog-article .review-original-content {
-        overflow-wrap: break-word;
-    }
-    .review-blog-article .review-original-content img {
-        max-width: 100% !important;
-    }
+.review-blog-article { max-width:700px; margin:0 auto; font-size:initial; line-height:normal; color:inherit; }
+.review-blog-article .review-original-content { width:100%; max-width:100%; }
+.review-blog-article .review-original-content * { box-sizing:border-box; }
+.review-blog-article .review-original-content p { margin:0; white-space:inherit; text-align:inherit; }
+.review-blog-article .review-original-content img { max-width:100% !important; height:auto !important; object-fit:contain; border-radius:0; }
+.review-blog-article .review-original-content figure { max-width:100%; }
+.review-blog-article .review-original-content table { max-width:100%; }
+@media(max-width:600px) {
+  .review-blog-article .review-original-content { overflow-wrap:break-word; }
+  .review-blog-article .review-original-content img { max-width:100% !important; }
 }
 
 /* 후기 상세 팝업: 원본 서식을 유지하면서 사진/문단의 시각적 간격 보완 */
 .review-detail-close {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 !important;
-    line-height: 1 !important;
-    font-family: Arial, sans-serif;
-    font-size: 25px;
-    text-align: center;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  text-align: center;
 }
 .review-blog-article .review-original-content img {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
-.review-blog-article .review-original-content img + img {
-    margin-top: 18px;
-}
-.review-blog-article .review-original-content figure {
-    margin: 18px auto 26px;
-}
-.review-blog-article .review-original-content figure + figure {
-    margin-top: 18px;
-}
-.review-blog-article .review-original-content p:has(> img) {
-    margin-top: 18px;
-    margin-bottom: 22px;
-}
-.review-blog-article .review-original-content p:has(> img) + p:has(> img) {
-    margin-top: 18px;
-}
+.review-blog-article .review-original-content img + img { margin-top: 18px; }
+.review-blog-article .review-original-content figure { margin: 18px auto 26px; }
+.review-blog-article .review-original-content figure + figure { margin-top: 18px; }
+.review-blog-article .review-original-content p:has(> img) { margin-top: 18px; margin-bottom: 22px; }
+.review-blog-article .review-original-content p:has(> img) + p:has(> img) { margin-top: 18px; }
 .review-blog-article .review-original-content p:not(:has(img)) + p:has(img),
-.review-blog-article
-    .review-original-content
-    div:not(:has(img))
-    + div:has(> img) {
-    margin-top: 24px;
-}
-.review-blog-article .review-original-content p:has(img) + p:not(:has(img)) {
-    margin-top: 24px;
-}
+.review-blog-article .review-original-content div:not(:has(img)) + div:has(> img) { margin-top: 24px; }
+.review-blog-article .review-original-content p:has(img) + p:not(:has(img)) { margin-top: 24px; }
 @media (max-width: 600px) {
-    .review-blog-article .review-original-content {
-        font-size: 13px;
-        line-height: 1.75;
-    }
-    .review-blog-article .review-original-content [style*="font-size"] {
-        font-size: 13px !important;
-    }
-    .review-blog-article .review-original-content img + img,
-    .review-blog-article .review-original-content figure + figure {
-        margin-top: 14px;
-    }
-    .review-blog-article .review-original-content p:has(> img) {
-        margin-top: 14px;
-        margin-bottom: 18px;
-    }
-    .review-blog-article
-        .review-original-content
-        p:not(:has(img))
-        + p:has(img) {
-        margin-top: 20px;
-    }
-    .review-detail-close {
-        font-size: 24px;
-    }
+  .review-blog-article .review-original-content { font-size: 13px; line-height: 1.75; }
+  .review-blog-article .review-original-content [style*="font-size"] { font-size: 13px !important; }
+  .review-blog-article .review-original-content img + img,
+  .review-blog-article .review-original-content figure + figure { margin-top: 14px; }
+  .review-blog-article .review-original-content p:has(> img) { margin-top: 14px; margin-bottom: 18px; }
+  .review-blog-article .review-original-content p:not(:has(img)) + p:has(img) { margin-top: 20px; }
+  .review-detail-close { font-size: 24px; }
 }
 
 /* 출고 후기 상세: 원본 문단 서식을 보존하고, 사진 앞뒤에 한 줄 여백 확보 */
 .review-blog-article .review-original-content img {
-    margin-block: 22px !important;
+  margin-block: 22px !important;
 }
 /* 이미지가 연속될 때에는 여백이 두 배로 늘어나지 않도록 조정 */
 .review-blog-article .review-original-content img + img {
-    margin-top: 0 !important;
+  margin-top: 0 !important;
 }
-.review-blog-article
-    .review-original-content
-    :is(p, div, figure):has(> img)
-    + :is(p, div, figure):has(> img)
-    > img {
-    margin-top: 0 !important;
+.review-blog-article .review-original-content :is(p, div, figure):has(> img) + :is(p, div, figure):has(> img) > img {
+  margin-top: 0 !important;
 }
 @media (max-width: 600px) {
-    .review-blog-article .review-original-content img {
-        margin-block: 18px !important;
-    }
+  .review-blog-article .review-original-content img {
+    margin-block: 18px !important;
+  }
 }
 
 /* 후기 팝업 - 모바일 글자 크기만 소폭 상향 (13px → 14px) */
 @media (max-width: 600px) {
-    .review-blog-article,
-    .review-blog-article .review-original-content {
-        font-size: 14px;
-    }
-    .review-blog-article .review-original-content [style*="font-size"] {
-        font-size: 14px !important;
-    }
+  .review-blog-article,
+  .review-blog-article .review-original-content {
+    font-size: 14px;
+  }
+  .review-blog-article .review-original-content [style*="font-size"] {
+    font-size: 14px !important;
+  }
 }
 
 /* 후기 팝업: 제목/날짜 아래 첫 사진과의 간격만 축소 */
 .review-detail-panel--blog .review-blog-scroll {
-    padding-top: 14px;
+  padding-top: 14px;
 }
 .review-blog-article .review-leading-media {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 @media (max-width: 600px) {
-    .review-detail-panel--blog .review-blog-scroll {
-        padding-top: 12px;
-    }
+  .review-detail-panel--blog .review-blog-scroll {
+    padding-top: 12px;
+  }
 }
 
+
 /* 출고 후기 전체보기 목록 - 메인 최근 3개월 슬라이더와 별개 */
-.review-all-panel {
-    min-height: min(480px, 90dvh);
-}
-.review-all-panel .review-detail-head {
-    align-items: flex-start;
-}
-.review-all-panel .review-detail-head h2 {
-    margin-bottom: 4px;
-}
-.review-all-count {
-    font-size: 13px;
-    color: #708097;
-    line-height: 1.6;
-    margin: 0;
-}
-.review-all-scroll {
-    flex: 1;
-    overflow-y: auto;
-    scroll-behavior: auto; /* JS 애니메이션과 충돌 방지 */
-    padding-top: 22px;
-}
-.review-all-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-}
-.review-all-card {
-    display: flex;
-    gap: 13px;
-    min-width: 0;
-    min-height: 123px;
-    padding: 12px;
-    border: 1px solid #e8edf4;
-    border-radius: 12px;
-    color: inherit;
-    text-decoration: none;
-    background: #fff;
-    transition:
-        border-color 0.18s,
-        box-shadow 0.18s;
-}
-.review-all-card:hover,
-.review-all-card:focus-visible {
-    border-color: #82a7f6;
-    box-shadow: 0 5px 18px #203d7312;
-}
-.review-all-card__photo {
-    display: flex;
-    flex: 0 0 112px;
-    align-items: center;
-    justify-content: center;
-    height: 96px;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #eff3f8;
-}
-.review-all-card__photo img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.review-all-card__empty {
-    padding: 0 9px;
-    color: #8491a4;
-    font-size: 11px;
-    text-align: center;
-}
-.review-all-card__info {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    min-width: 0;
-}
-.review-all-card__info strong {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    color: #17273c;
-    font-size: 13px;
-    line-height: 1.5;
-    word-break: keep-all;
-}
-.review-all-card__info time {
-    font-size: 11px;
-    color: #8290a4;
-}
-.review-all-card__link {
-    margin-top: auto;
-    color: var(--blue, #326bfa);
-    font-size: 12px;
-    font-weight: 700;
-}
-.review-all-empty {
-    padding: 56px 10px;
-    text-align: center;
-    color: #728196;
-    font-size: 14px;
-}
-.review-back-list {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin: 0 0 12px;
-    padding: 4px 0;
-    border: 0;
-    background: transparent;
-    color: #386fe8;
-    font-size: 12px;
-    font-weight: 800;
-    cursor: pointer;
-}
-.review-back-list:hover {
-    text-decoration: underline;
-}
+.review-all-panel { min-height: min(480px, 90dvh); }
+.review-all-panel .review-detail-head { align-items: flex-start; }
+.review-all-panel .review-detail-head h2 { margin-bottom: 4px; }
+.review-all-count { font-size: 13px; color: #708097; line-height: 1.6; margin: 0; }
+.review-all-scroll { flex: 1; overflow-y: auto; scroll-behavior: auto; /* JS 애니메이션과 충돌 방지 */ padding-top: 22px; }
+.review-all-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.review-all-card { display: flex; gap: 13px; min-width: 0; min-height: 123px; padding: 12px; border: 1px solid #e8edf4; border-radius: 12px; color: inherit; text-decoration: none; background: #fff; transition: border-color .18s, box-shadow .18s; }
+.review-all-card:hover, .review-all-card:focus-visible { border-color: #82a7f6; box-shadow: 0 5px 18px #203d7312; }
+.review-all-card__photo { display: flex; flex: 0 0 112px; align-items: center; justify-content: center; height: 96px; overflow: hidden; border-radius: 8px; background: #eff3f8; }
+.review-all-card__photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.review-all-card__empty { padding: 0 9px; color: #8491a4; font-size: 11px; text-align: center; }
+.review-all-card__info { display: flex; flex: 1; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
+.review-all-card__info strong { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; color: #17273c; font-size: 13px; line-height: 1.5; word-break: keep-all; }
+.review-all-card__info time { font-size: 11px; color: #8290a4; }
+.review-all-card__link { margin-top: auto; color: var(--blue, #326bfa); font-size: 12px; font-weight: 700; }
+.review-all-empty { padding: 56px 10px; text-align: center; color: #728196; font-size: 14px; }
+.review-back-list { display: inline-flex; align-items: center; gap: 5px; margin: 0 0 12px; padding: 4px 0; border: 0; background: transparent; color: #386fe8; font-size: 12px; font-weight: 800; cursor: pointer; }
+.review-back-list:hover { text-decoration: underline; }
 @media (max-width: 600px) {
-    .review-all-panel {
-        min-height: 0;
-    }
-    .review-all-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 9px;
-    }
-    .review-all-scroll {
-        padding: 14px 14px 28px;
-    }
-    .review-all-card {
-        min-height: 105px;
-        gap: 12px;
-        padding: 10px;
-    }
-    .review-all-card__photo {
-        flex-basis: 105px;
-        height: 86px;
-    }
+  .review-all-panel { min-height: 0; }
+  .review-all-grid { grid-template-columns: minmax(0, 1fr); gap: 9px; }
+  .review-all-scroll { padding: 14px 14px 28px; }
+  .review-all-card { min-height: 105px; gap: 12px; padding: 10px; }
+  .review-all-card__photo { flex-basis: 105px; height: 86px; }
 }
 @media (max-width: 360px) {
-    .review-all-card__photo {
-        flex-basis: 87px;
-        height: 82px;
-    }
+  .review-all-card__photo { flex-basis: 87px; height: 82px; }
 }
+
 
 /* 2026-10-20 - 실제 오토지니 출고후기 UI 기준: 목록 카드 / 팝업 / 모바일 타이틀 정렬 */
 /* 메인 타이틀과 '전체 후기 보기'를 같은 기준선에 배치 (eyebrow 줄에 뜨지 않도록) */
-.review-section__head {
-    align-items: flex-end;
-}
-.review-section__more {
-    align-self: flex-end;
-    white-space: nowrap;
-}
+.review-section__head { align-items: flex-end; }
+.review-section__more { align-self: flex-end; white-space: nowrap; }
 
 /* 출고 후기 전체 목록: PC 4열 사진형 카드, 스크롤 영역 내부에서만 이동 */
 .autogenie-review-dialog {
-    width: min(996px, calc(100% - 36px));
-    max-height: min(88dvh, 900px);
+  width: min(996px, calc(100% - 36px));
+  max-height: min(88dvh, 900px);
 }
 .review-all-panel {
-    height: min(718px, 88dvh);
-    min-height: 0;
-    max-height: min(88dvh, 900px);
+  height: min(718px, 88dvh);
+  min-height: 0;
+  max-height: min(88dvh, 900px);
 }
 .review-all-panel .review-detail-head {
-    align-items: flex-start;
-    padding: 22px 26px 17px;
+  align-items: flex-start;
+  padding: 22px 26px 17px;
 }
 .review-all-panel .review-detail-head h2 {
-    margin: 0 0 8px;
-    color: #182840;
-    font-size: 19px;
-    line-height: 1.35;
+  margin: 0 0 8px;
+  color: #182840;
+  font-size: 19px;
+  line-height: 1.35;
 }
-.review-all-panel .review-detail-eyebrow {
-    margin-bottom: 8px;
-}
-.review-all-count {
-    font-size: 12px;
-    color: #8390a5;
-    line-height: 1.5;
-}
+.review-all-panel .review-detail-eyebrow { margin-bottom: 8px; }
+.review-all-count { font-size: 12px; color: #8390a5; line-height: 1.5; }
 .review-all-scroll {
-    flex: 1 1 auto;
-    min-height: 0;
-    padding: 20px 26px 30px;
-    overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 20px 26px 30px;
+  overflow-y: auto;
 }
 .review-all-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 18px 14px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px 14px;
 }
 .review-all-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e2e8f1;
+  border-radius: 12px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+.review-all-card__photo {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 0;
+  background: #f0f3f8;
+}
+.review-all-card__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.review-all-card__empty { padding: 14px; font-size: 11px; }
+.review-all-card__info {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  min-height: 84px;
+  width: 100%;
+  padding: 10px 11px 12px;
+  box-sizing: border-box;
+}
+.review-all-card__info strong {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #14253e;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+.review-all-card__info time {
+  margin-top: auto;
+  padding-top: 12px;
+  color: #8190a7;
+  font-size: 10.5px;
+  line-height: 1.25;
+}
+.review-all-card__link { display: none; }
+.review-back-list { font-weight: 800; }
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .review-all-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .review-section__head {
     display: flex;
-    flex-direction: column;
-    gap: 0;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 0 14px;
+  }
+  .review-section__head > div { min-width: 0; }
+  .review-section__head h2 {
+    font-size: clamp(15px, 4.3vw, 18px);
+    line-height: 1.35;
+    white-space: nowrap;
+    letter-spacing: -0.045em;
+  }
+  .review-section__more {
+    align-self: flex-end;
+    margin: 0 0 2px;
+    font-size: 11px;
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+  .autogenie-review-dialog {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+  .review-all-panel { width: 100%; height: 100dvh; max-height: 100dvh; min-height: 0; }
+  .review-all-panel .review-detail-head { padding: 16px 15px 17px; gap: 8px; }
+  .review-all-panel .review-detail-eyebrow { font-size: 10px; margin-bottom: 8px; }
+  .review-all-panel .review-detail-head h2 { font-size: 17px; margin-bottom: 12px; }
+  .review-all-count { font-size: 12px; }
+  .review-all-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 10px;
+  }
+  .review-all-scroll { padding: 18px 13px 28px; }
+  .review-all-card {
     min-width: 0;
     min-height: 0;
     padding: 0;
-    overflow: hidden;
-    border: 1px solid #e2e8f1;
+    gap: 0;
     border-radius: 12px;
-    background: #fff;
-    color: inherit;
-    text-decoration: none;
-}
-.review-all-card__photo {
-    display: flex;
-    flex: none;
-    align-items: center;
-    justify-content: center;
+  }
+  .review-all-card__photo {
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
-    overflow: hidden;
+    flex: none;
     border-radius: 0;
-    background: #f0f3f8;
-}
-.review-all-card__photo img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.review-all-card__empty {
-    padding: 14px;
-    font-size: 11px;
-}
-.review-all-card__info {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    min-height: 84px;
-    width: 100%;
-    padding: 10px 11px 12px;
-    box-sizing: border-box;
-}
-.review-all-card__info strong {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    color: #14253e;
-    font-size: 12px;
-    font-weight: 800;
-    line-height: 1.5;
-    word-break: keep-all;
-}
-.review-all-card__info time {
-    margin-top: auto;
-    padding-top: 12px;
-    color: #8190a7;
-    font-size: 10.5px;
-    line-height: 1.25;
-}
-.review-all-card__link {
-    display: none;
-}
-.review-back-list {
-    font-weight: 800;
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-    .review-all-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-@media (max-width: 600px) {
-    .review-section__head {
-        display: flex;
-        align-items: flex-end;
-        gap: 8px;
-        padding: 0 14px;
-    }
-    .review-section__head > div {
-        min-width: 0;
-    }
-    .review-section__head h2 {
-        font-size: clamp(15px, 4.3vw, 18px);
-        line-height: 1.35;
-        white-space: nowrap;
-        letter-spacing: -0.045em;
-    }
-    .review-section__more {
-        align-self: flex-end;
-        margin: 0 0 2px;
-        font-size: 11px;
-        line-height: 1.35;
-        white-space: nowrap;
-    }
-    .autogenie-review-dialog {
-        width: 100vw;
-        max-width: 100vw;
-        height: 100dvh;
-        max-height: 100dvh;
-        box-sizing: border-box;
-        border-radius: 0;
-    }
-    .review-all-panel {
-        width: 100%;
-        height: 100dvh;
-        max-height: 100dvh;
-        min-height: 0;
-    }
-    .review-all-panel .review-detail-head {
-        padding: 16px 15px 17px;
-        gap: 8px;
-    }
-    .review-all-panel .review-detail-eyebrow {
-        font-size: 10px;
-        margin-bottom: 8px;
-    }
-    .review-all-panel .review-detail-head h2 {
-        font-size: 17px;
-        margin-bottom: 12px;
-    }
-    .review-all-count {
-        font-size: 12px;
-    }
-    .review-all-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px 10px;
-    }
-    .review-all-scroll {
-        padding: 18px 13px 28px;
-    }
-    .review-all-card {
-        min-width: 0;
-        min-height: 0;
-        padding: 0;
-        gap: 0;
-        border-radius: 12px;
-    }
-    .review-all-card__photo {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        flex: none;
-        border-radius: 0;
-    }
-    .review-all-card__info {
-        min-height: 82px;
-        padding: 10px 10px 11px;
-    }
-    .review-all-card__info strong {
-        font-size: 11.5px;
-        line-height: 1.5;
-    }
-    .review-all-card__info time {
-        padding-top: 11px;
-        font-size: 10px;
-    }
-    .review-detail-panel--blog .review-detail-head {
-        padding: 22px 22px 18px;
-    }
-    .review-detail-panel--blog .review-detail-head h2 {
-        font-size: 17px;
-        line-height: 1.45;
-    }
-    .review-detail-panel--blog .review-detail-eyebrow {
-        font-size: 11px;
-    }
-    .review-detail-panel--blog .review-back-list {
-        margin: 0 0 10px;
-        font-size: 12px;
-    }
-    .review-detail-panel--blog .review-blog-scroll {
-        padding: 14px 16px 32px;
-    }
+  }
+  .review-all-card__info { min-height: 82px; padding: 10px 10px 11px; }
+  .review-all-card__info strong { font-size: 11.5px; line-height: 1.5; }
+  .review-all-card__info time { padding-top: 11px; font-size: 10px; }
+  .review-detail-panel--blog .review-detail-head { padding: 22px 22px 18px; }
+  .review-detail-panel--blog .review-detail-head h2 { font-size: 17px; line-height: 1.45; }
+  .review-detail-panel--blog .review-detail-eyebrow { font-size: 11px; }
+  .review-detail-panel--blog .review-back-list { margin: 0 0 10px; font-size: 12px; }
+  .review-detail-panel--blog .review-blog-scroll { padding: 14px 16px 32px; }
 }
 @media (max-width: 340px) {
-    .review-section__head {
-        gap: 5px;
-    }
-    .review-section__head h2 {
-        font-size: 14px;
-    }
-    .review-section__more {
-        font-size: 10px;
-    }
-    .review-all-scroll {
-        padding-inline: 10px;
-    }
-    .review-all-grid {
-        column-gap: 9px;
-    }
-    .review-all-card__info {
-        padding-inline: 8px;
-    }
+  .review-section__head { gap: 5px; }
+  .review-section__head h2 { font-size: 14px; }
+  .review-section__more { font-size: 10px; }
+  .review-all-scroll { padding-inline: 10px; }
+  .review-all-grid { column-gap: 9px; }
+  .review-all-card__info { padding-inline: 8px; }
 }
 
 /* 닫기 버튼: 사이트의 공통 button 테마에 덮어씌워지지 않도록 통일 */
 .autogenie-review-dialog .review-detail-close {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 50% !important;
-    background: #f1f5fc !important;
-    color: #27364d !important;
-    box-shadow: none !important;
-    font-size: 22px !important;
-    font-weight: 500;
-    line-height: 1 !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #f1f5fc !important;
+  color: #27364d !important;
+  box-shadow: none !important;
+  font-size: 22px !important;
+  font-weight: 500;
+  line-height: 1 !important;
 }
 
 /* 2026-10-21 | 출고 후기 목록/상세: 닫기 버튼 기준 통일 및 포커스 테두리 정리 */
@@ -8905,103 +8459,91 @@ body.review-dialog-open {
 .autogenie-review-dialog,
 .autogenie-review-dialog:focus,
 .autogenie-review-dialog:focus-visible {
-    outline: none !important;
+  outline: none !important;
 }
 
 /* 세 가지 진입 경로(목록, 메인 후기 상세, 목록에서 상세)의 헤더 기준 통일 */
 .autogenie-review-dialog :is(.review-detail-head, .review-gallery-head) {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 24px 78px 18px 26px;
-    box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 78px 18px 26px;
+  box-sizing: border-box;
 }
 .autogenie-review-dialog :is(.review-detail-head, .review-gallery-head) > div {
-    flex: 1 1 auto;
-    min-width: 0;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 /* 제목이 2줄 이상이어도 닫기 버튼의 상단/우측 좌표는 변하지 않음 */
 .autogenie-review-dialog .review-detail-close {
-    position: absolute !important;
-    top: 24px !important;
-    right: 26px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex: none !important;
-    width: 36px !important;
-    min-width: 36px !important;
-    max-width: 36px !important;
-    height: 36px !important;
-    min-height: 36px !important;
-    max-height: 36px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 50% !important;
-    background: #f1f5fc !important;
-    color: #27364d !important;
-    box-shadow: none !important;
-    outline: none !important;
-    font-family: Arial, sans-serif !important;
-    font-size: 24px !important;
-    font-weight: 400 !important;
-    line-height: 1 !important;
-    box-sizing: border-box !important;
-    transform: none !important;
-    appearance: none !important;
-    -webkit-appearance: none !important;
-    cursor: pointer;
-    z-index: 1;
+  position: absolute !important;
+  top: 24px !important;
+  right: 26px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: none !important;
+  width: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #f1f5fc !important;
+  color: #27364d !important;
+  box-shadow: none !important;
+  outline: none !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+  transform: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  cursor: pointer;
+  z-index: 1;
 }
 /* 마우스 클릭 후 파란색 포커스 박스가 남지 않도록 처리 */
 .autogenie-review-dialog .review-detail-close:focus,
 .autogenie-review-dialog .review-detail-close:focus-visible {
-    outline: none !important;
-    box-shadow: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 /* 후기 카드는 파란 포커스 대신 중립색 키보드 포커스만 제공 */
-.autogenie-review-dialog
-    :is(
-        .review-all-card,
-        .review-gallery-card__button,
-        .review-back-list,
-        .review-detail-back
-    ):focus:not(:focus-visible) {
-    outline: none !important;
+.autogenie-review-dialog :is(.review-all-card, .review-gallery-card__button, .review-back-list, .review-detail-back):focus:not(:focus-visible) {
+  outline: none !important;
 }
-.autogenie-review-dialog
-    :is(
-        .review-all-card,
-        .review-gallery-card__button,
-        .review-back-list,
-        .review-detail-back
-    ):focus-visible {
-    outline: 2px solid #7d8999 !important;
-    outline-offset: 2px;
+.autogenie-review-dialog :is(.review-all-card, .review-gallery-card__button, .review-back-list, .review-detail-back):focus-visible {
+  outline: 2px solid #7d8999 !important;
+  outline-offset: 2px;
 }
 @media (max-width: 600px) {
-    .autogenie-review-dialog :is(.review-detail-head, .review-gallery-head) {
-        padding: 18px 68px 16px 16px;
-        gap: 12px;
-    }
-    .autogenie-review-dialog .review-detail-close {
-        top: 18px !important;
-        right: 16px !important;
-    }
+  .autogenie-review-dialog :is(.review-detail-head, .review-gallery-head) {
+    padding: 18px 68px 16px 16px;
+    gap: 12px;
+  }
+  .autogenie-review-dialog .review-detail-close {
+    top: 18px !important;
+    right: 16px !important;
+  }
 }
 
 /* 2026-10-21 | 모바일 후기 팝업 제목: 자동 포커스 시 파란 테두리 제거 */
 /* reviews.js의 제목 포커스(접근성/스크롤 유지)는 변경하지 않음 */
 .autogenie-review-dialog .review-detail-head h2:focus,
 .autogenie-review-dialog .review-detail-head h2:focus-visible {
-    outline: none !important;
-    box-shadow: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 .autogenie-review-dialog .review-detail-head h2 {
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* 모바일 최초 진입 로딩 화면: 주소창 축소/확대 시 중앙 콘텐츠 점프 방지 */
@@ -9026,267 +8568,155 @@ body.review-dialog-open {
 /* 전체 후기 목록 내부 전용: 부드럽게 맨 위로 이동하는 파란 버튼 */
 .review-gallery-panel,
 .review-all-panel {
-    position: relative;
+  position: relative;
 }
 .autogenie-review-dialog .review-scroll-top {
-    position: absolute;
-    right: 24px;
-    bottom: 24px;
-    z-index: 5;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: none;
-    box-sizing: border-box;
-    width: 46px;
-    height: 46px;
-    min-width: 46px;
-    min-height: 46px;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    background: #326bfa;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 1;
-    box-shadow: 0 4px 15px rgba(50, 107, 250, 0.22);
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  box-sizing: border-box;
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  min-height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #326bfa;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: 0 4px 15px rgba(50, 107, 250, .22);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 /* 화살표를 원형 버튼의 시각적 중앙보다 3px 위로 정렬 */
 .autogenie-review-dialog .review-scroll-top > span {
-    display: inline-block;
-    transform: translateY(-3px);
+  display: inline-block;
+  transform: translateY(-3px);
 }
 .autogenie-review-dialog .review-scroll-top[hidden] {
-    display: none !important;
+  display: none !important;
 }
 .autogenie-review-dialog .review-scroll-top:hover {
-    background: #2459df;
+  background: #2459df;
 }
 .autogenie-review-dialog .review-scroll-top:focus:not(:focus-visible) {
-    outline: none;
+  outline: none;
 }
 .autogenie-review-dialog .review-scroll-top:focus-visible {
-    outline: 2px solid #8592a5;
-    outline-offset: 3px;
+  outline: 2px solid #8592a5;
+  outline-offset: 3px;
 }
 @media (max-width: 600px) {
-    .autogenie-review-dialog .review-scroll-top {
-        right: 16px;
-        bottom: calc(18px + env(safe-area-inset-bottom, 0px));
-        width: 44px;
-        height: 44px;
-        min-width: 44px;
-        min-height: 44px;
-        font-size: 24px;
-    }
+  .autogenie-review-dialog .review-scroll-top {
+    right: 16px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 24px;
+  }
 }
 /* 출고 후기 하단 → 후기 속 차량 목록 CTA (PC / 모바일 공통) */
 .review-vehicle-link {
-    box-sizing: border-box;
-    max-width: 700px;
-    margin: 32px auto 0;
-    padding: 22px 24px;
-    border: 1px solid #e0e8f6;
-    border-radius: 16px;
-    background: #f7faff;
-    text-align: left;
+  box-sizing: border-box;
+  max-width: 700px;
+  margin: 32px auto 0;
+  padding: 22px 24px;
+  border: 1px solid #e0e8f6;
+  border-radius: 16px;
+  background: #f7faff;
+  text-align: left;
 }
 .review-vehicle-link__eyebrow {
-    margin: 0 0 8px;
-    color: #326bfa;
-    font-size: 10px;
-    line-height: 1.4;
-    font-weight: 800;
-    letter-spacing: 0.075em;
+  margin: 0 0 8px;
+  color: #326bfa;
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 800;
+  letter-spacing: .075em;
 }
 .review-vehicle-link__title {
-    display: block;
-    color: #172b4b;
-    font-size: 17px;
-    line-height: 1.5;
-    font-weight: 800;
-    word-break: keep-all;
+  display: block;
+  color: #172b4b;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 800;
+  word-break: keep-all;
 }
 .review-vehicle-link__desc {
-    display: block;
-    margin-top: 5px;
-    color: #62728a;
-    font-size: 13px;
-    line-height: 1.6;
-    word-break: keep-all;
+  display: block;
+  margin-top: 5px;
+  color: #62728a;
+  font-size: 13px;
+  line-height: 1.6;
+  word-break: keep-all;
 }
 .review-vehicle-link__button {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    width: 100%;
-    min-height: 48px;
-    margin-top: 18px;
-    padding: 12px 18px;
-    border: 1px solid #326bfa;
-    border-radius: 10px;
-    background: #326bfa;
-    color: #fff;
-    font: inherit;
-    font-size: 14px;
-    font-weight: 750;
-    line-height: 1.4;
-    cursor: pointer;
-    transition:
-        background 0.2s,
-        border-color 0.2s,
-        transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: 1px solid #326bfa;
+  border-radius: 10px;
+  background: #326bfa;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .2s;
 }
-.review-vehicle-link__button:hover {
-    background: #2459e7;
-    border-color: #2459e7;
-}
-.review-vehicle-link__button:active {
-    transform: translateY(1px);
-}
-.review-vehicle-link__button:focus-visible {
-    outline: 3px solid #9fbbff;
-    outline-offset: 3px;
-}
-.review-vehicle-link__arrow {
-    font-size: 21px;
-    font-weight: 500;
-    line-height: 1;
-}
+.review-vehicle-link__button:hover { background: #2459e7; border-color: #2459e7; }
+.review-vehicle-link__button:active { transform: translateY(1px); }
+.review-vehicle-link__button:focus-visible { outline: 3px solid #9fbbff; outline-offset: 3px; }
+.review-vehicle-link__arrow { font-size: 21px; font-weight: 500; line-height: 1; }
 /* 선택은 사용자가 직접 하며, 추천 차종만 목록에서 시각적으로 강조 */
 .vehicle-card-item.review-vehicle-target:not(.active) {
-    border-color: #326bfa;
-    background: #edf3ff;
-    box-shadow: 0 0 0 2px rgba(50, 107, 250, 0.12);
+  border-color: #326bfa;
+  background: #edf3ff;
+  box-shadow: 0 0 0 2px rgba(50,107,250,.12);
 }
 @media (max-width: 600px) {
-    .review-vehicle-link {
-        margin-top: 26px;
-        padding: 18px 16px;
-        border-radius: 14px;
-    }
-    .review-vehicle-link__title {
-        font-size: 15px;
-    }
-    .review-vehicle-link__desc {
-        font-size: 12px;
-    }
-    .review-vehicle-link__button {
-        min-height: 48px;
-        margin-top: 14px;
-        padding: 12px 14px;
-        font-size: 13px;
-    }
+  .review-vehicle-link { margin-top: 26px; padding: 18px 16px; border-radius: 14px; }
+  .review-vehicle-link__title { font-size: 15px; }
+  .review-vehicle-link__desc { font-size: 12px; }
+  .review-vehicle-link__button { min-height: 48px; margin-top: 14px; padding: 12px 14px; font-size: 13px; }
 }
 
+
 /* 차단 대상 견적 신청 경고 팝업 */
-.estimate-block-modal {
-    position: fixed;
-    inset: 0;
-    margin: auto;
-    width: calc(100% - 32px);
-    max-width: 370px;
-    max-height: calc(100dvh - 32px);
-    padding: 0;
-    border: 0;
-    border-radius: 18px;
-    background: #fff;
-    color: #1f2937;
-    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.22);
-    overflow: auto;
-}
-.estimate-block-modal::backdrop {
-    background: rgba(15, 23, 42, 0.57);
-}
-.estimate-block-modal__content {
-    box-sizing: border-box;
-    padding: 28px;
-    text-align: center;
-    font-family: inherit;
-}
-.estimate-block-modal__symbol {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 54px;
-    height: 54px;
-    margin: 0 auto 12px;
-    border-radius: 50%;
-    background: #fef2f2;
-    color: #dc2626;
-    font-size: 31px;
-    font-weight: 700;
-}
-.estimate-block-modal h2 {
-    margin: 0;
-    color: #111827;
-    font-size: 19px;
-    line-height: 1.45;
-    font-weight: 750;
-    word-break: keep-all;
-}
-.estimate-block-modal__reason {
-    margin: 24px 0 20px;
-    font-size: 14px;
-    line-height: 1.7;
-    word-break: keep-all;
-}
-.estimate-block-modal__warning {
-    padding: 16px;
-    border-radius: 12px;
-    background: #fef2f2;
-}
-.estimate-block-modal__warning strong {
-    display: block;
-    margin: 0 0 10px;
-    color: #b91c1c;
-    font-size: 14px;
-    line-height: 1.5;
-}
-.estimate-block-modal__warning p {
-    margin: 0;
-    color: #991b1b;
-    font-size: 14px;
-    line-height: 1.7;
-    word-break: keep-all;
-}
-.estimate-block-modal__support {
-    margin: 20px 0 24px;
-    color: #6b7280;
-    font-size: 12px;
-    line-height: 1.7;
-    word-break: keep-all;
-}
-.estimate-block-modal__confirm {
-    display: block;
-    width: 100%;
-    min-height: 46px;
-    border: 0;
-    border-radius: 9px;
-    background: #326bfa;
-    color: #fff;
-    font: inherit;
-    font-size: 14px;
-    font-weight: 650;
-    cursor: pointer;
-}
-.estimate-block-modal__confirm:focus-visible {
-    outline: 3px solid #93c5fd;
-    outline-offset: 3px;
-}
-@media (max-width: 480px) {
-    .estimate-block-modal__content {
-        padding: 24px;
-    }
-    .estimate-block-modal h2 {
-        font-size: 18px;
-    }
-}
+.estimate-block-modal{position:fixed;inset:0;margin:auto;width:calc(100% - 32px);max-width:370px;max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:18px;background:#fff;color:#1f2937;box-shadow:0 20px 60px rgba(15,23,42,.22);overflow:auto}
+.estimate-block-modal::backdrop{background:rgba(15,23,42,.57)}
+.estimate-block-modal__content{box-sizing:border-box;padding:28px;text-align:center;font-family:inherit}
+.estimate-block-modal__symbol{display:flex;align-items:center;justify-content:center;width:54px;height:54px;margin:0 auto 12px;border-radius:50%;background:#fef2f2;color:#dc2626;font-size:31px;font-weight:700}
+.estimate-block-modal h2{margin:0;color:#111827;font-size:19px;line-height:1.45;font-weight:750;word-break:keep-all}
+.estimate-block-modal__reason{margin:24px 0 20px;font-size:14px;line-height:1.7;word-break:keep-all}
+.estimate-block-modal__warning{padding:16px;border-radius:12px;background:#fef2f2}
+.estimate-block-modal__warning strong{display:block;margin:0 0 10px;color:#b91c1c;font-size:14px;line-height:1.5}
+.estimate-block-modal__warning p{margin:0;color:#991b1b;font-size:14px;line-height:1.7;word-break:keep-all}
+.estimate-block-modal__support{margin:20px 0 24px;color:#6b7280;font-size:12px;line-height:1.7;word-break:keep-all}
+.estimate-block-modal__confirm{display:block;width:100%;min-height:46px;border:0;border-radius:9px;background:#326bfa;color:#fff;font:inherit;font-size:14px;font-weight:650;cursor:pointer}
+.estimate-block-modal__confirm:focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
+@media(max-width:480px){.estimate-block-modal__content{padding:24px}.estimate-block-modal h2{font-size:18px}}
+
+/* 경고 팝업: 마우스 클릭 시 이중 포커스 링 제거 */
+.estimate-block-modal__confirm:focus:not(:focus-visible) { outline: none; box-shadow: none; }
+
 
 /* 차단 경고 팝업 확인 버튼 하늘색 테두리 제거 */
 .estimate-block-modal__confirm:focus,

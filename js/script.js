@@ -12726,15 +12726,16 @@ const vehicleCatalog = [
 
   // Apps Script 웹 앱은 외부 도메인 호출 시 CORS 제한이 있을 수 있어 JSONP를 사용합니다.
   // 콜백은 구글 시트 내용이 아닌 {success, blocked}만 받습니다.
-  function checkVisitorBlockOnEntry() {
+  async function checkVisitorBlockOnEntry() {
     if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL.includes("여기에_")) return;
-    const visitorId = getAutojiniVisitorId();
-    if (!visitorId) return;
+    // 방문로그와 동일한 외부 IP 조회 함수를 사용합니다.
+    const ipAddress = await getPublicIpAddress();
+    if (!ipAddress || ipAddress === "조회 실패") return;
     const callbackName = "agBlockCheck" + Math.random().toString(36).slice(2);
     const script = document.createElement("script");
     const url = new URL(GOOGLE_APPS_SCRIPT_URL);
     url.searchParams.set("action", "check_visitor_block");
-    url.searchParams.set("visitorId", visitorId);
+    url.searchParams.set("ipAddress", ipAddress);
     url.searchParams.set("callback", callbackName);
     url.searchParams.set("_", String(Date.now()));
     let settled = false;
@@ -13017,6 +13018,7 @@ const vehicleCatalog = [
 
     const payload = buildEstimatePayload();
     const securityData = getAutojiniSecurityData();
+    const estimateIpAddress = await getPublicIpAddress();
 
     // Apps Script의 e.parameter에서 각 값을 안정적으로 읽을 수 있도록
     // application/x-www-form-urlencoded 형식으로 명시적으로 구성합니다.
@@ -13039,6 +13041,7 @@ const vehicleCatalog = [
 
       // 방문로그와 같은 방문자 ID를 사용해 고객이름을 연결합니다.
       visitorId: securityData.visitorId || "확인 불가",
+      ipAddress: estimateIpAddress,
       visitSessionId: getOrCreateAutojiniVisitSessionId(),
       elapsedSeconds: String(securityData.elapsedSeconds || 0),
       ...window.AutoGenieTraffic?.getFields()
