@@ -11388,6 +11388,7 @@ const vehicleCatalog = [
     state.customerPhone = "";
     state.contactMethod = "";
     state.submitted = false;
+    state.blockedSubmission = false;
 
     // 다시 1단계부터 완료해야 다음 단계 탭을 열 수 있도록 합니다.
     state.maxReachedStep = 1;
@@ -11876,6 +11877,22 @@ const vehicleCatalog = [
     `;
   }
 
+  function renderBlockedComplete() {
+    return `
+      <div class="wizard-complete wizard-complete--blocked" role="status">
+        <div class="blocked-complete__icon" aria-hidden="true">!</div>
+        <h2>견적 신청이 제한되었습니다.</h2>
+        <p>현재 해당 접속 환경에서는 견적 신청을 진행하실 수 없습니다.</p>
+        <section class="blocked-complete__notice" aria-label="법적 조치 안내">
+          <strong>⚠ 법적 조치 안내</strong>
+          <p>반복적인 허위 견적 신청 및 서비스 이용 방해 행위가 지속될 경우<br class="blocked-complete__desktop-break"> 관련 법령에 따라 법적 조치가 취해질 수 있습니다.</p>
+        </section>
+        <p class="blocked-complete__support">정상적인 상담을 원하시는 경우 고객센터로 문의해 주세요.</p>
+        <button type="button" id="restartButton">홈으로 돌아가기</button>
+      </div>
+    `;
+  }
+
   function renderComplete() {
     const paint = currentPaint();
     const pendingText = "상담 후 결정";
@@ -11985,7 +12002,7 @@ const vehicleCatalog = [
       indicator.hidden = true;
       actions.hidden = true;
       spacer.hidden = true;
-      content.innerHTML = renderComplete();
+      content.innerHTML = state.blockedSubmission ? renderBlockedComplete() : renderComplete();
       updateReviewPlacement();
       bindCompleteEvents();
       return;
@@ -12629,6 +12646,7 @@ const vehicleCatalog = [
     state.customerPhone = "";
     state.contactMethod = "";
     state.submitted = false;
+    state.blockedSubmission = false;
     render();
 
     // 차량 선택을 초기화했으므로 첫 화면용 후기 영역도 다시 표시합니다.
@@ -12726,36 +12744,48 @@ const vehicleCatalog = [
 
   // Apps Script 웹 앱은 외부 도메인 호출 시 CORS 제한이 있을 수 있어 JSONP를 사용합니다.
   // 콜백은 구글 시트 내용이 아닌 {success, blocked}만 받습니다.
-  async function checkVisitorBlockOnEntry() {
-    if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL.includes("여기에_")) return;
-    // 방문로그와 동일한 외부 IP 조회 함수를 사용합니다.
-    const ipAddress = await getPublicIpAddress();
-    if (!ipAddress || ipAddress === "조회 실패") return;
-    const callbackName = "agBlockCheck" + Math.random().toString(36).slice(2);
-    const script = document.createElement("script");
-    const url = new URL(GOOGLE_APPS_SCRIPT_URL);
-    url.searchParams.set("action", "check_visitor_block");
-    url.searchParams.set("ipAddress", ipAddress);
-    url.searchParams.set("callback", callbackName);
-    url.searchParams.set("_", String(Date.now()));
-    let settled = false;
-    const cleanup = () => {
-      if (settled) return;
-      settled = true;
-      clearTimeout(timeoutId);
-      script.remove();
-      delete window[callbackName];
-    };
-    window[callbackName] = result => {
-      cleanup();
-      if (result && result.success === true && result.blocked === true) {
-        showEstimateBlockedWarning();
+  // 요청 전 실제 차단목록을 조회합니다. null은 네트워크/조회 오류를 뜻합니다.
+  // 공개 응답에서는 차단목록 전체가 아니라 차단 여부만 전달됩니다.
+  function requestIpBlockStatus(ipAddress) {
+    return new Promise(resolve => {
+      if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL.includes("여기에_") ||
+          !ipAddress || ipAddress === "조회 실패") {
+        resolve(null);
+        return;
       }
-    };
-    script.onerror = cleanup;
-    script.src = url.toString();
-    const timeoutId = setTimeout(cleanup, 12000);
-    document.head.appendChild(script);
+      const callbackName = "agBlockCheck" + Math.random().toString(36).slice(2);
+      const script = document.createElement("script");
+      const url = new URL(GOOGLE_APPS_SCRIPT_URL);
+      url.searchParams.set("action", "check_visitor_block");
+      url.searchParams.set("ipAddress", ipAddress);
+      url.searchParams.set("callback", callbackName);
+      url.searchParams.set("_", String(Date.now()));
+      let settled = false;
+      let timeoutId;
+      const finish = value => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timeoutId);
+        script.remove();
+        delete window[callbackName];
+        resolve(value);
+      };
+      window[callbackName] = result => {
+        finish(result && result.success === true && typeof result.blocked === "boolean"
+          ? result.blocked : null);
+      };
+      script.onerror = () => finish(null);
+      timeoutId = setTimeout(() => finish(null), 12000);
+      script.src = url.toString();
+      document.head.appendChild(script);
+    });
+  }
+
+  async function checkVisitorBlockOnEntry() {
+    const ipAddress = await getPublicIpAddress();
+    if (await requestIpBlockStatus(ipAddress) === true) {
+      showEstimateBlockedWarning();
+    }
   }
   checkVisitorBlockOnEntry();
 
@@ -13111,6 +13141,19 @@ const vehicleCatalog = [
     nextButton.textContent = "견적 전송 중...";
 
     try {
+      // no-cors POST는 서버 응답을 읽을 수 없으므로 보내기 전에 차단 여부를 별도로 확인합니다.
+      const applicationIp = await getPublicIpAddress();
+      const blockedStatus = await requestIpBlockStatus(applicationIp);
+      if (blockedStatus === null) {
+        throw new Error("차단 상태를 확인할 수 없습니다. 잠시 후 다시 시도해 주세요.");
+      }
+      if (blockedStatus === true) {
+        state.blockedSubmission = true;
+        state.submitted = true;
+        render();
+        scrollToEstimate();
+        return;
+      }
       await submitEstimateToGoogle();
       window.AutoGenieTraffic?.trackConversion();
       state.submitted = true;
@@ -13118,7 +13161,8 @@ const vehicleCatalog = [
       scrollToEstimate();
     } catch (error) {
       console.error(error);
-      showValidation("견적 전송에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+      showValidation(error?.message?.includes("차단 상태")
+        ? error.message : "견적 전송에 실패했습니다. 잠시 후 다시 시도해 주세요.");
       nextButton.disabled = false;
       nextButton.classList.remove("is-submitting");
       nextButton.innerHTML = originalText;

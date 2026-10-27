@@ -8717,10 +8717,14 @@ body.review-dialog-open { overflow: hidden; }
 /* 경고 팝업: 마우스 클릭 시 이중 포커스 링 제거 */
 .estimate-block-modal__confirm:focus:not(:focus-visible) { outline: none; box-shadow: none; }
 
-
-/* 차단 경고 팝업 확인 버튼 하늘색 테두리 제거 */
-.estimate-block-modal__confirm:focus,
-.estimate-block-modal__confirm:focus-visible {
-    outline: none !important;
-    box-shadow: none !important;
-}
+/* 차단 대상 견적 신청 결과 화면 */
+.wizard-complete--blocked { max-width: 520px; margin: 0 auto; text-align: center; padding: 36px 14px 20px; }
+.blocked-complete__icon { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 24px; border-radius: 50%; background: #fff0f0; color: #dc2626; font-size: 34px; font-weight: 800; }
+.wizard-complete--blocked h2 { margin: 0 0 20px; color: #111827; font-size: clamp(21px, 4.8vw, 26px); line-height: 1.4; font-weight: 750; }
+.wizard-complete--blocked > p { margin: 0; color: #667085; font-size: 14px; line-height: 1.8; }
+.blocked-complete__notice { margin: 30px 0 22px; padding: 24px 20px; border-radius: 13px; background: #fff1f1; color: #b91c1c; }
+.blocked-complete__notice strong { display: block; margin-bottom: 14px; font-size: 14px; }
+.blocked-complete__notice p { margin: 0; font-size: 14px; line-height: 1.8; }
+.wizard-complete--blocked .blocked-complete__support { margin: 0 0 28px; font-size: 13px; }
+.wizard-complete--blocked #restartButton { display: block; width: 100%; min-height: 48px; border: none; border-radius: 9px; background: #326bfa; color: white; font-size: 14px; font-weight: 650; cursor: pointer; }
+@media (max-width: 480px) { .wizard-complete--blocked { padding: 30px 4px 12px; } .blocked-complete__notice { padding: 22px 15px; } .blocked-complete__desktop-break { display: none; } }
