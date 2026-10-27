@@ -12712,30 +12712,51 @@ const vehicleCatalog = [
   document.querySelectorAll("[data-estimate-block-close]").forEach(button => {
     button.addEventListener("click", () => estimateBlockModal?.close());
   });
-  // 동일 사이트·브라우저에서 이전에 차단 판정을 받은 경우 재방문 시 안내합니다.
-  // 관리자 차단목록 조회가 아니며, 브라우저 데이터 삭제나 기기 변경 시 식별할 수 없습니다.
+  // 차단 여부는 Google 시트의 방문자 ID 목록을 기준으로 확인합니다.
+  // 과거 테스트용 localStorage 플래그는 더 이상 접속 경고 판정에 사용하지 않습니다.
   const ESTIMATE_BLOCK_BROWSER_KEY = "autogenie_estimate_blocked_browser_v1";
   function rememberEstimateBlockedBrowser() {
-    try { localStorage.setItem(ESTIMATE_BLOCK_BROWSER_KEY, "1"); }
-    catch (error) { console.warn("차단 브라우저 표시 저장 실패", error); }
-  }
-  function wasEstimateBlockedBrowser() {
-    try { return localStorage.getItem(ESTIMATE_BLOCK_BROWSER_KEY) === "1"; }
-    catch (error) { return false; }
+    // 구글 시트에 등록된 ID만 접속 경고 대상으로 삼습니다.
   }
   function showEstimateBlockedWarning() {
     if (estimateBlockModal?.open) return;
     if (estimateBlockModal?.showModal) estimateBlockModal.showModal();
     else alert("견적 신청이 제한되었습니다. 동일한 허위 신청이 지속될 경우 법적 조치가 취해질 수 있습니다.");
   }
-  // 처음 방문한 일반 고객에게는 표시하지 않습니다.
-  if (wasEstimateBlockedBrowser()) {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", showEstimateBlockedWarning, { once: true });
-    } else {
-      showEstimateBlockedWarning();
-    }
+
+  // Apps Script 웹 앱은 외부 도메인 호출 시 CORS 제한이 있을 수 있어 JSONP를 사용합니다.
+  // 콜백은 구글 시트 내용이 아닌 {success, blocked}만 받습니다.
+  function checkVisitorBlockOnEntry() {
+    if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL.includes("여기에_")) return;
+    const visitorId = getAutojiniVisitorId();
+    if (!visitorId) return;
+    const callbackName = "agBlockCheck" + Math.random().toString(36).slice(2);
+    const script = document.createElement("script");
+    const url = new URL(GOOGLE_APPS_SCRIPT_URL);
+    url.searchParams.set("action", "check_visitor_block");
+    url.searchParams.set("visitorId", visitorId);
+    url.searchParams.set("callback", callbackName);
+    url.searchParams.set("_", String(Date.now()));
+    let settled = false;
+    const cleanup = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeoutId);
+      script.remove();
+      delete window[callbackName];
+    };
+    window[callbackName] = result => {
+      cleanup();
+      if (result && result.success === true && result.blocked === true) {
+        showEstimateBlockedWarning();
+      }
+    };
+    script.onerror = cleanup;
+    script.src = url.toString();
+    const timeoutId = setTimeout(cleanup, 12000);
+    document.head.appendChild(script);
   }
+  checkVisitorBlockOnEntry();
 
   function isValidCustomerName(value) {
     const name = value.trim().replace(/\s+/g, " ");
