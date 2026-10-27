@@ -14,18 +14,37 @@
   const source = clean(q.get('utm_source')).toLowerCase() || (googleClick ? 'google' : naverClick ? 'naver' : ref.includes('naver.') ? 'naver' : /(^|\.)google\./.test(ref) ? 'google' : ref ? 'referral' : 'direct');
   const medium = clean(q.get('utm_medium')).toLowerCase() || (googleClick || naverClick ? 'cpc' : 'unknown');
   const adKeyword = clean(q.get('utm_term'));
-  const searchTerm = actual || '미확인';
+  // 최초로 확인된 실제 검색어만 영구 보존합니다. (브라우저별 저장)
+  // 기존 세션에 이미 확인된 검색어가 있다면 업그레이드 시에도 유지합니다.
+  const FIRST_KEY = 'autogenie_first_confirmed_search_term_v1';
+  let firstTerm = '';
+  try { firstTerm = clean(localStorage.getItem(FIRST_KEY)); } catch (_) {}
+  if (!firstTerm && saved.trafficKeywordType === 'actual_naver_query') {
+    const previousTerm = clean(saved.trafficSearchTerm);
+    if (previousTerm && previousTerm !== '미확인') firstTerm = previousTerm;
+  }
+  if (!firstTerm && actual) firstTerm = actual;
+  if (firstTerm) {
+    try { localStorage.setItem(FIRST_KEY, firstTerm); } catch (_) {}
+  }
+  const searchTerm = firstTerm || '미확인';
   if (!saved.recordedAt || [...q.keys()].some(k => /^(utm_|n_query|gclid|wbraid|gbraid|n_click)/i.test(k))) {
     saved = {
       trafficSource: source,
       trafficMedium: medium,
       trafficCampaign: clean(q.get('utm_campaign')),
       trafficSearchTerm: searchTerm,
-      trafficKeywordType: actual ? 'actual_naver_query' : 'unknown',
+      trafficKeywordType: firstTerm ? 'actual_naver_query' : 'unknown',
       trafficAdKeyword: adKeyword,
       trafficReferrer: clean(ref),
       recordedAt: new Date().toISOString()
     };
+    try { sessionStorage.setItem(KEY, JSON.stringify(saved)); } catch (_) {}
+  }
+  // 새 파라미터 없이 방문했어도 이전에 확인한 최초 검색어를 복원합니다.
+  if (firstTerm) {
+    saved.trafficSearchTerm = firstTerm;
+    saved.trafficKeywordType = 'actual_naver_query';
     try { sessionStorage.setItem(KEY, JSON.stringify(saved)); } catch (_) {}
   }
   const fields = () => ({
