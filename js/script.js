@@ -12712,9 +12712,29 @@ const vehicleCatalog = [
   document.querySelectorAll("[data-estimate-block-close]").forEach(button => {
     button.addEventListener("click", () => estimateBlockModal?.close());
   });
+  // 동일 사이트·브라우저에서 이전에 차단 판정을 받은 경우 재방문 시 안내합니다.
+  // 관리자 차단목록 조회가 아니며, 브라우저 데이터 삭제나 기기 변경 시 식별할 수 없습니다.
+  const ESTIMATE_BLOCK_BROWSER_KEY = "autogenie_estimate_blocked_browser_v1";
+  function rememberEstimateBlockedBrowser() {
+    try { localStorage.setItem(ESTIMATE_BLOCK_BROWSER_KEY, "1"); }
+    catch (error) { console.warn("차단 브라우저 표시 저장 실패", error); }
+  }
+  function wasEstimateBlockedBrowser() {
+    try { return localStorage.getItem(ESTIMATE_BLOCK_BROWSER_KEY) === "1"; }
+    catch (error) { return false; }
+  }
   function showEstimateBlockedWarning() {
+    if (estimateBlockModal?.open) return;
     if (estimateBlockModal?.showModal) estimateBlockModal.showModal();
     else alert("견적 신청이 제한되었습니다. 동일한 허위 신청이 지속될 경우 법적 조치가 취해질 수 있습니다.");
+  }
+  // 처음 방문한 일반 고객에게는 표시하지 않습니다.
+  if (wasEstimateBlockedBrowser()) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", showEstimateBlockedWarning, { once: true });
+    } else {
+      showEstimateBlockedWarning();
+    }
   }
 
   function isValidCustomerName(value) {
@@ -12885,6 +12905,7 @@ const vehicleCatalog = [
       }
 
       if (isBlockedEstimateIdentity(name.value, phone.value)) {
+        rememberEstimateBlockedBrowser();
         showEstimateBlockedWarning();
         return false;
       }
