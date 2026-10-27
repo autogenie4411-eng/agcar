@@ -70,3 +70,100 @@
   };
   // URL에 실제 검색어가 없는 경우 브라우저에서 추측하거나 referrer로 조작하지 않습니다.
 })();
+
+
+/* agcar 최초 검색어 수집 테스트 */
+(() => {
+  'use strict';
+
+  const tracker = window.AutoGenieTraffic;
+  if (!tracker || typeof tracker.getFields !== 'function') return;
+
+  const originalGetFields = tracker.getFields.bind(tracker);
+  const STORAGE_KEY = 'agcar_first_search_test_v1';
+  const clean = value => String(value || '').trim().slice(0, 180);
+
+  function getReferrerKeyword() {
+    try {
+      const url = new URL(document.referrer);
+      const host = url.hostname.toLowerCase();
+
+      if (/(^|\.)search\.naver\.com$/.test(host)) {
+        const term = clean(
+          url.searchParams.get('query') ||
+          url.searchParams.get('n_query')
+        );
+        if (term) {
+          return { term, type: 'naver_referrer_query' };
+        }
+      }
+
+      if (
+        /(^|\.)google\./.test(host) &&
+        url.pathname.startsWith('/search')
+      ) {
+        const term = clean(url.searchParams.get('q'));
+        if (term) {
+          return { term, type: 'google_referrer_query' };
+        }
+      }
+    } catch (_) {}
+
+    return { term: '', type: '' };
+  }
+
+  const params = new URLSearchParams(location.search);
+  const naverQuery = clean(params.get('n_query'));
+  const referrerResult = getReferrerKeyword();
+  const existing = originalGetFields();
+
+  let first = null;
+
+  try {
+    first = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+  } catch (_) {}
+
+  if (!first || !first.term) {
+    const existingTerm = clean(existing.trafficSearchTerm);
+
+    if (existingTerm && existingTerm !== '미확인') {
+      first = {
+        term: existingTerm,
+        type: existing.trafficKeywordType || 'previously_confirmed'
+      };
+    } else if (naverQuery) {
+      first = {
+        term: naverQuery,
+        type: 'actual_naver_query'
+      };
+    } else if (referrerResult.term) {
+      first = referrerResult;
+    }
+
+    if (first && first.term) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(first));
+      } catch (_) {}
+    }
+  }
+
+  tracker.getFields = function () {
+    const fields = originalGetFields();
+
+    return {
+      ...fields,
+      trafficSearchTerm: first?.term || fields.trafficSearchTerm || '미확인',
+      trafficKeywordType: first?.type || fields.trafficKeywordType || 'unknown'
+    };
+  };
+
+  tracker.getTestInfo = function () {
+    return {
+      referrer: document.referrer || '없음',
+      landingNQuery: naverQuery || '없음',
+      referrerKeyword: referrerResult.term || '미확인',
+      firstSearchKeyword: tracker.getFields().trafficSearchTerm,
+      keywordType: tracker.getFields().trafficKeywordType
+    };
+  };
+})();
