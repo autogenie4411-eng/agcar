@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261028-desktop-trim-buttons-fullwidth-01">
+    <link rel="stylesheet" href="css/style.css?v=20261028-desktop-close-circle-01">
 </head>
 <body>
 
@@ -316,9 +316,31 @@
       <div class="trim-detail-modal__body">
         <div class="trim-detail-modal__vehicle" id="trimDetailVehicle"></div>
         <h2 id="trimDetailModalTitle" class="trim-detail-modal__title" tabindex="-1"></h2>
+        <figure class="trim-detail-modal__visual" id="trimDetailVisual" hidden>
+          <div class="trim-detail-modal__visual-heading">
+            <span>대표 핵심 기능</span>
+            <strong id="trimDetailFeatureName"></strong>
+          </div>
+          <img id="trimDetailImage" alt="" decoding="async">
+          <figcaption id="trimDetailImageCaption"></figcaption>
+        </figure>
         <p class="trim-detail-modal__summary" id="trimDetailModalSummary"></p>
         <section class="trim-detail-modal__info" aria-labelledby="trimDetailCompareTitle">
           <h3 id="trimDetailCompareTitle">트림별로 달라질 수 있는 부분</h3>
+          <div class="trim-detail-modal__comparison" id="trimDetailComparison" hidden>
+            <div class="trim-detail-modal__comparison-group trim-detail-modal__comparison-group--inherited">
+              <strong class="trim-detail-modal__comparison-label" id="trimDetailInheritedTitle">이전 트림에서 이어지는 주요 사양</strong>
+              <ul class="trim-detail-modal__highlights trim-detail-modal__highlights--inherited" id="trimDetailInheritedList"></ul>
+            </div>
+            <div class="trim-detail-modal__comparison-group trim-detail-modal__comparison-group--upgrade">
+              <div class="trim-detail-modal__comparison-upgrade-top">
+                <span class="trim-detail-modal__upgrade-badge">UPGRADE</span>
+                <strong class="trim-detail-modal__comparison-label" id="trimDetailAddedTitle">새로 추가된 기능</strong>
+              </div>
+              <ul class="trim-detail-modal__highlights trim-detail-modal__highlights--upgrade" id="trimDetailAddedList"></ul>
+            </div>
+            <p class="trim-detail-modal__comparison-foot" id="trimDetailComparisonFoot"></p>
+          </div>
           <ul class="trim-detail-modal__highlights" id="trimDetailHighlights"></ul>
         </section>
         <div class="trim-detail-modal__notice">
@@ -353,7 +375,7 @@
 
   <script src="js/traffic-tracker.js?v=20261027"></script>
 
-  <script src="js/script.js?v=20261028-trim-confirm-fix-02"></script>
+  <script src="js/script.js?v=20261028-grandeur-combined-02"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/reviews.js?v=20261022-review-full-ad-safe-v2"></script>
 

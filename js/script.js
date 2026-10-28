@@ -11405,14 +11405,140 @@ const vehicleCatalog = [
   let trimDetailHistoryActive = false;
   let trimDetailHistoryExitPending = false;
 
-  // 공식 사양을 확인한 차량부터 아래에 차량별 설명을 등록할 수 있습니다.
-  // key 형태: "브랜드|차량명|세부모델|트림명"
-  // 예: "현대|그랜저|2.5 가솔린|프리미엄": {
-  //   summary: "차량별로 확인된 간단한 설명",
-  //   highlights: ["확인된 기본 사양", "확인된 편의 사양", "확인된 디자인 사양"]
-  // }
-  // 원본 파일에는 트림별 사양 데이터가 없으므로, 기본값은 확인용 공통 안내입니다.
-  const vehicleTrimDescriptions = {};
+  // 그랜저 트림 안내: 2026-10-19에 전달받은 '현대/그랜저/그랜저.txt'와
+  // 현대자동차 2026-10-01 공식 가격표를 바탕으로 작성한 고객용 요약입니다.
+  // 사양은 연식/파워트레인/옵션에 따라 달라질 수 있으므로 출시연도 변경 시 재확인해야 합니다.
+  // 이미지 파일은 사용자가 준 '현대.zip'에서 원래의 한글 파일명을 그대로 복사했습니다.
+  const grandeFeatureFolder = "images/trim-features/현대/그랜저/";
+  const vehicleTrimDescriptions = {
+    // 일반 그랜저: 2.5 가솔린
+    "현대|그랜저|2.5 가솔린|프리미엄": {
+      summary: "그랜저의 주요 안전·편의 기능을 고르게 갖춘 기본 트림입니다. 스마트 크루즈 컨트롤과 차로 유지 보조 등 주행 보조 기능이 제공되며, 앞좌석 열선·통풍 시트로 일상 주행의 편안함을 높였습니다.",
+      highlights: [
+        "스마트 크루즈 컨트롤(스탑앤고 포함)",
+        "차로 유지 보조 2 및 전방 충돌방지 보조",
+        "1열 열선·통풍 시트와 2열 열선 시트"
+      ],
+      featureImage: grandeFeatureFolder + "스마트 크루즈 컨트롤.webp",
+      featureTitle: "스마트 크루즈 컨트롤",
+      featureCaption: "설정한 속도와 앞차 간격을 유지하도록 돕는 주행 보조 기능입니다."
+    },
+    "현대|그랜저|2.5 가솔린|익스클루시브": {
+      summary: "프리미엄의 구성에 주차와 실내 편의 기능을 강화한 트림입니다. 서라운드 뷰 모니터로 주변을 확인하기 쉽고, 원격 스마트 주차 보조와 운전석 에르고 모션 시트 등 편의 사양이 추가됩니다.",
+      highlights: [
+        "서라운드 뷰 모니터와 후측방 모니터",
+        "원격 스마트 주차 보조",
+        "운전석 에르고 모션 시트 및 디지털 키 2"
+      ],
+      upgrade: {
+        previous: "프리미엄",
+        items: ["서라운드 뷰 모니터", "원격 스마트 주차 보조", "운전석 에르고 모션 시트"],
+        note: "이전 트림에서도 일부 기능은 별도 선택 옵션으로 제공될 수 있습니다."
+      },
+      inheritedHighlights: ["스마트 크루즈 컨트롤", "차로 유지 보조 2", "1열 열선·통풍 시트"],
+      featureImage: grandeFeatureFolder + "서라운드 뷰 모니터.webp",
+      featureTitle: "서라운드 뷰 모니터",
+      featureCaption: "차량 주변을 카메라 영상으로 보여 주차와 출차를 돕는 기능입니다."
+    },
+    "현대|그랜저|2.5 가솔린|캘리그래피": {
+      summary: "고급 소재와 상위 주행·편의 기능을 갖춘 트림입니다. 헤드업 디스플레이로 주행 정보를 시선 앞에서 확인할 수 있고, 고속도로 주행 보조 2와 BOSE 프리미엄 사운드 등이 적용됩니다.",
+      highlights: [
+        "헤드업 디스플레이와 고속도로 주행 보조 2",
+        "BOSE 프리미엄 사운드",
+        "프리뷰 전자제어 서스펜션 및 2열 통풍 시트"
+      ],
+      upgrade: {
+        previous: "익스클루시브",
+        items: ["헤드업 디스플레이", "고속도로 주행 보조 2", "BOSE 프리미엄 사운드"],
+        note: "이전 트림에서도 일부 기능은 별도 선택 옵션으로 제공될 수 있습니다."
+      },
+      inheritedHighlights: ["서라운드 뷰 모니터", "원격 스마트 주차 보조", "운전석 에르고 모션 시트"],
+      featureImage: grandeFeatureFolder + "헤드업 디스플레이.webp",
+      featureTitle: "헤드업 디스플레이",
+      featureCaption: "전면 시야 가까이에 속도 등 주행 정보를 표시하는 편의 기능입니다."
+    },
+    "현대|그랜저|2.5 가솔린|캘리그래피 블랙 잉크": {
+      summary: "캘리그래피의 주요 기능에 블랙 전용 디자인을 더한 트림입니다. 블랙 외장 장식과 전용 휠·실내 마감으로 차별화했으며, 프리뷰 전자제어 서스펜션 등 고급 주행 사양도 갖췄습니다.",
+      highlights: [
+        "블랙 잉크 전용 외관·실내 디자인",
+        "전용 블랙 알로이 휠",
+        "캘리그래피 주요 편의 사양 및 전자제어 서스펜션"
+      ],
+      upgrade: {
+        previous: "캘리그래피",
+        items: ["블랙 잉크 전용 외장 디자인", "블랙 전용 알로이 휠", "블랙 테마 실내 마감"],
+        note: "기능 추가보다 블랙 전용 디자인 차별화가 핵심입니다. 기존 캘리그래피 사양은 이어집니다."
+      },
+      inheritedHighlights: ["헤드업 디스플레이", "고속도로 주행 보조 2", "BOSE 프리미엄 사운드"],
+      featureImage: grandeFeatureFolder + "프리뷰 전자제어 서스펜션.webp",
+      featureTitle: "프리뷰 전자제어 서스펜션",
+      featureCaption: "주행 상황에 맞춰 차체의 움직임을 조절하는 기능입니다. 블랙 잉크의 핵심 차별점은 전용 디자인입니다."
+    },
+
+    // 그랜저 하이브리드: 1.6 터보 HEV
+    "현대|그랜저 하이브리드|1.6 HEV|프리미엄": {
+      summary: "1.6 터보 엔진과 전기모터를 함께 쓰는 하이브리드 기본 트림입니다. 부드러운 구동과 효율을 고려한 구성에 스마트 크루즈 컨트롤, 차로 유지 보조 등 주요 주행 보조 기능을 갖췄습니다.",
+      highlights: [
+        "1.6 터보 하이브리드 시스템 및 회생제동",
+        "스마트 크루즈 컨트롤(스탑앤고 포함)",
+        "차로 유지 보조 2 및 1열 열선·통풍 시트"
+      ],
+      featureImage: grandeFeatureFolder + "스마트 크루즈 컨트롤.webp",
+      featureTitle: "스마트 크루즈 컨트롤",
+      featureCaption: "설정 속도와 앞차 간격을 유지하도록 돕는 운전자 보조 기능입니다."
+    },
+    "현대|그랜저 하이브리드|1.6 HEV|익스클루시브": {
+      summary: "하이브리드의 효율성에 주차와 탑승 편의를 강화한 트림입니다. 서라운드 뷰 모니터와 원격 스마트 주차 보조로 주차를 돕고, 운전석 에르고 모션 시트 등 실내 편의 기능을 더했습니다.",
+      highlights: [
+        "서라운드 뷰 모니터와 후측방 모니터",
+        "원격 스마트 주차 보조",
+        "운전석 에르고 모션 시트 및 디지털 키 2"
+      ],
+      upgrade: {
+        previous: "프리미엄",
+        items: ["서라운드 뷰 모니터", "원격 스마트 주차 보조", "운전석 에르고 모션 시트"],
+        note: "이전 트림에서도 일부 기능은 별도 선택 옵션으로 제공될 수 있습니다."
+      },
+      inheritedHighlights: ["스마트 크루즈 컨트롤", "차로 유지 보조 2", "하이브리드 시스템"],
+      featureImage: grandeFeatureFolder + "서라운드 뷰 모니터.webp",
+      featureTitle: "서라운드 뷰 모니터",
+      featureCaption: "차량 주변 영상을 확인해 좁은 공간에서 주차를 돕는 기능입니다."
+    },
+    "현대|그랜저 하이브리드|1.6 HEV|캘리그래피": {
+      summary: "하이브리드의 부드러운 주행에 고급 편의 사양을 더한 트림입니다. 헤드업 디스플레이, 고속도로 주행 보조 2와 BOSE 프리미엄 사운드 등 상위 기능을 폭넓게 제공합니다.",
+      highlights: [
+        "헤드업 디스플레이와 고속도로 주행 보조 2",
+        "BOSE 프리미엄 사운드",
+        "프리뷰 전자제어 서스펜션 및 2열 통풍 시트"
+      ],
+      upgrade: {
+        previous: "익스클루시브",
+        items: ["헤드업 디스플레이", "고속도로 주행 보조 2", "BOSE 프리미엄 사운드"],
+        note: "이전 트림에서도 일부 기능은 별도 선택 옵션으로 제공될 수 있습니다."
+      },
+      inheritedHighlights: ["서라운드 뷰 모니터", "원격 스마트 주차 보조", "하이브리드 시스템"],
+      featureImage: grandeFeatureFolder + "헤드업 디스플레이.webp",
+      featureTitle: "헤드업 디스플레이",
+      featureCaption: "운전자의 전방 시야 가까이에 주행 정보를 표시합니다."
+    },
+    "현대|그랜저 하이브리드|1.6 HEV|캘리그래피 블랙 잉크": {
+      summary: "캘리그래피 하이브리드의 상위 편의 기능에 블랙 전용 디자인을 결합했습니다. 블랙 컬러 중심의 외관·내장과 전용 휠로 개성을 살리며, 전자제어 서스펜션 등 고급 사양을 유지합니다.",
+      highlights: [
+        "블랙 잉크 전용 외관·실내 디자인",
+        "전용 블랙 알로이 휠",
+        "캘리그래피 주요 기능 및 전자제어 서스펜션"
+      ],
+      upgrade: {
+        previous: "캘리그래피",
+        items: ["블랙 잉크 전용 외장 디자인", "블랙 전용 알로이 휠", "블랙 테마 실내 마감"],
+        note: "기능 추가보다 블랙 전용 디자인 차별화가 핵심입니다. 기존 캘리그래피 사양은 이어집니다."
+      },
+      inheritedHighlights: ["헤드업 디스플레이", "고속도로 주행 보조 2", "하이브리드 시스템"],
+      featureImage: grandeFeatureFolder + "프리뷰 전자제어 서스펜션.webp",
+      featureTitle: "프리뷰 전자제어 서스펜션",
+      featureCaption: "주행 상황에 맞춰 차체 움직임을 조절합니다. 블랙 잉크는 디자인 차별화 트림입니다."
+    }
+  };
 
   function openTrimDetailModal(trimName) {
     if (!trimName || state.step !== 2 || !state.trim) return;
@@ -11421,6 +11547,58 @@ const vehicleCatalog = [
 
     const descriptionKey = [state.brandName, state.carName, state.trim, trimName].join("|");
     const registeredDetail = vehicleTrimDescriptions[descriptionKey];
+    const compareTitle = document.getElementById("trimDetailCompareTitle");
+    const comparisonSection = document.getElementById("trimDetailComparison");
+    const inheritedList = document.getElementById("trimDetailInheritedList");
+    const addedList = document.getElementById("trimDetailAddedList");
+    const comparisonFoot = document.getElementById("trimDetailComparisonFoot");
+    const inheritedTitle = document.getElementById("trimDetailInheritedTitle");
+    const addedTitle = document.getElementById("trimDetailAddedTitle");
+    const upgrade = registeredDetail?.upgrade;
+    const hasComparison = Boolean(upgrade && Array.isArray(registeredDetail?.inheritedHighlights));
+
+    if (comparisonSection && inheritedList && addedList && comparisonFoot && inheritedTitle && addedTitle) {
+      comparisonSection.hidden = !hasComparison;
+      inheritedList.replaceChildren();
+      addedList.replaceChildren();
+
+      if (hasComparison) {
+        inheritedTitle.textContent = `${upgrade.previous}에서 이어지는 주요 사양`;
+        addedTitle.textContent = trimName.includes("블랙 잉크")
+          ? "달라지는 디자인 포인트"
+          : "새로 추가된 기능";
+
+        registeredDetail.inheritedHighlights.forEach(label => {
+          const li = document.createElement("li");
+          const marker = document.createElement("span");
+          marker.className = "trim-detail-modal__check";
+          marker.setAttribute("aria-hidden", "true");
+          marker.textContent = "✓";
+          const txt = document.createElement("span");
+          txt.textContent = label;
+          li.append(marker, txt);
+          inheritedList.append(li);
+        });
+
+        upgrade.items.forEach(label => {
+          const li = document.createElement("li");
+          const marker = document.createElement("span");
+          marker.className = "trim-detail-modal__check trim-detail-modal__check--plus";
+          marker.setAttribute("aria-hidden", "true");
+          marker.textContent = "+";
+          const txt = document.createElement("span");
+          txt.textContent = label;
+          li.append(marker, txt);
+          addedList.append(li);
+        });
+
+        comparisonFoot.textContent = upgrade.note || "이전 트림의 기본 사양을 포함합니다.";
+      }
+    }
+
+    if (compareTitle) compareTitle.textContent = hasComparison
+      ? "주요 사양"
+      : registeredDetail ? "주요 기본 사양" : "트림별로 달라질 수 있는 부분";
     const defaultHighlights = [
       "기본 포함 사양: 안전·편의 기능 등의 구성",
       "선택 가능 옵션: 추가할 수 있는 옵션과 패키지",
@@ -11431,25 +11609,55 @@ const vehicleCatalog = [
     document.getElementById("trimDetailVehicle").textContent =
       `${state.brandName} ${state.carName} · ${state.trim}`;
     document.getElementById("trimDetailModalTitle").textContent = trimName;
+
+    // 차량 외관 대표 이미지는 사용하지 않고, 검증된 트림별 '핵심 기능' 이미지만 표시합니다.
+    // 미등록 트림은 이미지 블록 자체를 숨겨 잘못된 옵션을 안내하지 않도록 합니다.
+    // 등록 예시: vehicleTrimDescriptions["브랜드|차량|세부모델|트림"].featureImage
+    const trimVisual = document.getElementById("trimDetailVisual");
+    const trimImage = document.getElementById("trimDetailImage");
+    const trimFeatureName = document.getElementById("trimDetailFeatureName");
+    const trimImageCaption = document.getElementById("trimDetailImageCaption");
+    if (trimVisual && trimImage && trimFeatureName && trimImageCaption) {
+      trimVisual.hidden = true;
+      trimImage.onerror = null;
+      trimImage.removeAttribute("src");
+      trimImage.alt = "";
+      const featureImage = registeredDetail?.featureImage;
+      if (featureImage && registeredDetail.featureTitle) {
+        trimFeatureName.textContent = registeredDetail.featureTitle;
+        trimImage.alt = registeredDetail.featureAlt || `${state.carName} ${trimName} 트림의 ${registeredDetail.featureTitle} 기능 이미지`;
+        trimImageCaption.textContent = registeredDetail.featureCaption || "기능 설명을 위한 이미지입니다. 실제 적용 사양은 연식과 옵션에 따라 달라질 수 있습니다.";
+        trimImage.onerror = () => { trimVisual.hidden = true; };
+        trimImage.src = assetUrl(featureImage);
+        trimVisual.hidden = false;
+      } else {
+        trimFeatureName.textContent = "";
+        trimImageCaption.textContent = "";
+      }
+    }
+
     document.getElementById("trimDetailModalSummary").textContent = registeredDetail?.summary ||
       `‘${trimName}’ 트림은 선택한 차량의 세부 등급이에요. 같은 차량이라도 트림에 따라 기본 제공되는 사양과 선택 가능한 옵션이 달라질 수 있어요.`;
 
     const highlightList = document.getElementById("trimDetailHighlights");
     highlightList.replaceChildren();
+    highlightList.hidden = hasComparison;
     const highlights = Array.isArray(registeredDetail?.highlights) && registeredDetail.highlights.length
       ? registeredDetail.highlights
       : defaultHighlights;
-    highlights.forEach(item => {
-      const li = document.createElement("li");
-      const marker = document.createElement("span");
-      marker.className = "trim-detail-modal__check";
-      marker.setAttribute("aria-hidden", "true");
-      marker.textContent = "✓";
-      const text = document.createElement("span");
-      text.textContent = item;
-      li.append(marker, text);
-      highlightList.append(li);
-    });
+    if (!hasComparison) {
+      highlights.forEach(item => {
+        const li = document.createElement("li");
+        const marker = document.createElement("span");
+        marker.className = "trim-detail-modal__check";
+        marker.setAttribute("aria-hidden", "true");
+        marker.textContent = "✓";
+        const text = document.createElement("span");
+        text.textContent = item;
+        li.append(marker, text);
+        highlightList.append(li);
+      });
+    }
 
     pendingSubTrim = trimName;
     if (trimDetailModal?.showModal) {
