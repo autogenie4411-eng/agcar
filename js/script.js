@@ -11400,6 +11400,10 @@ const vehicleCatalog = [
   const trimDetailModal = document.getElementById("trimDetailModal");
   const confirmTrimSelectionButton = document.getElementById("confirmTrimSelection");
   let pendingSubTrim = "";
+  // 모바일 전체 화면을 닫을 때 임시 히스토리가 이전의 트림 선택값을 덮어쓰지 않도록 관리합니다.
+  const TRIM_DETAIL_HISTORY_KEY = "autogenieTrimDetailScreen";
+  let trimDetailHistoryActive = false;
+  let trimDetailHistoryExitPending = false;
 
   // 공식 사양을 확인한 차량부터 아래에 차량별 설명을 등록할 수 있습니다.
   // key 형태: "브랜드|차량명|세부모델|트림명"
@@ -11449,7 +11453,19 @@ const vehicleCatalog = [
 
     pendingSubTrim = trimName;
     if (trimDetailModal?.showModal) {
+      // 히스토리와 선택값이 뒤섞이지 않도록 모바일에서만 별도 화면 이력을 생성합니다.
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        rememberWizardStep();
+        window.history.pushState(
+          { ...(window.history.state || {}), [TRIM_DETAIL_HISTORY_KEY]: true }, "", window.location.href
+        );
+        trimDetailHistoryActive = true;
+      }
       trimDetailModal.showModal();
+      // 최초 진입 시 닫기 버튼에 포커스 테두리가 생기지 않도록 제목으로 포커스를 이동합니다.
+      document.getElementById("trimDetailModalTitle")?.focus({ preventScroll: true });
+      // 이전 트림의 스크롤 위치가 남지 않도록 상세 내용을 처음부터 보여줍니다.
+      trimDetailModal.querySelector(".trim-detail-modal__body")?.scrollTo(0, 0);
     } else {
       // dialog 미지원 브라우저에서도 확인 전 자동 선택은 하지 않습니다.
       if (window.confirm(`${state.brandName} ${state.carName} - ${state.trim} / ${trimName}\n이 트림을 선택하시겠습니까?`)) {
@@ -11462,14 +11478,22 @@ const vehicleCatalog = [
 
   function commitTrimSelection() {
     const selected = pendingSubTrim;
-    if (!selected || state.step !== 2) return;
-    pendingSubTrim = "";
-    if (trimDetailModal?.open) trimDetailModal.close();
+    if (!selected || state.step !== 2 || !state.trim) return;
+    // 선택한 트림이 현재 차량/세부모델에 실제 존재하는지 다시 확인합니다.
+    const group = currentVehicle()?.detailModels?.find(item => item.name === state.trim);
+    if (!group?.trims.includes(selected)) return;
+
+    // 중요: 팝업을 닫기 전에 STEP 02의 실제 선택값을 먼저 확정합니다.
+    // 이후 렌더·뒤로가기 이벤트에서 선택 전 상태로 복원되지 않도록 합니다.
     state.subTrim = selected;
+    pendingSubTrim = "";
     render();
     showValidation("");
-    // 기존 STEP 02 동작처럼 세부모델 섹션으로 복귀합니다.
-    scrollToNextSelection('[data-option-section="engine-model"]', "start");
+    rememberWizardStep();
+    if (trimDetailModal?.open) trimDetailModal.close();
+
+    // 해당 트림의 선택 표시(라디오·active)가 보이도록 목록으로 돌아갑니다.
+    scrollToNextSelection('[data-option-section="sub-trim"]', "start");
   }
 
   confirmTrimSelectionButton?.addEventListener("click", commitTrimSelection);
@@ -11481,8 +11505,12 @@ const vehicleCatalog = [
     if (event.target === trimDetailModal) trimDetailModal.close();
   });
   trimDetailModal?.addEventListener("close", () => {
-    // X / 닫기 / ESC / 배경 클릭 시 선택을 바꾸지 않습니다.
+    // 취소는 기존 선택 유지, 확정은 이미 commitTrimSelection에서 선택 반영.
     pendingSubTrim = "";
+    if (trimDetailHistoryActive && !trimDetailHistoryExitPending) {
+      trimDetailHistoryExitPending = true;
+      window.history.back();
+    }
   });
 
   function updateReviewPlacement() {
@@ -13005,6 +13033,15 @@ const vehicleCatalog = [
   }
 
   window.addEventListener("popstate", event => {
+    // 트림 상세화면의 임시 히스토리를 빠져나올 때에는 페이지 이동으로 취급하지 않습니다.
+    // 브라우저가 돌려준 저장값은 선택 확정 전일 수 있으므로 현재 state를 우선합니다.
+    if (trimDetailHistoryActive) {
+      trimDetailHistoryActive = false;
+      trimDetailHistoryExitPending = false;
+      if (trimDetailModal?.open) trimDetailModal.close();
+      rememberWizardStep();
+      return;
+    }
     const saved = event.state?.[WIZARD_HISTORY_KEY];
     if (!saved || !Number.isInteger(saved.step) || saved.step < 1 || saved.step > 4) return;
     Object.assign(state, saved);

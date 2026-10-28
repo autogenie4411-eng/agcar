@@ -9785,11 +9785,15 @@ body.review-dialog-open {
 }
 .trim-detail-modal__actions {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: 9px;
+    width: 100%;
+    align-self: stretch;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
 }
 .trim-detail-modal__cancel,
 .trim-detail-modal__confirm {
+    width: 100%;
+    box-sizing: border-box;
     min-width: 0;
     min-height: 48px;
     padding: 10px 12px;
@@ -9843,4 +9847,215 @@ body.review-dialog-open {
     .trim-selection-hint {
         font-size: 12px;
     }
+}
+
+/* =========================================================
+   STEP 02 | 모바일에서는 트림 설명을 독립 화면처럼 전면 표시
+   PC(769px 이상): 기존 중앙 팝업을 그대로 사용
+   모바일(768px 이하): 상단 내비게이션 / 본문 / 하단 선택 고정
+========================================================= */
+.trim-detail-modal__back,
+.trim-detail-modal__cancel-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .trim-detail-modal {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100%;
+        height: 100dvh;
+        max-width: none;
+        max-height: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: #fff;
+        overscroll-behavior: contain;
+    }
+
+    .trim-detail-modal::backdrop {
+        background: #fff;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
+    .trim-detail-modal__panel {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .trim-detail-modal__header {
+        flex: 0 0 auto;
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr) 42px;
+        align-items: center;
+        gap: 6px;
+        min-height: 60px;
+        padding: max(8px, env(safe-area-inset-top)) 15px 8px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #e9edf2;
+        background: #fff;
+    }
+
+    .trim-detail-modal__back {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 42px;
+        height: 42px;
+        padding: 0 0 0 3px;
+        border: 0;
+        background: transparent;
+        color: #182230;
+        cursor: pointer;
+    }
+
+    .trim-detail-modal__eyebrow {
+        color: #182230;
+        font-size: 16px;
+        font-weight: 800;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .trim-detail-modal__close {
+        justify-self: end;
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        border-radius: 8px;
+        background: transparent;
+        color: #667085;
+        font-size: 26px;
+        font-weight: 400;
+    }
+
+    .trim-detail-modal__body {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 26px 22px 36px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .trim-detail-modal__vehicle {
+        padding: 7px 11px;
+        font-size: 12px;
+    }
+
+    .trim-detail-modal__title {
+        margin: 18px 0 10px;
+        font-size: clamp(24px, 6vw, 30px);
+        line-height: 1.32;
+    }
+
+    .trim-detail-modal__summary {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .trim-detail-modal__info {
+        margin-top: 30px;
+        padding-top: 25px;
+    }
+
+    .trim-detail-modal__info h3 {
+        margin-bottom: 18px;
+        font-size: 16px;
+    }
+
+    .trim-detail-modal__highlights {
+        gap: 17px;
+    }
+
+    .trim-detail-modal__highlights li {
+        gap: 11px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .trim-detail-modal__check {
+        flex-basis: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 1px;
+        font-size: 13px;
+    }
+
+    .trim-detail-modal__notice {
+        margin-top: 30px;
+        padding: 17px 16px;
+    }
+
+    .trim-detail-modal__notice strong,
+    .trim-detail-modal__notice p {
+        font-size: 12.5px;
+    }
+
+    .trim-detail-modal__footer {
+        display: block;
+        flex: 0 0 auto;
+        padding: 12px 20px max(15px, env(safe-area-inset-bottom));
+        border-top: 1px solid #e9edf2;
+        background: #fff;
+        box-shadow: 0 -8px 24px rgba(20, 31, 51, 0.035);
+    }
+
+    .trim-detail-modal__question,
+    .trim-detail-modal__cancel-desktop {
+        display: none;
+    }
+
+    .trim-detail-modal__actions {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        gap: 2px;
+    }
+
+    .trim-detail-modal__confirm {
+        width: 100%;
+        min-height: 52px;
+        border-radius: 10px;
+        font-size: 15px;
+    }
+
+    .trim-detail-modal__cancel {
+        width: 100%;
+        min-height: 42px;
+        border: none;
+        background: transparent;
+        color: #667085;
+        font-size: 13px;
+        font-weight: 650;
+    }
+
+    .trim-detail-modal__cancel-mobile {
+        display: inline;
+    }
+
+    .trim-detail-modal__back:focus-visible {
+        outline: 3px solid rgba(50, 107, 250, .3);
+        outline-offset: 1px;
+    }
+}
+
+/* 짧은 화면에서도 본문만 스크롤되고 선택 버튼은 계속 보입니다. */
+@media (max-width: 768px) and (max-height: 480px) {
+    .trim-detail-modal__header { min-height: 50px; padding-top: 4px; padding-bottom: 4px; }
+    .trim-detail-modal__body { padding-top: 16px; padding-bottom: 20px; }
+    .trim-detail-modal__footer { padding-top: 5px; padding-bottom: max(6px, env(safe-area-inset-bottom)); }
+    .trim-detail-modal__confirm { min-height: 46px; }
+    .trim-detail-modal__cancel { min-height: 34px; }
 }
