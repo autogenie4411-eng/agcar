@@ -3173,13 +3173,16 @@ body:has(.wizard-page) {
     position: relative;
 }
 .loader-status:after {
-    vertical-align: bottom;
     content: "...";
+    position: absolute;
+    left: calc(100% + 2px);
+    top: 0;
     width: 16px;
-    margin-left: 2px;
-    animation: 1.1s steps(4, end) infinite loaderEllipsis;
-    display: inline-block;
+    height: 1em;
+    line-height: 1;
+    white-space: nowrap;
     overflow: hidden;
+    animation: 1.1s steps(4, end) infinite loaderEllipsis;
 }
 @keyframes loaderPulse {
     0%,
@@ -3204,10 +3207,10 @@ body:has(.wizard-page) {
 }
 @keyframes loaderEllipsis {
     0% {
-        width: 0;
+        clip-path: inset(0 100% 0 0);
     }
     to {
-        width: 16px;
+        clip-path: inset(0 0 0 0);
     }
 }
 @keyframes loaderExit {
