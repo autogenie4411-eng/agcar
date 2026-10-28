@@ -9377,3 +9377,224 @@ body.review-dialog-open {
     outline: none !important;
     box-shadow: none !important;
 }
+
+/* =========================================================
+   통합차 할인 딱지: 이미지 전체가 아닌 실제 HTML/CSS 배지
+   - 타원: CSS 그라데이션 / 확성기: 투명 PNG / 할인 문구: HTML 텍스트
+   - 색상 스와치는 전폭 스크롤, 카드 이미지와 중첩하지 않음
+========================================================= */
+.wizard-car-card .paint-block.has-monthly-discount {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+        "paint-label paint-label"
+        "paint-swatches paint-swatches"
+        "paint-choice paint-discount";
+    align-items: start;
+    column-gap: 0;
+    overflow: hidden;
+}
+.wizard-car-card .paint-block.has-monthly-discount .paint-label {
+    grid-area: paint-label;
+    min-width: 0;
+}
+.wizard-car-card .paint-block.has-monthly-discount .wizard-paints {
+    grid-area: paint-swatches;
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 0;
+}
+.wizard-car-card .paint-block.has-monthly-discount .chosen-paint {
+    grid-area: paint-choice;
+    min-width: 0;
+    max-width: 100%;
+    width: auto !important;
+    margin-top: 0;
+    padding-top: 11px;
+    overflow-wrap: anywhere;
+}
+.wizard-car-card .paint-block.has-monthly-discount .chosen-paint strong {
+    font-size: 12px;
+    letter-spacing: -0.5px;
+}
+/* 할인 딱지: 타원과 문구는 CSS/HTML, 확성기만 별도 투명 PNG */
+.wizard-car-card .monthly-discount-sticker {
+    position: relative;
+    grid-area: paint-discount;
+    justify-self: end;
+    align-self: end;
+    display: block;
+    box-sizing: border-box;
+    width: 180px;
+    height: 79px;
+    flex: none;
+    margin: 0 -4px -2px 2px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    isolation: isolate;
+    pointer-events: none;
+}
+.wizard-car-card .monthly-discount-sticker::before,
+.wizard-car-card .monthly-discount-sticker::after {
+    content: none;
+}
+.wizard-car-card .monthly-discount-sticker__pill {
+    position: absolute;
+    z-index: 0;
+    top: 16px;
+    right: 3px;
+    width: 137px;
+    height: 61px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 4px 20px 3px 47px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(112deg, #076bfb 0%, #0b57f8 42%, #4a20ef 100%);
+    box-shadow: 0 4px 9px rgb(27 60 184 / 13%);
+    text-align: center;
+    white-space: nowrap;
+    color: white;
+    line-height: 1;
+}
+.wizard-car-card .monthly-discount-sticker__megaphone {
+    position: absolute;
+    z-index: 1;
+    top: 2px;
+    left: 9px;
+    display: block;
+    width: 84px;
+    height: 82px;
+    min-width: 0;
+    max-width: none;
+    object-fit: contain;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+.wizard-car-card .monthly-discount-sticker__month,
+.wizard-car-card .monthly-discount-sticker__max,
+.wizard-car-card .monthly-discount-sticker__rate {
+    position: static;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-family:
+        "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    font-style: normal;
+    white-space: nowrap;
+    text-shadow: none;
+}
+.wizard-car-card .monthly-discount-sticker__month {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 13px;
+    letter-spacing: -0.4px;
+}
+.wizard-car-card .monthly-discount-sticker__details {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 3px;
+    width: 100%;
+}
+.wizard-car-card .monthly-discount-sticker__max {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+.wizard-car-card .monthly-discount-sticker__rate {
+    color: #ffef25;
+    font-size: 27px;
+    font-weight: 950;
+    line-height: 30px;
+    letter-spacing: -1.1px;
+}
+@media (max-width: 360px) {
+    .wizard-car-card .paint-block.has-monthly-discount {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+    .wizard-car-card .paint-block.has-monthly-discount .chosen-paint strong {
+        font-size: 11px;
+        letter-spacing: -0.5px;
+    }
+}
+@media (max-width: 340px) {
+    .wizard-car-card .paint-block.has-monthly-discount {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "paint-label"
+            "paint-swatches"
+            "paint-choice"
+            "paint-discount";
+    }
+    .wizard-car-card .paint-block.has-monthly-discount .chosen-paint {
+        min-height: 28px;
+        padding-top: 8px;
+        padding-bottom: 0;
+    }
+    .wizard-car-card .monthly-discount-sticker {
+        margin-top: -3px;
+    }
+}
+
+/* =========================================================
+   할인 딱지 모바일 전용 축소 (2026-10-28)
+   PC 원본 180 x 79px 유지 / 모바일 약 70%로 축소
+   개별 요소의 실제 크기를 줄여 색상 선택 안내문과 겹침 방지
+========================================================= */
+@media (max-width: 600px) {
+    .wizard-car-card .monthly-discount-sticker {
+        width: 126px;
+        height: 56px;
+        margin: 0 -2px 0 3px;
+    }
+    .wizard-car-card .monthly-discount-sticker__pill {
+        top: 11px;
+        right: 2px;
+        width: 98px;
+        height: 45px;
+        gap: 1px;
+        padding: 3px 13px 2px 31px;
+        box-shadow: 0 3px 6px rgb(27 60 184 / 11%);
+    }
+    .wizard-car-card .monthly-discount-sticker__megaphone {
+        top: 1px;
+        left: 4px;
+        width: 59px;
+        height: 58px;
+    }
+    .wizard-car-card .monthly-discount-sticker__month {
+        font-size: 9.5px;
+        line-height: 11px;
+        letter-spacing: -0.35px;
+        font-weight: 500;
+    }
+    .wizard-car-card .monthly-discount-sticker__details {
+        gap: 2px;
+    }
+    .wizard-car-card .monthly-discount-sticker__max {
+        font-size: 9.5px;
+        letter-spacing: -0.4px;
+    }
+    .wizard-car-card .monthly-discount-sticker__rate {
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.7px;
+    }
+}
+/* 작은 휴대폰에서는 안내 문구와 할인율 영역 사이 간격만 미세 보정 */
+@media (max-width: 350px) {
+    .wizard-car-card .monthly-discount-sticker {
+        margin-right: -2px;
+    }
+}

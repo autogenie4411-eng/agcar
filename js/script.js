@@ -1,7 +1,46 @@
 (() => {
   "use strict";
 
-  const currentMonth = new Date().getMonth() + 1;
+  // 현재 월은 화면 렌더링 시마다 계산합니다.
+  // 탭을 오래 열어둔 상태에서 월이 바뀌어도 월별 할인 표시를 갱신합니다.
+  function getCurrentDiscountMonth() {
+    return new Date().getMonth() + 1;
+  }
+
+  function syncDisplayedDiscountMonths() {
+    const label = `${getCurrentDiscountMonth()}월 할인율`;
+
+    document.querySelectorAll(".monthly-discount-sticker").forEach((sticker) => {
+      const monthElement = sticker.querySelector(".monthly-discount-sticker__month");
+      if (monthElement) {
+        monthElement.textContent = label;
+      }
+
+      const rate = sticker.querySelector(".monthly-discount-sticker__rate")?.textContent?.trim();
+      if (rate) {
+        sticker.setAttribute("aria-label", `${label} 최대 ${rate}`);
+      }
+    });
+
+    document.querySelectorAll(".discount-rate dt").forEach((element) => {
+      element.textContent = label;
+    });
+  }
+
+  // 휴면 탭 복귀/브라우저 뒤로가기로 돌아오는 경우에도 최신 월을 표시합니다.
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      syncDisplayedDiscountMonths();
+    }
+  });
+  window.addEventListener("pageshow", syncDisplayedDiscountMonths);
+
+  // 페이지를 계속 열어둔 경우에는 매분 확인합니다.
+  window.setInterval(() => {
+    if (!document.hidden) {
+      syncDisplayedDiscountMonths();
+    }
+  }, 60 * 1000);
 
   function resetPageScroll() {
     document.documentElement.scrollTop = 0;
@@ -11586,6 +11625,9 @@ const vehicleCatalog = [
     const paint = currentPaint();
     const paints = currentPaints();
     const useOwnBackground = Boolean(brand?.ownBackground && state.carName);
+    // 매월 현재 월을 표시하고, 통합 사이트는 선택한 차량 구분으로 할인율 결정
+    const discountMonth = getCurrentDiscountMonth();
+    const discountRate = state.market === "import" ? 20 : 10;
 
     const carTitleMarkup = `<div class="wizard-car-title ${useOwnBackground ? "wizard-car-title--overlay" : ""}">
         <div>
@@ -11671,7 +11713,7 @@ const vehicleCatalog = [
         <div class="wizard-car-card car-adjust ${!state.carName ? "is-empty sequential-hidden" : ""} ${brand?.ownBackground ? "has-own-background" : ""} ${state.brandName === "테슬라" ? "is-tesla" : ""} ${state.brandName === "제네시스" ? "is-genesis" : ""} ${state.brandName === "기아" ? "is-kia" : ""} ${state.brandName === "기아" && state.carName === "봉고3" ? "is-kia-bongo3" : ""}" data-brand="${state.brandName || ""}" data-car="${state.carName || ""}">
           ${carImageMarkup}
 
-          <div class="paint-block ${!state.carName ? "is-disabled-block" : ""}" data-option-section="paint">
+          <div class="paint-block ${!state.carName ? "is-disabled-block" : "has-monthly-discount"}" data-option-section="paint">
             <div class="paint-label">
               <span class="paint-label-title"><b>4</b> 외장 색상${state.carName ? `<em>${paints.length}개</em>` : ""}</span>
               ${state.carName ? `<small class="paint-swipe-guide">좌우로 넘겨보세요</small>` : ""}
@@ -11687,6 +11729,16 @@ const vehicleCatalog = [
               </div>
               <div class="chosen-paint">
                 <strong>${paint ? paint.name : "색상을 선택해 주세요"}</strong>
+              </div>
+              <div class="monthly-discount-sticker" role="note" aria-label="${discountMonth}월 할인율 최대 ${discountRate}%">
+                <img class="monthly-discount-sticker__megaphone" src="images/discount-megaphone.png?v=20261028-match-ref-02" alt="" aria-hidden="true" width="52" height="64">
+                <div class="monthly-discount-sticker__pill">
+                  <span class="monthly-discount-sticker__month">${discountMonth}월 할인율</span>
+                  <div class="monthly-discount-sticker__details">
+                    <span class="monthly-discount-sticker__max">최대</span>
+                    <strong class="monthly-discount-sticker__rate">${discountRate}%</strong>
+                  </div>
+                </div>
               </div>
             ` : `<p class="empty-selection-guide">차량을 먼저 선택해 주세요.</p>`}
           </div>
@@ -11816,7 +11868,7 @@ const vehicleCatalog = [
             <div><dt>세부모델</dt><dd>${state.trim || "상담 후 결정"}${state.subTrim ? ` · ${state.subTrim}` : ""}</dd></div>
             <div><dt>이용조건</dt><dd>${state.usage || "상담 후 결정"} · ${state.initialCost || "상담 후 결정"}${!["초기비용 0원", "상담 후 결정"].includes(state.initialCost) && state.rate ? ` ${state.rate}` : ""}</dd></div>
             <div><dt>주행거리</dt><dd>${state.mileage || "상담 후 결정"}</dd></div>
-            <div class="discount-rate"><dt>${currentMonth}월 할인율</dt><dd>최대 10%</dd></div>
+            <div class="discount-rate"><dt>${getCurrentDiscountMonth()}월 할인율</dt><dd>최대 10%</dd></div>
             ${isElectricVehicle() ? `<div><dt>보조금 지역</dt><dd data-summary-subsidy-region>${state.subsidyRegion || "선택 전"}</dd></div>` : ""}
           </dl>
         </div>
@@ -11942,7 +11994,7 @@ const vehicleCatalog = [
               <div><dt>이용 방식</dt><dd>${usageText}</dd></div>
               <div><dt>초기비용</dt><dd>${initialCostText}</dd></div>
               <div><dt>주행거리</dt><dd>${mileageText}</dd></div>
-              <div class="discount-rate"><dt>${currentMonth}월 할인율</dt><dd>최대 10%</dd></div>
+              <div class="discount-rate"><dt>${getCurrentDiscountMonth()}월 할인율</dt><dd>최대 10%</dd></div>
               <div><dt>보조금 지역</dt><dd>${subsidyRegionText}</dd></div>
             </dl>
           </div>
