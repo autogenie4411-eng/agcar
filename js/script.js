@@ -2206,7 +2206,7 @@ const vehicleCatalog = [
             "id": "paint-346",
             "name": "우유니 화이트",
             "hex": "#F3F3F3",
-            "border": "#030303",
+            "border": "#cfd5dc",
             "image": "images/vehicles/제네시스/g90-우유니 화이트.webp"
           },
           {
