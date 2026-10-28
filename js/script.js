@@ -11396,6 +11396,95 @@ const vehicleCatalog = [
   const reviewSection = document.getElementById("reviewSection");
   const reviewParking = document.getElementById("reviewParking");
 
+  // STEP 02: 트림 설명을 먼저 열고, 고객이 확인한 경우에만 subTrim에 반영합니다.
+  const trimDetailModal = document.getElementById("trimDetailModal");
+  const confirmTrimSelectionButton = document.getElementById("confirmTrimSelection");
+  let pendingSubTrim = "";
+
+  // 공식 사양을 확인한 차량부터 아래에 차량별 설명을 등록할 수 있습니다.
+  // key 형태: "브랜드|차량명|세부모델|트림명"
+  // 예: "현대|그랜저|2.5 가솔린|프리미엄": {
+  //   summary: "차량별로 확인된 간단한 설명",
+  //   highlights: ["확인된 기본 사양", "확인된 편의 사양", "확인된 디자인 사양"]
+  // }
+  // 원본 파일에는 트림별 사양 데이터가 없으므로, 기본값은 확인용 공통 안내입니다.
+  const vehicleTrimDescriptions = {};
+
+  function openTrimDetailModal(trimName) {
+    if (!trimName || state.step !== 2 || !state.trim) return;
+    const modelGroup = currentVehicle()?.detailModels?.find(group => group.name === state.trim);
+    if (!modelGroup || !modelGroup.trims.includes(trimName)) return;
+
+    const descriptionKey = [state.brandName, state.carName, state.trim, trimName].join("|");
+    const registeredDetail = vehicleTrimDescriptions[descriptionKey];
+    const defaultHighlights = [
+      "기본 포함 사양: 안전·편의 기능 등의 구성",
+      "선택 가능 옵션: 추가할 수 있는 옵션과 패키지",
+      "차량 가격: 트림 및 선택 옵션에 따른 견적 차이"
+    ];
+
+    // 텍스트 노드로 넣어 트림명에 특수문자가 있어도 HTML로 해석되지 않게 합니다.
+    document.getElementById("trimDetailVehicle").textContent =
+      `${state.brandName} ${state.carName} · ${state.trim}`;
+    document.getElementById("trimDetailModalTitle").textContent = trimName;
+    document.getElementById("trimDetailModalSummary").textContent = registeredDetail?.summary ||
+      `‘${trimName}’ 트림은 선택한 차량의 세부 등급이에요. 같은 차량이라도 트림에 따라 기본 제공되는 사양과 선택 가능한 옵션이 달라질 수 있어요.`;
+
+    const highlightList = document.getElementById("trimDetailHighlights");
+    highlightList.replaceChildren();
+    const highlights = Array.isArray(registeredDetail?.highlights) && registeredDetail.highlights.length
+      ? registeredDetail.highlights
+      : defaultHighlights;
+    highlights.forEach(item => {
+      const li = document.createElement("li");
+      const marker = document.createElement("span");
+      marker.className = "trim-detail-modal__check";
+      marker.setAttribute("aria-hidden", "true");
+      marker.textContent = "✓";
+      const text = document.createElement("span");
+      text.textContent = item;
+      li.append(marker, text);
+      highlightList.append(li);
+    });
+
+    pendingSubTrim = trimName;
+    if (trimDetailModal?.showModal) {
+      trimDetailModal.showModal();
+    } else {
+      // dialog 미지원 브라우저에서도 확인 전 자동 선택은 하지 않습니다.
+      if (window.confirm(`${state.brandName} ${state.carName} - ${state.trim} / ${trimName}\n이 트림을 선택하시겠습니까?`)) {
+        commitTrimSelection();
+      } else {
+        pendingSubTrim = "";
+      }
+    }
+  }
+
+  function commitTrimSelection() {
+    const selected = pendingSubTrim;
+    if (!selected || state.step !== 2) return;
+    pendingSubTrim = "";
+    if (trimDetailModal?.open) trimDetailModal.close();
+    state.subTrim = selected;
+    render();
+    showValidation("");
+    // 기존 STEP 02 동작처럼 세부모델 섹션으로 복귀합니다.
+    scrollToNextSelection('[data-option-section="engine-model"]', "start");
+  }
+
+  confirmTrimSelectionButton?.addEventListener("click", commitTrimSelection);
+  trimDetailModal?.querySelectorAll("[data-trim-close]").forEach(button => {
+    button.addEventListener("click", () => trimDetailModal.close());
+  });
+  trimDetailModal?.addEventListener("click", event => {
+    // 팝업 바깥의 어두운 배경을 클릭하면 취소합니다.
+    if (event.target === trimDetailModal) trimDetailModal.close();
+  });
+  trimDetailModal?.addEventListener("close", () => {
+    // X / 닫기 / ESC / 배경 클릭 시 선택을 바꾸지 않습니다.
+    pendingSubTrim = "";
+  });
+
   function updateReviewPlacement() {
     if (!reviewSection || !reviewParking) return;
 
@@ -11764,6 +11853,7 @@ const vehicleCatalog = [
 
         <fieldset class="option-block no-gap" data-option-section="engine-model">
           <legend><b>1</b> 세부모델 선택</legend>
+          <p class="trim-selection-hint"><span aria-hidden="true">ⓘ</span> 트림을 누르면 설명을 확인한 뒤 선택할 수 있습니다.</p>
 
           <div class="engine-model-list">
             ${modelGroups.length ? modelGroups.map(group => {
@@ -11779,7 +11869,7 @@ const vehicleCatalog = [
                   ${isActive ? `
                     <div class="sub-trim-list" data-option-section="sub-trim">
                       ${group.trims.map(item => `
-                        <button class="sub-trim-item ${item === state.subTrim ? "active" : ""}" type="button" data-sub-trim="${item}">
+                        <button class="sub-trim-item ${item === state.subTrim ? "active" : ""}" type="button" data-sub-trim="${item}" aria-haspopup="dialog" aria-controls="trimDetailModal" aria-pressed="${item === state.subTrim}">
                           <span class="radio-ui ${item === state.subTrim ? "checked" : ""}" aria-hidden="true"></span>
                           <strong>${item}</strong>
                         </button>
@@ -12486,12 +12576,8 @@ const vehicleCatalog = [
 
     content.querySelectorAll("[data-sub-trim]").forEach(button => {
       button.addEventListener("click", () => {
-        state.subTrim = button.dataset.subTrim;
-        render();
-
-        // 하위 트림을 선택해도 하단 버튼으로 이동하지 않고
-        // 2페이지의 "1. 세부모델" 위치에 고정합니다.
-        scrollToNextSelection('[data-option-section="engine-model"]', "start");
+        // 클릭 시에는 아직 확정하지 않습니다. 설명 팝업에서 확인해야 반영됩니다.
+        openTrimDetailModal(button.dataset.subTrim);
       });
     });
 

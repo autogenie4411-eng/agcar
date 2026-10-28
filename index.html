@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261028-match-ref-02-mobile-small-1028">
+    <link rel="stylesheet" href="css/style.css?v=20261028-trim-modal-test-01">
 </head>
 <body>
 
@@ -303,6 +303,36 @@
     </footer>
   </main>
 
+  <!-- STEP 02: 트림 확인 팝업 (선택 확정 전 안내) -->
+  <dialog class="trim-detail-modal" id="trimDetailModal" aria-labelledby="trimDetailModalTitle" aria-describedby="trimDetailModalSummary">
+    <div class="trim-detail-modal__panel">
+      <header class="trim-detail-modal__header">
+        <span class="trim-detail-modal__eyebrow">트림 상세 안내</span>
+        <button type="button" class="trim-detail-modal__close" data-trim-close aria-label="트림 안내 닫기">×</button>
+      </header>
+      <div class="trim-detail-modal__body">
+        <div class="trim-detail-modal__vehicle" id="trimDetailVehicle"></div>
+        <h2 id="trimDetailModalTitle" class="trim-detail-modal__title"></h2>
+        <p class="trim-detail-modal__summary" id="trimDetailModalSummary"></p>
+        <section class="trim-detail-modal__info" aria-labelledby="trimDetailCompareTitle">
+          <h3 id="trimDetailCompareTitle">트림별로 달라질 수 있는 부분</h3>
+          <ul class="trim-detail-modal__highlights" id="trimDetailHighlights"></ul>
+        </section>
+        <div class="trim-detail-modal__notice">
+          <strong>선택 전 확인해 주세요</strong>
+          <p>기본 사양과 선택 옵션은 차량, 연식, 세부모델에 따라 달라질 수 있습니다. 정확한 구성은 상담 시 확인해 주세요.</p>
+        </div>
+      </div>
+      <footer class="trim-detail-modal__footer">
+        <p class="trim-detail-modal__question">이 트림을 선택하시겠습니까?</p>
+        <div class="trim-detail-modal__actions">
+          <button type="button" class="trim-detail-modal__cancel" data-trim-close>닫기</button>
+          <button type="button" class="trim-detail-modal__confirm" id="confirmTrimSelection">이 트림 선택하기</button>
+        </div>
+      </footer>
+    </div>
+  </dialog>
+
   <!-- 견적 신청 제한 안내 -->
   <dialog class="estimate-block-modal" id="estimateBlockModal" aria-labelledby="estimateBlockTitle" aria-describedby="estimateBlockDescription">
     <div class="estimate-block-modal__content">
@@ -320,7 +350,7 @@
 
   <script src="js/traffic-tracker.js?v=20261027"></script>
 
-  <script src="js/script.js?v=20261028-match-ref-02"></script>
+  <script src="js/script.js?v=20261028-trim-modal-test-01"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/reviews.js?v=20261022-review-full-ad-safe-v2"></script>
 
