@@ -11396,7 +11396,10 @@ const vehicleCatalog = [
   const reviewSection = document.getElementById("reviewSection");
   const reviewParking = document.getElementById("reviewParking");
 
-  // STEP 02: 트림 설명을 먼저 열고, 고객이 확인한 경우에만 subTrim에 반영합니다.
+  // 트림 설명 팝업 ON/OFF: true = 사용, false = 사용 안 함
+  const ENABLE_TRIM_DETAIL_POPUP = false;
+
+  // STEP 02: ON일 때는 팝업 확인 후, OFF일 때는 클릭 즉시 트림을 확정합니다.
   const trimDetailModal = document.getElementById("trimDetailModal");
   const confirmTrimSelectionButton = document.getElementById("confirmTrimSelection");
   let pendingSubTrim = "";
@@ -12089,7 +12092,6 @@ const vehicleCatalog = [
 
         <fieldset class="option-block no-gap" data-option-section="engine-model">
           <legend><b>1</b> 세부모델 선택</legend>
-          <p class="trim-selection-hint"><span aria-hidden="true">ⓘ</span> 트림을 누르면 설명을 확인한 뒤 선택할 수 있습니다.</p>
 
           <div class="engine-model-list">
             ${modelGroups.length ? modelGroups.map(group => {
@@ -12105,7 +12107,7 @@ const vehicleCatalog = [
                   ${isActive ? `
                     <div class="sub-trim-list" data-option-section="sub-trim">
                       ${group.trims.map(item => `
-                        <button class="sub-trim-item ${item === state.subTrim ? "active" : ""}" type="button" data-sub-trim="${item}" aria-haspopup="dialog" aria-controls="trimDetailModal" aria-pressed="${item === state.subTrim}">
+                        <button class="sub-trim-item ${item === state.subTrim ? "active" : ""}" type="button" data-sub-trim="${item}" ${ENABLE_TRIM_DETAIL_POPUP ? 'aria-haspopup="dialog" aria-controls="trimDetailModal"' : ''} aria-pressed="${item === state.subTrim}">
                           <span class="radio-ui ${item === state.subTrim ? "checked" : ""}" aria-hidden="true"></span>
                           <strong>${item}</strong>
                         </button>
@@ -12812,8 +12814,14 @@ const vehicleCatalog = [
 
     content.querySelectorAll("[data-sub-trim]").forEach(button => {
       button.addEventListener("click", () => {
-        // 클릭 시에는 아직 확정하지 않습니다. 설명 팝업에서 확인해야 반영됩니다.
-        openTrimDetailModal(button.dataset.subTrim);
+        if (ENABLE_TRIM_DETAIL_POPUP) {
+          // ON: 설명을 확인한 다음에 트림을 확정합니다.
+          openTrimDetailModal(button.dataset.subTrim);
+        } else {
+          // OFF: 기존의 동일한 선택 확정 절차를 사용하여 바로 반영합니다.
+          pendingSubTrim = button.dataset.subTrim;
+          commitTrimSelection();
+        }
       });
     });
 

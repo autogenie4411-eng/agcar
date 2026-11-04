@@ -6,6 +6,9 @@ const SOURCE = 'https://www.agautoplan.com/review';
 const MAX_PAGES = 120; // 최초 전체 연도 수집 시 오래된 페이지까지 탐색
 const MAX_REVIEWS = 2000; // 최근 2개월 제한 대신 보관 연도 전체를 수집
 const MAX_CONSECUTIVE_ERRORS = 8;
+// 매회 너무 많은 상세페이지 요청으로 GitHub Actions 시간 초과가 발생하지 않도록 제한합니다.
+// 최신 게시글부터 먼저 갱신하고 이전 후기는 다음 실행에서 순차 보강합니다.
+const MAX_DETAIL_FETCHES_PER_RUN = 70;
 const OUTPUT = path.resolve('data/reviews.json');
 
 // 후기 분류는 메이커 + 국내/수입 차종명을 함께 검사합니다.
@@ -300,83 +303,80 @@ async function collectCurrentPageItems(page) {
   });
 }
 
-async function clickNextListPage(page, currentPageNo) {
-  const target = currentPageNo + 1;
-  return await page.evaluate((target) => {
-    const candidates = [...document.querySelectorAll('a,button')].filter(el => {
-      const s = getComputedStyle(el);
-      const r = el.getBoundingClientRect();
-      return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0;
-    });
-
-    const exact = candidates.find(el => (el.textContent || '').trim() === String(target));
-    if (exact) {
-      exact.click();
-      return true;
-    }
-
-    const next = candidates.find(el => {
-      const txt = (el.textContent || '').trim();
-      const aria = el.getAttribute('aria-label') || '';
-      const cls = String(el.className || '');
-      return /^(다음|next|›|»|>)$/i.test(txt) || /next|다음/i.test(`${aria} ${cls}`);
-    });
-
-    if (next) {
-      next.click();
-      return true;
-    }
-    return false;
-  }, target);
+// 아임웹 게시판은 링크의 page / q 쿼리로 페이지를 구분합니다.
+// 화면의 숫자 버튼을 클릭하면 게시글 내부의 숫자를 잘못 누르거나,
+// 페이지 전환 전에 같은 목록을 다시 읽을 수 있어 직접 주소를 이동합니다.
+function sourceListUrl(pageNumber) {
+  const query = Buffer.from('a:1:{s:12:"keyword_type";s:3:"all";}').toString('base64');
+  const url = new URL(SOURCE + '/');
+  url.searchParams.set('page', String(pageNumber));
+  url.searchParams.set('q', query);
+  url.searchParams.set('t', 'board');
+  return url.href;
 }
 
 async function collectBoardOrder(page) {
   const ordered = [];
   const seen = new Set();
-
-  await page.goto(SOURCE, { waitUntil: 'domcontentloaded', timeout: 45000 });
-  await page.waitForTimeout(2400);
+  const cutoff = reviewRetentionStart();
+  let failedPages = 0;
 
   for (let pageNo = 1; pageNo <= MAX_PAGES; pageNo++) {
-    await page.evaluate(() => window.scrollTo(0, 0));
-    await page.waitForTimeout(300);
+    const url = sourceListUrl(pageNo);
+    let items = [];
+    let loaded = false;
 
-    for (let i = 0; i < 3; i++) {
-      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-      await page.waitForTimeout(500);
+    // 일시적인 네트워크 응답/게시판 지연 시 같은 페이지를 한 번 더 요청합니다.
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+        if (!response?.ok()) throw new Error(`HTTP ${response?.status() || 'no response'}`);
+        await page.locator('a[href*="idx="]').first().waitFor({ state: 'attached', timeout: 10000 });
+        // 지연 로딩된 썸네일을 포함해 수집합니다.
+        await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+        await page.waitForTimeout(400);
+        await page.evaluate(() => window.scrollTo(0, 0));
+        items = await collectCurrentPageItems(page);
+        if (!items.length) throw new Error('게시판 링크 0건');
+        loaded = true;
+        break;
+      } catch (error) {
+        console.warn(`후기 목록 ${pageNo}페이지 재시도 ${attempt}/2: ${error.message}`);
+        await sleep(900);
+      }
     }
 
-    await page.evaluate(() => window.scrollTo(0, 0));
-    await page.waitForTimeout(300);
+    if (!loaded) {
+      failedPages++;
+      if (pageNo === 1) throw new Error('첫 후기 목록 페이지를 가져오지 못했습니다. 기존 JSON은 유지됩니다.');
+      if (failedPages >= 2) throw new Error(`후기 목록 ${pageNo}페이지 연속 실패. 기존 JSON은 유지됩니다.`);
+      continue;
+    }
+    failedPages = 0;
 
-    const items = await collectCurrentPageItems(page);
-    console.log(`목록 ${pageNo}페이지: ${items.length}건`);
+    const freshItems = items.filter(item => !seen.has(item.id));
+    console.log(`목록 ${pageNo}페이지: ${items.length}건 / 처음 발견 ${freshItems.length}건`);
+    if (!freshItems.length) {
+      // 끝 페이지를 지나 같은 페이지가 반복되는 아임웹 게시판 예외 처리
+      console.log('앞서 읽은 게시물만 나타나 목록 탐색을 종료합니다.');
+      break;
+    }
 
-    for (const item of items) {
-      if (seen.has(item.id)) continue;
+    for (const item of freshItems) {
       seen.add(item.id);
       ordered.push({
         ...item,
-        listDate: parseDate(item.text),
+        listDate: parseDate(item.text) || parseImageDate(item.image),
         sourceOrder: ordered.length
       });
     }
 
-    if (!items.length) break;
-
-    // 자동 갱신 시에도 전년도(1~3월)/올해(4~12월) 보관 경계까지 탐색합니다.
-    const cutoff = reviewRetentionStart();
-    const pageDates = items.map(item => parseDate(item.text)).filter(Boolean);
+    const pageDates = freshItems.map(item => parseDate(item.text) || parseImageDate(item.image)).filter(Boolean);
     if (pageDates.length && pageDates.every(date => date < cutoff)) {
       console.log(`목록 ${pageNo}페이지에서 ${isoDate(cutoff)} 이전 도달, 탐색 종료`);
       break;
     }
-
-    const clicked = await clickNextListPage(page, pageNo);
-    if (!clicked) break;
-    await page.waitForTimeout(1800);
   }
-
   return ordered;
 }
 
@@ -853,6 +853,7 @@ try {
   const detailPage = await context.newPage();
   const fresh = [];
   let errors = 0;
+  let detailFetches = 0;
 
   for (let i = 0; i < items.length && fresh.length + oldReviews.length < MAX_REVIEWS; i++) {
     const item = items[i];
@@ -861,9 +862,14 @@ try {
       old.sourceOrder = item.sourceOrder;
       // 이전 버전의 JSON은 상세 본문이 없는 목록 데이터만 저장했습니다.
       // 상세 팝업을 완성할 수 있도록 본문 미보유 건은 다시 수집합니다.
-      const hasDetails = Boolean(old.articleHtml || old.body || old.contentBlocks?.length);
+      const hasDetails = !old.pendingFullSync && Boolean(old.articleHtml || old.body || old.contentBlocks?.length);
       if (hasDetails) continue;
     }
+    if (detailFetches >= MAX_DETAIL_FETCHES_PER_RUN) {
+      console.log(`상세 수집 ${detailFetches}건 완료: 남은 상세 보강은 다음 자동 실행에서 계속합니다.`);
+      break;
+    }
+    detailFetches++;
     const parsed = await parseDetail(detailPage, item);
     if (parsed?.tooOld) {
       console.log(`보관 기간 시작(${isoDate(reviewRetentionStart())}) 이전 도달: ${isoDate(parsed.date)}`);
@@ -874,10 +880,15 @@ try {
       parsed.title = normalizeReviewTitle(parsed.title) || parsed.title;
       // 신규 글은 추가하고, 기존 글은 새 상세 정보만 보강합니다.
       if (old) {
-        fresh.push({ ...old, ...parsed, image: parsed.image || old.image, body: parsed.body || old.body,
+        const merged = { ...old, ...parsed, image: parsed.image || old.image, body: parsed.body || old.body,
           articleHtml: parsed.articleHtml || old.articleHtml || '',
           images: parsed.images?.length ? parsed.images : old.images,
-          contentBlocks: parsed.contentBlocks?.length ? parsed.contentBlocks : old.contentBlocks });
+          contentBlocks: parsed.contentBlocks?.length ? parsed.contentBlocks : old.contentBlocks };
+        // 상세 DOM이 비어 있으면 재시도 표식을 지우지 않습니다.
+        if (parsed.articleHtml || parsed.body || parsed.contentBlocks?.length) {
+          delete merged.pendingFullSync;
+        }
+        fresh.push(merged);
       } else {
         fresh.push(parsed);
       }
@@ -908,6 +919,17 @@ try {
 
   if (!unique.length) {
     throw new Error('갱신할 국산·수입차 후기를 찾지 못했습니다. 기존 파일을 유지합니다.');
+  }
+
+  // 새 글을 첫 목록에서 확인했는데 결과에 빠져 있다면 자동 갱신 성공으로 처리하지 않습니다.
+  // (과거에는 기존 JSON을 다시 저장하고 정상 종료하여 9월 데이터가 그대로 남았습니다.)
+  const newestIds = items.slice(0, 8)
+    .filter(item => reviewMarket({ title: item.title }) !== 'unknown')
+    .map(item => String(item.id));
+  const finalIds = new Set(unique.map(review => String(review.id)));
+  const missingLatest = newestIds.filter(id => !finalIds.has(id));
+  if (missingLatest.length) {
+    throw new Error(`최신 후기 ${missingLatest.length}건 수집 누락 (ID: ${missingLatest.join(', ')}). 기존 파일을 유지합니다.`);
   }
 
   // 아카이브에는 이 사이트에 해당하는 후기만 저장하며, 이전 기록은 신규 수집 시 덮어쓰기하지 않습니다.
