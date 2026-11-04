@@ -3,7 +3,10 @@ import path from 'node:path';
 import { chromium } from 'playwright';
 
 const SOURCE = 'https://www.agautoplan.com/review';
-const MAX_PAGES = 120; // 최초 전체 연도 수집 시 오래된 페이지까지 탐색
+// 매 실행마다 최신 12페이지(통상 최대 144건)만 점검합니다.
+// 이전 후기는 reviews.json에 보존되어 있으므로 전체 연도를 매번 다시 방문할 필요가 없습니다.
+// 아임웹 사이트에서 연속 수십 페이지 탐색 시 HTTP 403이 발생하는 현상을 방지합니다.
+const MAX_PAGES = 12;
 const MAX_REVIEWS = 2000; // 최근 2개월 제한 대신 보관 연도 전체를 수집
 const MAX_CONSECUTIVE_ERRORS = 8;
 // 매회 너무 많은 상세페이지 요청으로 GitHub Actions 시간 초과가 발생하지 않도록 제한합니다.
@@ -325,12 +328,14 @@ async function collectBoardOrder(page) {
     const url = sourceListUrl(pageNo);
     let items = [];
     let loaded = false;
+    let lastHttpStatus = null;
 
     // 일시적인 네트워크 응답/게시판 지연 시 같은 페이지를 한 번 더 요청합니다.
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
         const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-        if (!response?.ok()) throw new Error(`HTTP ${response?.status() || 'no response'}`);
+        lastHttpStatus = response?.status() ?? null;
+        if (!response?.ok()) throw new Error(`HTTP ${lastHttpStatus || 'no response'}`);
         await page.locator('a[href*="idx="]').first().waitFor({ state: 'attached', timeout: 10000 });
         // 지연 로딩된 썸네일을 포함해 수집합니다.
         await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
@@ -342,14 +347,26 @@ async function collectBoardOrder(page) {
         break;
       } catch (error) {
         console.warn(`후기 목록 ${pageNo}페이지 재시도 ${attempt}/2: ${error.message}`);
+        // 403/429는 서버가 접근을 제한했다는 신호입니다. 같은 URL을
+        // 즉시 반복 요청하면 차단이 길어질 수 있으므로 재시도하지 않습니다.
+        if (lastHttpStatus === 403 || lastHttpStatus === 429) break;
         await sleep(900);
       }
     }
 
     if (!loaded) {
-      failedPages++;
       if (pageNo === 1) throw new Error('첫 후기 목록 페이지를 가져오지 못했습니다. 기존 JSON은 유지됩니다.');
-      if (failedPages >= 2) throw new Error(`후기 목록 ${pageNo}페이지 연속 실패. 기존 JSON은 유지됩니다.`);
+      if (lastHttpStatus === 403 || lastHttpStatus === 429) {
+        // 최신 목록은 확보했습니다. 추가 페이지가 거부되어도 이미 확보한
+        // 새 글은 반영하고, 수집하지 못한 이전 후기들은 기존 JSON에서 보존합니다.
+        console.warn(`⚠ ${pageNo}페이지 HTTP ${lastHttpStatus}: 원본 사이트의 접근 제한으로 목록 탐색을 종료합니다. 수집한 ${ordered.length}건으로 최신 후기를 갱신하고 기존 후기를 유지합니다.`);
+        break;
+      }
+      failedPages++;
+      if (failedPages >= 2) {
+        console.warn(`⚠ ${pageNo}페이지까지 목록 수집이 연속 실패했습니다. 이미 확인한 ${ordered.length}건만 처리하고, 기존 데이터는 유지합니다.`);
+        break;
+      }
       continue;
     }
     failedPages = 0;
