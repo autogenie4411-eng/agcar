@@ -910,6 +910,18 @@
     reviewSwiper = null;
   }
 
+  function carouselCardMarkup(items) {
+    if (!items.length) return '';
+    // 후기 수가 적어도 Swiper의 loop가 끊기지 않도록 충분한 카드 수를 확보합니다.
+    // 현재 통합차처럼 후기가 충분한 경우에도 한 순서를 더 붙여 마지막 -> 첫 후기가
+    // 자연스럽게 이어지게 합니다. 원본 목록 및 상세보기 데이터는 복제하지 않습니다.
+    // 후기가 매우 많아질 경우에는 DOM 크기를 제한하고 Swiper의 기본 loop를 사용합니다.
+    const repeatCount = items.length > 1 && items.length <= 64
+      ? Math.max(2, Math.ceil(16 / items.length))
+      : 1;
+    return items.map(cardTemplate).join('').repeat(repeatCount);
+  }
+
   function initReviewSwiper() {
     destroyReviewSwiper();
     if (!renderedReviews.length || hiddenAfterBrandSelection) return;
@@ -1013,7 +1025,7 @@
     }
 
     section.hidden = false;
-    track.innerHTML = reviews.length ? reviews.map(cardTemplate).join('') : `<article class="review-card review-card--loading"><div class="review-card__body"><strong>최근 3개월 동안 등록된 출고 후기가 없습니다.</strong><p>전체 후기 보기에서 이전 출고 사례를 확인해 보세요.</p></div></article>`;
+    track.innerHTML = reviews.length ? carouselCardMarkup(reviews) : `<article class="review-card review-card--loading"><div class="review-card__body"><strong>최근 3개월 동안 등록된 출고 후기가 없습니다.</strong><p>전체 후기 보기에서 이전 출고 사례를 확인해 보세요.</p></div></article>`;
     bindImageFallbacks();
 
     // DOM 크기가 계산된 다음 Swiper를 초기화해야 slidesPerView:auto가 정확하게 작동한다.
@@ -1218,7 +1230,7 @@
     if (reviews.length) {
       renderReviewList(reviews);
     } else {
-      section.hidden = false;
+      section.hidden = hiddenAfterBrandSelection;
       allReviews = [];
       destroyReviewSwiper();
       track.innerHTML = `<article class="review-card review-card--loading">
@@ -1239,6 +1251,13 @@
     if (reviewSwiper?.autoplay) reviewSwiper.autoplay.stop();
     destroyReviewSwiper();
   }, true);
+
+  // URL 차량 직행도 일반 차량 선택과 동일하게 후기 영역을 숨깁니다.
+  if (document.documentElement.classList.contains('vehicle-direct-selected')) {
+    hiddenAfterBrandSelection = true;
+    section.hidden = true;
+    destroyReviewSwiper();
+  }
 
   // 로고 클릭/처음부터 다시하기 등 견적이 초기 상태로 돌아가면 후기도 다시 노출한다.
   document.addEventListener('autogenie:wizard-reset', restoreReviewSection);

@@ -10285,3 +10285,71 @@ body.review-dialog-open {
         transform: translate(-50%, -50%) rotate(-45deg);
     }
 }
+
+
+/* =========================================================
+   법인 전용 소개 페이지 (2026-11-04)
+   기존 로딩 종료 → 소개 → CTA 클릭 → 기존 견적 단계
+   실제 회사 사진은 .corporate-intro__office-placeholder 교체
+========================================================= */
+html:not(.corporate-estimate-started) .wizard-page > .wizard-hero,
+html:not(.corporate-estimate-started) .wizard-page > .estimate-shell,
+html:not(.corporate-estimate-started) .wizard-page > .vehicle-search-modal,
+html:not(.corporate-estimate-started) .wizard-page > .privacy-modal { display: none !important; }
+html.corporate-estimate-started .corporate-intro { display: none !important; }
+html:not(.corporate-estimate-started) .header-vehicle-search-button { visibility: hidden; pointer-events: none; }
+.corporate-intro { background:#fff; color:#152d51; width:100%; }
+.corporate-intro *, .corporate-intro *::before, .corporate-intro *::after { box-sizing:border-box; }
+.corporate-intro button { cursor:pointer; font:inherit; }
+.corporate-intro__hero {
+  position:relative; display:flex; flex-direction:column; align-items:center;
+  min-height:368px; background:linear-gradient(150deg,#356ef5 0%,#2459e9 65%,#2150d4 100%);
+  color:#fff; text-align:center; padding:25px 18px 20px; overflow:hidden;
+}
+.corporate-intro__hero::before { content:""; position:absolute; inset:22% 0 15%; opacity:.14;
+ background:linear-gradient(transparent 55%,#0e3b9e 55%); clip-path:polygon(0 100%,0 55%,8% 55%,8% 42%,16% 42%,16% 61%,22% 61%,22% 35%,30% 35%,30% 60%,38% 60%,38% 26%,48% 26%,48% 64%,57% 64%,57% 38%,67% 38%,67% 58%,75% 58%,75% 20%,85% 20%,85% 53%,92% 53%,92% 42%,100% 42%,100% 100%); }
+.corporate-intro__eyebrow { position:relative; margin:0 0 8px; font-weight:700; font-size:12px; letter-spacing:-.02em; }
+.corporate-intro__hero h1 { position:relative; font-size:clamp(21px, 5.5vw, 26px); line-height:1.3; letter-spacing:-.055em; font-weight:800; margin:0 0 10px; color:#fff; }
+.corporate-intro__summary { position:relative; margin:0; font-size:11px; line-height:1.6; color:#e9efff; }
+.corporate-intro__cars { position:relative; width:100%; max-width:390px; height:145px; object-fit:contain; margin:8px 0 10px; filter:drop-shadow(0 12px 9px #082a7040); }
+.corporate-intro__hero-button, .corporate-intro__bottom button { border:0; border-radius:8px; min-height:39px; font-size:12px !important; font-weight:800 !important; }
+.corporate-intro__hero-button { position:relative; background:#fff; color:#1d56dc; width:min(100%,260px); }
+.corporate-intro button span { margin-left:10px; }
+.corporate-intro__stats { display:grid; grid-template-columns:1fr 1fr; padding:24px 12px; background:#fff; border-bottom:1px solid #edf1f6; text-align:center; }
+.corporate-intro__stats > div { padding:0 7px; display:flex; flex-direction:column; gap:6px; }
+.corporate-intro__stats > div + div { border-left:1px solid #d8e2f0; }
+.corporate-intro__stats span {font-size:10px; color:#5c708d; font-weight:600; }
+.corporate-intro__stats strong {font-size:clamp(15px,4vw,19px); color:#2563ed; font-weight:800; letter-spacing:-.05em; white-space:nowrap; }
+.corporate-intro__about { padding:30px 20px 32px; }
+.corporate-intro__section-label { margin:0 0 8px; font-size:9px; font-weight:800; letter-spacing:.09em; color:#326bfa; }
+.corporate-intro__about h2, .corporate-intro__benefits h2 {margin:0 0 12px; font-size:19px; line-height:1.4; letter-spacing:-.05em; font-weight:800; color:#152d51; }
+.corporate-intro__about > p:not(.corporate-intro__section-label) { margin:0; font-size:12px; line-height:1.85; color:#586984; word-break:keep-all; }
+.corporate-intro__offices { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:19px; }
+.corporate-intro__office-placeholder {aspect-ratio:1.48; background:linear-gradient(140deg,#f3f6fa,#e7edf5); border:1px dashed #cbd7e7; border-radius:8px; display:flex; flex-direction:column; gap:5px; justify-content:center; align-items:center; text-align:center; padding:9px; }
+.corporate-intro__office-placeholder span { font-size:11px; color:#526a8c; font-weight:800; }
+.corporate-intro__office-placeholder small {font-size:9px; color:#7c8ba2; line-height:1.5; }
+.corporate-intro__blue-banner { min-height:164px; padding:30px 20px; display:flex; align-items:center; position:relative; overflow:hidden; color:#fff;
+ background:linear-gradient(90deg,#0d3269 0%,#124181 53%,#1f5b9c 100%); }
+.corporate-intro__blue-banner::after { content:""; position:absolute; right:-20px; bottom:-52px; width:195px; height:195px; border:1px solid #ffffff18; border-radius:50%; box-shadow:0 0 0 32px #ffffff08,0 0 0 70px #ffffff06; }
+.corporate-intro__blue-banner > div { position:relative; z-index:1; max-width:300px; }
+.corporate-intro__blue-banner .corporate-intro__section-label {color:#aecaee;}
+.corporate-intro__blue-banner h2 {color:#fff; margin:0 0 8px; font-size:18px; line-height:1.38; letter-spacing:-.05em;}
+.corporate-intro__blue-banner p:last-child {margin:0; font-size:11px; line-height:1.7; color:#e5efff; max-width:235px;}
+.corporate-intro__benefits {padding:28px 20px 30px;}
+.corporate-intro__benefits h2 {font-size:18px; margin-bottom:15px;}
+.corporate-intro__benefits dl {margin:0;}
+.corporate-intro__benefits dl > div { display:grid; grid-template-columns:42% 1fr; align-items:start; gap:14px; border-top:1px solid #e5ebf2; padding:12px 0; }
+.corporate-intro__benefits dl > div:last-child { border-bottom:1px solid #e5ebf2; }
+.corporate-intro__benefits dt {font-size:12px; font-weight:800; color:#203c6d; letter-spacing:-.04em;}
+.corporate-intro__benefits dd {margin:0; font-size:11px; line-height:1.65; color:#67748b; word-break:keep-all;}
+.corporate-intro__bottom {background:#f0f5ff; text-align:center; margin:0 12px 16px; border-radius:10px; padding:24px 14px; }
+.corporate-intro__bottom h2 {margin:0 0 8px; font-size:17px; line-height:1.5; letter-spacing:-.04em; color:#123269;}
+.corporate-intro__bottom p {font-size:11px; color:#667a98; margin:0 0 16px;}
+.corporate-intro__bottom button {background:#326bfa; color:white; width:100%; max-width:320px;}
+@media(max-width:420px){
+ .corporate-intro__hero {min-height:352px; padding-top:22px;}
+ .corporate-intro__cars {height:135px;}
+ .corporate-intro__about {padding-inline:17px;}
+ .corporate-intro__benefits {padding-inline:17px;}
+ .corporate-intro__benefits dl > div {gap:9px; grid-template-columns:40% 1fr;}
+}

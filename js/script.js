@@ -77,10 +77,23 @@
     document.body.classList.add("loader-active");
 
     window.setTimeout(() => {
+      // 차량별 링크는 로딩 뒤 위치를 먼저 맞추고, 완료된 화면만 공개합니다.
+      if (document.documentElement.classList.contains("vehicle-direct-selected")) {
+        const showDirectVehicle = () => {
+          alignDirectVehicle();
+          window.requestAnimationFrame(() => {
+            alignDirectVehicle();
+            document.documentElement.classList.remove("vehicle-link-loading");
+            landingLoader.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("loader-active");
+            landingLoader.remove();
+          });
+        };
+        window.requestAnimationFrame(showDirectVehicle);
+        return;
+      }
+      document.documentElement.classList.remove("vehicle-link-loading");
       landingLoader.setAttribute("aria-hidden", "true");
-
-      // 로더가 사라진 뒤에는 현재 스크롤 위치를 건드리지 않습니다.
-      // 사용자가 빠르게 차량 구분을 선택한 경우에도 맨 위로 튀지 않습니다.
       window.setTimeout(() => {
         document.body.classList.remove("loader-active");
         landingLoader.remove();
@@ -13565,9 +13578,65 @@ const vehicleCatalog = [
   const homeLogo = document.querySelector(".brand-mark");
   homeLogo?.addEventListener("click", event => {
     event.preventDefault();
-    resetWizardToStart();
+    // 로고 클릭 시 선택했던 차량/견적 정보와 URL 파라미터를 초기화합니다.
+    // 새 문서를 불러오므로 기존 로딩 애니메이션부터 법인 소개 화면까지 다시 실행됩니다.
+    // replace를 사용해 브라우저 뒤로가기로 직전 견적 상태가 재노출되지 않게 합니다.
+    const homeUrl = new URL("./", window.location.href);
+    homeUrl.search = "";
+    homeUrl.hash = "";
+    window.location.replace(homeUrl.href);
   });
+
+  // ?car=차량명 / ?brand=브랜드명 : 실제 차량 카탈로그에서만 찾습니다.
+  // 동명이 있다면 브랜드를 추가해야 정확한 모델로 연결할 수 있습니다.
+  function findDirectVehicle() {
+    const params = new URLSearchParams(window.location.search);
+    const car = (params.get("car") || "").trim();
+    const brand = (params.get("brand") || "").trim();
+    if (!car) return null;
+    const compact = value => String(value).normalize("NFKC").replace(/\s+/g, "").toLocaleLowerCase();
+    const matching = allVehicleSearchItems.filter(item =>
+      compact(item.carName) === compact(car) && (!brand || compact(item.brandName) === compact(brand))
+    );
+    if (matching.length !== 1) {
+      if (matching.length > 1) console.warn("동일한 차량명이 여러 브랜드에 있습니다. ?brand=브랜드명을 함께 지정하세요.");
+      return null;
+    }
+    return matching[0];
+  }
+
+  function alignDirectVehicle() {
+    if (!document.documentElement.classList.contains("vehicle-direct-selected")) return;
+    const target = content.querySelector(".wizard-car-card");
+    if (!target) return;
+    const root = document.documentElement;
+    const body = document.body;
+    const rootBehavior = root.style.scrollBehavior;
+    const bodyBehavior = body.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    body.style.scrollBehavior = "auto";
+    const destination = Math.max(0, Math.round(window.scrollY + target.getBoundingClientRect().top - 76));
+    window.scrollTo({ top: destination, left: 0, behavior: "instant" });
+    root.style.scrollBehavior = rootBehavior;
+    body.style.scrollBehavior = bodyBehavior;
+  }
+
+  const directVehicle = findDirectVehicle();
+  if (directVehicle) {
+    state.step = 1;
+    state.market = directVehicle.market;
+    state.brandName = directVehicle.brandName;
+    state.carName = directVehicle.carName;
+    state.paintId = "";
+    // 인트로를 건너뛰되, 일반 주소 방문과 로고 초기화 시에는 인트로를 유지합니다.
+    document.documentElement.classList.add("corporate-estimate-started", "vehicle-direct-selected");
+    document.getElementById("corporateIntro")?.setAttribute("aria-hidden", "true");
+  } else {
+    document.documentElement.classList.remove("vehicle-link-loading");
+  }
 
   render();
   rememberWizardStep();
+  // 로더가 없는 예외적 환경에서도 딥링크 위치를 곧바로 맞춥니다.
+  if (directVehicle && !landingLoader) window.requestAnimationFrame(alignDirectVehicle);
 })();

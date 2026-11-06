@@ -17,6 +17,12 @@
   <title>오토지니 | 장기렌트·리스 전 차종 비교</title>
 
   <script>
+    // 첫 진입 시 항상 법인 소개 화면부터 표시합니다.
+    document.documentElement.classList.remove("corporate-estimate-started");
+    // 차량별 광고 링크는 로딩 중 기본 소개 화면이 비치지 않도록 가립니다.
+    if (new URLSearchParams(location.search).get("car")?.trim()) {
+      document.documentElement.classList.add("vehicle-link-loading");
+    }
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
@@ -25,11 +31,15 @@
     window.scrollTo(0, 0);
   </script>
   
+  <style>
+    html.vehicle-link-loading .landing-loader { animation: none !important; opacity: 1 !important; }
+    html.vehicle-link-loading .wizard-page { visibility: hidden !important; }
+  </style>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261028-desktop-close-circle-01">
+    <link rel="stylesheet" href="css/style.css?v=20261104-corporate-intro-01">
 </head>
 <body>
 
@@ -93,7 +103,7 @@
 
   <main class="wizard-page" id="top">
     <header class="wizard-header">
-      <a class="brand-mark" href="#top" aria-label="오토지니 홈">
+      <a class="brand-mark" href="index.html" aria-label="오토지니 홈으로 새로고침">
         <span class="brand-symbol">A</span>
         <span class="brand-copy">
           <strong class="brand-copy__name">AUTOGENIE</strong>
@@ -105,6 +115,56 @@
         <span class="header-vehicle-search-button__mobile">차량 검색</span>
       </button>
     </header>
+
+
+    <!-- 법인 전용 인트로: 기존 로딩 종료 후 표시, CTA 클릭 시 차량 선택 화면 전환 -->
+    <section class="corporate-intro" id="corporateIntro" aria-labelledby="corporateIntroTitle">
+      <div class="corporate-intro__hero">
+        <p class="corporate-intro__eyebrow">법인 장기렌트 · 리스 전문</p>
+        <h1 id="corporateIntroTitle">기업 차량 견적,<br>더 간편하게 시작하세요.</h1>
+        <p class="corporate-intro__summary">법인 차량 도입부터 출고까지,<br>오토지니가 함께합니다.</p>
+        <img class="corporate-intro__cars" src="images/car-img.png" alt="국산차와 수입차 비교 견적 안내" decoding="async">
+        <button class="corporate-intro__hero-button" type="button" data-enter-estimate>법인 차량 견적 시작하기 <span aria-hidden="true">→</span></button>
+      </div>
+
+      <div class="corporate-intro__stats" aria-label="오토지니 법인 서비스 안내">
+        <div><span>누적 차량 출고 경험</span><strong>약 3,000대</strong></div>
+        <div><span>상담부터 출고까지</span><strong>1:1 전담 관리</strong></div>
+      </div>
+
+      <section class="corporate-intro__about" aria-labelledby="corporateAboutTitle">
+        <p class="corporate-intro__section-label">ABOUT AUTOGENIE</p>
+        <h2 id="corporateAboutTitle">오토지니는 법인 차량<br>전문 상담 기업입니다.</h2>
+        <p>기업의 차량 도입 목적과 예산에 맞춰 장기렌트·리스 조건을 비교하고, 견적부터 계약과 출고까지 전담 담당자가 함께합니다.</p>
+        <div class="corporate-intro__offices" aria-label="회사 내부 사진 자리">
+          <div class="corporate-intro__office-placeholder"><span>회사 내부 사진 01</span><small>실제 사무실 사진으로 교체 예정</small></div>
+          <div class="corporate-intro__office-placeholder"><span>회사 내부 사진 02</span><small>실제 상담 공간 사진으로 교체 예정</small></div>
+        </div>
+      </section>
+
+      <section class="corporate-intro__blue-banner" aria-labelledby="corporateBenefitTitle">
+        <div>
+          <p class="corporate-intro__section-label">BUSINESS SERVICE</p>
+          <h2 id="corporateBenefitTitle">차량 도입뿐 아니라,<br>이후 운영까지 생각합니다.</h2>
+          <p>기업별 이용 조건을 살펴보고 적합한 차량과 계약 방식을 제안합니다.</p>
+        </div>
+      </section>
+
+      <section class="corporate-intro__benefits" aria-labelledby="corporateBenefitsTitle">
+        <h2 id="corporateBenefitsTitle">오토지니에서 진행하면 좋은 점</h2>
+        <dl>
+          <div><dt>법인 맞춤 조건 비교</dt><dd>기업 규모와 이용 목적에 맞는 렌트·리스 조건을 비교합니다.</dd></div>
+          <div><dt>1:1 전담 담당자</dt><dd>상담부터 견적, 계약, 출고 과정까지 담당자가 안내합니다.</dd></div>
+          <div><dt>차량 운영 상담</dt><dd>도입 이후에도 차량 이용과 계약 관련 사항을 상담할 수 있습니다.</dd></div>
+        </dl>
+      </section>
+
+      <section class="corporate-intro__bottom" aria-labelledby="corporateStartTitle">
+        <h2 id="corporateStartTitle">법인 차량이 필요하다면,<br>오토지니에서 시작하세요.</h2>
+        <p>원하는 차량을 선택하고 이용 조건을 비교해 보세요.</p>
+        <button type="button" data-enter-estimate>법인 차량 견적 시작하기 <span aria-hidden="true">→</span></button>
+      </section>
+    </section>
 
     <section class="wizard-hero">
       <p>국산·수입 전 차종 비교</p>
@@ -373,11 +433,32 @@
     </div>
   </dialog>
 
+
+  <script>
+    // 기존 견적 JS의 상태·이벤트는 유지하고, 인트로 표시 상태만 전환합니다.
+    (function () {
+      function enterCorporateEstimate() {
+        document.documentElement.classList.add("corporate-estimate-started");
+        document.getElementById("corporateIntro")?.setAttribute("aria-hidden", "true");
+        const estimate = document.getElementById("estimate");
+        window.scrollTo({ top: 0, behavior: "instant" });
+        // 전환 후 키보드 접근성을 기존 차량 선택 첫 버튼으로 돌립니다.
+        requestAnimationFrame(function () {
+          const initialButton = estimate?.querySelector('.segment-control[data-group="market"] button');
+          if (initialButton) initialButton.focus({ preventScroll: true });
+        });
+      }
+      document.querySelectorAll("[data-enter-estimate]").forEach(function (button) {
+        button.addEventListener("click", enterCorporateEstimate);
+      });
+    })();
+  </script>
+
   <script src="js/traffic-tracker.js?v=20261027"></script>
 
-  <script src="js/script.js?v=20261028-grandeur-combined-02"></script>
+  <script src="js/script.js?v=20261104-agcar-direct-car-link-01"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="js/reviews.js?v=20261022-review-full-ad-safe-v2"></script>
+  <script src="js/reviews.js?v=20261106-agcar-review-loop-01"></script>
 
 </body>
 </html>
