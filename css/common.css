@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+/* =========================================================
+   공통 폰트 크기
+   기준: 1rem = 16px
+========================================================= */
+:root {
+    --font-10: 0.625rem;
+    --font-11: 0.6875rem;
+    --font-12: 0.75rem;
+    --font-13: 0.8125rem;
+    --font-14: 0.875rem;
+    --font-15: 0.9375rem;
+    --font-16: 1rem;
+    --font-17: 1.0625rem;
+    --font-18: 1.125rem;
+    --font-19: 1.1875rem;
+    --font-20: 1.25rem;
+    --font-21: 1.3125rem;
+    --font-22: 1.375rem;
+    --font-23: 1.4375rem;
+    --font-24: 1.5rem;
+    --font-25: 1.5625rem;
+    --font-26: 1.625rem;
+    --font-27: 1.6875rem;
+    --font-28: 1.75rem;
+    --font-29: 1.8125rem;
+    --font-30: 1.875rem;
+    --font-31: 1.9375rem;
+    --font-32: 2rem;
+    --font-33: 2.0625rem;
+    --font-34: 2.125rem;
+    --font-35: 2.1875rem;
+    --font-36: 2.25rem;
+    --font-37: 2.3125rem;
+    --font-38: 2.375rem;
+    --font-39: 2.4375rem;
+    --font-40: 2.5rem;
+    --font-41: 2.5625rem;
+    --font-42: 2.625rem;
+    --font-43: 2.6875rem;
+    --font-44: 2.75rem;
+    --font-45: 2.8125rem;
+    --font-46: 2.875rem;
+    --font-47: 2.9375rem;
+    --font-48: 3rem;
+    --font-49: 3.0625rem;
+    --font-50: 3.125rem;
+    /* 사이트 기본 본문 크기 */
+    --font-size-base: var(--font-15);
+    --font-size-progress-label: var(--font-15);
+    --font-size-progress-number: var(--font-12);
+    /* 사이트 공통 색상 및 레이아웃 변수 */
+    --navy-950: #061426;
+    --navy-900: #091c34;
+    --navy-800: #102845;
+    --blue: #2f6bff;
+    --blue-dark: #1b4fd6;
+    --sky: #a9c9ff;
+    --ink: #101828;
+    --muted: #667085;
+    --line: #e4e8ee;
+    --surface: #f4f7fb;
+
+    /* 가이드라인 3개 선 */
+    /* --car-guide-x1: 14%;
+    --car-guide-x2: 86%;
+    --car-guide-bottom: 30px; */
+}
+
+/* =========================================================
+   가이드라인 선
+========================================================= */
+.wizard-car-image {
+    position: relative !important;
+}
+
+.wizard-car-image::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+
+    background-image:
+    /* 빨간선 1 */
+        linear-gradient(
+            to right,
+            transparent calc(var(--car-guide-x1) - 0.5px),
+            red calc(var(--car-guide-x1) - 0.5px),
+            red calc(var(--car-guide-x1) + 0.5px),
+            transparent calc(var(--car-guide-x1) + 0.5px)
+        ),
+        /* 빨간선 2 */
+        linear-gradient(
+                to right,
+                transparent calc(var(--car-guide-x2) - 0.5px),
+                red calc(var(--car-guide-x2) - 0.5px),
+                red calc(var(--car-guide-x2) + 0.5px),
+                transparent calc(var(--car-guide-x2) + 0.5px)
+            ),
+        /* 파란 가로선 */
+        linear-gradient(
+                to bottom,
+                transparent calc(100% - var(--car-guide-bottom) - 0.5px),
+                blue calc(100% - var(--car-guide-bottom) - 0.5px),
+                blue calc(100% - var(--car-guide-bottom) + 0.5px),
+                transparent calc(100% - var(--car-guide-bottom) + 0.5px)
+            ) !important;
+}
+
+/* =========================================================
+   사이트 공통 기본 스타일
+========================================================= */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    color: var(--ink);
+    font-size: var(--font-size-base);
+    word-break: keep-all;
+    background: #fff;
+    margin: 0;
+    font-family:
+        Pretendard,
+        Noto Sans KR,
+        Apple SD Gothic Neo,
+        Arial,
+        sans-serif;
+}
+button,
+input,
+select {
+    font: inherit;
+}
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    width: 1.2em;
+}

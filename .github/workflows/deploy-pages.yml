@@ -1,0 +1,55 @@
+name: Deploy GitHub Pages
+
+# Site content is deployed on main pushes. Review collection is NOT started on push.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Share one Pages deployment lock with the review-sync publishing job.
+concurrency:
+  group: autogenie-pages-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout this site's main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Restore this repository's latest reviews
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          if git fetch --no-tags --depth=1 origin refs/heads/review-data:refs/remotes/origin/review-data; then
+            git show refs/remotes/origin/review-data:data/reviews.json > /tmp/autogenie-site-reviews.json
+            mv /tmp/autogenie-site-reviews.json data/reviews.json
+            echo 'Loaded this repository review-data branch; main push did not replace reviews.'
+          else
+            echo 'No review-data branch yet: using the bundled reviews.json until the first manual sync.'
+          fi
+      - name: Exclude repository-only files from published website
+        shell: bash
+        run: |
+          rm -rf .git .github scripts analytics
+          rm -f .gitignore
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload site files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4

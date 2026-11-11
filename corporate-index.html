@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko" data-site-variant="corporate">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JW5PS7PGTS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JW5PS7PGTS');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="오토지니 법인 장기렌트·리스 전문 상담. 기업용 국산차·수입차 차량 계약 조건을 비교하고 맞춤 견적을 받아보세요.">
+  <title>오토지니 법인 | 법인 장기렌트·리스 전문 견적</title>
+
+  <script>
+    // 법인 소개 페이지 표시 설정: true = 표시(ON), false = 숨김(OFF)
+    // 법인 전용 사이트에만 적용되며 통합차 메인에는 영향이 없습니다.
+    (function () {
+      const SHOW_CORPORATE_INTRO = false; // 법인 소개 페이지 표시 여부
+      document.documentElement.classList.toggle("corporate-estimate-started", !SHOW_CORPORATE_INTRO);
+    })();
+    // 차량별 광고 링크는 로딩 중 기본 소개 화면이 비치지 않도록 가립니다.
+    if (new URLSearchParams(location.search).get("car")?.trim()) {
+      document.documentElement.classList.add("vehicle-link-loading");
+    }
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    document.documentElement.scrollTop = 0;
+    window.scrollTo(0, 0);
+  </script>
+  
+  <style>
+    html.vehicle-link-loading .landing-loader { animation: none !important; opacity: 1 !important; }
+    html.vehicle-link-loading .wizard-page { visibility: hidden !important; }
+  
+/* 2026-11-10: 차이점/장점 섹션 가독성 개선 */
+.corporate-intro__compare-head h2 { font-size: clamp(24px, 6vw, 29px); }
+.corporate-intro__compare-head > p:last-child { max-width: 100%; }
+.corporate-intro__compare-stack { min-height: 0; }
+.corporate-intro__compare-card li { min-height: 62px; justify-content: center; }
+.corporate-intro__compare-card li strong { word-break: keep-all; }
+.corporate-intro__compare-card--basic li strong { color: #5c6d7d; }
+.corporate-intro__compare-card--rent { box-shadow: 0 16px 28px rgba(17,31,67,.18); }
+.corporate-intro__rent-head h2 { white-space: normal; font-size: clamp(24px, 6vw, 29px); }
+.corporate-intro__rent-group { padding: 22px 18px 20px; }
+.corporate-intro__rent-group h3 { white-space: normal; font-size: 20px; }
+.corporate-intro__rent-group-heading p { margin-top: 6px; font-size: 12px; }
+.corporate-intro__rent-list { margin-top: 18px; }
+.corporate-intro__rent-list li + li { margin-top: 16px; }
+.corporate-intro__rent-list strong { font-size: 15.5px; }
+.corporate-intro__rent-list p { font-size: 13px; }
+@media (max-width: 420px) {
+  .corporate-intro__compare-card li { min-height: 58px; }
+  .corporate-intro__compare-card li strong { font-size: 12.5px; }
+  .corporate-intro__rent-group h3 { font-size: 18px; }
+  .corporate-intro__rent-list strong { font-size: 14.2px; }
+  .corporate-intro__rent-list p { font-size: 12.5px; }
+}
+</style>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20261110-trim-merged-01">
+</head>
+<body>
+
+
+  <div class="landing-loader" id="landingLoader" role="status" aria-live="polite" aria-label="견적 화면을 준비하고 있습니다.">
+    <div class="loader-content">
+      <div class="loader-copy">
+        <p>AUTOGENIE</p>
+        <h2>내 차 견적을<br>간편하게 시작하세요.</h2>
+        <span>원하는 차량과 이용조건을<br>차례대로 선택할 수 있습니다.</span>
+      </div>
+      <div class="loader-symbol" aria-hidden="true">
+        <i>A</i>
+        <b></b><b></b><b></b>
+      </div>
+      <div class="loader-status">전국 최저가 견적을 불러오는 중</div>
+    </div>
+  </div>
+
+  <aside class="customer-care" aria-labelledby="customerCareTitle">
+    <div class="customer-care__head">
+      <span>고객센터</span>
+      <h2 id="customerCareTitle">필요한 상담을 선택해 주세요</h2>
+    </div>
+
+    <div class="customer-care__body">
+      <div class="customer-care__channels">
+        <!-- <a class="customer-care__channel" href="tel:1600-3481" aria-label="전화 상담 1600-3487"> -->
+        <a class="customer-care__channel" aria-label="전화 상담 1600-3481">
+          <svg class="customer-care__phone" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M9.1 4.8 13 4a2 2 0 0 1 2.3 1.5l1.1 4.7a2 2 0 0 1-.6 1.9l-2.1 2c1.4 3.1 3.8 5.5 6.9 6.9l2-2.1a2 2 0 0 1 1.9-.6l4.7 1.1a2 2 0 0 1 1.5 2.3l-.8 3.9a3 3 0 0 1-3 2.4C14.2 27.5 4.5 17.8 4 7.8a3 3 0 0 1 2.4-3Z"></path>
+          </svg>
+          <span class="customer-care__channel-copy">
+            <strong>전화 상담</strong>
+            <b>1600-3481</b>
+          </span>
+          <span class="customer-care__arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="customer-care__channel" href="http://pf.kakao.com/_xbkxkGn/chat" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 상담 페이지 열기">
+          <span class="customer-care__talk" aria-hidden="true">TALK</span>
+          <span class="customer-care__channel-copy">
+            <strong>카카오톡 상담</strong>
+            <small>채널로 빠르게 문의하기</small>
+          </span>
+          <span class="customer-care__arrow" aria-hidden="true">›</span>
+        </a>
+      </div>
+
+      <section class="customer-care__hours" aria-label="고객센터 운영시간">
+        <h3>운영시간</h3>
+        <dl>
+          <div><dt>평일</dt><dd>09:00 - 18:00</dd></div>
+          <div><dt>점심</dt><dd>12:00 - 13:30</dd></div>
+          <div><dt>주말·공휴일</dt><dd>휴무</dd></div>
+        </dl>
+      </section>
+    </div>
+  </aside>
+
+
+  <main class="wizard-page" id="top">
+    <header class="wizard-header">
+      <a class="brand-mark" href="index.html" aria-label="오토지니 홈으로 새로고침">
+        <span class="brand-symbol">A</span>
+        <span class="brand-copy">
+          <strong class="brand-copy__name">AUTOGENIE</strong>
+          <small class="brand-copy__sub">오토지니</small>
+        </span>
+      </a>
+      <button type="button" class="header-caption header-vehicle-search-button" id="openVehicleSearch" aria-haspopup="dialog" aria-controls="vehicleSearchModal">
+        <span class="header-vehicle-search-button__desktop">차량 통합검색</span>
+        <span class="header-vehicle-search-button__mobile">차량 검색</span>
+      </button>
+    </header>
+
+
+    <!-- 법인 소개: 로딩 종료 후 표시 / 견적 버튼 클릭 시 기존 차량 선택으로 전환 -->
+    <section class="corporate-intro" id="corporateIntro" aria-labelledby="corporateIntroTitle">
+      <div class="corporate-intro__hero">
+        <div class="corporate-intro__hero-content">
+          <p class="corporate-intro__eyebrow">법인 장기렌트 · 리스 전문 오토지니</p>
+          <h1 id="corporateIntroTitle">법인 차량 계약,<br><span>전문가의 경험이 다릅니다.</span></h1>
+          <p class="corporate-intro__summary">오토지니는 기업의 차량 도입 목적과 예산을 이해하고,<br>적합한 렌트·리스 방식과 차량을 제안하는 법인 차량 전문 회사입니다.</p>
+
+          <button class="corporate-intro__hero-button" type="button" data-enter-estimate>
+            법인 차량 견적 시작하기 <span aria-hidden="true">→</span>
+          </button>
+          <p class="corporate-intro__hero-caption">국산차 · 수입차 장기렌트·리스 비교</p>
+        </div>
+        <figure class="corporate-intro__hero-photo">
+          <img src="images/회사 전경/법인-상담-회의실.png" alt="회의실에서 법인 렌트·리스 차량 조건을 설명하는 상담 연출 장면" width="1448" height="1086" fetchpriority="high" decoding="async">
+          <figcaption>법인 차량 1:1 상담 연출 이미지</figcaption>
+        </figure>
+      </div>
+
+      <section class="corporate-intro__benefits" aria-labelledby="corporateBenefitsTitle">
+        <p class="corporate-intro__section-label">CORPORATE SOLUTIONS</p>
+        <h2 id="corporateBenefitsTitle">법인 렌트·리스는<br><span>조건을 아는 전문가와.</span></h2>
+        <p class="corporate-intro__body-copy">같은 차량도 계약 구조에 따라 부담과 관리 범위가 달라집니다. 조건별 차이를 명확히 설명하고 기업의 선택을 돕습니다.</p>
+        <dl>
+          <div>
+            <dt><strong>3,000대 이상</strong> 축적된 출고 경험</dt>
+            <dd>누적 출고 경험을 바탕으로 차량 선정부터 계약·출고 단계에서 놓치기 쉬운 사항까지 꼼꼼히 안내합니다.</dd>
+          </div>
+          <div>
+            <dt>렌트·리스 계약 조건 <strong>정밀 비교</strong></dt>
+            <dd>계약기간, 약정 주행거리, 초기비용, 월 납입료와 보험·세금 포함 여부를 항목별로 비교해 드립니다.</dd>
+          </div>
+          <div>
+            <dt><strong>1:1 전담</strong> 진행 관리</dt>
+            <dd>전담 담당자 한 명을 통해 견적·계약·출고의 진행 상황을 이어서 확인하고 필요한 상담을 받을 수 있습니다.</dd>
+          </div>
+        </dl>
+      </section>
+
+
+      <section class="corporate-intro__compare" aria-labelledby="corporateCompareTitle">
+        <div class="corporate-intro__compare-head">
+          <p class="corporate-intro__section-label">COMPARE OPTIONS</p>
+          <h2 id="corporateCompareTitle">일반 구매·리스 vs<br><span>법인 전문 렌트·리스</span></h2>
+          <p>법인 차량은 도입 방식에 따라 관리 편의와 비용 구조가 달라집니다. 핵심 차이만 한눈에 비교해보세요.</p>
+        </div>
+
+        <div class="corporate-intro__compare-stack">
+          <article class="corporate-intro__compare-card corporate-intro__compare-card--basic" aria-labelledby="compareBasicTitle">
+            <h3 id="compareBasicTitle">일반 구매·리스</h3>
+            <ul>
+              <li><span>보험·세금</span><strong>항목별 조건을 각각 확인해야 합니다.</strong></li>
+              <li><span>차량 관리</span><strong>정비와 사고 대응을 직접 챙겨야 합니다.</strong></li>
+              <li><span>비용 구조</span><strong>초기비용과 월 부담을 스스로 비교해야 합니다.</strong></li>
+              <li><span>계약 설계</span><strong>기간·주행거리 조건을 직접 검토해야 합니다.</strong></li>
+            </ul>
+          </article>
+
+          <article class="corporate-intro__compare-card corporate-intro__compare-card--rent" aria-labelledby="compareRentTitle">
+            <h3 id="compareRentTitle">법인 전문 렌트·리스</h3>
+            <ul>
+              <li><span>보험·세금</span><strong>포함 구조와 월 부담을 한 번에 보기 쉽습니다.</strong></li>
+              <li><span>차량 관리</span><strong>정비 포함 여부와 사고 지원 범위를 함께 검토합니다.</strong></li>
+              <li><span>비용 구조</span><strong>초기비용과 월 비용 계획을 세우기 편합니다.</strong></li>
+              <li><span>계약 설계</span><strong>기간·주행거리를 법인 상황에 맞게 설계합니다.</strong></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="corporate-intro__rent-benefits" aria-labelledby="corporateRentBenefitsTitle">
+        <div class="corporate-intro__rent-inner">
+          <div class="corporate-intro__rent-head">
+            <p class="corporate-intro__section-label">CORPORATE RENTAL BENEFITS</p>
+            <h2 id="corporateRentBenefitsTitle">법인이라면 렌트카,<br><span>이런 점이 좋아요.</span></h2>
+            <p>모바일에서도 바로 읽히도록 핵심 장점을 비용 관리와 차량 관리 두 가지로 나눠 간결하게 정리했습니다.</p>
+          </div>
+
+          <div class="corporate-intro__rent-grid">
+            <section class="corporate-intro__rent-group" aria-labelledby="corporateRentCostTitle">
+              <header class="corporate-intro__rent-group-heading">
+                <span class="corporate-intro__rent-index" aria-hidden="true">01</span>
+                <div>
+                  <h3 id="corporateRentCostTitle">비용 관리 <span>&amp;</span><br>세무 처리 편의</h3>
+                  <p>초기 부담과 월 비용 관리에 도움이 됩니다.</p>
+                </div>
+              </header>
+              <ul class="corporate-intro__rent-list">
+                <li>
+                  <strong>초기 자금 부담 완화</strong>
+                  <p>차량 도입 시 목돈 부담을 줄여 시작하기 좋습니다.</p>
+                </li>
+                <li>
+                  <strong>월 비용 예측이 쉬움</strong>
+                  <p>포함 항목을 기준으로 월별 운영 예산을 세우기 편합니다.</p>
+                </li>
+                <li>
+                  <strong>업무용 비용 처리 검토</strong>
+                  <p>세법상 요건에 따라 관련 비용의 비용 처리를 검토할 수 있습니다.</p>
+                </li>
+              </ul>
+            </section>
+
+            <section class="corporate-intro__rent-group" aria-labelledby="corporateRentManageTitle">
+              <header class="corporate-intro__rent-group-heading">
+                <span class="corporate-intro__rent-index" aria-hidden="true">02</span>
+                <div>
+                  <h3 id="corporateRentManageTitle">법인 차량 <span>&amp;</span><br>관리 편리성</h3>
+                  <p>차량 운영에 드는 관리 수고를 줄일 수 있습니다.</p>
+                </div>
+              </header>
+              <ul class="corporate-intro__rent-list">
+                <li>
+                  <strong>보험·세금 관리 부담 완화</strong>
+                  <p>포함형 상품을 선택하면 차량 운영 시 챙겨야 할 관리 항목을 줄일 수 있습니다.</p>
+                </li>
+                <li>
+                  <strong>정비·사고 대응 범위 확인</strong>
+                  <p>상품별 지원 범위를 비교해 관리 방식에 맞는 조건을 선택할 수 있습니다.</p>
+                </li>
+                <li>
+                  <strong>만기 후 반납·교체 계획 편리</strong>
+                  <p>계약 종료 후 다음 차량 운영 계획을 세우기 쉽습니다.</p>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <p class="corporate-intro__rent-note">※ 초기비용, 보험·정비 포함 범위, 사고 지원 및 만기 조건은 상품마다 다릅니다. 세무상 비용 인정은 업무용 사용 여부와 관련 법규·증빙 요건에 따라 달라질 수 있습니다.</p>
+        </div>
+      </section>
+
+      <section class="corporate-intro__blue-banner" aria-labelledby="corporateBenefitTitle">
+        <div>
+          <p class="corporate-intro__section-label">VISITING CONSULTATION</p>
+          <h2 id="corporateBenefitTitle">방문이 어려우신가요?<br><span>직접 찾아가 상담합니다.</span></h2>
+          <p>내방하기 어려운 법인 고객을 위해 일정과 장소를 협의하여 방문 상담도 도와드립니다.</p>
+        </div>
+      </section>
+
+      <section class="corporate-intro__bottom" aria-labelledby="corporateStartTitle">
+        <p class="corporate-intro__section-label">START YOUR ESTIMATE</p>
+        <h2 id="corporateStartTitle">기업에 필요한 차량,<br>지금 선택해 보세요.</h2>
+        <p>국산차·수입차 차종과 이용 조건을 선택한 뒤 상담을 신청할 수 있습니다.</p>
+        <button type="button" data-enter-estimate>법인 차량 견적 시작하기 <span aria-hidden="true">→</span></button>
+      </section>
+    </section>
+
+    <section class="wizard-hero">
+      <p>국산·수입 전 차종 비교</p>
+      <h1>내가 원하는 차량,<br><strong>조건까지 한 번에 선택하세요.</strong></h1>
+      <!-- <span>전국 최저가 맞춤 견적을 받아보실 수 있습니다.</span> -->
+      <span>초기비용 <span class="wizard-zero">0</span>원, 자동차세 <span class="wizard-zero">0</span>원, 보험료 <span class="wizard-zero">0</span>원</span>
+      <div class="wizard-hero-visual" aria-hidden="true">
+        <img src="images/car-img-bg.png" alt="" class="wizard-hero-visual__image">
+      </div>
+    </section>
+
+    <section class="estimate-shell" id="estimate">
+      <ol class="step-indicator progress-1" id="stepIndicator" aria-label="견적 신청 단계">
+        <li class="active">
+          <button type="button" data-step-tab="1"><b>01</b><span>차량 선택</span></button>
+        </li>
+        <li>
+          <button type="button" data-step-tab="2" disabled><b>02</b><span>세부모델</span></button>
+        </li>
+        <li>
+          <button type="button" data-step-tab="3" disabled><b>03</b><span>이용조건</span></button>
+        </li>
+        <li>
+          <button type="button" data-step-tab="4" disabled><b>04</b><span>정보입력</span></button>
+        </li>
+      </ol>
+
+      <form id="estimateForm" novalidate>
+        <div id="wizardContent">
+          <div class="wizard-step step-one wizard-static-fallback">
+            <div class="step-heading">
+              <span>STEP 01</span>
+              <h2>원하는 차량을 선택해 주세요.</h2>
+              <p>차량 종류부터 색상까지 순서대로 선택할 수 있습니다.</p>
+            </div>
+
+            <fieldset class="option-block">
+              <legend><b>1</b> 차량 구분</legend>
+              <div class="segment-control two-column" data-group="market">
+                <button type="button" data-value="domestic">국산차</button>
+                <button type="button" data-value="import">수입차</button>
+              </div>
+            </fieldset>
+
+            <div class="review-slot" data-review-slot></div>
+
+            <fieldset class="option-block is-disabled-block initial-followup-selection" hidden>
+              <legend><b>2</b> 브랜드</legend>
+              <p class="empty-selection-guide">차량 구분을 먼저 선택해 주세요.</p>
+            </fieldset>
+
+            <fieldset class="option-block is-disabled-block initial-followup-selection" hidden>
+              <legend><b>3</b> 차량</legend>
+              <p class="empty-selection-guide">브랜드를 먼저 선택해 주세요.</p>
+            </fieldset>
+
+            <div class="wizard-car-card is-empty initial-followup-selection" hidden>
+              <div class="wizard-car-title">
+                <div>
+                  <small>SELECT VEHICLE</small>
+                  <strong>차량을 선택해 주세요</strong>
+                </div>
+              </div>
+
+              <div class="wizard-car-image">
+                <div class="vehicle-empty-visual">차량 선택 후 이미지가 표시됩니다.</div>
+              </div>
+
+              <div class="paint-block is-disabled-block">
+                <div class="paint-label"><b>4</b> 외장 색상</div>
+                <p class="empty-selection-guide">차량을 먼저 선택해 주세요.</p>
+              </div>
+            </div>
+          </div>
+</div>
+
+        <div id="reviewParking" class="review-parking">
+        <section class="review-section" id="reviewSection" aria-labelledby="reviewSectionTitle">
+          <div class="review-section__head">
+            <div>
+              <span class="review-section__eyebrow">REAL DELIVERY REVIEW</span>
+              <h2 id="reviewSectionTitle">오토지니 실제 출고 후기</h2>
+              
+            </div>
+            <a class="review-section__more" href="#review-detail">전체 후기 보기</a>
+          </div>
+
+          <div class="swiper review-carousel" id="reviewCarousel">
+            <div class="swiper-wrapper review-track" id="reviewTrack" aria-live="polite">
+              <article class="review-card review-card--loading">
+                <div class="review-card__body">
+                  <span class="review-card__badge">오토지니 출고후기</span>
+                  <strong>출고 후기를 불러오는 중입니다.</strong>
+                  <p>최신 출고 사례를 확인하고 있습니다.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        </div>
+        <div class="wizard-spacer"></div>
+        <div class="wizard-actions" id="wizardActions">
+          <button class="back-button" id="backButton" type="button" aria-label="이전 단계" hidden>
+            <svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M14 7l5 5-5 5"></path>
+            </svg>
+          </button>
+          <div class="wizard-actions__group" id="actionGroup">
+            <button class="consult-button" id="consultButton" type="button" hidden>바로 견적신청</button>
+            <button class="next-button" id="nextButton" type="button">
+              다음 단계
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M14 7l5 5-5 5"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+
+
+  
+
+  <dialog class="vehicle-search-modal" id="vehicleSearchModal" aria-labelledby="vehicleSearchModalTitle">
+    <div class="vehicle-search-modal__panel">
+      <div class="vehicle-search-modal__header">
+        <div>
+          <h2 id="vehicleSearchModalTitle">차량 통합검색</h2>
+          <p>차량명을 검색하면 차량 구분과 브랜드가 자동으로 선택됩니다.</p>
+        </div>
+        <button type="button" class="vehicle-search-modal__close" id="closeVehicleSearch" aria-label="차량 검색 닫기">×</button>
+      </div>
+      <div class="vehicle-search-modal__body">
+        <div class="vehicle-search-field">
+          <input type="search" id="globalVehicleSearch" placeholder="예: 아반떼, 그랑 콜레오스, 모델Y" autocomplete="off" aria-controls="globalVehicleSearchList">
+          <button type="button" class="vehicle-search-clear" id="globalVehicleSearchClear" aria-label="검색어 지우기" hidden>×</button>
+        </div>
+        <p class="vehicle-search-result" id="globalVehicleSearchResult" aria-live="polite">차량명을 입력해 주세요.</p>
+        <div class="vehicle-search-list integrated-vehicle-search__list" id="globalVehicleSearchList" hidden></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="privacy-modal" id="privacyModal" aria-labelledby="privacyModalTitle">
+      <div class="privacy-modal__inner">
+        <div class="privacy-modal__header">
+          <h2 id="privacyModalTitle">개인정보 수집 및 이용 동의</h2>
+          <button type="button" class="privacy-modal__close" data-privacy-close aria-label="개인정보 팝업 닫기">×</button>
+        </div>
+
+        <div class="privacy-modal__content">
+          <section>
+            <h3>개인정보취급방침은 다음과 같은 내용을 담고 있습니다.</h3>
+          </section>
+
+          <section>
+            <h3>가. 수집하는 개인정보 항목 및 수집방법</h3>
+            <p>신청자 이름, 핸드폰</p>
+          </section>
+
+          <section>
+            <h3>나. 개인정보의 수집 및 이용목적</h3>
+            <p>영업 담당자들의 전화 상담</p>
+          </section>
+
+          <section>
+            <h3>다. 수집한 개인정보의 보유 및 이용기간</h3>
+            <p>원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.</p>
+          </section>
+        </div>
+
+        <div class="privacy-modal__footer">
+          <button type="button" class="privacy-modal__confirm" data-privacy-close>확인</button>
+        </div>
+      </div>
+    </dialog>
+
+    <footer class="wizard-footer">
+      <div class="footer-brand">
+        <strong>AUTOGENIE</strong>
+        <p>장기렌트·리스, 좋은 조건을 찾는 가장 쉬운 방법</p>
+      </div>
+
+      <dl class="company-info">
+        <div><dt>상호명</dt><dd>에이지기획 주식회사</dd></div>
+        <div><dt>대표자</dt><dd>이태우</dd></div>
+        <div><dt>사업자등록번호</dt><dd>438-87-03620</dd></div>
+        <div><dt>이메일</dt><dd><a href="mailto:chayogi8934@naver.com">chayogi8934@naver.com</a></dd></div>
+        <div class="wide"><dt>주소</dt><dd>인천광역시 연수구 송도동 10-7, 7층 707-차55호</dd></div>
+        <div><dt>대표전화</dt><dd><a href="tel:1600-3481">1600-3481</a></dd></div>
+        <div><dt>상담시간</dt><dd>평일 09:00 - 18:00 상담 가능</dd></div>
+      </dl>
+
+      <small class="footer-copyright">© AUTOGENIE. All rights reserved.</small>
+    </footer>
+  </main>
+
+  <!-- STEP 02: 트림 확인 팝업 (선택 확정 전 안내) -->
+  <dialog class="trim-detail-modal" id="trimDetailModal" aria-labelledby="trimDetailModalTitle" aria-describedby="trimDetailModalSummary">
+    <div class="trim-detail-modal__panel">
+      <header class="trim-detail-modal__header">
+        <button type="button" class="trim-detail-modal__back" data-trim-close aria-label="트림 목록으로 돌아가기">
+          <svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <span class="trim-detail-modal__eyebrow">트림 상세 안내</span>
+        <button type="button" class="trim-detail-modal__close" data-trim-close aria-label="트림 안내 닫기">×</button>
+      </header>
+      <div class="trim-detail-modal__body">
+        <div class="trim-detail-modal__vehicle" id="trimDetailVehicle"></div>
+        <h2 id="trimDetailModalTitle" class="trim-detail-modal__title" tabindex="-1"></h2>
+        <figure class="trim-detail-modal__visual" id="trimDetailVisual" hidden>
+          <div class="trim-detail-modal__visual-heading">
+            <span id="trimDetailFeatureLabel">대표 핵심 기능</span>
+            <strong id="trimDetailFeatureName"></strong>
+          </div>
+          <img id="trimDetailImage" alt="" decoding="async">
+          <figcaption id="trimDetailImageCaption"></figcaption>
+        </figure>
+        <p class="trim-detail-modal__summary" id="trimDetailModalSummary"></p>
+        <section class="trim-detail-modal__info" aria-labelledby="trimDetailCompareTitle">
+          <h3 id="trimDetailCompareTitle">트림별로 달라질 수 있는 부분</h3>
+          <div class="trim-detail-modal__comparison" id="trimDetailComparison" hidden>
+            <div class="trim-detail-modal__comparison-group trim-detail-modal__comparison-group--inherited">
+              <strong class="trim-detail-modal__comparison-label" id="trimDetailInheritedTitle">이전 트림에서 이어지는 주요 사양</strong>
+              <ul class="trim-detail-modal__highlights trim-detail-modal__highlights--inherited" id="trimDetailInheritedList"></ul>
+            </div>
+            <div class="trim-detail-modal__comparison-group trim-detail-modal__comparison-group--upgrade">
+              <div class="trim-detail-modal__comparison-upgrade-top">
+                <span class="trim-detail-modal__upgrade-badge">UPGRADE</span>
+                <strong class="trim-detail-modal__comparison-label" id="trimDetailAddedTitle">새로 추가된 기능</strong>
+              </div>
+              <ul class="trim-detail-modal__highlights trim-detail-modal__highlights--upgrade" id="trimDetailAddedList"></ul>
+            </div>
+            <p class="trim-detail-modal__comparison-foot" id="trimDetailComparisonFoot"></p>
+          </div>
+          <ul class="trim-detail-modal__highlights" id="trimDetailHighlights"></ul>
+        </section>
+        <div class="trim-detail-modal__notice">
+          <strong>선택 전 확인해 주세요</strong>
+          <p>기본 사양과 선택 옵션은 차량, 연식, 세부모델에 따라 달라질 수 있습니다. 정확한 구성은 상담 시 확인해 주세요.</p>
+        </div>
+      </div>
+      <footer class="trim-detail-modal__footer">
+        <p class="trim-detail-modal__question">이 트림을 선택하시겠습니까?</p>
+        <div class="trim-detail-modal__actions">
+          <button type="button" class="trim-detail-modal__cancel" data-trim-close><span class="trim-detail-modal__cancel-desktop">다른 트림 살펴보기</span><span class="trim-detail-modal__cancel-mobile">다른 트림 살펴보기</span></button>
+          <button type="button" class="trim-detail-modal__confirm" id="confirmTrimSelection">이 트림 선택하기</button>
+        </div>
+      </footer>
+    </div>
+  </dialog>
+
+  <!-- 견적 신청 제한 안내 -->
+  <dialog class="estimate-block-modal" id="estimateBlockModal" aria-labelledby="estimateBlockTitle" aria-describedby="estimateBlockDescription">
+    <div class="estimate-block-modal__content">
+      <div class="estimate-block-modal__symbol" aria-hidden="true">!</div>
+      <h2 id="estimateBlockTitle">견적 신청이 제한되었습니다</h2>
+      <p class="estimate-block-modal__reason" id="estimateBlockDescription">반복적인 허위 견적 신청 및 서비스 이용 방해 행위가 확인되어 견적 신청이 제한되었습니다.</p>
+      <div class="estimate-block-modal__warning">
+        <strong>⚠ 법적 조치 안내</strong>
+        <p>동일한 행위가 지속될 경우 관련 법령에 따라 법적 조치가 취해질 수 있습니다.</p>
+      </div>
+      <p class="estimate-block-modal__support">정상적인 상담을 원하시는 경우 고객센터로 문의해 주세요.</p>
+      <button class="estimate-block-modal__confirm" type="button" data-estimate-block-close>확인</button>
+    </div>
+  </dialog>
+
+
+  <script>
+    // 기존 견적 JS의 상태·이벤트는 유지하고, 인트로 표시 상태만 전환합니다.
+    (function () {
+      function enterCorporateEstimate() {
+        document.documentElement.classList.add("corporate-estimate-started");
+        document.getElementById("corporateIntro")?.setAttribute("aria-hidden", "true");
+        const estimate = document.getElementById("estimate");
+        window.scrollTo({ top: 0, behavior: "instant" });
+        // 전환 후 키보드 접근성을 기존 차량 선택 첫 버튼으로 돌립니다.
+        requestAnimationFrame(function () {
+          const initialButton = estimate?.querySelector('.segment-control[data-group="market"] button');
+          if (initialButton) initialButton.focus({ preventScroll: true });
+        });
+      }
+      document.querySelectorAll("[data-enter-estimate]").forEach(function (button) {
+        button.addEventListener("click", enterCorporateEstimate);
+      });
+    })();
+  </script>
+
+  <script src="js/traffic-tracker.js?v=20261027"></script>
+
+  <script src="js/trim-reference-data.js?v=20261110-trim-merged-01"></script>
+  <script src="js/script.js?v=20261110-trim-merged-01"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/reviews.js?v=20261106-agcar-review-loop-01"></script>
+
+</body>
+</html>

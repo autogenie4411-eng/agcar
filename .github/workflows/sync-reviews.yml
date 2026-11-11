@@ -1,0 +1,130 @@
+name: Sync AUTOGENIE Reviews
+
+# Monday and Thursday 09:30 KST; review collection never runs merely from git push.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 0 * * 1,4'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autogenie-review-sync-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  sync-reviews:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    outputs:
+      changed: ${{ steps.archive.outputs.changed }}
+    env:
+      TZ: Asia/Seoul
+    steps:
+      - name: Checkout this site's source
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Restore this repository's latest review archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          if git fetch --no-tags --depth=1 origin refs/heads/review-data:refs/remotes/origin/review-data; then
+            git show refs/remotes/origin/review-data:data/reviews.json > /tmp/autogenie-prior-reviews.json
+            mv /tmp/autogenie-prior-reviews.json data/reviews.json
+            echo 'Restored preserved reviews before collecting new reviews.'
+          else
+            echo 'First sync: using the initial reviews.json packaged with this site.'
+          fi
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright and Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Collect latest reviews
+        run: node scripts/sync-reviews.mjs
+      - name: Save reviews only in this repository's review-data branch
+        id: archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Never push an empty or malformed archive into the published website.
+          node --input-type=module -e 'import fs from "node:fs"; const p = JSON.parse(fs.readFileSync("data/reviews.json", "utf8")); if (!Array.isArray(p.reviews) || p.reviews.length === 0) throw new Error("Missing review records");'
+          if git show-ref --verify --quiet refs/remotes/origin/review-data; then
+            prior=$(git show refs/remotes/origin/review-data:data/reviews.json | sha256sum | cut -d' ' -f1)
+            latest=$(sha256sum data/reviews.json | cut -d' ' -f1)
+            if [ "$prior" = "$latest" ]; then
+              echo 'Review archive unchanged; no GitHub Pages redeploy needed.'
+              echo 'changed=false' >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+          worktree_dir=$(mktemp -d /tmp/autogenie-review-XXXXXXXX)
+          if git show-ref --verify --quiet refs/remotes/origin/review-data; then
+            git worktree add --detach "$worktree_dir" refs/remotes/origin/review-data
+          else
+            git worktree add -b review-data "$worktree_dir" HEAD
+          fi
+          mkdir -p "$worktree_dir/data"
+          cp data/reviews.json "$worktree_dir/data/reviews.json"
+          cd "$worktree_dir"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/reviews.json
+          if git diff --cached --quiet; then
+            # On the first sync, the branch must exist even if JSON was identical.
+            echo 'No content change; creating first review-data branch.'
+          else
+            git commit -m 'chore: sync AUTOGENIE reviews'
+          fi
+          git push origin HEAD:refs/heads/review-data
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+
+  publish-reviews:
+    needs: sync-reviews
+    if: needs.sync-reviews.outputs.changed == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    # The same group is used by the usual main branch Pages deployment.
+    concurrency:
+      group: autogenie-pages-${{ github.repository }}
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout current website
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Restore updated review-data archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          git fetch --no-tags --depth=1 origin refs/heads/review-data:refs/remotes/origin/review-data
+          git show refs/remotes/origin/review-data:data/reviews.json > /tmp/autogenie-new-reviews.json
+          mv /tmp/autogenie-new-reviews.json data/reviews.json
+      - name: Exclude repository-only files from published website
+        shell: bash
+        run: |
+          rm -rf .git .github scripts analytics
+          rm -f .gitignore
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload updated website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy latest reviews
+        id: deployment
+        uses: actions/deploy-pages@v4
