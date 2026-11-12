@@ -515,6 +515,10 @@
         document.documentElement.classList.add("corporate-estimate-started");
         const intro = document.getElementById("corporateIntro");
         intro?.setAttribute("aria-hidden", "true");
+        if (window.AGCAR_SITE_VARIANT !== "corporate" || location.hostname.toLowerCase() === "agcar.agautoplan.com") {
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+          return;
+        }
         // 법인 소개의 견적 버튼에서는 차량 선택(STEP 01)을 헤더 바로 아래에 보여줍니다.
         // 상단의 견적 소개 배너는 유지하되 이 진입 경로에서만 건너뜁니다.
         function alignToVehicleSelection() {

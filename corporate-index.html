@@ -38,8 +38,8 @@
   <style>
     html.vehicle-link-loading .landing-loader { animation: none !important; opacity: 1 !important; }
     html.vehicle-link-loading .wizard-page { visibility: hidden !important; }
-    html.corporate-estimate-started .wizard-page > .wizard-hero { display: none; }
-    html.corporate-estimate-started .wizard-page > .estimate-shell { margin-top: 12px; }
+    html[data-site-variant="corporate"].corporate-vehicle-selection .wizard-page > .wizard-hero { display: none; }
+    html[data-site-variant="corporate"].corporate-vehicle-selection .wizard-page > .estimate-shell { margin-top: 12px; }
   
 
 </style>
@@ -457,10 +457,14 @@
     (function () {
       function showEstimate() {
         document.documentElement.classList.add("corporate-estimate-started");
+        const isCorporateSite = document.documentElement.dataset.siteVariant === "corporate" &&
+          location.hostname.toLowerCase() !== "agcar.agautoplan.com";
+        document.documentElement.classList.toggle("corporate-vehicle-selection", isCorporateSite);
         const intro = document.getElementById("corporateIntro");
         intro?.setAttribute("aria-hidden", "true");
         requestAnimationFrame(function () {
           window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+          if (!isCorporateSite) return;
           const initialButton = document.querySelector('#estimate .segment-control[data-group="market"] button');
           if (initialButton) initialButton.focus({ preventScroll: true });
         });
