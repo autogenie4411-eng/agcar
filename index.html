@@ -511,16 +511,43 @@
       if (logo && window.AGCAR_SITE_VARIANT === "corporate") {
         logo.setAttribute("aria-label", "법인 소개 처음으로 새로고침");
       }
-      function enterCorporateEstimate() {
+      function showEstimate() {
         document.documentElement.classList.add("corporate-estimate-started");
-        document.getElementById("corporateIntro")?.setAttribute("aria-hidden", "true");
-        const estimate = document.getElementById("estimate");
-        window.scrollTo({ top: 0, behavior: "instant" });
-        // 전환 후 키보드 접근성을 기존 차량 선택 첫 버튼으로 돌립니다.
+        const intro = document.getElementById("corporateIntro");
+        intro?.setAttribute("aria-hidden", "true");
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
         requestAnimationFrame(function () {
-          const initialButton = estimate?.querySelector('.segment-control[data-group="market"] button');
+          const initialButton = document.querySelector('#estimate .segment-control[data-group="market"] button');
           if (initialButton) initialButton.focus({ preventScroll: true });
         });
+      }
+      function enterCorporateEstimate() {
+        const intro = document.getElementById("corporateIntro");
+        if (!intro || intro.dataset.isLeaving === "true") return;
+
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (typeof intro.animate !== "function") {
+          showEstimate();
+          return;
+        }
+
+        intro.dataset.isLeaving = "true";
+        const exitAnimation = intro.animate(
+          [
+            { opacity: 1, transform: "translateY(0)" },
+            {
+              opacity: 0,
+              transform: prefersReducedMotion ? "translateY(0)" : "translateY(-14px)"
+            }
+          ],
+          {
+            duration: prefersReducedMotion ? 180 : 450,
+            easing: "cubic-bezier(0.22, 0.61, 0.36, 1)",
+            fill: "forwards"
+          }
+        );
+        exitAnimation.addEventListener("finish", showEstimate, { once: true });
       }
       document.querySelectorAll("[data-enter-estimate]").forEach(function (button) {
         button.addEventListener("click", enterCorporateEstimate);
