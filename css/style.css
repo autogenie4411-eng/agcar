@@ -12630,10 +12630,6 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
     display: block;
     white-space: nowrap;
 }
-.c26-delivery-graphic figcaption strong span:last-child {
-    color: #152239;
-    font-size: 0.82em;
-}
 .c26-delivery-graphic figcaption p {
     margin: 10px 0 0;
     color: #55677d;
@@ -12895,5 +12891,95 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
     }
     .corporate-intro.c26 .c26-benefits__list p {
         font-size: 12.5px;
+    }
+}
+@media (max-width: 600px) {
+    .corporate-intro.c26 .c26-eyebrow {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+    .corporate-intro.c26 #corporateIntroTitle {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+    .corporate-intro.c26 .c26-lead {
+        font-size: 13.5px;
+        line-height: 1.65;
+    }
+    .corporate-intro.c26 .c26-recommend h2,
+    .corporate-intro.c26 .c26-highlight--saving h2,
+    .corporate-intro.c26 .c26-comparison__intro h2,
+    .corporate-intro.c26 .c26-benefits > h2,
+    .corporate-intro.c26 .c26-service > h2,
+    .corporate-intro.c26 .c26-partners h2,
+    .corporate-intro.c26 .c26-bottom h2 {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+    .corporate-intro.c26 .c26-comparison__table thead th {
+        font-size: 13px;
+    }
+    .corporate-intro.c26 .c26-comparison__table tbody th,
+    .corporate-intro.c26 .c26-comparison__table tbody td {
+        font-size: 12.5px;
+        line-height: 1.5;
+    }
+    .corporate-intro.c26 .c26-benefits__list h3 {
+        font-size: 14px;
+    }
+    .corporate-intro.c26 .c26-benefits__list p {
+        font-size: 12px;
+    }
+    .corporate-intro.c26 .c26-service__rows article > b {
+        font-size: 16px;
+    }
+    .corporate-intro.c26 .c26-service__rows strong {
+        font-size: 15px;
+    }
+    .corporate-intro.c26 .c26-service__rows p {
+        font-size: 13px;
+    }
+    .corporate-intro.c26 .c26-logo {
+        box-sizing: border-box;
+        flex: 0 0 142px;
+        width: 142px;
+        height: 54px;
+        gap: 5px;
+        padding: 0 8px;
+        overflow: hidden;
+    }
+    .corporate-intro.c26 .c26-logo i {
+        flex: 0 0 auto;
+        font-size: 15px;
+    }
+    .corporate-intro.c26 .c26-logo b {
+        flex: 0 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        font-size: 11px;
+        line-height: 1.2;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+@media (max-width: 360px) {
+    .corporate-intro.c26 #corporateIntroTitle {
+        font-size: 26px;
+    }
+    .corporate-intro.c26 .c26-logo {
+        flex-basis: 134px;
+        width: 134px;
+    }
+    .corporate-intro.c26 .c26-logo b {
+        font-size: 10.5px;
+    }
+}
+@media (max-width: 600px) {
+    .corporate-intro.c26 .c26-benefits__list p {
+        display: block;
+    }
+    .corporate-intro.c26 .c26-benefits__list p span {
+        display: block;
+        white-space: nowrap;
     }
 }
