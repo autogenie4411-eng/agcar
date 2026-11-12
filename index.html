@@ -37,10 +37,10 @@
       document.documentElement.classList.toggle("corporate-estimate-started", !isCorporate);
       window.AGCAR_SITE_VARIANT = variant;
       const pageTitle = isCorporate
-        ? "오토지니 법인 | 법인 장기렌트·리스 전문 견적"
+        ? "오토지니 법인·개인사업자 | 장기렌트·리스 견적 비교"
         : "오토지니 통합차 | 국산·수입차 장기렌트·리스 견적 비교";
       const pageDescription = isCorporate
-        ? "오토지니 법인 렌트·리스 비교 견적. 초기비용, 보험·세금, 차량 관리 조건을 비교하고 1:1 상담을 받아보세요."
+        ? "오토지니 법인·개인사업자 렌트·리스 비교 견적. 초기비용과 차량 관리 조건을 비교하고 1:1 상담을 받아보세요."
         : "오토지니 국산차·수입차 장기렌트·리스 비교 견적. 원하는 차량과 조건을 선택하고 1:1 상담을 받아보세요.";
       document.title = pageTitle;
       const description = document.querySelector('meta[name="description"]');
@@ -151,14 +151,14 @@
     <section class="corporate-intro c26" id="corporateIntro" aria-labelledby="corporateIntroTitle">
       <section class="c26-hero" aria-labelledby="corporateIntroTitle">
         <div class="c26-pad">
-          <p class="c26-eyebrow">법인 렌트·리스 전문 오토지니</p>
-          <h1 id="corporateIntroTitle">우리 회사에 맞는 법인차,<br><span>비교부터 출고까지.</span></h1>
+          <p class="c26-eyebrow">법인·개인사업자 렌트·리스 전문 오토지니</p>
+          <h1 id="corporateIntroTitle">우리 회사에 맞는 차량,<br><span>비교부터 출고까지.</span></h1>
           <p class="c26-lead">복잡한 조건 비교부터 계약까지, 담당자가 함께합니다.</p>
-          <button type="button" data-enter-estimate class="c26-cta">법인 차량 견적 시작하기 <span aria-hidden="true">→</span></button>
+          <button type="button" data-enter-estimate class="c26-cta">맞춤 차량 견적 시작하기 <span aria-hidden="true">→</span></button>
           <div class="c26-metrics">
             <figure class="c26-delivery-graphic">
               <figcaption>
-                <span>법인 차량 누적 출고</span>
+                <span>누적 차량 출고</span>
                 <strong><span>3,000대 이상</span></strong>
                 <!-- <p>지속적인 성장으로<br>더 많은 고객님과 함께하고 있습니다.</p> -->
               </figcaption>
@@ -169,7 +169,7 @@
       </section>
     
       <section class="c26-recommend c26-pad" aria-labelledby="c26RecTitle">
-        <h2 id="c26RecTitle">법인차, <span>이런 기업에 추천합니다!</span></h2>
+        <h2 id="c26RecTitle">법인·개인사업자, <span>이런 분께 추천합니다!</span></h2>
         <div class="c26-reasons">
           <div><img class="c26-reasons__image" src="images/icons/corporate_purchase_cost.png" alt="" loading="lazy" decoding="async"><p>초기 구매 목돈 부담을 덜고 필요한 차량을 도입하세요</p></div>
           <div><img class="c26-reasons__image" src="images/icons/corporate_vehicle_management.png" alt="" loading="lazy" decoding="async"><p>차량 운영·관리 부담을 줄여 업무 효율을 높이세요</p></div>
@@ -183,7 +183,7 @@
             <h2 id="c26CompareTitle">초기 비용 부담 <span>DOWN!</span></h2>
           </div>
           <table class="c26-comparison__table">
-            <thead><tr><th scope="col">구분</th><th scope="col">차량 직접 구매</th><th scope="col">법인 장기렌트</th></tr></thead>
+            <thead><tr><th scope="col">구분</th><th scope="col">차량 직접 구매</th><th scope="col">장기렌트</th></tr></thead>
             <tbody>
               <tr><th scope="row">초기 자금</th><td>차량 대금 등을<br>직접 부담</td><td>보증금·선납금 등을<br>조건별로 선택</td></tr>
               <tr><th scope="row">보험·자동차세</th><td>가입과 납부를<br>직접 관리</td><td>일반적으로 월 렌트료에<br>포함해 운영</td></tr>
@@ -202,7 +202,7 @@
       </section>
 
       <section class="c26-benefits c26-pad" aria-labelledby="c26BenefitsTitle">
-        <h2 id="c26BenefitsTitle">법인차 <span>핵심 혜택</span></h2>
+        <h2 id="c26BenefitsTitle">사업자 차량 <span>핵심 혜택</span></h2>
         <div class="c26-benefits__list">
           <article><div class="c26-benefit-icon"><img src="images/icons/benefit_initial_cost.png" alt="" loading="lazy" decoding="async"></div><div><h3>초기 비용 조절</h3><p><span>보증금·선납금 비교</span><span>초기 부담을 조절</span></p></div></article>
           <article><div class="c26-benefit-icon"><img src="images/icons/benefit_monthly_cost.png" alt="" loading="lazy" decoding="async"></div><div><h3>월 비용 관리</h3><p><span>월 납입금·포함 비용</span><span>예산에 맞춰 관리</span></p></div></article>
@@ -215,26 +215,26 @@
       <section class="c26-consulting" aria-labelledby="c26ConsultingTitle">
         <figure class="c26-consulting-visual">
           <figcaption>
-            <span>상담부터 출고까지 책임지는</span>
-            <h2 id="c26ConsultingTitle"><em>1:1</em> 전담관리</h2>
+            <span>법인·개인사업자만을 위한 전문 상담 서비스</span>
+            <h2 id="c26ConsultingTitle"><em>사업자 전문 1:1</em> 전담관리</h2>
           </figcaption>
           <img src="images/personal-consulting.png" alt="렌트·리스 상담부터 계약과 출고까지 1:1 전담 관리" loading="lazy" decoding="async">
         </figure>
       </section>
     
       <section class="c26-service c26-pad" aria-labelledby="c26ServiceTitle"><h2 id="c26ServiceTitle">계약 과정도 <span>EASY!</span></h2>
-        <div class="c26-service__rows"><article><b>01</b><div><strong>조건 비교</strong><p>여러 렌트·리스 조건을 기업별 운용 계획에 맞춰 검토합니다.</p></div></article><article><b>02</b><div><strong>전담 1:1 상담</strong><p>견적부터 계약 확인까지 담당자와 일관되게 소통합니다.</p></div></article><article><b>03</b><div><strong>방문 상담 협의</strong><p>방문이 필요한 경우 일정과 장소를 조율해 상담할 수 있습니다.</p></div></article></div>
+        <div class="c26-service__rows"><article><b>01</b><div><strong>조건 비교</strong><p>여러 렌트·리스 조건을 사업 운영 계획에 맞춰 비교합니다.</p></div></article><article><b>02</b><div><strong>전담 1:1 상담</strong><p>견적부터 계약 확인까지 담당자와 일관되게 소통합니다.</p></div></article><article><b>03</b><div><strong>방문 상담 협의</strong><p>방문이 필요한 경우 일정과 장소를 조율해 상담할 수 있습니다.</p></div></article></div>
       </section>
     
     
-    <section class="c26-meeting" aria-label="법인 상담 공간 사진">
-      <figure><img src="images/회사 전경/법인-상담-회의실.png" alt="오토지니 법인 차량 상담 회의 장면" loading="lazy" decoding="async" onerror="this.closest('figure').hidden=true"/><figcaption>법인 차량 1:1 상담 이미지</figcaption></figure>
+    <section class="c26-meeting" aria-label="차량 상담 공간 사진">
+      <figure><img src="images/회사 전경/법인-상담-회의실.png" alt="오토지니 차량 상담 회의 장면" loading="lazy" decoding="async" onerror="this.closest('figure').hidden=true"/><figcaption>차량 1:1 상담 이미지</figcaption></figure>
     </section>
-      <section class="c26-partners" aria-labelledby="c26PartnersTitle"><div class="c26-pad"><h2 id="c26PartnersTitle">법인 <span>출고 고객사</span></h2></div>
+      <section class="c26-partners" aria-labelledby="c26PartnersTitle"><div class="c26-pad"><h2 id="c26PartnersTitle">주요 <span>출고 고객사</span></h2></div>
         <div class="c26-marquees"><div class="c26-marquee c26-marquee--left" aria-label="제휴사 임시 예시 자동 흐름"><div class="c26-marquee__track" aria-hidden="true"><div class="c26-marquee__group"><span class="c26-logo"><i style="--logo:#2371b9" aria-hidden="true">◆</i><b>KDB캐피탈</b></span><span class="c26-logo"><i style="--logo:#169f92" aria-hidden="true">✦</i><b>하나캐피탈</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데오토리스</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데캐피탈</b></span><span class="c26-logo"><i style="--logo:#60a73e" aria-hidden="true">●</i><b>아마존카</b></span></div><div class="c26-marquee__group"><span class="c26-logo"><i style="--logo:#2371b9" aria-hidden="true">◆</i><b>KDB캐피탈</b></span><span class="c26-logo"><i style="--logo:#169f92" aria-hidden="true">✦</i><b>하나캐피탈</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데오토리스</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데캐피탈</b></span><span class="c26-logo"><i style="--logo:#60a73e" aria-hidden="true">●</i><b>아마존카</b></span></div></div></div><div class="c26-marquee c26-marquee--right" aria-label="제휴사 임시 예시 자동 흐름"><div class="c26-marquee__track" aria-hidden="true"><div class="c26-marquee__group"><span class="c26-logo"><i style="--logo:#c52e40" aria-hidden="true">▰</i><b>메리츠캐피탈</b></span><span class="c26-logo"><i style="--logo:#1e8fc9" aria-hidden="true">◒</i><b>우리카드</b></span><span class="c26-logo"><i style="--logo:#1e8fc9" aria-hidden="true">◒</i><b>우리금융캐피탈</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데렌터카</b></span><span class="c26-logo"><i style="--logo:#2371b9" aria-hidden="true">◆</i><b>KDB캐피탈</b></span></div><div class="c26-marquee__group"><span class="c26-logo"><i style="--logo:#c52e40" aria-hidden="true">▰</i><b>메리츠캐피탈</b></span><span class="c26-logo"><i style="--logo:#1e8fc9" aria-hidden="true">◒</i><b>우리카드</b></span><span class="c26-logo"><i style="--logo:#1e8fc9" aria-hidden="true">◒</i><b>우리금융캐피탈</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데렌터카</b></span><span class="c26-logo"><i style="--logo:#2371b9" aria-hidden="true">◆</i><b>KDB캐피탈</b></span></div></div></div></div>
       </section>
     
-      <section class="c26-bottom c26-pad" aria-labelledby="c26BottomTitle"><div class="c26-bottom__inner"><h2 id="c26BottomTitle">우리 회사 맞춤 <span>차량 견적</span></h2><button type="button" data-enter-estimate class="c26-cta">법인 차량 견적 시작하기 <span aria-hidden="true">→</span></button></div></section>
+      <section class="c26-bottom c26-pad" aria-labelledby="c26BottomTitle"><div class="c26-bottom__inner"><h2 id="c26BottomTitle">우리 회사 맞춤 <span>차량 견적</span></h2><button type="button" data-enter-estimate class="c26-cta">맞춤 차량 견적 시작하기 <span aria-hidden="true">→</span></button></div></section>
     </section>
         <section class="wizard-hero">
       <p>국산·수입 전 차종 비교</p>
