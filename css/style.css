@@ -12597,9 +12597,9 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
     margin: 0;
     margin-left: -12px;
     padding: 10px;
-    border: 1px solid #e7eef8;
+    /* border: 1px solid #e7eef8; */
     border-radius: 16px;
-    box-shadow: 0 5px 16px rgba(24, 53, 91, 0.06);
+    /* box-shadow: 0 5px 16px rgba(24, 53, 91, 0.06); */
     overflow: hidden;
 }
 .c26-delivery-graphic figcaption {
