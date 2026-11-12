@@ -13,14 +13,14 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="오토지니 법인 장기렌트·리스 전문 상담. 기업용 국산차·수입차 차량 계약 조건을 비교하고 맞춤 견적을 받아보세요.">
+  <meta name="description" content="오토지니 법인 렌트·리스 비교 견적. 초기비용, 보험·세금, 차량 관리 조건을 비교하고 1:1 상담을 받아보세요.">
   <title>오토지니 법인 | 법인 장기렌트·리스 전문 견적</title>
 
   <script>
     // 법인 소개 페이지 표시 설정: true = 표시(ON), false = 숨김(OFF)
     // 법인 전용 사이트에만 적용되며 통합차 메인에는 영향이 없습니다.
     (function () {
-      const SHOW_CORPORATE_INTRO = false; // 법인 소개 페이지 표시 여부
+      const SHOW_CORPORATE_INTRO = true; // 법인 소개 페이지 표시 여부
       document.documentElement.classList.toggle("corporate-estimate-started", !SHOW_CORPORATE_INTRO);
     })();
     // 차량별 광고 링크는 로딩 중 기본 소개 화면이 비치지 않도록 가립니다.
@@ -39,35 +39,14 @@
     html.vehicle-link-loading .landing-loader { animation: none !important; opacity: 1 !important; }
     html.vehicle-link-loading .wizard-page { visibility: hidden !important; }
   
-/* 2026-11-10: 차이점/장점 섹션 가독성 개선 */
-.corporate-intro__compare-head h2 { font-size: clamp(24px, 6vw, 29px); }
-.corporate-intro__compare-head > p:last-child { max-width: 100%; }
-.corporate-intro__compare-stack { min-height: 0; }
-.corporate-intro__compare-card li { min-height: 62px; justify-content: center; }
-.corporate-intro__compare-card li strong { word-break: keep-all; }
-.corporate-intro__compare-card--basic li strong { color: #5c6d7d; }
-.corporate-intro__compare-card--rent { box-shadow: 0 16px 28px rgba(17,31,67,.18); }
-.corporate-intro__rent-head h2 { white-space: normal; font-size: clamp(24px, 6vw, 29px); }
-.corporate-intro__rent-group { padding: 22px 18px 20px; }
-.corporate-intro__rent-group h3 { white-space: normal; font-size: 20px; }
-.corporate-intro__rent-group-heading p { margin-top: 6px; font-size: 12px; }
-.corporate-intro__rent-list { margin-top: 18px; }
-.corporate-intro__rent-list li + li { margin-top: 16px; }
-.corporate-intro__rent-list strong { font-size: 15.5px; }
-.corporate-intro__rent-list p { font-size: 13px; }
-@media (max-width: 420px) {
-  .corporate-intro__compare-card li { min-height: 58px; }
-  .corporate-intro__compare-card li strong { font-size: 12.5px; }
-  .corporate-intro__rent-group h3 { font-size: 18px; }
-  .corporate-intro__rent-list strong { font-size: 14.2px; }
-  .corporate-intro__rent-list p { font-size: 12.5px; }
-}
+
 </style>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261110-trim-merged-01">
+    <link rel="stylesheet" href="css/style.css?v=20261111-corp-layout-01">
+<style id="c26-marquee-critical">.c26-partners,.c26-marquees,.c26-marquee{overflow-x:hidden!important}.c26-marquee{scrollbar-width:none!important}.c26-marquee::-webkit-scrollbar{display:none!important}.c26-marquees.c26-marquees--active .c26-marquee__track{animation:none!important}</style>
 </head>
 <body>
 
@@ -131,7 +110,7 @@
 
   <main class="wizard-page" id="top">
     <header class="wizard-header">
-      <a class="brand-mark" href="index.html" aria-label="오토지니 홈으로 새로고침">
+      <a class="brand-mark" href="corporate-index.html" aria-label="법인 소개 처음으로 새로고침">
         <span class="brand-symbol">A</span>
         <span class="brand-copy">
           <strong class="brand-copy__name">AUTOGENIE</strong>
@@ -145,154 +124,74 @@
     </header>
 
 
-    <!-- 법인 소개: 로딩 종료 후 표시 / 견적 버튼 클릭 시 기존 차량 선택으로 전환 -->
-    <section class="corporate-intro" id="corporateIntro" aria-labelledby="corporateIntroTitle">
-      <div class="corporate-intro__hero">
-        <div class="corporate-intro__hero-content">
-          <p class="corporate-intro__eyebrow">법인 장기렌트 · 리스 전문 오토지니</p>
-          <h1 id="corporateIntroTitle">법인 차량 계약,<br><span>전문가의 경험이 다릅니다.</span></h1>
-          <p class="corporate-intro__summary">오토지니는 기업의 차량 도입 목적과 예산을 이해하고,<br>적합한 렌트·리스 방식과 차량을 제안하는 법인 차량 전문 회사입니다.</p>
-
-          <button class="corporate-intro__hero-button" type="button" data-enter-estimate>
-            법인 차량 견적 시작하기 <span aria-hidden="true">→</span>
-          </button>
-          <p class="corporate-intro__hero-caption">국산차 · 수입차 장기렌트·리스 비교</p>
-        </div>
-        <figure class="corporate-intro__hero-photo">
-          <img src="images/회사 전경/법인-상담-회의실.png" alt="회의실에서 법인 렌트·리스 차량 조건을 설명하는 상담 연출 장면" width="1448" height="1086" fetchpriority="high" decoding="async">
-          <figcaption>법인 차량 1:1 상담 연출 이미지</figcaption>
-        </figure>
-      </div>
-
-      <section class="corporate-intro__benefits" aria-labelledby="corporateBenefitsTitle">
-        <p class="corporate-intro__section-label">CORPORATE SOLUTIONS</p>
-        <h2 id="corporateBenefitsTitle">법인 렌트·리스는<br><span>조건을 아는 전문가와.</span></h2>
-        <p class="corporate-intro__body-copy">같은 차량도 계약 구조에 따라 부담과 관리 범위가 달라집니다. 조건별 차이를 명확히 설명하고 기업의 선택을 돕습니다.</p>
-        <dl>
-          <div>
-            <dt><strong>3,000대 이상</strong> 축적된 출고 경험</dt>
-            <dd>누적 출고 경험을 바탕으로 차량 선정부터 계약·출고 단계에서 놓치기 쉬운 사항까지 꼼꼼히 안내합니다.</dd>
-          </div>
-          <div>
-            <dt>렌트·리스 계약 조건 <strong>정밀 비교</strong></dt>
-            <dd>계약기간, 약정 주행거리, 초기비용, 월 납입료와 보험·세금 포함 여부를 항목별로 비교해 드립니다.</dd>
-          </div>
-          <div>
-            <dt><strong>1:1 전담</strong> 진행 관리</dt>
-            <dd>전담 담당자 한 명을 통해 견적·계약·출고의 진행 상황을 이어서 확인하고 필요한 상담을 받을 수 있습니다.</dd>
-          </div>
-        </dl>
-      </section>
-
-
-      <section class="corporate-intro__compare" aria-labelledby="corporateCompareTitle">
-        <div class="corporate-intro__compare-head">
-          <p class="corporate-intro__section-label">COMPARE OPTIONS</p>
-          <h2 id="corporateCompareTitle">일반 구매·리스 vs<br><span>법인 전문 렌트·리스</span></h2>
-          <p>법인 차량은 도입 방식에 따라 관리 편의와 비용 구조가 달라집니다. 핵심 차이만 한눈에 비교해보세요.</p>
-        </div>
-
-        <div class="corporate-intro__compare-stack">
-          <article class="corporate-intro__compare-card corporate-intro__compare-card--basic" aria-labelledby="compareBasicTitle">
-            <h3 id="compareBasicTitle">일반 구매·리스</h3>
-            <ul>
-              <li><span>보험·세금</span><strong>항목별 조건을 각각 확인해야 합니다.</strong></li>
-              <li><span>차량 관리</span><strong>정비와 사고 대응을 직접 챙겨야 합니다.</strong></li>
-              <li><span>비용 구조</span><strong>초기비용과 월 부담을 스스로 비교해야 합니다.</strong></li>
-              <li><span>계약 설계</span><strong>기간·주행거리 조건을 직접 검토해야 합니다.</strong></li>
-            </ul>
-          </article>
-
-          <article class="corporate-intro__compare-card corporate-intro__compare-card--rent" aria-labelledby="compareRentTitle">
-            <h3 id="compareRentTitle">법인 전문 렌트·리스</h3>
-            <ul>
-              <li><span>보험·세금</span><strong>포함 구조와 월 부담을 한 번에 보기 쉽습니다.</strong></li>
-              <li><span>차량 관리</span><strong>정비 포함 여부와 사고 지원 범위를 함께 검토합니다.</strong></li>
-              <li><span>비용 구조</span><strong>초기비용과 월 비용 계획을 세우기 편합니다.</strong></li>
-              <li><span>계약 설계</span><strong>기간·주행거리를 법인 상황에 맞게 설계합니다.</strong></li>
-            </ul>
-          </article>
+    <!-- AUTOGENIE corporate editorial redesign / 2026-11-11 -->
+    <section class="corporate-intro c26" id="corporateIntro" aria-labelledby="corporateIntroTitle">
+      <section class="c26-hero" aria-labelledby="corporateIntroTitle">
+        <div class="c26-pad">
+          <p class="c26-eyebrow">AUTOGENIE · CORPORATE SOLUTIONS</p>
+          <h1 id="corporateIntroTitle">법인 차량 계약,<br><span>초기 부담은 <em>가볍게.</em></span><br>조건 비교는 <em>꼼꼼하게.</em></h1>
+          <p class="c26-lead">장기렌트부터 리스까지.<br>기업의 예산과 운행 목적에 맞는 조건을 비교하고 전담 상담으로 안내합니다.</p>
+          <button type="button" data-enter-estimate class="c26-cta">법인 차량 견적 시작하기 <span aria-hidden="true">→</span></button>
+          <div class="c26-metrics"><span><b>3,000대+</b><small>누적 출고 경험</small></span><span><b>1:1</b><small>전담 상담</small></span><span><b>국산·수입</b><small>차량 비교</small></span></div>
         </div>
       </section>
-
-      <section class="corporate-intro__rent-benefits" aria-labelledby="corporateRentBenefitsTitle">
-        <div class="corporate-intro__rent-inner">
-          <div class="corporate-intro__rent-head">
-            <p class="corporate-intro__section-label">CORPORATE RENTAL BENEFITS</p>
-            <h2 id="corporateRentBenefitsTitle">법인이라면 렌트카,<br><span>이런 점이 좋아요.</span></h2>
-            <p>모바일에서도 바로 읽히도록 핵심 장점을 비용 관리와 차량 관리 두 가지로 나눠 간결하게 정리했습니다.</p>
-          </div>
-
-          <div class="corporate-intro__rent-grid">
-            <section class="corporate-intro__rent-group" aria-labelledby="corporateRentCostTitle">
-              <header class="corporate-intro__rent-group-heading">
-                <span class="corporate-intro__rent-index" aria-hidden="true">01</span>
-                <div>
-                  <h3 id="corporateRentCostTitle">비용 관리 <span>&amp;</span><br>세무 처리 편의</h3>
-                  <p>초기 부담과 월 비용 관리에 도움이 됩니다.</p>
-                </div>
-              </header>
-              <ul class="corporate-intro__rent-list">
-                <li>
-                  <strong>초기 자금 부담 완화</strong>
-                  <p>차량 도입 시 목돈 부담을 줄여 시작하기 좋습니다.</p>
-                </li>
-                <li>
-                  <strong>월 비용 예측이 쉬움</strong>
-                  <p>포함 항목을 기준으로 월별 운영 예산을 세우기 편합니다.</p>
-                </li>
-                <li>
-                  <strong>업무용 비용 처리 검토</strong>
-                  <p>세법상 요건에 따라 관련 비용의 비용 처리를 검토할 수 있습니다.</p>
-                </li>
-              </ul>
-            </section>
-
-            <section class="corporate-intro__rent-group" aria-labelledby="corporateRentManageTitle">
-              <header class="corporate-intro__rent-group-heading">
-                <span class="corporate-intro__rent-index" aria-hidden="true">02</span>
-                <div>
-                  <h3 id="corporateRentManageTitle">법인 차량 <span>&amp;</span><br>관리 편리성</h3>
-                  <p>차량 운영에 드는 관리 수고를 줄일 수 있습니다.</p>
-                </div>
-              </header>
-              <ul class="corporate-intro__rent-list">
-                <li>
-                  <strong>보험·세금 관리 부담 완화</strong>
-                  <p>포함형 상품을 선택하면 차량 운영 시 챙겨야 할 관리 항목을 줄일 수 있습니다.</p>
-                </li>
-                <li>
-                  <strong>정비·사고 대응 범위 확인</strong>
-                  <p>상품별 지원 범위를 비교해 관리 방식에 맞는 조건을 선택할 수 있습니다.</p>
-                </li>
-                <li>
-                  <strong>만기 후 반납·교체 계획 편리</strong>
-                  <p>계약 종료 후 다음 차량 운영 계획을 세우기 쉽습니다.</p>
-                </li>
-              </ul>
-            </section>
-          </div>
-          <p class="corporate-intro__rent-note">※ 초기비용, 보험·정비 포함 범위, 사고 지원 및 만기 조건은 상품마다 다릅니다. 세무상 비용 인정은 업무용 사용 여부와 관련 법규·증빙 요건에 따라 달라질 수 있습니다.</p>
+    
+      <section class="c26-recommend c26-pad" aria-labelledby="c26RecTitle">
+        <p class="c26-eyebrow">WHO NEEDS IT?</p>
+        <h2 id="c26RecTitle">법인 렌트·리스,<br><span>이런 기업에 추천합니다</span></h2>
+        <p class="c26-desc">차량이 필요한 순간부터, 운영까지 고려해 보세요.</p>
+        <div class="c26-reasons">
+          <div><svg class="c26-icon c26-icon--coin" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="25" width="31" height="18" rx="3"/><path d="M14 30h23M14 38h23"/><ellipse cx="42" cy="17" rx="13" ry="7"/><path d="M29 17v8c0 4 6 7 13 7s13-3 13-7v-8M29 23c0 4 6 7 13 7"/></svg><strong>차량 구매에<br>목돈 투입이 부담인 기업</strong></div>
+          <div><svg class="c26-icon c26-icon--swap" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 20h35m-9-9 9 9-9 9M51 42H16m9-9-9 9 9 9"/><rect x="10" y="10" width="12" height="9" rx="2"/><rect x="42" y="43" width="12" height="9" rx="2"/></svg><strong>운행 환경에 맞춰<br>차량 교체를 고려하는 기업</strong></div>
+          <div><svg class="c26-icon c26-icon--manage" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 33h40l-5-15H18l-6 15ZM16 33l-2 10h36l-2-10M22 42v7m20-7v7"/><circle cx="22" cy="34" r="2"/><circle cx="42" cy="34" r="2"/><path d="M22 15l7-5h12l5 5"/></svg><strong>차량 관리와 비용을<br>효율적으로 운영할 기업</strong></div>
         </div>
       </section>
-
-      <section class="corporate-intro__blue-banner" aria-labelledby="corporateBenefitTitle">
-        <div>
-          <p class="corporate-intro__section-label">VISITING CONSULTATION</p>
-          <h2 id="corporateBenefitTitle">방문이 어려우신가요?<br><span>직접 찾아가 상담합니다.</span></h2>
-          <p>내방하기 어려운 법인 고객을 위해 일정과 장소를 협의하여 방문 상담도 도와드립니다.</p>
+    
+      <section class="c26-highlight"><div class="c26-pad"><span class="c26-highlight__tag">SMART BUSINESS MOBILITY</span><h2>복잡한 차량 계약,<br><strong>오토지니에서 간결하게.</strong></h2><p>비용·차종·계약 조건을 함께 비교하고,<br>담당자와 1:1로 상담하세요.</p></div></section>
+    
+      <section class="c26-compare c26-pad" aria-labelledby="c26CompareTitle">
+        <p class="c26-eyebrow">PURCHASE VS LONG-TERM RENT</p>
+        <h2 id="c26CompareTitle">차량 직접 구매와 장기렌트,<br><span>무엇이 다를까요?</span></h2>
+        <p class="c26-desc">초기비용부터 운용 방식까지 한눈에 비교하세요.</p>
+        <div class="c26-comparison" role="table" aria-label="차량 구매와 법인 장기렌트 비교">
+          <div role="row" class="c26-comparison__head"><span role="columnheader">직접 구매</span><span role="columnheader">법인 장기렌트</span></div>
+          <div class="c26-comparison__item" role="rowgroup"><h3>초기 자금</h3><div role="row"><span role="cell">차량 대금 등<br>직접 부담</span><strong role="cell">보증금·선납금 등<br>조건별 선택 가능</strong></div></div>
+          <div class="c26-comparison__item" role="rowgroup"><h3>보험·자동차세</h3><div role="row"><span role="cell">가입·납부 등<br>직접 관리</span><strong role="cell">일반적으로 월 렌트료에<br>포함해 운영</strong></div></div>
+          <div class="c26-comparison__item" role="rowgroup"><h3>차량 유지관리</h3><div role="row"><span role="cell">정비·사고 대응<br>직접 처리</span><strong role="cell">계약에 따른 관리<br>지원 범위 확인</strong></div></div>
+          <div class="c26-comparison__item" role="rowgroup"><h3>지출 계획</h3><div role="row"><span role="cell">구매비·유지비<br>항목별 관리</span><strong role="cell">월 납입금 중심의<br>운영비 계획</strong></div></div>
         </div>
+        <p class="c26-footnote">※ 일반적인 상품 구조를 비교한 예시입니다. 초기비용·포함 항목은 계약에 따라 다르며, 리스는 별도 조건으로 비교합니다.</p>
       </section>
-
-      <section class="corporate-intro__bottom" aria-labelledby="corporateStartTitle">
-        <p class="corporate-intro__section-label">START YOUR ESTIMATE</p>
-        <h2 id="corporateStartTitle">기업에 필요한 차량,<br>지금 선택해 보세요.</h2>
-        <p>국산차·수입차 차종과 이용 조건을 선택한 뒤 상담을 신청할 수 있습니다.</p>
-        <button type="button" data-enter-estimate>법인 차량 견적 시작하기 <span aria-hidden="true">→</span></button>
+    
+      <section class="c26-benefits c26-pad" aria-labelledby="c26BenefitsTitle">
+        <p class="c26-eyebrow">BUSINESS BENEFITS</p>
+        <h2 id="c26BenefitsTitle">법인 렌트·리스,<br><span>이런 점이 좋습니다.</span></h2>
+        <p class="c26-desc">네 가지 핵심 조건을 비교해 기업에 맞는 상품을 선택하세요.</p>
+        <div class="c26-benefits__list">
+          <article><div class="c26-benefit-icon"><svg class="c26-icon c26-icon--wallet" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="20" width="44" height="30" rx="5"/><path d="M10 24V17c0-4 3-6 7-6h28v9"/><rect x="38" y="30" width="17" height="11" rx="3"/><circle cx="43" cy="35.5" r="1"/></svg></div><div><h3>초기 자금 부담 조절</h3><p>보증금·선납금 조건을 비교해 기업의 현금 흐름에 맞게 선택</p></div></article>
+          <article><div class="c26-benefit-icon"><svg class="c26-icon c26-icon--calendar" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="14" width="42" height="38" rx="5"/><path d="M11 26h42M21 10v9m21-9v9M20 37l7 7 17-17"/></svg></div><div><h3>계획적인 월 비용 관리</h3><p>월 납입금과 포함 비용을 확인해 예산을 더 명확하게 관리</p></div></article>
+          <article><div class="c26-benefit-icon"><svg class="c26-icon c26-icon--car" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M11 34 17 20a5 5 0 0 1 5-3h20a5 5 0 0 1 5 3l6 14M12 34h40v13H12zM16 47v5m32-5v5M21 40h5m12 0h5"/></svg></div><div><h3>운영·관리의 편의성</h3><p>보험·정비·사고 지원 등 계약별 서비스 범위를 비교</p></div></article>
+          <article><div class="c26-benefit-icon"><svg class="c26-icon c26-icon--document" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 11h22l9 10v31H17zM39 11v11h9M23 29h18M23 36h18M23 43h11"/></svg></div><div><h3>법인 비용처리 검토</h3><p>업무용 차량의 증빙 및 비용처리 요건을 상담 과정에서 확인</p></div></article>
+        </div>
+        <p class="c26-footnote">※ 실제 비용처리는 세법·증빙 요건에 따르며, 세무 전문가의 검토가 필요할 수 있습니다.</p>
       </section>
+    
+      <section class="c26-service c26-pad" aria-labelledby="c26ServiceTitle"><p class="c26-eyebrow">WHY AUTOGENIE?</p><h2 id="c26ServiceTitle">계약만큼 중요한 건,<br><span>진행 과정의 편리함.</span></h2>
+        <div class="c26-service__rows"><article><b>01</b><div><strong>조건 비교</strong><p>여러 렌트·리스 조건을 기업별 운용 계획에 맞춰 검토합니다.</p></div></article><article><b>02</b><div><strong>전담 1:1 상담</strong><p>견적부터 계약 확인까지 담당자와 일관되게 소통합니다.</p></div></article><article><b>03</b><div><strong>방문 상담 협의</strong><p>방문이 필요한 경우 일정과 장소를 조율해 상담할 수 있습니다.</p></div></article></div>
+      </section>
+    
+    
+    <section class="c26-meeting" aria-label="법인 상담 공간 사진">
+      <figure><img src="images/회사 전경/법인-상담-회의실.png" alt="오토지니 법인 차량 상담 회의 장면" loading="lazy" decoding="async" onerror="this.closest('figure').hidden=true"/><figcaption>법인 차량 1:1 상담 이미지</figcaption></figure>
     </section>
-
-    <section class="wizard-hero">
+      <section class="c26-partners" aria-labelledby="c26PartnersTitle"><div class="c26-pad"><p class="c26-eyebrow">PARTNER NETWORK</p><h2 id="c26PartnersTitle">제휴 <span>파트너</span></h2><p class="c26-desc">여러 회사의 차량 조건을 비교하는 네트워크를 준비하고 있습니다.</p></div>
+        <div class="c26-marquees"><div class="c26-marquee c26-marquee--left" aria-label="제휴사 임시 예시 자동 흐름"><div class="c26-marquee__track" aria-hidden="true"><div class="c26-marquee__group"><span class="c26-logo"><i style="--logo:#2371b9" aria-hidden="true">◆</i><b>KDB캐피탈</b></span><span class="c26-logo"><i style="--logo:#169f92" aria-hidden="true">✦</i><b>하나캐피탈</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데오토리스</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데캐피탈</b></span><span class="c26-logo"><i style="--logo:#60a73e" aria-hidden="true">●</i><b>아마존카</b></span></div><div class="c26-marquee__group"><span class="c26-logo"><i style="--logo:#2371b9" aria-hidden="true">◆</i><b>KDB캐피탈</b></span><span class="c26-logo"><i style="--logo:#169f92" aria-hidden="true">✦</i><b>하나캐피탈</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데오토리스</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데캐피탈</b></span><span class="c26-logo"><i style="--logo:#60a73e" aria-hidden="true">●</i><b>아마존카</b></span></div></div></div><div class="c26-marquee c26-marquee--right" aria-label="제휴사 임시 예시 자동 흐름"><div class="c26-marquee__track" aria-hidden="true"><div class="c26-marquee__group"><span class="c26-logo"><i style="--logo:#c52e40" aria-hidden="true">▰</i><b>메리츠캐피탈</b></span><span class="c26-logo"><i style="--logo:#1e8fc9" aria-hidden="true">◒</i><b>우리카드</b></span><span class="c26-logo"><i style="--logo:#1e8fc9" aria-hidden="true">◒</i><b>우리금융캐피탈</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데렌터카</b></span><span class="c26-logo"><i style="--logo:#2371b9" aria-hidden="true">◆</i><b>KDB캐피탈</b></span></div><div class="c26-marquee__group"><span class="c26-logo"><i style="--logo:#c52e40" aria-hidden="true">▰</i><b>메리츠캐피탈</b></span><span class="c26-logo"><i style="--logo:#1e8fc9" aria-hidden="true">◒</i><b>우리카드</b></span><span class="c26-logo"><i style="--logo:#1e8fc9" aria-hidden="true">◒</i><b>우리금융캐피탈</b></span><span class="c26-logo"><i style="--logo:#da2237" aria-hidden="true">●</i><b>롯데렌터카</b></span><span class="c26-logo"><i style="--logo:#2371b9" aria-hidden="true">◆</i><b>KDB캐피탈</b></span></div></div></div></div>
+        <p class="c26-partners__note c26-pad">※ 회사명은 디자인 확인용 임시 예시로 실제 제휴 관계를 의미하지 않습니다.</p>
+      </section>
+    
+      <section class="c26-bottom c26-pad" aria-labelledby="c26BottomTitle"><div class="c26-bottom__inner"><p class="c26-eyebrow">START YOUR ESTIMATE</p><h2 id="c26BottomTitle">우리 회사에 맞는 차량,<br><span>지금 견적을 확인해 보세요.</span></h2><p>법인 렌트·리스 조건 비교, 오토지니와 시작하세요.</p><button type="button" data-enter-estimate class="c26-cta">법인 차량 견적 시작하기 <span aria-hidden="true">→</span></button></div></section>
+    </section>
+        <section class="wizard-hero">
       <p>국산·수입 전 차종 비교</p>
       <h1>내가 원하는 차량,<br><strong>조건까지 한 번에 선택하세요.</strong></h1>
       <!-- <span>전국 최저가 맞춤 견적을 받아보실 수 있습니다.</span> -->
@@ -580,6 +479,48 @@
     })();
   </script>
 
+<script id="c26-marquee-runtime">
+(function () {
+  function runCorporateMarquee() {
+    var container = document.querySelector('.c26-marquees');
+    if (!container || container.dataset.marqueeReady === '1') return;
+    var rows = Array.from(container.querySelectorAll('.c26-marquee'));
+    if (rows.length !== 2) return;
+    container.dataset.marqueeReady='1';
+    var state = rows.map(function(row) {
+      var track=row.querySelector('.c26-marquee__track');
+      var group=track.querySelector('.c26-marquee__group');
+      return {row:row,track:track,group:group, direction:row.classList.contains('c26-marquee--right')?1:-1, width:1, x:0, speed:row.classList.contains('c26-marquee--right')?26:29};
+    });
+    function recalc(){
+      state.forEach(function(s){
+        var old=s.width;
+        s.width=s.group.getBoundingClientRect().width || s.group.offsetWidth || 1;
+        if (old===1 || s.x < -s.width || s.x>0) s.x=s.direction>0?-s.width:0;
+        s.track.style.transform='translate3d('+s.x+'px,0,0)';
+      });
+    }
+    recalc();
+    container.classList.add('c26-marquees--active');
+    window.addEventListener('resize', recalc, {passive:true});
+    var prev=0;
+    function animate(t) {
+      var delta=prev?Math.min(t-prev,50):16;
+      prev=t;
+      state.forEach(function(s){
+        s.x += s.direction*s.speed*delta/1000;
+        if(s.direction<0 && s.x<=-s.width) s.x+=s.width;
+        if(s.direction>0 && s.x>=0) s.x-=s.width;
+        s.track.style.transform='translate3d('+s.x.toFixed(3)+'px,0,0)';
+      });
+      window.requestAnimationFrame(animate);
+    }
+    window.requestAnimationFrame(animate);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',runCorporateMarquee,{once:true});
+  else runCorporateMarquee();
+})();
+</script>
   <script src="js/traffic-tracker.js?v=20261027"></script>
 
   <script src="js/trim-reference-data.js?v=20261110-trim-merged-01"></script>

@@ -11107,7 +11107,15 @@ const vehicleCatalog = [
     - 탭/사이트를 닫았다가 다시 접속하면 새 방문으로 기록
   ========================================================= */
 
-  const AUTOJINI_VISIT_LOGGED_KEY = "autogenie_integrated_visit_logged_v2";
+  // 통합차 메인/법인 사이트는 같은 index.html을 사용합니다.
+  // HTML 초기 스크립트가 실제 도메인에 따라 data-site-variant를 설정합니다.
+  function getAgcarSiteSource() {
+    // 단일 index.html이 결정한 사이트 구분을 방문로그와 견적 접수에 공통 적용
+    const variant = String(document.documentElement.dataset.siteVariant || "").toLowerCase();
+    return variant === "corporate" ? "법인용" : "통합차";
+  }
+
+  const AUTOJINI_VISIT_LOGGED_KEY = "autogenie_integrated_visit_logged_v3";
   const AUTOJINI_VISIT_SESSION_ID_KEY = "autogenie_integrated_visit_session_id_v2";
   const AUTOJINI_VISIT_HEARTBEAT_MS = 10000;
 
@@ -11190,65 +11198,68 @@ const vehicleCatalog = [
     return "기타";
   }
 
+  // IP 조회는 방문 저장과 병렬로 실행합니다. 여러 기능의 IP 조회는 한 번의 요청을 공유합니다.
+  let autojiniIpLookupInFlight = null;
+  let autojiniCachedIp = "";
+  function autojiniIsValidIp(value) {
+    const ip = String(value || "").trim();
+    if (/^(\d{1,3}\.){3}\d{1,3}$/.test(ip)) {
+      return ip.split(".").every(part => Number(part) >= 0 && Number(part) <= 255);
+    }
+    return ip.includes(":") && /^[0-9a-f:.]+$/i.test(ip) && ip.length <= 45;
+  }
+
   async function getPublicIpAddress() {
-    const ipServices = [
-      {
-        url: "https://api.ipify.org?format=json",
-        getIp: data => data.ip
-      },
-      {
-        url: "https://api64.ipify.org?format=json",
-        getIp: data => data.ip
-      },
-      {
-        url: "https://icanhazip.com/",
-        getIp: data => data
-      }
+    if (autojiniCachedIp) return autojiniCachedIp;
+    if (autojiniIpLookupInFlight) return autojiniIpLookupInFlight;
+
+    const services = [
+      { url: "https://api.ipify.org?format=json", text: false },
+      { url: "https://api64.ipify.org?format=json", text: false },
+      { url: "https://icanhazip.com/", text: true }
     ];
 
-    for (const service of ipServices) {
-      const controller = new AbortController();
-      const timeoutId = window.setTimeout(() => {
-        controller.abort();
-      }, 3500);
-
-      try {
-        const response = await fetch(service.url, {
-          method: "GET",
-          cache: "no-store",
-          signal: controller.signal
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
+    autojiniIpLookupInFlight = new Promise(resolve => {
+      let settled = false;
+      let pending = services.length;
+      const controllers = [];
+      services.forEach(async (service, index) => {
+        // 기본 제공업체가 빨리 응답하면 다른 외부 업체에는 접속하지 않습니다.
+        if (index > 0) await new Promise(next => window.setTimeout(next, index === 1 ? 350 : 850));
+        if (settled) {
+          pending -= 1;
+          return;
         }
-
-        let responseData;
-
-        if (service.url.includes("icanhazip.com")) {
-          responseData = await response.text();
-        } else {
-          responseData = await response.json();
+        const controller = new AbortController();
+        controllers.push(controller);
+        const timeout = window.setTimeout(() => controller.abort(), 4500);
+        try {
+          const response = await fetch(service.url, {
+            method: "GET", cache: "no-store", signal: controller.signal
+          });
+          if (!response.ok) throw new Error("IP service HTTP " + response.status);
+          const raw = service.text ? await response.text() : (await response.json()).ip;
+          const ip = String(raw || "").trim();
+          if (!settled && autojiniIsValidIp(ip)) {
+            settled = true;
+            autojiniCachedIp = ip;
+            resolve(ip);
+            controllers.forEach(other => { if (other !== controller) other.abort(); });
+          }
+        } catch (_) {
+          // 한 제공업체의 네트워크/CORS 오류는 다른 제공업체의 성공에 영향 없음.
+        } finally {
+          window.clearTimeout(timeout);
+          pending -= 1;
+          if (!settled && pending === 0) {
+            settled = true;
+            resolve("조회 실패");
+          }
         }
-
-        const ipAddress = String(
-          service.getIp(responseData) || ""
-        ).trim();
-
-        if (ipAddress) {
-          return ipAddress;
-        }
-      } catch (error) {
-        console.warn(
-          `IP 조회 실패: ${service.url}`,
-          error
-        );
-      } finally {
-        window.clearTimeout(timeoutId);
-      }
-    }
-
-    return "조회 실패";
+      });
+    });
+    try { return await autojiniIpLookupInFlight; }
+    finally { autojiniIpLookupInFlight = null; }
   }
 
   function postAutojiniVisitData(data, preferBeacon = false) {
@@ -11300,47 +11311,178 @@ const vehicleCatalog = [
       });
   }
 
-  async function sendVisitLog() {
-    autojiniVisitSessionId = getOrCreateAutojiniVisitSessionId();
-
-    try {
-      if (sessionStorage.getItem(AUTOJINI_VISIT_LOGGED_KEY) === "true") {
-        return true;
+  // Apps Script ContentService는 도메인이 다르므로 fetch(no-cors) 응답 내용 읽기 불가.
+  // 난수 visitSessionId / submissionRequestId 존재 여부만 JSONP로 확인합니다.
+  function getAgcarServerSaved(action, idName, idValue) {
+    return new Promise(resolve => {
+      if (!GOOGLE_APPS_SCRIPT_URL || !idValue) return resolve(false);
+      const callback = "__agcarStatus" + Date.now() + Math.random().toString(36).slice(2);
+      const script = document.createElement("script");
+      const url = new URL(GOOGLE_APPS_SCRIPT_URL);
+      url.searchParams.set("action", action);
+      url.searchParams.set(idName, idValue);
+      url.searchParams.set("callback", callback);
+      let finished = false;
+      const timer = setTimeout(() => finish(false), 6000);
+      function finish(value) {
+        if (finished) return;
+        finished = true;
+        clearTimeout(timer);
+        try { delete window[callback]; } catch (_) { window[callback] = undefined; }
+        script.remove();
+        resolve(Boolean(value));
       }
-    } catch (error) {
-      console.warn("방문 로그 저장 여부를 읽지 못했습니다.", error);
-    }
-
-    const referrer = document.referrer || "";
-    const ipAddress = await getPublicIpAddress();
-
-    const success = await postAutojiniVisitData({
-      requestType: "page_visit",
-      visitedAt: new Date().toISOString(),
-      customerName: "",
-      ipAddress,
-      referrerDomain: getReferrerDomain(referrer),
-      referrerUrl: referrer || "직접 접속",
-      visitorId: getAutojiniVisitorId(),
-      visitSessionId: autojiniVisitSessionId,
-      deviceType: getDeviceType(),
-      browserName: getBrowserName(),
-      ...window.AutoGenieTraffic?.getFields(),
-      // Apps Script: 두 사이트의 신청출처를 도메인 기준으로 고정
-      applicationSource: window.AutoGenieSite?.applicationSource || "오토지니",
-      siteSource: window.AutoGenieSite?.applicationSource || "오토지니",
-      "신청출처": window.AutoGenieSite?.applicationSource || "오토지니"
+      window[callback] = response => finish(response?.success === true && response?.saved === true);
+      script.onerror = () => finish(false);
+      script.src = url.href;
+      document.head.appendChild(script);
     });
+  }
 
-    if (success) {
-      try {
-        sessionStorage.setItem(AUTOJINI_VISIT_LOGGED_KEY, "true");
-      } catch (error) {
-        console.warn("방문 로그 저장 여부를 기록하지 못했습니다.", error);
-      }
+  function delayAgcar(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+
+  async function confirmAgcarSaved(action, key, id) {
+    for (const wait of [450, 800, 1500]) {
+      await delayAgcar(wait);
+      if (await getAgcarServerSaved(action, key, id)) return true;
     }
+    return false;
+  }
 
-    return success;
+  let pendingVisitLogPromise = null;
+  let initialVisitStartedAt = "";
+  // 접속 즉시 IP 조회를 시작합니다. 방문로그 저장 확인이 늦어져도 IP 조회는 진행됩니다.
+  let autojiniVisitIpLookupStarted = false;
+  let autojiniVisitResolvedIp = "";
+  let autojiniVisitIpConfirmed = false;
+  let autojiniVisitIpSyncTask = null;
+
+  function startAutojiniVisitIpLookup() {
+    if (autojiniVisitIpLookupStarted) return;
+    autojiniVisitIpLookupStarted = true;
+    autojiniVisitSessionId = autojiniVisitSessionId || getOrCreateAutojiniVisitSessionId();
+    const attemptLookup = remainingRetries => {
+      getPublicIpAddress().then(ip => {
+        if (autojiniIsValidIp(ip)) {
+          autojiniVisitResolvedIp = ip;
+          void syncAutojiniVisitIp(); // 방문 기록 확인과 무관하게 먼저 후속 업데이트 시도
+        } else if (remainingRetries > 0 && document.visibilityState !== "hidden") {
+          window.setTimeout(() => attemptLookup(remainingRetries - 1), 5000);
+        } else {
+          void reportAutojiniVisitIpFailure();
+        }
+      }).catch(() => {
+        if (remainingRetries > 0 && document.visibilityState !== "hidden") {
+          window.setTimeout(() => attemptLookup(remainingRetries - 1), 5000);
+        } else {
+          void reportAutojiniVisitIpFailure();
+        }
+      });
+    };
+    attemptLookup(1);
+  }
+
+  // 모든 IP 조회 시도가 실패했을 때 임시 상태를 최종 실패로 변경합니다.
+  // 실제 IP가 확인된 기록을 서버에서 덮어쓰지 않도록 방어합니다.
+  async function reportAutojiniVisitIpFailure() {
+    if (autojiniIsValidIp(autojiniVisitResolvedIp)) return;
+    const sessionId = autojiniVisitSessionId || getOrCreateAutojiniVisitSessionId();
+    const failure = {requestType: "page_visit_ip_update", visitSessionId: sessionId, ipAddress: "조회 실패"};
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      if (autojiniIsValidIp(autojiniVisitResolvedIp)) return;
+      await postAutojiniVisitData(failure);
+      if (attempt < 2) await new Promise(resolve => window.setTimeout(resolve, 2500 * (attempt + 1)));
+    }
+  }
+
+  function syncAutojiniVisitIp() {
+    if (!autojiniIsValidIp(autojiniVisitResolvedIp) || autojiniVisitIpConfirmed) {
+      return Promise.resolve(autojiniVisitIpConfirmed);
+    }
+    if (autojiniVisitIpSyncTask) return autojiniVisitIpSyncTask;
+    const sessionId = autojiniVisitSessionId || getOrCreateAutojiniVisitSessionId();
+    const visitorId = getAutojiniVisitorId();
+    const ip = autojiniVisitResolvedIp;
+    autojiniVisitIpSyncTask = (async () => {
+      for (let attempt = 0; attempt < 4; attempt += 1) {
+        await postAutojiniVisitData({
+          requestType: "page_visit_ip_update", visitSessionId: sessionId, ipAddress: ip
+        });
+        await new Promise(resolve => window.setTimeout(resolve, 450 + 550 * attempt));
+        if (await getAgcarServerSaved("check_visit_ip_status", "visitSessionId", sessionId)) {
+          autojiniVisitIpConfirmed = true;
+          return true;
+        }
+      }
+      return false;
+    })();
+    return autojiniVisitIpSyncTask.finally(() => { autojiniVisitIpSyncTask = null; });
+  }
+
+  function flushAutojiniVisitIpOnHide() {
+    if (!autojiniVisitIpConfirmed && autojiniIsValidIp(autojiniVisitResolvedIp)) {
+      void postAutojiniVisitData({
+        requestType: "page_visit_ip_update",
+        visitSessionId: autojiniVisitSessionId || getOrCreateAutojiniVisitSessionId(),
+        ipAddress: autojiniVisitResolvedIp
+      }, true);
+    }
+  }
+
+  async function sendVisitLog() {
+    if (pendingVisitLogPromise) return pendingVisitLogPromise;
+    pendingVisitLogPromise = (async () => {
+      autojiniVisitSessionId = getOrCreateAutojiniVisitSessionId();
+      startAutojiniVisitIpLookup();
+      const check = () => getAgcarServerSaved("check_visit_status", "visitSessionId", autojiniVisitSessionId);
+      try {
+        if (sessionStorage.getItem(AUTOJINI_VISIT_LOGGED_KEY) === autojiniVisitSessionId) {
+          if (await check()) return true;
+          sessionStorage.removeItem(AUTOJINI_VISIT_LOGGED_KEY);
+        }
+      } catch (_) {}
+
+      const referrer = document.referrer || "";
+      initialVisitStartedAt = initialVisitStartedAt || new Date().toISOString();
+      const visitData = {
+        requestType: "page_visit",
+        visitedAt: initialVisitStartedAt,
+        customerName: "",
+        ipAddress: autojiniVisitResolvedIp || "IP 확인 중",
+        referrerDomain: getReferrerDomain(referrer),
+        referrerUrl: referrer || "직접 접속",
+        visitorId: getAutojiniVisitorId(),
+        visitSessionId: autojiniVisitSessionId,
+        deviceType: getDeviceType(),
+        browserName: getBrowserName(),
+        ...window.AutoGenieTraffic?.getFields(),
+        applicationSource: getAgcarSiteSource(),
+        siteSource: getAgcarSiteSource(),
+        "신청출처": getAgcarSiteSource()
+      };
+
+      // 외부 IP 조회를 기다리지 않고 방문 정보부터 서버에 저장합니다.
+      for (let attempt = 0; attempt < 3; attempt++) {
+        if (await check()) break; // 이전 시도는 도착했지만 응답 확인만 늦은 경우
+        await postAutojiniVisitData(visitData);
+        if (await confirmAgcarSaved("check_visit_status", "visitSessionId", autojiniVisitSessionId)) break;
+        await delayAgcar((attempt + 1) * 900);
+      }
+      const saved = await check();
+      if (saved) {
+        try { sessionStorage.setItem(AUTOJINI_VISIT_LOGGED_KEY, autojiniVisitSessionId); } catch (_) {}
+        // IP는 접속 시점부터 조회 중이며, 저장 완료 뒤에도 IP 반영 상태를 확인합니다.
+        if (autojiniVisitResolvedIp) {
+          // IP 갱신 요청이 방문행보다 먼저 도착했더라도 저장 후 재시도합니다.
+          void Promise.resolve(autojiniVisitIpSyncTask).then(() => {
+            if (!autojiniVisitIpConfirmed) return syncAutojiniVisitIp();
+          });
+        }
+      }
+      return saved;
+    })();
+    try { return await pendingVisitLogPromise; }
+    finally { pendingVisitLogPromise = null; }
   }
 
   function resumeAutojiniVisitTime() {
@@ -11419,6 +11561,7 @@ const vehicleCatalog = [
 
   function handleAutojiniVisibilityChange() {
     if (document.visibilityState === "hidden") {
+      flushAutojiniVisitIpOnHide();
       pauseAutojiniVisitTime();
       sendAutojiniVisitDuration(true);
       return;
@@ -11428,6 +11571,7 @@ const vehicleCatalog = [
   }
 
   function handleAutojiniPageHide() {
+    flushAutojiniVisitIpOnHide();
     pauseAutojiniVisitTime();
     sendAutojiniVisitDuration(true);
   }
@@ -13613,12 +13757,20 @@ const vehicleCatalog = [
     };
   }
 
+  let pendingEstimateRequestId = "";
+  let pendingEstimateFingerprint = "";
+
   async function submitEstimateToGoogle() {
     if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL.includes("여기에_")) {
       throw new Error("Apps Script 웹앱 URL이 설정되지 않았습니다.");
     }
 
     const payload = buildEstimatePayload();
+    const fingerprint = JSON.stringify(payload);
+    if (fingerprint !== pendingEstimateFingerprint || !pendingEstimateRequestId) {
+      pendingEstimateFingerprint = fingerprint;
+      pendingEstimateRequestId = createAutojiniVisitSessionId();
+    }
     const securityData = getAutojiniSecurityData();
     const estimateIpAddress = await getPublicIpAddress();
 
@@ -13645,18 +13797,34 @@ const vehicleCatalog = [
       visitorId: securityData.visitorId || "확인 불가",
       ipAddress: estimateIpAddress,
       visitSessionId: getOrCreateAutojiniVisitSessionId(),
+      submissionRequestId: pendingEstimateRequestId,
+      submissionSource: getAgcarSiteSource(),
+      applicationSource: getAgcarSiteSource(),
+      siteSource: getAgcarSiteSource(),
+      referrerUrl: document.referrer || "직접 접속",
+      referrerDomain: getReferrerDomain(document.referrer || ""),
+      deviceType: getDeviceType(),
+      browserName: getBrowserName(),
       elapsedSeconds: String(securityData.elapsedSeconds || 0),
       ...window.AutoGenieTraffic?.getFields()
     });
 
-    await fetch(GOOGLE_APPS_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-      },
-      body: body.toString()
-    });
+    // 저장 확인 전에는 견적 접수 완료 화면을 표시하지 않습니다.
+    for (let attempt = 0; attempt < 3; attempt++) {
+      if (await getAgcarServerSaved("check_estimate_status", "submissionRequestId", pendingEstimateRequestId)) return;
+      try {
+        await fetch(GOOGLE_APPS_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+          body: body.toString()
+        });
+      } catch (error) { console.warn("견적 전송 재시도 예정", error); }
+      if (await confirmAgcarSaved("check_estimate_status", "submissionRequestId", pendingEstimateRequestId)) return;
+      await delayAgcar((attempt + 1) * 1000);
+    }
+    if (await getAgcarServerSaved("check_estimate_status", "submissionRequestId", pendingEstimateRequestId)) return;
+    throw new Error("견적 저장 확인에 실패했습니다. 잠시 후 다시 시도해 주세요.");
   }
 
 
@@ -13733,7 +13901,7 @@ const vehicleCatalog = [
       scrollToEstimate();
     } catch (error) {
       console.error(error);
-      showValidation(error?.message?.includes("차단 상태")
+      showValidation(error?.message?.includes("차단 상태") || error?.message?.includes("견적 저장 확인")
         ? error.message : "견적 전송에 실패했습니다. 잠시 후 다시 시도해 주세요.");
       nextButton.disabled = false;
       nextButton.classList.remove("is-submitting");
