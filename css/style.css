@@ -11773,9 +11773,9 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
     padding-right: 28px;
 }
 .c26 .c26-eyebrow {
-    font-size: 10.5px;
-    letter-spacing: 0.09em;
-    line-height: 1.4;
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 1;
     font-weight: 850;
     color: #2e61b9;
     margin: 0 0 14px;
@@ -11788,9 +11788,9 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
     overflow-wrap: break-word;
 }
 .c26 h1 {
-    font-size: clamp(30px, 7.7vw, 38px);
-    line-height: 1.35;
-    letter-spacing: -0.073em;
+    font-size: 34px;
+    line-height: 1.24;
+    letter-spacing: 0;
     font-weight: 900;
     color: #172236;
     margin: 0;
@@ -11813,9 +11813,9 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
 }
 .c26 .c26-lead {
     font-size: 14px;
-    line-height: 1.82;
+    line-height: 1.7;
     color: #4d5f75;
-    margin: 20px 0 0;
+    margin: 12px 0 0;
 }
 .c26 .c26-desc {
     font-size: 13.5px;
@@ -11832,6 +11832,12 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
 .c26-hero {
     background: #fff;
     padding-top: 56px;
+}
+.corporate-intro.c26 #corporateIntroTitle {
+    font-size: 34px;
+}
+.corporate-intro.c26 .c26-cta {
+    margin-top: 20px;
 }
 .c26 .c26-cta {
     display: flex;
@@ -11913,8 +11919,8 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
     margin: auto;
 }
 .c26-recommend {
-    padding-top: 59px;
-    padding-bottom: 61px;
+    padding-top: 50px;
+    padding-bottom: 30px;
     background: #fff;
     text-align: center;
 }
@@ -11925,7 +11931,7 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
     font-size: 28px;
 }
 .corporate-intro.c26 .c26-recommend h2 {
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 800;
     line-height: 1.35;
 }
@@ -12236,7 +12242,7 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
 }
 .c26-service {
     background: #fff;
-    padding-top: 61px;
+    padding-top: 10px;
     padding-bottom: 58px;
 }
 .c26-service__rows {
@@ -12265,14 +12271,14 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
     color: #182b47;
 }
 .c26-service__rows p {
-    font-size: 12.5px;
+    font-size: 14px;
     line-height: 1.72;
     color: #5e6d7f;
     margin: 5px 0 0;
 }
 .c26-partners {
     background: #f1f6fc;
-    padding-top: 52px;
+    padding-top: 24px;
     padding-bottom: 44px;
     overflow: hidden !important;
     overflow-x: clip !important;
@@ -12420,9 +12426,10 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
 .c26-meeting img {
     display: block;
     width: 100%;
-    max-height: 350px;
-    aspect-ratio: 16/10;
+    max-height: 300px;
+    aspect-ratio: 18 / 10;
     object-fit: cover;
+    object-position: center 100%;
 }
 .c26-meeting figcaption {
     padding: 8px 20px 12px;
@@ -12585,112 +12592,183 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
 }
 .c26-delivery-graphic {
     position: relative;
-    isolation: isolate;
-    display: flex;
-    min-height: 188px;
+    display: block;
+    width: calc(100% + 24px);
     margin: 0;
-    padding: 20px 22px;
+    margin-left: -12px;
+    padding: 10px;
+    border: 1px solid #e7eef8;
+    border-radius: 16px;
+    box-shadow: 0 5px 16px rgba(24, 53, 91, 0.06);
     overflow: hidden;
-    border: 1px solid #e3ebf6;
-    border-radius: 4px;
-    background: #f8faff;
 }
 .c26-delivery-graphic figcaption {
-    position: relative;
-    z-index: 1;
-}
-.c26-delivery-graphic small {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    color: #64758c;
-    font-size: 11px;
-}
-.c26-delivery-graphic__eyebrow::before {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #176be0;
-    content: "";
-}
-.c26-delivery-graphic strong {
-    display: block;
-    margin-top: 9px;
-    color: #1468dc;
-    font-size: 36px;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.06em;
-}
-.c26-delivery-graphic strong span {
-    margin-left: 2px;
-    color: #347bdb;
-    font-size: 22px;
-    font-weight: 750;
-    letter-spacing: -0.03em;
-}
-.corporate-intro.c26 .c26-delivery-graphic__highlight {
-    display: block;
-    margin-top: 4px;
-    color: #176be0;
-    font-size: 22px;
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.04em;
-}
-.c26-delivery-graphic svg {
     position: absolute;
-    z-index: 0;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-}
-.corporate-intro.c26 .c26-metrics__support {
+    z-index: 1;
+    top: 9.5%;
+    left: 5.7%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px solid #e5eaf2;
+    width: 60%;
+    color: #152239;
+    pointer-events: none;
 }
-.corporate-intro.c26 .c26-metrics__support > span {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 10px 8px 0;
-    border-right: 1px solid #e5eaf2;
-    text-align: center;
+.c26-delivery-graphic figcaption > span {
+    font-size: 14px;
+    font-weight: 750;
+    line-height: 1.2;
 }
-.corporate-intro.c26 .c26-metrics__support > span:last-child {
-    border-right: 0;
+.c26-delivery-graphic figcaption strong {
+    display: grid;
+    margin-top: 5px;
+    color: #176be0;
+    font-size: 33px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0;
 }
-.corporate-intro.c26 .c26-metrics__support b {
-    color: #285ab7;
+.c26-delivery-graphic figcaption strong span {
+    display: block;
+    white-space: nowrap;
+}
+.c26-delivery-graphic figcaption strong span:last-child {
+    color: #152239;
+    font-size: 0.82em;
+}
+.c26-delivery-graphic figcaption p {
+    margin: 10px 0 0;
+    color: #55677d;
     font-size: 15px;
-    font-weight: 900;
+    line-height: 1.5;
 }
-.corporate-intro.c26 .c26-metrics__support small {
-    color: #7a8493;
-    font-size: 10px;
+.c26-delivery-graphic img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
-.corporate-intro.c26 .c26-delivery-graphic strong {
-    font-size: 36px;
+@media (max-width: 900px) {
+    .corporate-intro.c26 #corporateIntroTitle {
+        font-size: 30px;
+    }
+    .c26-delivery-graphic figcaption {
+        width: 82%;
+    }
+    .c26-delivery-graphic figcaption > span {
+        font-size: 14px;
+    }
+    .c26-delivery-graphic figcaption strong {
+        font-size: 34px;
+    }
+    .c26-delivery-graphic figcaption p {
+        margin-top: 12px;
+        font-size: 13px;
+    }
+}
+@media (max-width: 600px) {
+    .corporate-intro.c26 #corporateIntroTitle {
+        font-size: 28px;
+    }
+    .c26-delivery-graphic figcaption {
+        width: 85%;
+    }
+    .c26-delivery-graphic figcaption > span {
+        font-size: 13px;
+    }
+    .c26-delivery-graphic figcaption strong {
+        font-size: 30px;
+    }
 }
 @media (max-width: 420px) {
+    .corporate-intro.c26 #corporateIntroTitle {
+        font-size: 26px;
+    }
     .c26-delivery-graphic {
-        min-height: 178px;
-        padding: 17px 18px;
+        width: calc(100% + 18px);
+        margin-left: -9px;
     }
-    .corporate-intro.c26 .c26-delivery-graphic strong {
-        font-size: 32px;
+    .c26-delivery-graphic figcaption {
+        top: 5%;
+        left: 5.5%;
+        width: 80%;
     }
-    .corporate-intro.c26 .c26-delivery-graphic__highlight {
-        font-size: 20px;
+    .c26-delivery-graphic figcaption > span {
+        font-size: 15px;
+    }
+    .c26-delivery-graphic figcaption strong {
+        margin-top: 5px;
+        font-size: 24px;
+    }
+    .c26-delivery-graphic figcaption p {
+        margin-top: 7px;
+        font-size: 12px;
+        line-height: 1.35;
     }
 }
 @media (max-width: 340px) {
-    .corporate-intro.c26 .c26-delivery-graphic strong {
-        font-size: 29px;
+    .c26-delivery-graphic {
+        width: calc(100% + 10px);
+        margin-left: -5px;
     }
-    .corporate-intro.c26 .c26-delivery-graphic__highlight {
-        font-size: 19px;
+    .c26-delivery-graphic figcaption strong {
+        font-size: 22px;
+    }
+}
+.c26-consulting-visual {
+    width: calc(100% - 48px);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.c26-consulting {
+    padding: 50px 0 36px;
+}
+.c26-consulting-visual figcaption {
+    padding: 0 16px 0;
+    text-align: center;
+}
+.c26-consulting-visual figcaption span {
+    display: block;
+    color: #66758a;
+    font-size: 18px;
+    font-weight: 400;
+}
+.c26-consulting-visual figcaption h2 {
+    display: block;
+    margin-top: 3px;
+    color: #172236;
+    font-size: 41px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: 0 !important;
+}
+.c26-consulting-visual figcaption em {
+    color: #176be0;
+    font-style: normal;
+}
+.c26-consulting-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 420px) {
+    .c26-consulting {
+        padding: 24px 0;
+    }
+    .c26-consulting-visual {
+        width: calc(100% - 32px);
+    }
+    .c26-consulting-visual figcaption {
+        padding: 0 12px 14px;
+    }
+    .c26-consulting-visual figcaption span {
+        font-size: 15px;
+    }
+    .c26-consulting-visual figcaption h2 {
+        font-size: 28px;
+    }
+}
+@media (max-width: 340px) {
+    .c26-consulting-visual figcaption h2 {
+        font-size: 24px;
     }
 }
 .corporate-intro.c26 .c26-hero-visual {
