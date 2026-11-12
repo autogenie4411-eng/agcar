@@ -515,11 +515,23 @@
         document.documentElement.classList.add("corporate-estimate-started");
         const intro = document.getElementById("corporateIntro");
         intro?.setAttribute("aria-hidden", "true");
-        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+        // 법인 소개의 견적 버튼에서는 차량 선택(STEP 01)을 헤더 바로 아래에 보여줍니다.
+        // 상단의 견적 소개 배너는 유지하되 이 진입 경로에서만 건너뜁니다.
+        function alignToVehicleSelection() {
+          const estimate = document.getElementById("estimate");
+          if (!estimate) return;
+          const header = document.querySelector(".wizard-header");
+          const headerHeight = header ? header.getBoundingClientRect().height : 0;
+          const targetTop = window.scrollY + estimate.getBoundingClientRect().top - headerHeight - 8;
+          window.scrollTo({ top: Math.max(0, Math.round(targetTop)), left: 0, behavior: "smooth" });
+        }
+        // 소개 영역이 display:none이 된 다음의 실제 위치를 계산해야 정확합니다.
         requestAnimationFrame(function () {
-          const initialButton = document.querySelector('#estimate .segment-control[data-group="market"] button');
-          if (initialButton) initialButton.focus({ preventScroll: true });
+          requestAnimationFrame(function () {
+            alignToVehicleSelection();
+            const initialButton = document.querySelector('#estimate .segment-control[data-group="market"] button');
+            if (initialButton) initialButton.focus({ preventScroll: true });
+          });
         });
       }
       function enterCorporateEstimate() {
