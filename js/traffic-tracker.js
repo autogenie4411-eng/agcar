@@ -1,169 +1,121 @@
-/* 오토지니 유입 분석. 외부 전송 없이 기존 방문/견적 Apps Script 페이로드에 값을 추가합니다. */
+/* 오토지니 유입 분석: 현재 방문의 확인된 검색어만 기록합니다.
+ * 기존 방문로그/견적 Apps Script 필드명을 유지합니다.
+ * 주의: 네이버 실제 검색어(n_query)와 광고 키워드(utm_term)는 서로 다릅니다.
+ */
 (() => {
   'use strict';
-  const KEY = 'autogenie_traffic_attribution_v1';
-  const q = new URLSearchParams(location.search);
-  let saved = {};
-  try { saved = JSON.parse(sessionStorage.getItem(KEY) || '{}') || {}; } catch (_) {}
-  const ref = (() => { try { return new URL(document.referrer).hostname.toLowerCase(); } catch (_) { return ''; } })();
-  const clean = v => String(v || '').trim().slice(0, 180);
-  const actual = clean(q.get('n_query'));
-  const googleClick = q.has('gclid') || q.has('wbraid') || q.has('gbraid');
-  const naverClick = q.has('n_click') || Boolean(actual);
-  // Click identifiers take precedence when ad landing URLs lack UTM/referrer values.
-  const source = clean(q.get('utm_source')).toLowerCase() || (googleClick ? 'google' : naverClick ? 'naver' : ref.includes('naver.') ? 'naver' : /(^|\.)google\./.test(ref) ? 'google' : ref ? 'referral' : 'direct');
-  const medium = clean(q.get('utm_medium')).toLowerCase() || (googleClick || naverClick ? 'cpc' : 'unknown');
-  const adKeyword = clean(q.get('utm_term'));
-  // 최초로 확인된 실제 검색어만 영구 보존합니다. (브라우저별 저장)
-  // 기존 세션에 이미 확인된 검색어가 있다면 업그레이드 시에도 유지합니다.
-  const FIRST_KEY = 'autogenie_first_confirmed_search_term_v1';
-  let firstTerm = '';
-  try { firstTerm = clean(localStorage.getItem(FIRST_KEY)); } catch (_) {}
-  if (!firstTerm && saved.trafficKeywordType === 'actual_naver_query') {
-    const previousTerm = clean(saved.trafficSearchTerm);
-    if (previousTerm && previousTerm !== '미확인') firstTerm = previousTerm;
-  }
-  if (!firstTerm && actual) firstTerm = actual;
-  if (firstTerm) {
-    try { localStorage.setItem(FIRST_KEY, firstTerm); } catch (_) {}
-  }
-  const searchTerm = firstTerm || '미확인';
-  if (!saved.recordedAt || [...q.keys()].some(k => /^(utm_|n_query|gclid|wbraid|gbraid|n_click)/i.test(k))) {
-    saved = {
-      trafficSource: source,
-      trafficMedium: medium,
-      trafficCampaign: clean(q.get('utm_campaign')),
-      trafficSearchTerm: searchTerm,
-      trafficKeywordType: firstTerm ? 'actual_naver_query' : 'unknown',
-      trafficAdKeyword: adKeyword,
-      trafficReferrer: clean(ref),
-      recordedAt: new Date().toISOString()
-    };
-    try { sessionStorage.setItem(KEY, JSON.stringify(saved)); } catch (_) {}
-  }
-  // 새 파라미터 없이 방문했어도 이전에 확인한 최초 검색어를 복원합니다.
-  if (firstTerm) {
-    saved.trafficSearchTerm = firstTerm;
-    saved.trafficKeywordType = 'actual_naver_query';
-    try { sessionStorage.setItem(KEY, JSON.stringify(saved)); } catch (_) {}
-  }
-  const fields = () => ({
-    trafficSource: clean(saved.trafficSource),
-    trafficMedium: clean(saved.trafficMedium),
-    trafficCampaign: clean(saved.trafficCampaign),
-    trafficSearchTerm: clean(saved.trafficSearchTerm || '미확인'),
-    trafficKeywordType: clean(saved.trafficKeywordType),
-    trafficAdKeyword: clean(saved.trafficAdKeyword),
-    trafficReferrer: clean(saved.trafficReferrer)
-  });
-  window.AutoGenieTraffic = {
-    getFields: fields,
-    trackConversion: () => {
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'traffic_estimate_submit', {
-          traffic_search_term: fields().trafficSearchTerm,
-          traffic_source: fields().trafficSource,
-          traffic_medium: fields().trafficMedium
-        });
-      }
-    }
+
+  // v1 및 테스트용 localStorage의 오래된 검색어는 의도적으로 사용하지 않습니다.
+  const KEY = 'autogenie_traffic_attribution_v2';
+  const clean = value => String(value == null ? '' : value).trim().slice(0, 180);
+  const known = value => {
+    const str = clean(value);
+    return str && !['미확인', 'unknown', '(not set)', 'not set'].includes(str.toLowerCase());
   };
-  // URL에 실제 검색어가 없는 경우 브라우저에서 추측하거나 referrer로 조작하지 않습니다.
-})();
+  const q = new URLSearchParams(location.search);
+  const referrerUrl = (() => {
+    try { return document.referrer ? new URL(document.referrer) : null; }
+    catch (_) { return null; }
+  })();
+  const refHost = (referrerUrl?.hostname || '').toLowerCase();
+  const isInternal = !!referrerUrl && referrerUrl.origin === location.origin;
+  const isNaver = /(^|\.)naver\.com$/.test(refHost);
+  const isGoogle = /(^|\.)google\.[a-z.]+$/.test(refHost);
+  const currentHost = location.hostname.toLowerCase();
+  const hasCampaignParams = [...q.keys()].some(k => /^(utm_|n_query|n_click|gclid|wbraid|gbraid)/i.test(k));
 
-
-/* agcar 최초 검색어 수집 테스트 */
-(() => {
-  'use strict';
-
-  const tracker = window.AutoGenieTraffic;
-  if (!tracker || typeof tracker.getFields !== 'function') return;
-
-  const originalGetFields = tracker.getFields.bind(tracker);
-  const STORAGE_KEY = 'agcar_first_search_test_v1';
-  const clean = value => String(value || '').trim().slice(0, 180);
-
-  function getReferrerKeyword() {
-    try {
-      const url = new URL(document.referrer);
-      const host = url.hostname.toLowerCase();
-
-      if (/(^|\.)search\.naver\.com$/.test(host)) {
-        const term = clean(
-          url.searchParams.get('query') ||
-          url.searchParams.get('n_query')
-        );
-        if (term) {
-          return { term, type: 'naver_referrer_query' };
-        }
-      }
-
-      if (
-        /(^|\.)google\./.test(host) &&
-        url.pathname.startsWith('/search')
-      ) {
-        const term = clean(url.searchParams.get('q'));
-        if (term) {
-          return { term, type: 'google_referrer_query' };
-        }
-      }
-    } catch (_) {}
-
-    return { term: '', type: '' };
+  function getReferrerSearch() {
+    if (!referrerUrl) return null;
+    const host = refHost;
+    let term = '';
+    let type = '';
+    if (/(^|\.)search\.naver\.com$/.test(host)) {
+      term = clean(referrerUrl.searchParams.get('query') || referrerUrl.searchParams.get('n_query'));
+      type = 'naver_referrer_query';
+    } else if (isGoogle) {
+      term = clean(referrerUrl.searchParams.get('q'));
+      type = 'google_referrer_query';
+    }
+    return known(term) ? {term, type} : null;
   }
 
-  const params = new URLSearchParams(location.search);
-  const naverQuery = clean(params.get('n_query'));
-  const referrerResult = getReferrerKeyword();
-  const existing = originalGetFields();
+  // 추적 URL에 직접 들어온 검색어를 우선합니다. 추측값은 저장하지 않습니다.
+  const actual = clean(q.get('n_query'));
+  const referralSearch = getReferrerSearch();
+  const found = known(actual)
+    ? {term: actual, type: 'actual_naver_query'}
+    : referralSearch;
 
-  let first = null;
-
+  let saved = null;
   try {
-    first = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+    const parsed = JSON.parse(sessionStorage.getItem(KEY) || 'null');
+    if (parsed && parsed.hostname === currentHost && parsed.data && parsed.recordedAt) saved = parsed;
   } catch (_) {}
 
-  if (!first || !first.term) {
-    const existingTerm = clean(existing.trafficSearchTerm);
+  // 외부에서 새로 진입하면 이전 유입정보를 무효화합니다.
+  // 내부 이동/새로고침에서는 현재 세션의 최초 유입값을 유지합니다.
+  const isReload = (() => {
+    try { return performance.getEntriesByType('navigation')[0]?.type === 'reload'; }
+    catch (_) { return false; }
+  })();
+  const newEntry = !saved || hasCampaignParams || (!isInternal && !isReload);
 
-    if (existingTerm && existingTerm !== '미확인') {
-      first = {
-        term: existingTerm,
-        type: existing.trafficKeywordType || 'previously_confirmed'
-      };
-    } else if (naverQuery) {
-      first = {
-        term: naverQuery,
-        type: 'actual_naver_query'
-      };
-    } else if (referrerResult.term) {
-      first = referrerResult;
-    }
-
-    if (first && first.term) {
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(first));
-      } catch (_) {}
-    }
+  if (newEntry) {
+    const explicitSource = clean(q.get('utm_source')).toLowerCase();
+    const googlePaidClick = ['gclid', 'wbraid', 'gbraid'].some(k => known(q.get(k)));
+    const naverPaidClick = known(q.get('n_click'));
+    const source = explicitSource || (googlePaidClick ? 'google' : naverPaidClick || known(actual) || isNaver ? 'naver' : isGoogle ? 'google' : refHost ? 'referral' : 'direct');
+    const medium = clean(q.get('utm_medium')).toLowerCase() || (googlePaidClick || naverPaidClick ? 'cpc' : 'unknown');
+    saved = {
+      hostname: currentHost,
+      recordedAt: new Date().toISOString(),
+      data: {
+        trafficSource: source,
+        trafficMedium: medium,
+        trafficCampaign: clean(q.get('utm_campaign')),
+        trafficSearchTerm: found?.term || '미확인',
+        trafficKeywordType: found?.type || 'unknown',
+        trafficAdKeyword: clean(q.get('utm_term')),
+        trafficReferrer: clean(refHost)
+      }
+    };
+  } else if (found && !known(saved.data.trafficSearchTerm)) {
+    // 동일 방문에서 아직 검색어가 없었다면 확인된 검색어만 보완합니다.
+    saved.data.trafficSearchTerm = found.term;
+    saved.data.trafficKeywordType = found.type;
   }
 
-  tracker.getFields = function () {
-    const fields = originalGetFields();
+  try { sessionStorage.setItem(KEY, JSON.stringify(saved)); } catch (_) {}
 
-    return {
-      ...fields,
-      trafficSearchTerm: first?.term || fields.trafficSearchTerm || '미확인',
-      trafficKeywordType: first?.type || fields.trafficKeywordType || 'unknown'
-    };
-  };
+  const getFields = () => ({
+    trafficSource: clean(saved.data.trafficSource),
+    trafficMedium: clean(saved.data.trafficMedium),
+    trafficCampaign: clean(saved.data.trafficCampaign),
+    trafficSearchTerm: clean(saved.data.trafficSearchTerm) || '미확인',
+    trafficKeywordType: clean(saved.data.trafficKeywordType) || 'unknown',
+    trafficAdKeyword: clean(saved.data.trafficAdKeyword),
+    trafficReferrer: clean(saved.data.trafficReferrer)
+  });
 
-  tracker.getTestInfo = function () {
-    return {
+  window.AutoGenieTraffic = {
+    getFields,
+    trackConversion: () => {
+      if (typeof window.gtag === 'function') {
+        const fields = getFields();
+        window.gtag('event', 'traffic_estimate_submit', {
+          traffic_search_term: fields.trafficSearchTerm,
+          traffic_source: fields.trafficSource,
+          traffic_medium: fields.trafficMedium
+        });
+      }
+    },
+    getTestInfo: () => ({
       referrer: document.referrer || '없음',
-      landingNQuery: naverQuery || '없음',
-      referrerKeyword: referrerResult.term || '미확인',
-      firstSearchKeyword: tracker.getFields().trafficSearchTerm,
-      keywordType: tracker.getFields().trafficKeywordType
-    };
+      nQuery: actual || '없음',
+      referrerKeyword: referralSearch?.term || '미확인',
+      firstSearchKeyword: getFields().trafficSearchTerm,
+      keywordType: getFields().trafficKeywordType,
+      recordedAt: saved.recordedAt
+    })
   };
 })();
