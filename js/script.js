@@ -3776,86 +3776,137 @@ const vehicleCatalog = [
         "name": "봉고3",
         "detailModels": [
           {
-            "name": "1톤 킹캡 초장축",
+            "name": "LPG 킹캡 초장축 2WD M/T",
+            "engine": "LPG",
+            "cab": "킹캡",
             "trims": [
-              "L 라이트 M/T",
               "L 라이트",
-              "L M/T",
-              "L",
-              "L 스마트 셀렉션",
-              "GL M/T",
-              "GL",
-              "GLS M/T",
-              "GLS"
+              "L 기본형",
+              "GL 기본형",
+              "GLS 기본형"
             ]
           },
           {
-            "name": "1톤 킹캡 장축 4WD",
+            "name": "LPG 킹캡 초장축 2WD A/T",
+            "engine": "LPG",
+            "cab": "킹캡",
+            "trims": [
+              "L 라이트",
+              "L 기본형",
+              "스마트셀렉션 스마트",
+              "GL 기본형",
+              "GLS 기본형"
+            ]
+          },
+          {
+            "name": "LPG 킹캡 장축 4WD M/T",
+            "engine": "LPG",
+            "cab": "킹캡",
             "trims": [
               "GL 라이트",
-              "GL",
-              "GLS"
+              "GL 기본형",
+              "GLS 기본형"
             ]
           },
           {
-            "name": "1톤 더블캡 초장축",
+            "name": "LPG 더블캡 초장축 2WD M/T",
+            "engine": "LPG",
+            "cab": "더블캡",
             "trims": [
-              "L 라이트 M/T",
               "L 라이트",
-              "L M/T",
-              "L",
-              "GL M/T",
-              "GL",
-              "GLS M/T",
-              "GLS"
+              "L 기본형",
+              "GL 기본형",
+              "GLS 기본형"
             ]
           },
           {
-           "name": "1톤 더블캡 장축 4WD",
+            "name": "LPG 더블캡 초장축 2WD A/T",
+            "engine": "LPG",
+            "cab": "더블캡",
+            "trims": [
+              "L 라이트",
+              "L 기본형",
+              "GL 기본형",
+              "GLS 기본형"
+            ]
+          },
+          {
+            "name": "LPG 더블캡 장축 4WD M/T",
+            "engine": "LPG",
+            "cab": "더블캡",
             "trims": [
               "GL 라이트",
-              "GL",
-              "GLS"
+              "GL 기본형",
+              "GLS 플러스"
             ]
           },
           {
-            "name": "1톤 표준캡 초장축",
+            "name": "LPG 표준캡 초장축 2WD M/T",
+            "engine": "LPG",
+            "cab": "표준캡",
             "trims": [
-              "L 라이트 M/T",
               "L 라이트",
-              "L M/T",
-              "L",
-              "GL M/T",
-              "GL",
-              "GLS M/T",
-              "GLS"
+              "L 기본형",
+              "GL 기본형",
+              "GLS 기본형"
             ]
           },
           {
-           "name": "1톤 표준캡 장축 4WD",
+            "name": "LPG 표준캡 초장축 2WD A/T",
+            "engine": "LPG",
+            "cab": "표준캡",
+            "trims": [
+              "L 라이트",
+              "L 기본형",
+              "GL 기본형",
+              "GLS 기본형"
+            ]
+          },
+          {
+            "name": "LPG 표준캡 장축 4WD M/T",
+            "engine": "LPG",
+            "cab": "표준캡",
             "trims": [
               "GL 라이트",
-              "GL",
-              "GLS"
+              "GL 기본형",
+              "GLS 기본형"
             ]
           },
           {
-            "name": "1.2톤 킹캡 초장축",
+            "name": "1.2톤 LPG 킹캡 초장축 2WD A/T",
+            "engine": "1.2톤 LPG",
+            "cab": "1.2톤 킹캡",
             "trims": [
-              "스마트 셀렉션",
-              "GL M/T",
-              "GL",
-              "GLS M/T",
-              "GLS"
+              "1.2톤 스마트셀렉션 스마트",
+              "1.2톤 GL 기본형",
+              "1.2톤 GLS 기본형"
             ]
           },
           {
-            "name": "1.2톤 표준캡 초장축",
+            "name": "1.2톤 LPG 킹캡 초장축 2WD M/T",
+            "engine": "1.2톤 LPG",
+            "cab": "1.2톤 킹캡",
             "trims": [
-              "GL M/T",
-              "GL",
-              "GLS M/T",
-              "GLS"
+              "1.2톤 GL 기본형",
+              "1.2톤 GLS 기본형"
+            ]
+          },
+          {
+            "name": "1.2톤 LPG 표준캡 초장축 2WD M/T",
+            "engine": "1.2톤 LPG",
+            "cab": "1.2톤 표준캡",
+            "trims": [
+              "1.2톤 GL 기본형",
+              "1.2톤 GLS 기본형"
+            ]
+          },
+          {
+            "name": "1.2톤 LPG 표준캡 초장축 2WD A/T",
+            "engine": "1.2톤 LPG",
+            "cab": "1.2톤 표준캡",
+            "trims": [
+              "1.2톤 GL 기본형",
+              "1.2톤 GLS 기본형"
             ]
           }
         ],
