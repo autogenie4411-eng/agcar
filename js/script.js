@@ -777,63 +777,79 @@ const vehicleCatalog = [
         "name": "아반떼",
         "detailModels": [
           {
-            "name": "1.6 가솔린",
+            "name": "2.0 가솔린",
             "trims": [
-              "스마트",
               "모던",
+              "프리미엄",
               "인스퍼레이션"
-            ]
-          },{
-            "name": "1.6 가솔린 N라인",
-            "trims": [
-              "N라인"
             ]
           }
         ],
         "paints": [
-          {
-            "id": "paint-420",
-            "name": "메타 블루 펄",
-            "hex": "#9DA0C3",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-메타 블루 펄.webp"
-          },
-          {
-            "id": "paint-421",
-            "name": "미라지 그린",
-            "hex": "#646E68",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-미라지 그린.webp"
-          },
-          {
-            "id": "paint-422",
-            "name": "아마존 그레이 메탈릭",
-            "hex": "#7e858d",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-아마존 그레이 메탈릭.webp"
-          },
-          {
-            "id": "paint-423",
-            "name": "아틀라스 화이트",
-            "hex": "#f3f2ed",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-아틀라스 화이트.webp"
-          },
-          {
-            "id": "paint-424",
-            "name": "어비스 블랙 펄",
-            "hex": "#17191c",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-어비스 블랙 펄.webp"
-          },
-          {
-            "id": "paint-425",
-            "name": "에코트로닉 그레이 펄",
-            "hex": "#7e858d",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-에코트로닉 그레이 펄.webp"
-          }
-        ]
+  {
+    "id": "paint-423",
+    "name": "아틀라스 화이트",
+    "hex": "#e5e4e3",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼-아틀라스 화이트.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-qgp",
+    "name": "퀀텀 실버 펄",
+    "hex": "#949697",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼-퀀텀 실버 펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-424",
+    "name": "어비스 블랙 펄",
+    "hex": "#202323",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼-어비스 블랙 펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-425",
+    "name": "에코트로닉 그레이펄",
+    "hex": "#57595b",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼-에코트로닉 그레이펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-v2r",
+    "name": "볼케닉 레드 펄",
+    "hex": "#b12614",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼-볼케닉 레드 펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-g2h",
+    "name": "그라펜 그린 펄",
+    "hex": "#66716d",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼-그라펜 그린 펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-vc2",
+    "name": "고요 카퍼 펄",
+    "hex": "#b0a297",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼-고요 카퍼 펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-kkp",
+    "name": "코디악 블루 매트",
+    "hex": "#555db2",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼-코디악 블루 매트.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-raf",
+    "name": "랩터 그레이 매트",
+    "hex": "#615c55",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼-랩터 그레이 매트.webp?v=20261116-avante-colors-01"
+  }
+]
       },
       {
         "name": "아반떼 하이브리드",
@@ -841,62 +857,77 @@ const vehicleCatalog = [
           {
             "name": "1.6 HEV",
             "trims": [
-              "스마트",
-              "모던 라이트",
               "모던",
+              "프리미엄",
               "인스퍼레이션"
-            ]
-          },{
-            "name": "1.6 HEV N라인",
-            "trims": [
-              "N라인"
             ]
           }
         ],
         "paints": [
-          {
-            "id": "paint-544",
-            "name": "메타 블루 펄",
-            "hex": "#9DA0C3",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-메타 블루 펄.webp"
-          },
-          {
-            "id": "paint-545",
-            "name": "미라지 그린",
-            "hex": "#646E68",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-미라지 그린.webp"
-          },
-          {
-            "id": "paint-546",
-            "name": "아마존 그레이 메탈릭",
-            "hex": "#7e858d",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-아마존 그레이 메탈릭.webp"
-          },
-          {
-            "id": "paint-547",
-            "name": "아틀라스 화이트",
-            "hex": "#f3f2ed",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-아틀라스 화이트.webp"
-          },
-          {
-            "id": "paint-548",
-            "name": "어비스 블랙 펄",
-            "hex": "#17191c",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-어비스 블랙 펄.webp"
-          },
-          {
-            "id": "paint-549",
-            "name": "에코트로닉 그레이 펄",
-            "hex": "#7e858d",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아반떼-에코트로닉 그레이 펄.webp"
-          }
-        ]
+  {
+    "id": "paint-547",
+    "name": "아틀라스 화이트",
+    "hex": "#e5e4e3",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼 하이브리드-아틀라스 화이트.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-hybrid-qgp",
+    "name": "퀀텀 실버 펄",
+    "hex": "#949697",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼 하이브리드-퀀텀 실버 펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-548",
+    "name": "어비스 블랙 펄",
+    "hex": "#202323",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼 하이브리드-어비스 블랙 펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-549",
+    "name": "에코트로닉 그레이펄",
+    "hex": "#57595b",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼 하이브리드-에코트로닉 그레이펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-hybrid-v2r",
+    "name": "볼케닉 레드 펄",
+    "hex": "#b12614",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼 하이브리드-볼케닉 레드 펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-hybrid-g2h",
+    "name": "그라펜 그린 펄",
+    "hex": "#66716d",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼 하이브리드-그라펜 그린 펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-hybrid-vc2",
+    "name": "고요 카퍼 펄",
+    "hex": "#b0a297",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼 하이브리드-고요 카퍼 펄.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-hybrid-kkp",
+    "name": "코디악 블루 매트",
+    "hex": "#555db2",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼 하이브리드-코디악 블루 매트.webp?v=20261116-avante-colors-01"
+  },
+  {
+    "id": "paint-avante-hybrid-raf",
+    "name": "랩터 그레이 매트",
+    "hex": "#615c55",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/현대/아반떼 하이브리드-랩터 그레이 매트.webp?v=20261116-avante-colors-01"
+  }
+]
       },
       {
         "name": "아이오닉5",
@@ -5310,7 +5341,7 @@ const vehicleCatalog = [
           {
             "name": "1.2 가솔린",
             "trims": [
-              "LS",
+              "LS DELUXE",
               "Redline",
               "ACTIV",
               "RS"
@@ -5318,42 +5349,159 @@ const vehicleCatalog = [
           }
         ],
         "paints": [
-          {
-            "id": "paint-263",
-            "name": "모던 블랙",
-            "hex": "#17191c",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/쉐보레/트랙스-모던 블랙.webp"
-          },
-          {
-            "id": "paint-264",
-            "name": "모카치노 베이지",
-            "hex": "#e7e2dd",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/쉐보레/트랙스-모카치노 베이지.webp"
-          },
-          {
-            "id": "paint-265",
-            "name": "스털링 그레이",
-            "hex": "#7e858d",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/쉐보레/트랙스-스털링 그레이.webp"
-          },
-          {
-            "id": "paint-266",
-            "name": "칠리페퍼 레드",
-            "hex": "#a92b31",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/쉐보레/트랙스-칠리페퍼 레드.webp"
-          },
-          {
-            "id": "paint-267",
-            "name": "퓨어 화이트",
-            "hex": "#e6eef2",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/쉐보레/트랙스-퓨어 화이트.webp"
-          }
-        ]
+  {
+    "id": "paint-263",
+    "name": "모던 블랙",
+    "hex": "#17191c",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트랙스 RS-모던 블랙.webp",
+    "representativeTrim": "RS",
+    "allowedTrims": [
+      "LS DELUXE",
+      "Redline",
+      "ACTIV",
+      "RS"
+    ],
+    "trimImages": {
+      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-모던 블랙.webp",
+      "Redline": "images/vehicles/쉐보레/트랙스 Redline-모던 블랙.webp",
+      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-모던 블랙.webp",
+      "RS": "images/vehicles/쉐보레/트랙스 RS-모던 블랙.webp"
+    },
+    "legacyIds": [
+      "paint-trax-ls-deluxe-modern-black",
+      "paint-trax-redline-modern-black",
+      "paint-trax-activ-modern-black"
+    ],
+    "imagesByTrim": {
+      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-모던 블랙.webp",
+      "Redline": "images/vehicles/쉐보레/트랙스 Redline-모던 블랙.webp",
+      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-모던 블랙.webp",
+      "RS": "images/vehicles/쉐보레/트랙스 RS-모던 블랙.webp"
+    }
+  },
+  {
+    "id": "paint-265",
+    "name": "스털링 그레이",
+    "hex": "#7e858d",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트랙스 RS-스털링 그레이.webp",
+    "representativeTrim": "RS",
+    "allowedTrims": [
+      "LS DELUXE",
+      "Redline",
+      "ACTIV",
+      "RS"
+    ],
+    "trimImages": {
+      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-스털링 그레이.webp",
+      "Redline": "images/vehicles/쉐보레/트랙스 Redline-스털링 그레이.webp",
+      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-스털링 그레이.webp",
+      "RS": "images/vehicles/쉐보레/트랙스 RS-스털링 그레이.webp"
+    },
+    "legacyIds": [
+      "paint-trax-ls-deluxe-sterling-grey",
+      "paint-trax-redline-sterling-grey",
+      "paint-trax-activ-sterling-grey"
+    ],
+    "imagesByTrim": {
+      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-스털링 그레이.webp",
+      "Redline": "images/vehicles/쉐보레/트랙스 Redline-스털링 그레이.webp",
+      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-스털링 그레이.webp",
+      "RS": "images/vehicles/쉐보레/트랙스 RS-스털링 그레이.webp"
+    }
+  },
+  {
+    "id": "paint-267",
+    "name": "퓨어 화이트",
+    "hex": "#e6eef2",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트랙스 RS-퓨어 화이트.webp",
+    "representativeTrim": "RS",
+    "allowedTrims": [
+      "LS DELUXE",
+      "Redline",
+      "ACTIV",
+      "RS"
+    ],
+    "trimImages": {
+      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-퓨어 화이트.webp",
+      "Redline": "images/vehicles/쉐보레/트랙스 Redline-퓨어 화이트.webp",
+      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-퓨어 화이트.webp",
+      "RS": "images/vehicles/쉐보레/트랙스 RS-퓨어 화이트.webp"
+    },
+    "legacyIds": [
+      "paint-trax-ls-deluxe-pure-white",
+      "paint-trax-redline-pure-white",
+      "paint-trax-activ-pure-white"
+    ],
+    "imagesByTrim": {
+      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-퓨어 화이트.webp",
+      "Redline": "images/vehicles/쉐보레/트랙스 Redline-퓨어 화이트.webp",
+      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-퓨어 화이트.webp",
+      "RS": "images/vehicles/쉐보레/트랙스 RS-퓨어 화이트.webp"
+    }
+  },
+  {
+    "id": "paint-264",
+    "name": "모카치노 베이지",
+    "hex": "#e7e2dd",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트랙스 RS-모카치노 베이지.webp",
+    "representativeTrim": "RS",
+    "allowedTrims": [
+      "ACTIV",
+      "RS"
+    ],
+    "trimImages": {
+      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-모카치노 베이지.webp",
+      "RS": "images/vehicles/쉐보레/트랙스 RS-모카치노 베이지.webp"
+    },
+    "legacyIds": [
+      "paint-trax-activ-mochaccino-beige"
+    ],
+    "imagesByTrim": {
+      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-모카치노 베이지.webp",
+      "RS": "images/vehicles/쉐보레/트랙스 RS-모카치노 베이지.webp"
+    }
+  },
+  {
+    "id": "paint-trax-activ-pistachio-khaki",
+    "name": "피스타치오 카키",
+    "hex": "#485b3f",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트랙스 ACTIV-피스타치오 카키.webp",
+    "representativeTrim": "ACTIV",
+    "allowedTrims": [
+      "ACTIV"
+    ],
+    "trimImages": {
+      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-피스타치오 카키.webp"
+    },
+    "legacyIds": [],
+    "imagesByTrim": {
+      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-피스타치오 카키.webp"
+    }
+  },
+  {
+    "id": "paint-266",
+    "name": "칠리페퍼 레드",
+    "hex": "#a92b31",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트랙스 RS-칠리페퍼 레드.webp",
+    "representativeTrim": "RS",
+    "allowedTrims": [
+      "RS"
+    ],
+    "trimImages": {
+      "RS": "images/vehicles/쉐보레/트랙스 RS-칠리페퍼 레드.webp"
+    },
+    "legacyIds": [],
+    "imagesByTrim": {
+      "RS": "images/vehicles/쉐보레/트랙스 RS-칠리페퍼 레드.webp"
+    }
+  }
+]
       },
       {
         "name": "트레일블레이저",
@@ -5361,7 +5509,7 @@ const vehicleCatalog = [
           {
             "name": "1.35 가솔린",
             "trims": [
-              "Premier",
+              "PREMIER",
               "RS"
             ]
           },
@@ -5373,42 +5521,125 @@ const vehicleCatalog = [
           }
         ],
         "paints": [
-          {
-            "id": "paint-268",
-            "name": "마리나 블루",
-            "hex": "#55b7e9",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/쉐보레/트레일블레이저-마리나 블루.webp"
-          },
-          {
-            "id": "paint-269",
-            "name": "모던 블랙",
-            "hex": "#17191c",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/쉐보레/트레일블레이저-모던 블랙.webp"
-          },
-          {
-            "id": "paint-270",
-            "name": "모카치노 베이지",
-            "hex": "#e7e2dd",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/쉐보레/트레일블레이저-모카치노 베이지.webp"
-          },
-          {
-            "id": "paint-271",
-            "name": "스노우 화이트 펄",
-            "hex": "#f5f5f2",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/쉐보레/트레일블레이저-스노우 화이트 펄.webp"
-          },
-          {
-            "id": "paint-272",
-            "name": "스털링 그레이",
-            "hex": "#4f5454",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/쉐보레/트레일블레이저-스털링 그레이.webp"
-          }
-        ]
+  {
+    "id": "paint-268",
+    "name": "마리나 블루",
+    "hex": "#55b7e9",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트레일블레이저 RS-마리나 블루.webp",
+    "representativeTrim": "RS",
+    "allowedTrims": [
+      "RS"
+    ],
+    "trimImages": {
+      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-마리나 블루.webp"
+    },
+    "legacyIds": [],
+    "imagesByTrim": {
+      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-마리나 블루.webp"
+    }
+  },
+  {
+    "id": "paint-269",
+    "name": "모던 블랙",
+    "hex": "#17191c",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트레일블레이저 RS-모던 블랙.webp",
+    "representativeTrim": "RS",
+    "allowedTrims": [
+      "Premier",
+      "RS"
+    ],
+    "trimImages": {
+      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-모던 블랙.webp",
+      "Premier": "images/vehicles/쉐보레/트레일블레이저 PREMIER-모던 블랙.webp"
+    },
+    "legacyIds": [
+      "paint-trailblazer-premier-modern-black"
+    ],
+    "imagesByTrim": {
+      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-모던 블랙.webp",
+      "PREMIER": "images/vehicles/쉐보레/트레일블레이저 PREMIER-모던 블랙.webp"
+    }
+  },
+  {
+    "id": "paint-270",
+    "name": "모카치노 베이지",
+    "hex": "#e7e2dd",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트레일블레이저 RS-모카치노 베이지.webp",
+    "representativeTrim": "RS",
+    "allowedTrims": [
+      "RS"
+    ],
+    "trimImages": {
+      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-모카치노 베이지.webp"
+    },
+    "legacyIds": [],
+    "imagesByTrim": {
+      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-모카치노 베이지.webp"
+    }
+  },
+  {
+    "id": "paint-271",
+    "name": "스노우 화이트 펄",
+    "hex": "#f5f5f2",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트레일블레이저 RS-스노우 화이트 펄.webp",
+    "representativeTrim": "RS",
+    "allowedTrims": [
+      "RS"
+    ],
+    "trimImages": {
+      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-스노우 화이트 펄.webp"
+    },
+    "legacyIds": [],
+    "imagesByTrim": {
+      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-스노우 화이트 펄.webp"
+    }
+  },
+  {
+    "id": "paint-272",
+    "name": "스털링 그레이",
+    "hex": "#4f5454",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트레일블레이저 RS-스털링 그레이.webp",
+    "representativeTrim": "RS",
+    "allowedTrims": [
+      "Premier",
+      "RS"
+    ],
+    "trimImages": {
+      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-스털링 그레이.webp",
+      "Premier": "images/vehicles/쉐보레/트레일블레이저 PREMIER-스털링 그레이.webp"
+    },
+    "legacyIds": [
+      "paint-trailblazer-premier-sterling-grey"
+    ],
+    "imagesByTrim": {
+      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-스털링 그레이.webp",
+      "PREMIER": "images/vehicles/쉐보레/트레일블레이저 PREMIER-스털링 그레이.webp"
+    }
+  },
+  {
+    "id": "paint-trailblazer-premier-pure-white",
+    "name": "퓨어 화이트",
+    "hex": "#ffffff",
+    "border": "#cfd5dc",
+    "image": "images/vehicles/쉐보레/트레일블레이저 PREMIER-퓨어 화이트.webp",
+    "representativeTrim": "Premier",
+    "allowedTrims": [
+      "Premier"
+    ],
+    "trimImages": {
+      "Premier": "images/vehicles/쉐보레/트레일블레이저 PREMIER-퓨어 화이트.webp"
+    },
+    "legacyIds": [],
+    "imagesByTrim": {
+      "PREMIER": "images/vehicles/쉐보레/트레일블레이저 PREMIER-퓨어 화이트.webp"
+    }
+  }
+]
       }
     ]
   },
@@ -11826,7 +12057,7 @@ const vehicleCatalog = [
 
   function openTrimDetailModal(trimName) {
     if (!trimName || state.step !== 2 || !state.trim) return;
-    const modelGroup = currentVehicle()?.detailModels?.find(group => group.name === state.trim);
+    const modelGroup = availableModelGroups().find(group => group.name === state.trim);
     if (!modelGroup || !modelGroup.trims.includes(trimName)) return;
 
     const descriptionKey = [state.brandName, state.carName, state.trim, trimName].join("|");
@@ -12063,7 +12294,7 @@ const vehicleCatalog = [
     const selected = pendingSubTrim;
     if (!selected || state.step !== 2 || !state.trim) return;
     // 선택한 트림이 현재 차량/세부모델에 실제 존재하는지 다시 확인합니다.
-    const group = currentVehicle()?.detailModels?.find(item => item.name === state.trim);
+    const group = availableModelGroups().find(item => item.name === state.trim);
     if (!group?.trims.includes(selected)) return;
 
     // 중요: 팝업을 닫기 전에 STEP 02의 실제 선택값을 먼저 확정합니다.
@@ -12244,6 +12475,28 @@ const vehicleCatalog = [
     return currentVehicle()?.paints || [];
   }
 
+  // 트림별 차량 사진이 등록된 색상은 해당 색상에서 실제 제공되는 트림만 노출합니다.
+  function availableModelGroups() {
+    const groups = currentVehicle()?.detailModels || [];
+    const images = currentPaint()?.imagesByTrim;
+    if (!images) return groups;
+    return groups.map(group => ({
+      ...group,
+      trims: group.trims.filter(trim => Object.hasOwn(images, trim))
+    })).filter(group => group.trims.length);
+  }
+
+  function reconcilePaintTrim() {
+    if (!currentPaint()?.imagesByTrim) return;
+    const group = availableModelGroups().find(item => item.name === state.trim);
+    if (!group) {
+      state.trim = "";
+      state.subTrim = "";
+    } else if (!group.trims.includes(state.subTrim)) {
+      state.subTrim = "";
+    }
+  }
+
   function currentPaint() {
     return currentPaints().find(paint => paint.id === state.paintId) || null;
   }
@@ -12264,7 +12517,8 @@ const vehicleCatalog = [
   function currentCarImage() {
     const paints = currentPaints();
     const selectedPaint = currentPaint();
-    const imagePath = selectedPaint?.image || paints[0]?.image || fallbackImage;
+    const paint = selectedPaint || paints[0];
+    const imagePath = paint?.imagesByTrim?.[state.subTrim] || paint?.image || fallbackImage;
     return assetUrl(imagePath);
   }
 
@@ -12433,6 +12687,7 @@ const vehicleCatalog = [
               </div>
               <div class="chosen-paint">
                 <strong>${paint ? paint.name : "색상을 선택해 주세요"}</strong>
+                ${["아반떼", "아반떼 하이브리드", "트랙스 크로스오버", "트레일블레이저"].includes(state.carName) ? "" : (paint?.imagesByTrim ? `<small>선택 가능: ${Object.keys(paint.imagesByTrim).join(", ")}<br>${state.subTrim || Object.keys(paint.imagesByTrim)[0]} 트림 이미지</small>` : "")}
               </div>
               <div class="monthly-discount-sticker" role="note" aria-label="${discountMonth}월 할인율 최대 ${discountRate}%">
                 <img class="monthly-discount-sticker__megaphone" src="images/discount-megaphone.png?v=20261028-match-ref-02" alt="" aria-hidden="true" width="52" height="64">
@@ -12455,11 +12710,11 @@ const vehicleCatalog = [
   }
 
   function renderStepTwo() {
-    const vehicle = currentVehicle();
-    const modelGroups = Array.isArray(vehicle?.detailModels) ? vehicle.detailModels : [];
+    const modelGroups = availableModelGroups();
 
     return `
       <div class="wizard-step step-two">
+        ${currentPaint()?.imagesByTrim ? selectedVehicleHtml() : ""}
         <div class="step-heading">
           <span>STEP 02</span>
           <h2>세부 모델을 선택해 주세요.</h2>
@@ -12728,6 +12983,7 @@ const vehicleCatalog = [
   }
 
   function render(options = {}) {
+    reconcilePaintTrim();
     const preserveScroll = options.preserveScroll === true;
     const preservedScrollY = preserveScroll ? window.scrollY : 0;
     const preservedContentHeight = preserveScroll ? content.offsetHeight : 0;
@@ -13132,6 +13388,10 @@ const vehicleCatalog = [
         if (!nextPaint || state.paintId === nextPaintId) return;
 
         state.paintId = nextPaintId;
+        if (nextPaint.imagesByTrim) {
+          render({ preserveScroll: true });
+          return;
+        }
 
         const paintButtons = content.querySelectorAll("[data-paint]");
         paintButtons.forEach(item => {
