@@ -4451,7 +4451,7 @@ body.loader-active {
             rgba(255, 255, 255, 0.08) 0%,
             rgba(255, 255, 255, 0.02) 100%
         ),
-        url("../images/vehicle-stage-bg.png") center center / cover no-repeat;
+        url("../images/vehicle-stage-bg.png?v=20261124-cache-04") center center / cover no-repeat;
 }
 
 .wizard-car-stage-bg::before {
