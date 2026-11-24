@@ -89,42 +89,10 @@ jobs:
   publish-reviews:
     needs: sync-reviews
     if: needs.sync-reviews.outputs.changed == 'true'
-    runs-on: ubuntu-24.04
     permissions:
       contents: read
       pages: write
       id-token: write
-    # The same group is used by the usual main branch Pages deployment.
-    concurrency:
-      group: autogenie-pages-${{ github.repository }}
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout current website
-        uses: actions/checkout@v4
-        with:
-          ref: main
-      - name: Restore updated review-data archive
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p data
-          git fetch --no-tags --depth=1 origin refs/heads/review-data:refs/remotes/origin/review-data
-          git show refs/remotes/origin/review-data:data/reviews.json > /tmp/autogenie-new-reviews.json
-          mv /tmp/autogenie-new-reviews.json data/reviews.json
-      - name: Exclude repository-only files from published website
-        shell: bash
-        run: |
-          rm -rf .git .github scripts analytics
-          rm -f .gitignore
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-      - name: Upload updated website
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - name: Deploy latest reviews
-        id: deployment
-        uses: actions/deploy-pages@v4
+    uses: ./.github/workflows/deploy-pages.yml
+    with:
+      require_reviews: true
