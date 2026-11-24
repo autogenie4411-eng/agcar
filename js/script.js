@@ -160,8 +160,7 @@ const vehicleCatalog = [
             "trims": [
               "프리미엄",
               "익스클루시브",
-              "캘리그래피",
-              "캘리그래피 블랙 잉크"
+              "캘리그래피"
             ]
           }
         ],
@@ -171,70 +170,174 @@ const vehicleCatalog = [
             "name": "녹턴 그레이 매트(무광 컬러)",
             "hex": "#262626",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-녹턴 그레이 매트(무광 컬러).webp"
+            "image": "images/vehicles/현대/그랜저-녹턴 그레이 매트(무광 컬러).webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "2.5 가솔린|프리미엄",
+              "2.5 가솔린|익스클루시브",
+              "2.5 가솔린|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-385",
             "name": "녹턴 그레이 메탈릭",
             "hex": "#262626",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-녹턴 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/그랜저-녹턴 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린|프리미엄",
+              "2.5 가솔린|익스클루시브",
+              "2.5 가솔린|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-386",
             "name": "바이오필릭 블루 펄",
             "hex": "#313343",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-바이오필릭 블루 펄.webp"
+            "image": "images/vehicles/현대/그랜저-바이오필릭 블루 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린|프리미엄",
+              "2.5 가솔린|익스클루시브",
+              "2.5 가솔린|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-387",
             "name": "세레니티 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-세레니티 화이트 펄.webp"
+            "image": "images/vehicles/현대/그랜저-세레니티 화이트 펄.webp",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "2.5 가솔린|프리미엄",
+              "2.5 가솔린|익스클루시브",
+              "2.5 가솔린|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-388",
             "name": "아티스널 버건디 펄",
             "hex": "#6f3038",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-아티스널 버건디 펄.webp"
+            "image": "images/vehicles/현대/그랜저-아티스널 버건디 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린|프리미엄",
+              "2.5 가솔린|익스클루시브",
+              "2.5 가솔린|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-389",
             "name": "아티스널 버건디 펄(무광컬러)",
             "hex": "#6f3038",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-아티스널 버건지 매트(무광 컬러).webp"
+            "image": "images/vehicles/현대/그랜저-아티스널 버건지 매트(무광 컬러).webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "2.5 가솔린|프리미엄",
+              "2.5 가솔린|익스클루시브",
+              "2.5 가솔린|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-390",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/그랜저-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린|프리미엄",
+              "2.5 가솔린|익스클루시브",
+              "2.5 가솔린|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-391",
             "name": "에어로 실버 메탈릭",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-에어로 실버 메탈릭.webp"
+            "image": "images/vehicles/현대/그랜저-에어로 실버 메탈릭.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린|프리미엄",
+              "2.5 가솔린|익스클루시브",
+              "2.5 가솔린|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-392",
             "name": "트랜스미션 블루 매트(무광 컬러)",
             "hex": "#6D7480",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-트랜스미션 블루 매트(무광 컬러).webp"
+            "image": "images/vehicles/현대/그랜저-트랜스미션 블루 매트(무광 컬러).webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "2.5 가솔린|프리미엄",
+              "2.5 가솔린|익스클루시브",
+              "2.5 가솔린|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-393",
             "name": "트랜스미션 블루 펄",
             "hex": "#6D7480",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-트랜스미션 블루 펄.webp"
+            "image": "images/vehicles/현대/그랜저-트랜스미션 블루 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린|프리미엄",
+              "2.5 가솔린|익스클루시브",
+              "2.5 가솔린|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           }
         ]
       },
@@ -246,8 +349,7 @@ const vehicleCatalog = [
             "trims": [
               "프리미엄",
               "익스클루시브",
-              "캘리그래피",
-              "캘리그래피 블랙 잉크"
+              "캘리그래피"
             ]
           }
         ],
@@ -257,70 +359,174 @@ const vehicleCatalog = [
             "name": "녹턴 그레이 매트(무광 컬러)",
             "hex": "#262626",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-녹턴 그레이 매트(무광 컬러).webp"
+            "image": "images/vehicles/현대/그랜저-녹턴 그레이 매트(무광 컬러).webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-516",
             "name": "녹턴 그레이 메탈릭",
             "hex": "#262626",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-녹턴 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/그랜저-녹턴 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-517",
             "name": "바이오필릭 블루 펄",
             "hex": "#313343",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-바이오필릭 블루 펄.webp"
+            "image": "images/vehicles/현대/그랜저-바이오필릭 블루 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-518",
             "name": "세레니티 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-세레니티 화이트 펄.webp"
+            "image": "images/vehicles/현대/그랜저-세레니티 화이트 펄.webp",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-519",
             "name": "아티스널 버건디 펄",
             "hex": "#6f3038",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-아티스널 버건디 펄.webp"
+            "image": "images/vehicles/현대/그랜저-아티스널 버건디 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-520",
             "name": "아티스널 버건디 펄(무광컬러)",
             "hex": "#6f3038",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-아티스널 버건지 매트(무광 컬러).webp"
+            "image": "images/vehicles/현대/그랜저-아티스널 버건지 매트(무광 컬러).webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-521",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/그랜저-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-522",
             "name": "에어로 실버 메탈릭",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-에어로 실버 메탈릭.webp"
+            "image": "images/vehicles/현대/그랜저-에어로 실버 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-523",
             "name": "트랜스미션 블루 매트(무광 컬러)",
             "hex": "#6D7480",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-트랜스미션 블루 매트(무광 컬러).webp"
+            "image": "images/vehicles/현대/그랜저-트랜스미션 블루 매트(무광 컬러).webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-524",
             "name": "트랜스미션 블루 펄",
             "hex": "#6D7480",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/그랜저-트랜스미션 블루 펄.webp"
+            "image": "images/vehicles/현대/그랜저-트랜스미션 블루 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|캘리그래피"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "익스클루시브",
+              "캘리그래피"
+            ]
           }
         ]
       },
@@ -342,49 +548,118 @@ const vehicleCatalog = [
             "name": "데님 블루 펄",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/베뉴-데님 블루 펄.webp"
+            "image": "images/vehicles/현대/베뉴-데님 블루 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린|스마트",
+              "1.6 가솔린|프리미엄",
+              "1.6 가솔린|FLUX"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "프리미엄",
+              "FLUX"
+            ]
           },
           {
             "id": "paint-395",
             "name": "미라지 그린",
             "hex": "#476454",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/베뉴-미라지 그린.webp"
+            "image": "images/vehicles/현대/베뉴-미라지 그린.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린|스마트",
+              "1.6 가솔린|프리미엄",
+              "1.6 가솔린|FLUX"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "프리미엄",
+              "FLUX"
+            ]
           },
           {
             "id": "paint-396",
             "name": "쉬머링 실버 메탈릭",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/베뉴-쉬머링 실버 메탈릭.webp"
+            "image": "images/vehicles/현대/베뉴-쉬머링 실버 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린|스마트",
+              "1.6 가솔린|프리미엄"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "프리미엄"
+            ]
           },
           {
             "id": "paint-397",
             "name": "아틀라스 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/베뉴-아틀라스 화이트.webp"
+            "image": "images/vehicles/현대/베뉴-아틀라스 화이트.webp",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "1.6 가솔린|스마트",
+              "1.6 가솔린|프리미엄",
+              "1.6 가솔린|FLUX"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "프리미엄",
+              "FLUX"
+            ]
           },
           {
             "id": "paint-398",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/베뉴-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/베뉴-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린|스마트",
+              "1.6 가솔린|프리미엄",
+              "1.6 가솔린|FLUX"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "프리미엄",
+              "FLUX"
+            ]
           },
           {
             "id": "paint-399",
             "name": "에코트로닉 그레이 펄",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/베뉴-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/베뉴-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린|스마트",
+              "1.6 가솔린|프리미엄",
+              "1.6 가솔린|FLUX"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "프리미엄",
+              "FLUX"
+            ]
           },
           {
             "id": "paint-400",
             "name": "퀀텀 실버 펄",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/베뉴-퀀텀 실버 펄.webp"
+            "image": "images/vehicles/현대/베뉴-퀀텀 실버 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린|스마트",
+              "1.6 가솔린|프리미엄",
+              "1.6 가솔린|FLUX"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "프리미엄",
+              "FLUX"
+            ]
           }
         ]
       },
@@ -405,42 +680,90 @@ const vehicleCatalog = [
             "name": "다이나믹 옐로우",
             "hex": "#d5aa39",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-다이나믹 옐로우.webp"
+            "image": "images/vehicles/현대/스타리아-다이나믹 옐로우.webp",
+            "allowedConfigurations": [
+              "3.5 LPG 투어러|스마트 (11인승)",
+              "3.5 LPG 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           },
           {
             "id": "paint-402",
             "name": "쉬머링 실버 메탈릭",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-쉬머링 실버 메탈릭.webp"
+            "image": "images/vehicles/현대/스타리아-쉬머링 실버 메탈릭.webp",
+            "allowedConfigurations": [
+              "3.5 LPG 투어러|스마트 (11인승)",
+              "3.5 LPG 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           },
           {
             "id": "paint-403",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/스타리아-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "3.5 LPG 투어러|스마트 (11인승)",
+              "3.5 LPG 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           },
           {
             "id": "paint-404",
             "name": "에코트로닉 그레이 펄",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/스타리아-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "3.5 LPG 투어러|스마트 (11인승)",
+              "3.5 LPG 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           },
           {
             "id": "paint-405",
             "name": "크리미 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-크리미 화이트.webp"
+            "image": "images/vehicles/현대/스타리아-크리미 화이트.webp",
+            "allowedConfigurations": [
+              "3.5 LPG 투어러|스마트 (11인승)",
+              "3.5 LPG 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           },
           {
             "id": "paint-406",
             "name": "클래지 블루 펄",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-클래지 블루 펄.webp"
+            "image": "images/vehicles/현대/스타리아-클래지 블루 펄.webp",
+            "allowedConfigurations": [
+              "3.5 LPG 투어러|스마트 (11인승)",
+              "3.5 LPG 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           }
         ]
       },
@@ -461,42 +784,90 @@ const vehicleCatalog = [
             "name": "다이나믹 옐로우",
             "hex": "#d5aa39",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-다이나믹 옐로우.webp"
+            "image": "images/vehicles/현대/스타리아-다이나믹 옐로우.webp",
+            "allowedConfigurations": [
+              "1.6 HEV 투어러|스마트 (11인승)",
+              "1.6 HEV 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           },
           {
             "id": "paint-526",
             "name": "쉬머링 실버 메탈릭",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-쉬머링 실버 메탈릭.webp"
+            "image": "images/vehicles/현대/스타리아-쉬머링 실버 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 HEV 투어러|스마트 (11인승)",
+              "1.6 HEV 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           },
           {
             "id": "paint-527",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/스타리아-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV 투어러|스마트 (11인승)",
+              "1.6 HEV 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           },
           {
             "id": "paint-528",
             "name": "에코트로닉 그레이 펄",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/스타리아-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV 투어러|스마트 (11인승)",
+              "1.6 HEV 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           },
           {
             "id": "paint-529",
             "name": "크리미 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-크리미 화이트.webp"
+            "image": "images/vehicles/현대/스타리아-크리미 화이트.webp",
+            "allowedConfigurations": [
+              "1.6 HEV 투어러|스마트 (11인승)",
+              "1.6 HEV 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           },
           {
             "id": "paint-530",
             "name": "클래지 블루 펄",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/스타리아-클래지 블루 펄.webp"
+            "image": "images/vehicles/현대/스타리아-클래지 블루 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV 투어러|스마트 (11인승)",
+              "1.6 HEV 투어러|모던 (11인승)"
+            ],
+            "allowedTrims": [
+              "스마트 (11인승)",
+              "모던 (11인승)"
+            ]
           }
         ]
       },
@@ -509,9 +880,7 @@ const vehicleCatalog = [
               "익스클루시브",
               "프레스티지",
               "H-Pick",
-              "블랙 익스테리어",
-              "캘리그래피",
-              "블랙 잉크"
+              "캘리그래피"
             ]
           },
           {
@@ -520,9 +889,7 @@ const vehicleCatalog = [
               "익스클루시브",
               "프레스티지",
               "H-Pick",
-              "블랙 익스테리어",
-              "캘리그래피",
-              "블랙 잉크"
+              "캘리그래피"
             ]
           }
         ],
@@ -532,35 +899,117 @@ const vehicleCatalog = [
             "name": "사이버 세이지 펄",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/싼타페-사이버 세이지 펄.webp"
+            "image": "images/vehicles/현대/싼타페-사이버 세이지 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|익스클루시브",
+              "2.5 가솔린 터보|프레스티지",
+              "2.5 가솔린 터보|H-Pick",
+              "2.5 가솔린 터보|캘리그래피",
+              "2.5 가솔린 터보 AWD|익스클루시브",
+              "2.5 가솔린 터보 AWD|프레스티지",
+              "2.5 가솔린 터보 AWD|H-Pick",
+              "2.5 가솔린 터보 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "프레스티지",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-408",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/싼타페-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/싼타페-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|익스클루시브",
+              "2.5 가솔린 터보|프레스티지",
+              "2.5 가솔린 터보|H-Pick",
+              "2.5 가솔린 터보|캘리그래피",
+              "2.5 가솔린 터보 AWD|익스클루시브",
+              "2.5 가솔린 터보 AWD|프레스티지",
+              "2.5 가솔린 터보 AWD|H-Pick",
+              "2.5 가솔린 터보 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "프레스티지",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-409",
             "name": "얼씨 브래스 메탈릭 매트",
             "hex": "#745755",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/싼타페-얼씨 브래스 메탈릭 매트.webp"
+            "image": "images/vehicles/현대/싼타페-얼씨 브래스 메탈릭 매트.webp",
+            "surcharge": 200000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|익스클루시브",
+              "2.5 가솔린 터보|프레스티지",
+              "2.5 가솔린 터보|H-Pick",
+              "2.5 가솔린 터보|캘리그래피",
+              "2.5 가솔린 터보 AWD|익스클루시브",
+              "2.5 가솔린 터보 AWD|프레스티지",
+              "2.5 가솔린 터보 AWD|H-Pick",
+              "2.5 가솔린 터보 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "프레스티지",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-410",
             "name": "에코트로닉 그레이 펄",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/싼타페-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/싼타페-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|익스클루시브",
+              "2.5 가솔린 터보|프레스티지",
+              "2.5 가솔린 터보|H-Pick",
+              "2.5 가솔린 터보|캘리그래피",
+              "2.5 가솔린 터보 AWD|익스클루시브",
+              "2.5 가솔린 터보 AWD|프레스티지",
+              "2.5 가솔린 터보 AWD|H-Pick",
+              "2.5 가솔린 터보 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "프레스티지",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-411",
             "name": "크리미 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/싼타페-크리미 화이트 펄.webp"
+            "image": "images/vehicles/현대/싼타페-크리미 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|익스클루시브",
+              "2.5 가솔린 터보|프레스티지",
+              "2.5 가솔린 터보|H-Pick",
+              "2.5 가솔린 터보|캘리그래피",
+              "2.5 가솔린 터보 AWD|익스클루시브",
+              "2.5 가솔린 터보 AWD|프레스티지",
+              "2.5 가솔린 터보 AWD|H-Pick",
+              "2.5 가솔린 터보 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "프레스티지",
+              "H-Pick",
+              "캘리그래피"
+            ]
           }
         ]
       },
@@ -573,9 +1022,7 @@ const vehicleCatalog = [
               "익스클루시브",
               "프레스티지",
               "H-Pick",
-              "블랙 익스테리어",
-              "캘리그래피",
-              "블랙 잉크"
+              "캘리그래피"
             ]
           },
           {
@@ -584,9 +1031,7 @@ const vehicleCatalog = [
               "익스클루시브",
               "프레스티지",
               "H-Pick",
-              "블랙 익스테리어",
-              "캘리그래피",
-              "블랙 잉크"
+              "캘리그래피"
             ]
           }
         ],
@@ -596,35 +1041,117 @@ const vehicleCatalog = [
             "name": "사이버 세이지 펄",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/싼타페-사이버 세이지 펄.webp"
+            "image": "images/vehicles/현대/싼타페-사이버 세이지 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|캘리그래피",
+              "1.6 HEV AWD|익스클루시브",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|H-Pick",
+              "1.6 HEV AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "프레스티지",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-532",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/싼타페-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/싼타페-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|캘리그래피",
+              "1.6 HEV AWD|익스클루시브",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|H-Pick",
+              "1.6 HEV AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "프레스티지",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-533",
             "name": "얼씨 브래스 메탈릭 매트",
             "hex": "#745755",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/싼타페-얼씨 브래스 메탈릭 매트.webp"
+            "image": "images/vehicles/현대/싼타페-얼씨 브래스 메탈릭 매트.webp",
+            "surcharge": 200000,
+            "allowedConfigurations": [
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|캘리그래피",
+              "1.6 HEV AWD|익스클루시브",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|H-Pick",
+              "1.6 HEV AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "프레스티지",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-534",
             "name": "에코트로닉 그레이 펄",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/싼타페-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/싼타페-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|캘리그래피",
+              "1.6 HEV AWD|익스클루시브",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|H-Pick",
+              "1.6 HEV AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "프레스티지",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-535",
             "name": "크리미 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/싼타페-크리미 화이트 펄.webp"
+            "image": "images/vehicles/현대/싼타페-크리미 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|캘리그래피",
+              "1.6 HEV AWD|익스클루시브",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|H-Pick",
+              "1.6 HEV AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "프레스티지",
+              "H-Pick",
+              "캘리그래피"
+            ]
           }
         ]
       },
@@ -637,8 +1164,7 @@ const vehicleCatalog = [
               "프리미엄",
               "에스",
               "익스클루시브",
-              "인스퍼레이션",
-              "N Line"
+              "인스퍼레이션"
             ]
           }
         ],
@@ -648,56 +1174,155 @@ const vehicleCatalog = [
             "name": "녹턴 그레이 매트",
             "hex": "#3C4041",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-녹턴 그레이 매트.webp"
+            "image": "images/vehicles/현대/쏘나타-녹턴 그레이 매트.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프리미엄",
+              "1.6 가솔린 터보|에스",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-413",
             "name": "녹턴 그레이 메탈릭",
             "hex": "#3C4041",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-녹턴 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/쏘나타-녹턴 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프리미엄",
+              "1.6 가솔린 터보|에스",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-414",
             "name": "바이오 필릭 블루 펄",
             "hex": "#1E1F28",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-바이오 필릭 블루 펄.webp"
+            "image": "images/vehicles/현대/쏘나타-바이오 필릭 블루 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프리미엄",
+              "1.6 가솔린 터보|에스",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-415",
             "name": "세레니티 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-세레니티 화이트 펄.webp"
+            "image": "images/vehicles/현대/쏘나타-세레니티 화이트 펄.webp",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프리미엄",
+              "1.6 가솔린 터보|에스",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-416",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/쏘나타-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프리미엄",
+              "1.6 가솔린 터보|에스",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-417",
             "name": "얼티메이트 레드 메탈릭",
             "hex": "#a92b31",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-얼티메이트 레드 메탈릭.webp"
+            "image": "images/vehicles/현대/쏘나타-얼티메이트 레드 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프리미엄",
+              "1.6 가솔린 터보|에스",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-418",
             "name": "에어로 실버 매트",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-에어로 실버 매트.webp"
+            "image": "images/vehicles/현대/쏘나타-에어로 실버 매트.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프리미엄",
+              "1.6 가솔린 터보|에스",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-419",
             "name": "트랜스 미션 블루 펄",
             "hex": "#696E7A",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-트랜스 미션 블루 펄.webp"
+            "image": "images/vehicles/현대/쏘나타-트랜스 미션 블루 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프리미엄",
+              "1.6 가솔린 터보|에스",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           }
         ]
       },
@@ -705,7 +1330,7 @@ const vehicleCatalog = [
         "name": "쏘나타 하이브리드",
         "detailModels": [
           {
-            "name": "1.6 HEV",
+            "name": "2.0 HEV",
             "trims": [
               "프리미엄",
               "에스",
@@ -720,56 +1345,155 @@ const vehicleCatalog = [
             "name": "녹턴 그레이 매트",
             "hex": "#3C4041",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-녹턴 그레이 매트.webp"
+            "image": "images/vehicles/현대/쏘나타-녹턴 그레이 매트.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "2.0 HEV|프리미엄",
+              "2.0 HEV|에스",
+              "2.0 HEV|익스클루시브",
+              "2.0 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-537",
             "name": "녹턴 그레이 메탈릭",
             "hex": "#3C4041",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-녹턴 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/쏘나타-녹턴 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "2.0 HEV|프리미엄",
+              "2.0 HEV|에스",
+              "2.0 HEV|익스클루시브",
+              "2.0 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-538",
             "name": "바이오 필릭 블루 펄",
             "hex": "#1E1F28",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-바이오 필릭 블루 펄.webp"
+            "image": "images/vehicles/현대/쏘나타-바이오 필릭 블루 펄.webp",
+            "allowedConfigurations": [
+              "2.0 HEV|프리미엄",
+              "2.0 HEV|에스",
+              "2.0 HEV|익스클루시브",
+              "2.0 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-539",
             "name": "세레니티 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-세레니티 화이트 펄.webp"
+            "image": "images/vehicles/현대/쏘나타-세레니티 화이트 펄.webp",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "2.0 HEV|프리미엄",
+              "2.0 HEV|에스",
+              "2.0 HEV|익스클루시브",
+              "2.0 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-540",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/쏘나타-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "2.0 HEV|프리미엄",
+              "2.0 HEV|에스",
+              "2.0 HEV|익스클루시브",
+              "2.0 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-541",
             "name": "얼티메이트 레드 메탈릭",
             "hex": "#a92b31",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-얼티메이트 레드 메탈릭.webp"
+            "image": "images/vehicles/현대/쏘나타-얼티메이트 레드 메탈릭.webp",
+            "allowedConfigurations": [
+              "2.0 HEV|프리미엄",
+              "2.0 HEV|에스",
+              "2.0 HEV|익스클루시브",
+              "2.0 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-542",
             "name": "에어로 실버 매트",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-에어로 실버 매트.webp"
+            "image": "images/vehicles/현대/쏘나타-에어로 실버 매트.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "2.0 HEV|프리미엄",
+              "2.0 HEV|에스",
+              "2.0 HEV|익스클루시브",
+              "2.0 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-543",
             "name": "트랜스 미션 블루 펄",
             "hex": "#696E7A",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/쏘나타-트랜스 미션 블루 펄.webp"
+            "image": "images/vehicles/현대/쏘나타-트랜스 미션 블루 펄.webp",
+            "allowedConfigurations": [
+              "2.0 HEV|프리미엄",
+              "2.0 HEV|에스",
+              "2.0 HEV|익스클루시브",
+              "2.0 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "에스",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           }
         ]
       },
@@ -786,70 +1510,163 @@ const vehicleCatalog = [
           }
         ],
         "paints": [
-  {
-    "id": "paint-423",
-    "name": "아틀라스 화이트",
-    "hex": "#e5e4e3",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼-아틀라스 화이트.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-qgp",
-    "name": "퀀텀 실버 펄",
-    "hex": "#949697",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼-퀀텀 실버 펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-424",
-    "name": "어비스 블랙 펄",
-    "hex": "#202323",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼-어비스 블랙 펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-425",
-    "name": "에코트로닉 그레이펄",
-    "hex": "#57595b",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼-에코트로닉 그레이펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-v2r",
-    "name": "볼케닉 레드 펄",
-    "hex": "#b12614",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼-볼케닉 레드 펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-g2h",
-    "name": "그라펜 그린 펄",
-    "hex": "#66716d",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼-그라펜 그린 펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-vc2",
-    "name": "고요 카퍼 펄",
-    "hex": "#b0a297",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼-고요 카퍼 펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-kkp",
-    "name": "코디악 블루 매트",
-    "hex": "#555db2",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼-코디악 블루 매트.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-raf",
-    "name": "랩터 그레이 매트",
-    "hex": "#615c55",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼-랩터 그레이 매트.webp?v=20261116-avante-colors-01"
-  }
-]
+          {
+            "id": "paint-423",
+            "name": "아틀라스 화이트",
+            "hex": "#e5e4e3",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼-아틀라스 화이트.webp?v=20261116-avante-colors-01",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "2.0 가솔린|모던",
+              "2.0 가솔린|프리미엄",
+              "2.0 가솔린|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-qgp",
+            "name": "퀀텀 실버 펄",
+            "hex": "#949697",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼-퀀텀 실버 펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "2.0 가솔린|모던",
+              "2.0 가솔린|프리미엄",
+              "2.0 가솔린|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-424",
+            "name": "어비스 블랙 펄",
+            "hex": "#202323",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼-어비스 블랙 펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "2.0 가솔린|모던",
+              "2.0 가솔린|프리미엄",
+              "2.0 가솔린|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-425",
+            "name": "에코트로닉 그레이펄",
+            "hex": "#57595b",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼-에코트로닉 그레이펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "2.0 가솔린|모던",
+              "2.0 가솔린|프리미엄",
+              "2.0 가솔린|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-v2r",
+            "name": "볼케닉 레드 펄",
+            "hex": "#b12614",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼-볼케닉 레드 펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "2.0 가솔린|모던",
+              "2.0 가솔린|프리미엄",
+              "2.0 가솔린|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-g2h",
+            "name": "그라펜 그린 펄",
+            "hex": "#66716d",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼-그라펜 그린 펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "2.0 가솔린|모던",
+              "2.0 가솔린|프리미엄",
+              "2.0 가솔린|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-vc2",
+            "name": "고요 카퍼 펄",
+            "hex": "#b0a297",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼-고요 카퍼 펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "2.0 가솔린|모던",
+              "2.0 가솔린|프리미엄",
+              "2.0 가솔린|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-kkp",
+            "name": "코디악 블루 매트",
+            "hex": "#555db2",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼-코디악 블루 매트.webp?v=20261116-avante-colors-01",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "2.0 가솔린|모던",
+              "2.0 가솔린|프리미엄",
+              "2.0 가솔린|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-raf",
+            "name": "랩터 그레이 매트",
+            "hex": "#615c55",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼-랩터 그레이 매트.webp?v=20261116-avante-colors-01",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "2.0 가솔린|모던",
+              "2.0 가솔린|프리미엄",
+              "2.0 가솔린|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          }
+        ]
       },
       {
         "name": "아반떼 하이브리드",
@@ -864,70 +1681,163 @@ const vehicleCatalog = [
           }
         ],
         "paints": [
-  {
-    "id": "paint-547",
-    "name": "아틀라스 화이트",
-    "hex": "#e5e4e3",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼 하이브리드-아틀라스 화이트.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-hybrid-qgp",
-    "name": "퀀텀 실버 펄",
-    "hex": "#949697",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼 하이브리드-퀀텀 실버 펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-548",
-    "name": "어비스 블랙 펄",
-    "hex": "#202323",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼 하이브리드-어비스 블랙 펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-549",
-    "name": "에코트로닉 그레이펄",
-    "hex": "#57595b",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼 하이브리드-에코트로닉 그레이펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-hybrid-v2r",
-    "name": "볼케닉 레드 펄",
-    "hex": "#b12614",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼 하이브리드-볼케닉 레드 펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-hybrid-g2h",
-    "name": "그라펜 그린 펄",
-    "hex": "#66716d",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼 하이브리드-그라펜 그린 펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-hybrid-vc2",
-    "name": "고요 카퍼 펄",
-    "hex": "#b0a297",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼 하이브리드-고요 카퍼 펄.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-hybrid-kkp",
-    "name": "코디악 블루 매트",
-    "hex": "#555db2",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼 하이브리드-코디악 블루 매트.webp?v=20261116-avante-colors-01"
-  },
-  {
-    "id": "paint-avante-hybrid-raf",
-    "name": "랩터 그레이 매트",
-    "hex": "#615c55",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/현대/아반떼 하이브리드-랩터 그레이 매트.webp?v=20261116-avante-colors-01"
-  }
-]
+          {
+            "id": "paint-547",
+            "name": "아틀라스 화이트",
+            "hex": "#e5e4e3",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼 하이브리드-아틀라스 화이트.webp?v=20261116-avante-colors-01",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "1.6 HEV|모던",
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-hybrid-qgp",
+            "name": "퀀텀 실버 펄",
+            "hex": "#949697",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼 하이브리드-퀀텀 실버 펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "1.6 HEV|모던",
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-548",
+            "name": "어비스 블랙 펄",
+            "hex": "#202323",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼 하이브리드-어비스 블랙 펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "1.6 HEV|모던",
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-549",
+            "name": "에코트로닉 그레이펄",
+            "hex": "#57595b",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼 하이브리드-에코트로닉 그레이펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "1.6 HEV|모던",
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-hybrid-v2r",
+            "name": "볼케닉 레드 펄",
+            "hex": "#b12614",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼 하이브리드-볼케닉 레드 펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "1.6 HEV|모던",
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-hybrid-g2h",
+            "name": "그라펜 그린 펄",
+            "hex": "#66716d",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼 하이브리드-그라펜 그린 펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "1.6 HEV|모던",
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-hybrid-vc2",
+            "name": "고요 카퍼 펄",
+            "hex": "#b0a297",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼 하이브리드-고요 카퍼 펄.webp?v=20261116-avante-colors-01",
+            "allowedConfigurations": [
+              "1.6 HEV|모던",
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-hybrid-kkp",
+            "name": "코디악 블루 매트",
+            "hex": "#555db2",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼 하이브리드-코디악 블루 매트.webp?v=20261116-avante-colors-01",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "1.6 HEV|모던",
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          },
+          {
+            "id": "paint-avante-hybrid-raf",
+            "name": "랩터 그레이 매트",
+            "hex": "#615c55",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/현대/아반떼 하이브리드-랩터 그레이 매트.webp?v=20261116-avante-colors-01",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "1.6 HEV|모던",
+              "1.6 HEV|프리미엄",
+              "1.6 HEV|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "모던",
+              "프리미엄",
+              "인스퍼레이션"
+            ]
+          }
+        ]
       },
       {
         "name": "아이오닉5",
@@ -948,7 +1858,7 @@ const vehicleCatalog = [
             ]
           },
           {
-           "name": "Long Range AWD",
+            "name": "Long Range AWD",
             "trims": [
               "E-Lite",
               "Modern",
@@ -957,16 +1867,13 @@ const vehicleCatalog = [
             ]
           },
           {
-           "name": "Long Range N라인",
+            "name": "Long Range N라인",
             "trims": [
-              "E-Lite",
-              "Modern",
-              "Premium",
-              "Inspiration"
+              "A/T"
             ]
           },
           {
-           "name": "Long Range AWD N라인",
+            "name": "Long Range AWD N라인",
             "trims": [
               "A/T"
             ]
@@ -978,63 +1885,219 @@ const vehicleCatalog = [
             "name": "그래비티 골드 매트",
             "hex": "#AAAAA4",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉5-그래비티 골드 매트.webp"
+            "image": "images/vehicles/현대/아이오닉5-그래비티 골드 매트.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "Long Range|Modern",
+              "Long Range|Premium",
+              "Long Range|Inspiration",
+              "Long Range AWD|Modern",
+              "Long Range AWD|Premium",
+              "Long Range AWD|Inspiration",
+              "Long Range N라인|A/T",
+              "Long Range AWD N라인|A/T"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "Premium",
+              "Inspiration",
+              "A/T"
+            ]
           },
           {
             "id": "paint-427",
             "name": "디지털 틸 그린 펄",
             "hex": "#1C403F",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉5-디지털 틸 그린 펄.webp"
+            "image": "images/vehicles/현대/아이오닉5-디지털 틸 그린 펄.webp",
+            "allowedConfigurations": [
+              "Long Range|Modern",
+              "Long Range|Premium",
+              "Long Range|Inspiration",
+              "Long Range AWD|Modern",
+              "Long Range AWD|Premium",
+              "Long Range AWD|Inspiration"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "Premium",
+              "Inspiration"
+            ]
           },
           {
             "id": "paint-428",
             "name": "루시드 블루 펄",
             "hex": "#58697C",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉5-루시드 블루 펄.webp"
+            "image": "images/vehicles/현대/아이오닉5-루시드 블루 펄.webp",
+            "allowedConfigurations": [
+              "Long Range|Modern",
+              "Long Range|Premium",
+              "Long Range|Inspiration",
+              "Long Range AWD|Modern",
+              "Long Range AWD|Premium",
+              "Long Range AWD|Inspiration"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "Premium",
+              "Inspiration"
+            ]
           },
           {
             "id": "paint-429",
             "name": "사이버 그레이 메탈릭",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉5-사이버 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/아이오닉5-사이버 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Long Range|E-Lite",
+              "Long Range|Modern",
+              "Long Range|Premium",
+              "Long Range|Inspiration",
+              "Long Range AWD|E-Lite",
+              "Long Range AWD|Modern",
+              "Long Range AWD|Premium",
+              "Long Range AWD|Inspiration",
+              "Long Range N라인|A/T",
+              "Long Range AWD N라인|A/T"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "E-Lite",
+              "Modern",
+              "Premium",
+              "Inspiration",
+              "A/T"
+            ]
           },
           {
             "id": "paint-430",
             "name": "셀라돈 그레이 매트",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉5-셀라돈 그레이 매트.webp"
+            "image": "images/vehicles/현대/아이오닉5-셀라돈 그레이 매트.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "Long Range|Modern",
+              "Long Range|Premium",
+              "Long Range|Inspiration",
+              "Long Range AWD|Modern",
+              "Long Range AWD|Premium",
+              "Long Range AWD|Inspiration"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "Premium",
+              "Inspiration"
+            ]
           },
           {
             "id": "paint-431",
             "name": "아틀라스 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉5-아틀라스 화이트.webp"
+            "image": "images/vehicles/현대/아이오닉5-아틀라스 화이트.webp",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Long Range|E-Lite",
+              "Long Range|Modern",
+              "Long Range|Premium",
+              "Long Range|Inspiration",
+              "Long Range AWD|E-Lite",
+              "Long Range AWD|Modern",
+              "Long Range AWD|Premium",
+              "Long Range AWD|Inspiration",
+              "Long Range N라인|A/T",
+              "Long Range AWD N라인|A/T"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "E-Lite",
+              "Modern",
+              "Premium",
+              "Inspiration",
+              "A/T"
+            ]
           },
           {
             "id": "paint-432",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉5-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/아이오닉5-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Long Range|E-Lite",
+              "Long Range|Modern",
+              "Long Range|Premium",
+              "Long Range|Inspiration",
+              "Long Range AWD|E-Lite",
+              "Long Range AWD|Modern",
+              "Long Range AWD|Premium",
+              "Long Range AWD|Inspiration",
+              "Long Range N라인|A/T",
+              "Long Range AWD N라인|A/T"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "E-Lite",
+              "Modern",
+              "Premium",
+              "Inspiration",
+              "A/T"
+            ]
           },
           {
             "id": "paint-433",
             "name": "에코트로닉 그레이 펄",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉5-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/아이오닉5-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Long Range|E-Lite",
+              "Long Range|Modern",
+              "Long Range|Premium",
+              "Long Range|Inspiration",
+              "Long Range AWD|E-Lite",
+              "Long Range AWD|Modern",
+              "Long Range AWD|Premium",
+              "Long Range AWD|Inspiration",
+              "Long Range N라인|A/T",
+              "Long Range AWD N라인|A/T"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "E-Lite",
+              "Modern",
+              "Premium",
+              "Inspiration",
+              "A/T"
+            ]
           },
           {
             "id": "paint-434",
             "name": "프로스티드 브라운 매트",
             "hex": "#7E7C76",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉5-프로스티드 브라운 매트.webp"
+            "image": "images/vehicles/현대/아이오닉5-프로스티드 브라운 매트.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "Long Range|Modern",
+              "Long Range|Premium",
+              "Long Range|Inspiration",
+              "Long Range AWD|Modern",
+              "Long Range AWD|Premium",
+              "Long Range AWD|Inspiration"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "Premium",
+              "Inspiration"
+            ]
           }
         ]
       },
@@ -1058,7 +2121,7 @@ const vehicleCatalog = [
             ]
           },
           {
-           "name": "Long Range AWD",
+            "name": "Long Range AWD",
             "trims": [
               "E-Lite",
               "Exclusive",
@@ -1086,42 +2149,162 @@ const vehicleCatalog = [
             "name": "그래비티 골드 매트",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉6-그래비티 골드 매트.webp"
+            "image": "images/vehicles/현대/아이오닉6-그래비티 골드 매트.webp",
+            "surcharge": 200000,
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Exclusive",
+              "Standard|Prestige",
+              "Long Range|E-Lite",
+              "Long Range|Exclusive",
+              "Long Range|Prestige",
+              "Long Range AWD|E-Lite",
+              "Long Range AWD|Exclusive",
+              "Long Range AWD|Prestige",
+              "Long Range N라인|Exclusive",
+              "Long Range N라인|Prestige",
+              "Long Range AWD N라인|Exclusive",
+              "Long Range AWD N라인|Prestige"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Exclusive",
+              "Prestige",
+              "E-Lite"
+            ]
           },
           {
             "id": "paint-436",
             "name": "녹턴 그레이 메탈릭",
             "hex": "#3A4347",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉6-녹턴 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/아이오닉6-녹턴 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Exclusive",
+              "Standard|Prestige",
+              "Long Range|E-Lite",
+              "Long Range|Exclusive",
+              "Long Range|Prestige",
+              "Long Range AWD|E-Lite",
+              "Long Range AWD|Exclusive",
+              "Long Range AWD|Prestige",
+              "Long Range N라인|Exclusive",
+              "Long Range N라인|Prestige",
+              "Long Range AWD N라인|Exclusive",
+              "Long Range AWD N라인|Prestige"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Exclusive",
+              "Prestige",
+              "E-Lite"
+            ]
           },
           {
             "id": "paint-437",
             "name": "바이오 필릭 블루 펄",
             "hex": "#3C4053",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉6-바이오 필릭 블루 펄.webp"
+            "image": "images/vehicles/현대/아이오닉6-바이오 필릭 블루 펄.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Exclusive",
+              "Standard|Prestige",
+              "Long Range|E-Lite",
+              "Long Range|Exclusive",
+              "Long Range|Prestige",
+              "Long Range AWD|E-Lite",
+              "Long Range AWD|Exclusive",
+              "Long Range AWD|Prestige"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Exclusive",
+              "Prestige",
+              "E-Lite"
+            ]
           },
           {
             "id": "paint-438",
             "name": "세레니티 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉6-세레니티 화이트 펄.webp"
+            "image": "images/vehicles/현대/아이오닉6-세레니티 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Exclusive",
+              "Standard|Prestige",
+              "Long Range|E-Lite",
+              "Long Range|Exclusive",
+              "Long Range|Prestige",
+              "Long Range AWD|E-Lite",
+              "Long Range AWD|Exclusive",
+              "Long Range AWD|Prestige",
+              "Long Range N라인|Exclusive",
+              "Long Range N라인|Prestige",
+              "Long Range AWD N라인|Exclusive",
+              "Long Range AWD N라인|Prestige"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Exclusive",
+              "Prestige",
+              "E-Lite"
+            ]
           },
           {
             "id": "paint-439",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉6-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/아이오닉6-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Exclusive",
+              "Standard|Prestige",
+              "Long Range|E-Lite",
+              "Long Range|Exclusive",
+              "Long Range|Prestige",
+              "Long Range AWD|E-Lite",
+              "Long Range AWD|Exclusive",
+              "Long Range AWD|Prestige",
+              "Long Range N라인|Exclusive",
+              "Long Range N라인|Prestige",
+              "Long Range AWD N라인|Exclusive",
+              "Long Range AWD N라인|Prestige"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Exclusive",
+              "Prestige",
+              "E-Lite"
+            ]
           },
           {
             "id": "paint-440",
             "name": "트랜스미션 블루 펄",
             "hex": "#556174",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉6-트랜스미션 블루 펄.webp"
+            "image": "images/vehicles/현대/아이오닉6-트랜스미션 블루 펄.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Exclusive",
+              "Standard|Prestige",
+              "Long Range|E-Lite",
+              "Long Range|Exclusive",
+              "Long Range|Prestige",
+              "Long Range AWD|E-Lite",
+              "Long Range AWD|Exclusive",
+              "Long Range AWD|Prestige"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Exclusive",
+              "Prestige",
+              "E-Lite"
+            ]
           }
         ]
       },
@@ -1159,49 +2342,156 @@ const vehicleCatalog = [
             "name": "녹턴 그레이 매트",
             "hex": "#616B73",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉9-녹턴 그레이 매트.webp"
+            "image": "images/vehicles/현대/아이오닉9-녹턴 그레이 매트.webp",
+            "surcharge": 200000,
+            "allowedConfigurations": [
+              "EV 항속형|익스클루시브 (7인승)",
+              "EV 항속형|프레스티지 (7인승)",
+              "EV 항속형|캘리그래피 (7인승)",
+              "EV 항속형 AWD|익스클루시브 (7인승)",
+              "EV 항속형 AWD|프레스티지 (7인승)",
+              "EV 항속형 AWD|캘리그래피 (7인승)",
+              "EV 성능형 AWD|익스클루시브 (7인승)",
+              "EV 성능형 AWD|프레스티지 (7인승)",
+              "EV 성능형 AWD|캘리그래피 (7인승)"
+            ],
+            "allowedTrims": [
+              "익스클루시브 (7인승)",
+              "프레스티지 (7인승)",
+              "캘리그래피 (7인승)"
+            ]
           },
           {
             "id": "paint-442",
             "name": "녹턴 그레이 메탈릭",
             "hex": "#616B73",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉9-녹턴 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/아이오닉9-녹턴 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "EV 항속형|익스클루시브 (7인승)",
+              "EV 항속형|프레스티지 (7인승)",
+              "EV 항속형|캘리그래피 (7인승)",
+              "EV 항속형 AWD|익스클루시브 (7인승)",
+              "EV 항속형 AWD|프레스티지 (7인승)",
+              "EV 항속형 AWD|캘리그래피 (7인승)",
+              "EV 성능형 AWD|익스클루시브 (7인승)",
+              "EV 성능형 AWD|프레스티지 (7인승)",
+              "EV 성능형 AWD|캘리그래피 (7인승)"
+            ],
+            "allowedTrims": [
+              "익스클루시브 (7인승)",
+              "프레스티지 (7인승)",
+              "캘리그래피 (7인승)"
+            ]
           },
           {
             "id": "paint-443",
             "name": "세레니티 화이트 펄",
             "hex": "#C3CBD4",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉9-세레니티 화이트 펄.webp"
+            "image": "images/vehicles/현대/아이오닉9-세레니티 화이트 펄.webp",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "EV 항속형|익스클루시브 (7인승)",
+              "EV 항속형|프레스티지 (7인승)",
+              "EV 항속형|캘리그래피 (7인승)",
+              "EV 항속형 AWD|익스클루시브 (7인승)",
+              "EV 항속형 AWD|프레스티지 (7인승)",
+              "EV 항속형 AWD|캘리그래피 (7인승)",
+              "EV 성능형 AWD|익스클루시브 (7인승)",
+              "EV 성능형 AWD|프레스티지 (7인승)",
+              "EV 성능형 AWD|캘리그래피 (7인승)"
+            ],
+            "allowedTrims": [
+              "익스클루시브 (7인승)",
+              "프레스티지 (7인승)",
+              "캘리그래피 (7인승)"
+            ]
           },
           {
             "id": "paint-444",
             "name": "셀라돈 그레이 매트",
             "hex": "#8FA5A7",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉9-셀라돈 그레이 매트.webp"
+            "image": "images/vehicles/현대/아이오닉9-셀라돈 그레이 매트.webp",
+            "surcharge": 200000,
+            "allowedConfigurations": [
+              "EV 항속형|캘리그래피 (7인승)",
+              "EV 항속형 AWD|캘리그래피 (7인승)",
+              "EV 성능형 AWD|캘리그래피 (7인승)"
+            ],
+            "allowedTrims": [
+              "캘리그래피 (7인승)"
+            ]
           },
           {
             "id": "paint-445",
             "name": "셀라돈 그레이 메탈릭",
             "hex": "#8FA5A7",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉9-셀라돈 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/아이오닉9-셀라돈 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "EV 항속형|익스클루시브 (7인승)",
+              "EV 항속형|프레스티지 (7인승)",
+              "EV 항속형|캘리그래피 (7인승)",
+              "EV 항속형 AWD|익스클루시브 (7인승)",
+              "EV 항속형 AWD|프레스티지 (7인승)",
+              "EV 항속형 AWD|캘리그래피 (7인승)",
+              "EV 성능형 AWD|익스클루시브 (7인승)",
+              "EV 성능형 AWD|프레스티지 (7인승)",
+              "EV 성능형 AWD|캘리그래피 (7인승)"
+            ],
+            "allowedTrims": [
+              "익스클루시브 (7인승)",
+              "프레스티지 (7인승)",
+              "캘리그래피 (7인승)"
+            ]
           },
           {
             "id": "paint-446",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉9-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/아이오닉9-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "EV 항속형|익스클루시브 (7인승)",
+              "EV 항속형|프레스티지 (7인승)",
+              "EV 항속형|캘리그래피 (7인승)",
+              "EV 항속형 AWD|익스클루시브 (7인승)",
+              "EV 항속형 AWD|프레스티지 (7인승)",
+              "EV 항속형 AWD|캘리그래피 (7인승)",
+              "EV 성능형 AWD|익스클루시브 (7인승)",
+              "EV 성능형 AWD|프레스티지 (7인승)",
+              "EV 성능형 AWD|캘리그래피 (7인승)"
+            ],
+            "allowedTrims": [
+              "익스클루시브 (7인승)",
+              "프레스티지 (7인승)",
+              "캘리그래피 (7인승)"
+            ]
           },
           {
             "id": "paint-447",
             "name": "이오노스피어 그린 펄",
             "hex": "#476454",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/아이오닉9-이오노스피어 그린 펄.webp"
+            "image": "images/vehicles/현대/아이오닉9-이오노스피어 그린 펄.webp",
+            "allowedConfigurations": [
+              "EV 항속형|익스클루시브 (7인승)",
+              "EV 항속형|프레스티지 (7인승)",
+              "EV 항속형|캘리그래피 (7인승)",
+              "EV 항속형 AWD|익스클루시브 (7인승)",
+              "EV 항속형 AWD|프레스티지 (7인승)",
+              "EV 항속형 AWD|캘리그래피 (7인승)",
+              "EV 성능형 AWD|익스클루시브 (7인승)",
+              "EV 성능형 AWD|프레스티지 (7인승)",
+              "EV 성능형 AWD|캘리그래피 (7인승)"
+            ],
+            "allowedTrims": [
+              "익스클루시브 (7인승)",
+              "프레스티지 (7인승)",
+              "캘리그래피 (7인승)"
+            ]
           }
         ]
       },
@@ -1245,28 +2535,100 @@ const vehicleCatalog = [
             "name": "아틀라스 화이트",
             "hex": "#F9FBFC",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/캐스퍼-아틀라스 화이트.webp"
+            "image": "images/vehicles/현대/캐스퍼-아틀라스 화이트.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|스마트",
+              "1.0 가솔린|디 에센셜",
+              "1.0 가솔린|인스퍼레이션",
+              "1.0 가솔린 터보|스마트",
+              "1.0 가솔린 터보|디 에센셜",
+              "1.0 가솔린 터보|인스퍼레이션",
+              "1.0 가솔린 밴|스마트",
+              "1.0 가솔린 밴|스마트 초이스",
+              "1.0 가솔린 터보 밴|스마트",
+              "1.0 가솔린 터보 밴|스마트 초이스"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "디 에센셜",
+              "인스퍼레이션",
+              "스마트 초이스"
+            ]
           },
           {
             "id": "paint-449",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/캐스퍼-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/캐스퍼-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|스마트",
+              "1.0 가솔린|디 에센셜",
+              "1.0 가솔린|인스퍼레이션",
+              "1.0 가솔린 터보|스마트",
+              "1.0 가솔린 터보|디 에센셜",
+              "1.0 가솔린 터보|인스퍼레이션",
+              "1.0 가솔린 밴|스마트",
+              "1.0 가솔린 밴|스마트 초이스",
+              "1.0 가솔린 터보 밴|스마트",
+              "1.0 가솔린 터보 밴|스마트 초이스"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "디 에센셜",
+              "인스퍼레이션",
+              "스마트 초이스"
+            ]
           },
           {
             "id": "paint-450",
             "name": "언블리치드 아이보리",
             "hex": "#d8d0bf",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/캐스퍼-언블리치드 아이보리.webp"
+            "image": "images/vehicles/현대/캐스퍼-언블리치드 아이보리.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|스마트",
+              "1.0 가솔린|디 에센셜",
+              "1.0 가솔린|인스퍼레이션",
+              "1.0 가솔린 터보|스마트",
+              "1.0 가솔린 터보|디 에센셜",
+              "1.0 가솔린 터보|인스퍼레이션",
+              "1.0 가솔린 밴|스마트",
+              "1.0 가솔린 밴|스마트 초이스",
+              "1.0 가솔린 터보 밴|스마트",
+              "1.0 가솔린 터보 밴|스마트 초이스"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "디 에센셜",
+              "인스퍼레이션",
+              "스마트 초이스"
+            ]
           },
           {
             "id": "paint-451",
             "name": "톰보이 카키",
             "hex": "#5e6452",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/캐스퍼-톰보이 카키.webp"
+            "image": "images/vehicles/현대/캐스퍼-톰보이 카키.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|스마트",
+              "1.0 가솔린|디 에센셜",
+              "1.0 가솔린|인스퍼레이션",
+              "1.0 가솔린 터보|스마트",
+              "1.0 가솔린 터보|디 에센셜",
+              "1.0 가솔린 터보|인스퍼레이션",
+              "1.0 가솔린 밴|스마트",
+              "1.0 가솔린 밴|스마트 초이스",
+              "1.0 가솔린 터보 밴|스마트",
+              "1.0 가솔린 터보 밴|스마트 초이스"
+            ],
+            "allowedTrims": [
+              "스마트",
+              "디 에센셜",
+              "인스퍼레이션",
+              "스마트 초이스"
+            ]
           }
         ]
       },
@@ -1274,9 +2636,14 @@ const vehicleCatalog = [
         "name": "캐스퍼 일렉트릭",
         "detailModels": [
           {
+            "name": "EV 42.0kWh",
+            "trims": [
+              "프리미엄"
+            ]
+          },
+          {
             "name": "EV 49.0kWh",
             "trims": [
-              "프리미엄",
               "인스퍼레이션",
               "크로스",
               "라운지"
@@ -1289,28 +2656,76 @@ const vehicleCatalog = [
             "name": "아틀라스 화이트",
             "hex": "#F9FBFC",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/캐스퍼-아틀라스 화이트.webp"
+            "image": "images/vehicles/현대/캐스퍼-아틀라스 화이트.webp",
+            "allowedConfigurations": [
+              "EV 42.0kWh|프리미엄",
+              "EV 49.0kWh|인스퍼레이션",
+              "EV 49.0kWh|크로스",
+              "EV 49.0kWh|라운지"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "인스퍼레이션",
+              "크로스",
+              "라운지"
+            ]
           },
           {
             "id": "paint-551",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/캐스퍼-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/캐스퍼-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "EV 42.0kWh|프리미엄",
+              "EV 49.0kWh|인스퍼레이션",
+              "EV 49.0kWh|크로스",
+              "EV 49.0kWh|라운지"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "인스퍼레이션",
+              "크로스",
+              "라운지"
+            ]
           },
           {
             "id": "paint-552",
             "name": "언블리치드 아이보리",
             "hex": "#d8d0bf",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/캐스퍼-언블리치드 아이보리.webp"
+            "image": "images/vehicles/현대/캐스퍼-언블리치드 아이보리.webp",
+            "allowedConfigurations": [
+              "EV 42.0kWh|프리미엄",
+              "EV 49.0kWh|인스퍼레이션",
+              "EV 49.0kWh|크로스",
+              "EV 49.0kWh|라운지"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "인스퍼레이션",
+              "크로스",
+              "라운지"
+            ]
           },
           {
             "id": "paint-553",
             "name": "톰보이 카키",
             "hex": "#5e6452",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/캐스퍼-톰보이 카키.webp"
+            "image": "images/vehicles/현대/캐스퍼-톰보이 카키.webp",
+            "allowedConfigurations": [
+              "EV 42.0kWh|프리미엄",
+              "EV 49.0kWh|인스퍼레이션",
+              "EV 49.0kWh|크로스",
+              "EV 49.0kWh|라운지"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "인스퍼레이션",
+              "크로스",
+              "라운지"
+            ]
           }
         ]
       },
@@ -1354,49 +2769,189 @@ const vehicleCatalog = [
             "name": "네오테릭 옐로우",
             "hex": "#b9cb58",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-네오테릭 옐로우.webp"
+            "image": "images/vehicles/현대/코나-네오테릭 옐로우.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|Modern",
+              "1.6 가솔린 터보|H-Pick",
+              "1.6 가솔린 터보|Premium",
+              "1.6 가솔린 터보|Inspiration",
+              "1.6 가솔린 터보|Black Exterior",
+              "1.6 가솔린 터보 N라인|N Line",
+              "1.6 가솔린 터보 4WD|Premium",
+              "1.6 가솔린 터보 4WD|Inspiration",
+              "1.6 가솔린 터보 4WD|Black Exterior",
+              "1.6 가솔린 터보 4WD N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-453",
             "name": "미라지 그린",
             "hex": "#68726F",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-미라지 그린.webp"
+            "image": "images/vehicles/현대/코나-미라지 그린.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|Modern",
+              "1.6 가솔린 터보|H-Pick",
+              "1.6 가솔린 터보|Premium",
+              "1.6 가솔린 터보|Inspiration",
+              "1.6 가솔린 터보|Black Exterior",
+              "1.6 가솔린 터보 N라인|N Line",
+              "1.6 가솔린 터보 4WD|Premium",
+              "1.6 가솔린 터보 4WD|Inspiration",
+              "1.6 가솔린 터보 4WD|Black Exterior",
+              "1.6 가솔린 터보 4WD N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-454",
             "name": "사이버 그레이 메탈릭",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-사이버 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/코나-사이버 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|Modern",
+              "1.6 가솔린 터보|H-Pick",
+              "1.6 가솔린 터보|Premium",
+              "1.6 가솔린 터보|Inspiration",
+              "1.6 가솔린 터보|Black Exterior",
+              "1.6 가솔린 터보 N라인|N Line",
+              "1.6 가솔린 터보 4WD|Premium",
+              "1.6 가솔린 터보 4WD|Inspiration",
+              "1.6 가솔린 터보 4WD|Black Exterior",
+              "1.6 가솔린 터보 4WD N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-455",
             "name": "아틀라스 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-아틀라스 화이트.webp"
+            "image": "images/vehicles/현대/코나-아틀라스 화이트.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|Modern",
+              "1.6 가솔린 터보|H-Pick",
+              "1.6 가솔린 터보|Premium",
+              "1.6 가솔린 터보|Inspiration",
+              "1.6 가솔린 터보|Black Exterior",
+              "1.6 가솔린 터보 N라인|N Line",
+              "1.6 가솔린 터보 4WD|Premium",
+              "1.6 가솔린 터보 4WD|Inspiration",
+              "1.6 가솔린 터보 4WD|Black Exterior",
+              "1.6 가솔린 터보 4WD N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-456",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/코나-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|Modern",
+              "1.6 가솔린 터보|H-Pick",
+              "1.6 가솔린 터보|Premium",
+              "1.6 가솔린 터보|Inspiration",
+              "1.6 가솔린 터보|Black Exterior",
+              "1.6 가솔린 터보 N라인|N Line",
+              "1.6 가솔린 터보 4WD|Premium",
+              "1.6 가솔린 터보 4WD|Inspiration",
+              "1.6 가솔린 터보 4WD|Black Exterior",
+              "1.6 가솔린 터보 4WD N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-457",
             "name": "얼티메이트 레드 메탈릭",
             "hex": "#a92b31",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-얼티메이트 레드 메탈릭.webp"
+            "image": "images/vehicles/현대/코나-얼티메이트 레드 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|Modern",
+              "1.6 가솔린 터보|H-Pick",
+              "1.6 가솔린 터보|Premium",
+              "1.6 가솔린 터보|Inspiration",
+              "1.6 가솔린 터보|Black Exterior",
+              "1.6 가솔린 터보 N라인|N Line",
+              "1.6 가솔린 터보 4WD|Premium",
+              "1.6 가솔린 터보 4WD|Inspiration",
+              "1.6 가솔린 터보 4WD|Black Exterior",
+              "1.6 가솔린 터보 4WD N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-458",
             "name": "에코트로닉 그레이 펄",
             "hex": "#3F3F3F",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/코나-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|Modern",
+              "1.6 가솔린 터보|H-Pick",
+              "1.6 가솔린 터보|Premium",
+              "1.6 가솔린 터보|Inspiration",
+              "1.6 가솔린 터보|Black Exterior",
+              "1.6 가솔린 터보 N라인|N Line",
+              "1.6 가솔린 터보 4WD|Premium",
+              "1.6 가솔린 터보 4WD|Inspiration",
+              "1.6 가솔린 터보 4WD|Black Exterior",
+              "1.6 가솔린 터보 4WD N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           }
         ]
       },
@@ -1426,49 +2981,161 @@ const vehicleCatalog = [
             "name": "네오테릭 옐로우",
             "hex": "#b9cb58",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-네오테릭 옐로우.webp"
+            "image": "images/vehicles/현대/코나-네오테릭 옐로우.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|Modern",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|Premium",
+              "1.6 HEV|Inspiration",
+              "1.6 HEV|Black Exterior",
+              "1.6 HEV N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-555",
             "name": "미라지 그린",
             "hex": "#68726F",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-미라지 그린.webp"
+            "image": "images/vehicles/현대/코나-미라지 그린.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|Modern",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|Premium",
+              "1.6 HEV|Inspiration",
+              "1.6 HEV|Black Exterior",
+              "1.6 HEV N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-556",
             "name": "사이버 그레이 메탈릭",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-사이버 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/코나-사이버 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|Modern",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|Premium",
+              "1.6 HEV|Inspiration",
+              "1.6 HEV|Black Exterior",
+              "1.6 HEV N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-557",
             "name": "아틀라스 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-아틀라스 화이트.webp"
+            "image": "images/vehicles/현대/코나-아틀라스 화이트.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|Modern",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|Premium",
+              "1.6 HEV|Inspiration",
+              "1.6 HEV|Black Exterior",
+              "1.6 HEV N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-558",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/코나-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|Modern",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|Premium",
+              "1.6 HEV|Inspiration",
+              "1.6 HEV|Black Exterior",
+              "1.6 HEV N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-559",
             "name": "얼티메이트 레드 메탈릭",
             "hex": "#a92b31",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-얼티메이트 레드 메탈릭.webp"
+            "image": "images/vehicles/현대/코나-얼티메이트 레드 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|Modern",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|Premium",
+              "1.6 HEV|Inspiration",
+              "1.6 HEV|Black Exterior",
+              "1.6 HEV N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           },
           {
             "id": "paint-560",
             "name": "에코트로닉 그레이 펄",
             "hex": "#3F3F3F",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/코나-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|Modern",
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|Premium",
+              "1.6 HEV|Inspiration",
+              "1.6 HEV|Black Exterior",
+              "1.6 HEV N라인|N Line"
+            ],
+            "allowedTrims": [
+              "Modern",
+              "H-Pick",
+              "Premium",
+              "Inspiration",
+              "Black Exterior",
+              "N Line"
+            ]
           }
         ]
       },
@@ -1503,49 +3170,147 @@ const vehicleCatalog = [
             "name": "네오테릭 옐로우",
             "hex": "#b9cb58",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-네오테릭 옐로우.webp"
+            "image": "images/vehicles/현대/코나-네오테릭 옐로우.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Premium",
+              "Long Range|Premium",
+              "Long Range|Modern Plus",
+              "Long Range|Inspiration",
+              "Long Range N라인|Inspiration"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Premium",
+              "Modern Plus",
+              "Inspiration"
+            ]
           },
           {
             "id": "paint-562",
             "name": "미라지 그린",
             "hex": "#68726F",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-미라지 그린.webp"
+            "image": "images/vehicles/현대/코나-미라지 그린.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Premium",
+              "Long Range|Premium",
+              "Long Range|Modern Plus",
+              "Long Range|Inspiration",
+              "Long Range N라인|Inspiration"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Premium",
+              "Modern Plus",
+              "Inspiration"
+            ]
           },
           {
             "id": "paint-563",
             "name": "사이버 그레이 메탈릭",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-사이버 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/코나-사이버 그레이 메탈릭.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Premium",
+              "Long Range|Premium",
+              "Long Range|Modern Plus",
+              "Long Range|Inspiration",
+              "Long Range N라인|Inspiration"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Premium",
+              "Modern Plus",
+              "Inspiration"
+            ]
           },
           {
             "id": "paint-564",
             "name": "아틀라스 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-아틀라스 화이트.webp"
+            "image": "images/vehicles/현대/코나-아틀라스 화이트.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Premium",
+              "Long Range|Premium",
+              "Long Range|Modern Plus",
+              "Long Range|Inspiration",
+              "Long Range N라인|Inspiration"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Premium",
+              "Modern Plus",
+              "Inspiration"
+            ]
           },
           {
             "id": "paint-565",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/코나-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Premium",
+              "Long Range|Premium",
+              "Long Range|Modern Plus",
+              "Long Range|Inspiration",
+              "Long Range N라인|Inspiration"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Premium",
+              "Modern Plus",
+              "Inspiration"
+            ]
           },
           {
             "id": "paint-566",
             "name": "얼티메이트 레드 메탈릭",
             "hex": "#a92b31",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-얼티메이트 레드 메탈릭.webp"
+            "image": "images/vehicles/현대/코나-얼티메이트 레드 메탈릭.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Premium",
+              "Long Range|Premium",
+              "Long Range|Modern Plus",
+              "Long Range|Inspiration",
+              "Long Range N라인|Inspiration"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Premium",
+              "Modern Plus",
+              "Inspiration"
+            ]
           },
           {
             "id": "paint-567",
             "name": "에코트로닉 그레이 펄",
             "hex": "#3F3F3F",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/코나-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/코나-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "Standard|E-Value +",
+              "Standard|Premium",
+              "Long Range|Premium",
+              "Long Range|Modern Plus",
+              "Long Range|Inspiration",
+              "Long Range N라인|Inspiration"
+            ],
+            "allowedTrims": [
+              "E-Value +",
+              "Premium",
+              "Modern Plus",
+              "Inspiration"
+            ]
           }
         ]
       },
@@ -1555,33 +3320,17 @@ const vehicleCatalog = [
           {
             "name": "1.6 가솔린 터보",
             "trims": [
-              "모던",
-              "프리미엄",
               "H-Pick",
-              "인스퍼레이션",
-              "블랙 익스테리어"
+              "익스클루시브",
+              "인스퍼레이션"
             ]
           },
           {
             "name": "1.6 가솔린 터보 AWD",
             "trims": [
-              "모던",
-              "프리미엄",
               "H-Pick",
-              "인스퍼레이션",
-              "블랙 익스테리어"
-            ]
-          },
-          {
-            "name": "1.6 가솔린 터보 N라인",
-            "trims": [
-              "N Line"
-            ]
-          },
-          {
-            "name": "1.6 가솔린 터보 AWD N라인",
-            "trims": [
-              "N Line"
+              "익스클루시브",
+              "인스퍼레이션"
             ]
           }
         ],
@@ -1591,35 +3340,80 @@ const vehicleCatalog = [
             "name": "쉬머링 실버 메탈릭",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/투싼-쉬머링 실버 메탈릭.webp"
+            "image": "images/vehicles/현대/투싼-쉬머링 실버 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|H-Pick",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션",
+              "1.6 가솔린 터보 AWD|H-Pick",
+              "1.6 가솔린 터보 AWD|익스클루시브",
+              "1.6 가솔린 터보 AWD|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "H-Pick",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-460",
             "name": "아마존 그레이 메탈릭",
             "hex": "#434842",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/투싼-아마존 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/투싼-아마존 그레이 메탈릭.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-461",
             "name": "에코트로닉 그레이 펄",
             "hex": "#434842",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/투싼-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/투싼-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|H-Pick",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션",
+              "1.6 가솔린 터보 AWD|H-Pick",
+              "1.6 가솔린 터보 AWD|익스클루시브",
+              "1.6 가솔린 터보 AWD|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "H-Pick",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-462",
             "name": "크리미 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/투싼-크리미 화이트 펄.webp"
+            "image": "images/vehicles/현대/투싼-크리미 화이트 펄.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-463",
             "name": "팬텀 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/투싼-팬텀 블랙 펄.webp"
+            "image": "images/vehicles/현대/투싼-팬텀 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|H-Pick",
+              "1.6 가솔린 터보|익스클루시브",
+              "1.6 가솔린 터보|인스퍼레이션",
+              "1.6 가솔린 터보 AWD|H-Pick",
+              "1.6 가솔린 터보 AWD|익스클루시브",
+              "1.6 가솔린 터보 AWD|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "H-Pick",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           }
         ]
       },
@@ -1629,33 +3423,17 @@ const vehicleCatalog = [
           {
             "name": "1.6 HEV",
             "trims": [
-              "모던",
-              "프리미엄",
               "H-Pick",
-              "인스퍼레이션",
-              "블랙 익스테리어"
+              "익스클루시브",
+              "인스퍼레이션"
             ]
           },
           {
             "name": "1.6 HEV AWD",
             "trims": [
-              "모던",
-              "프리미엄",
               "H-Pick",
-              "인스퍼레이션",
-              "블랙 익스테리어"
-            ]
-          },
-          {
-            "name": "1.6 HEV N라인",
-            "trims": [
-              "N Line"
-            ]
-          },
-          {
-            "name": "1.6 HEV AWD N라인",
-            "trims": [
-              "N Line"
+              "익스클루시브",
+              "인스퍼레이션"
             ]
           }
         ],
@@ -1665,35 +3443,80 @@ const vehicleCatalog = [
             "name": "쉬머링 실버 메탈릭",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/투싼-쉬머링 실버 메탈릭.webp"
+            "image": "images/vehicles/현대/투싼-쉬머링 실버 메탈릭.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|인스퍼레이션",
+              "1.6 HEV AWD|H-Pick",
+              "1.6 HEV AWD|익스클루시브",
+              "1.6 HEV AWD|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "H-Pick",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-569",
             "name": "아마존 그레이 메탈릭",
             "hex": "#434842",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/투싼-아마존 그레이 메탈릭.webp"
+            "image": "images/vehicles/현대/투싼-아마존 그레이 메탈릭.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-570",
             "name": "에코트로닉 그레이 펄",
             "hex": "#434842",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/투싼-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/투싼-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|인스퍼레이션",
+              "1.6 HEV AWD|H-Pick",
+              "1.6 HEV AWD|익스클루시브",
+              "1.6 HEV AWD|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "H-Pick",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           },
           {
             "id": "paint-571",
             "name": "크리미 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/투싼-크리미 화이트 펄.webp"
+            "image": "images/vehicles/현대/투싼-크리미 화이트 펄.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-572",
             "name": "팬텀 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/투싼-팬텀 블랙 펄.webp"
+            "image": "images/vehicles/현대/투싼-팬텀 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|H-Pick",
+              "1.6 HEV|익스클루시브",
+              "1.6 HEV|인스퍼레이션",
+              "1.6 HEV AWD|H-Pick",
+              "1.6 HEV AWD|익스클루시브",
+              "1.6 HEV AWD|인스퍼레이션"
+            ],
+            "allowedTrims": [
+              "H-Pick",
+              "익스클루시브",
+              "인스퍼레이션"
+            ]
           }
         ]
       },
@@ -1704,16 +3527,18 @@ const vehicleCatalog = [
             "name": "2.5 가솔린 터보 9인승",
             "trims": [
               "익스클루시브",
-              "프레스티지",
-              "캘리그래피"
+              "H-Pick",
+              "캘리그래피",
+              "하이루프"
             ]
           },
           {
             "name": "2.5 가솔린 터보 9인승 AWD",
             "trims": [
               "익스클루시브",
-              "프레스티지",
-              "캘리그래피"
+              "H-Pick",
+              "캘리그래피",
+              "하이루프"
             ]
           }
         ],
@@ -1723,56 +3548,151 @@ const vehicleCatalog = [
             "name": "갤럭시 마룬 펄",
             "hex": "#484048",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-갤럭시 마룬 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-갤럭시 마룬 펄.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-465",
             "name": "로버스트 에메랄드 펄",
             "hex": "#355c4b",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-로버스트 에메랄드 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-로버스트 에메랄드 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보 9인승|캘리그래피",
+              "2.5 가솔린 터보 9인승 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-466",
             "name": "쉬머링 실버 메탈릭",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-쉬머링 실버 메탈릭.webp"
+            "image": "images/vehicles/현대/팰리세이드-쉬머링 실버 메탈릭.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보 9인승|익스클루시브",
+              "2.5 가솔린 터보 9인승|H-Pick",
+              "2.5 가솔린 터보 9인승|캘리그래피",
+              "2.5 가솔린 터보 9인승 AWD|익스클루시브",
+              "2.5 가솔린 터보 9인승 AWD|H-Pick",
+              "2.5 가솔린 터보 9인승 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-467",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보 9인승|익스클루시브",
+              "2.5 가솔린 터보 9인승|H-Pick",
+              "2.5 가솔린 터보 9인승|캘리그래피",
+              "2.5 가솔린 터보 9인승|하이루프",
+              "2.5 가솔린 터보 9인승 AWD|익스클루시브",
+              "2.5 가솔린 터보 9인승 AWD|H-Pick",
+              "2.5 가솔린 터보 9인승 AWD|캘리그래피",
+              "2.5 가솔린 터보 9인승 AWD|하이루프"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피",
+              "하이루프"
+            ]
           },
           {
             "id": "paint-468",
             "name": "에코트로닉 그레이 펄",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보 9인승|익스클루시브",
+              "2.5 가솔린 터보 9인승|H-Pick",
+              "2.5 가솔린 터보 9인승|캘리그래피",
+              "2.5 가솔린 터보 9인승 AWD|익스클루시브",
+              "2.5 가솔린 터보 9인승 AWD|H-Pick",
+              "2.5 가솔린 터보 9인승 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-469",
             "name": "캐스트 아이언 브라운 펄",
             "hex": "#755548",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-캐스트 아이언 브라운 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-캐스트 아이언 브라운 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보 9인승|익스클루시브",
+              "2.5 가솔린 터보 9인승|H-Pick",
+              "2.5 가솔린 터보 9인승|캘리그래피",
+              "2.5 가솔린 터보 9인승 AWD|익스클루시브",
+              "2.5 가솔린 터보 9인승 AWD|H-Pick",
+              "2.5 가솔린 터보 9인승 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-470",
             "name": "크리미 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-크리미 화이트 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-크리미 화이트 펄.webp",
+            "surcharge": 90000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보 9인승|익스클루시브",
+              "2.5 가솔린 터보 9인승|H-Pick",
+              "2.5 가솔린 터보 9인승|캘리그래피",
+              "2.5 가솔린 터보 9인승|하이루프",
+              "2.5 가솔린 터보 9인승 AWD|익스클루시브",
+              "2.5 가솔린 터보 9인승 AWD|H-Pick",
+              "2.5 가솔린 터보 9인승 AWD|캘리그래피",
+              "2.5 가솔린 터보 9인승 AWD|하이루프"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피",
+              "하이루프"
+            ]
           },
           {
             "id": "paint-471",
             "name": "클래지 블루 펄",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-클래지 블루 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-클래지 블루 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보 9인승|익스클루시브",
+              "2.5 가솔린 터보 9인승|H-Pick",
+              "2.5 가솔린 터보 9인승|캘리그래피",
+              "2.5 가솔린 터보 9인승 AWD|익스클루시브",
+              "2.5 가솔린 터보 9인승 AWD|H-Pick",
+              "2.5 가솔린 터보 9인승 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피"
+            ]
           }
         ]
       },
@@ -1783,16 +3703,18 @@ const vehicleCatalog = [
             "name": "2.5 HEV 9인승",
             "trims": [
               "익스클루시브",
-              "프레스티지",
-              "캘리그래피"
+              "H-Pick",
+              "캘리그래피",
+              "하이루프"
             ]
           },
           {
             "name": "2.5 HEV 9인승 AWD",
             "trims": [
               "익스클루시브",
-              "프레스티지",
-              "캘리그래피"
+              "H-Pick",
+              "캘리그래피",
+              "하이루프"
             ]
           }
         ],
@@ -1802,56 +3724,151 @@ const vehicleCatalog = [
             "name": "갤럭시 마룬 펄",
             "hex": "#484048",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-갤럭시 마룬 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-갤럭시 마룬 펄.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-574",
             "name": "로버스트 에메랄드 펄",
             "hex": "#355c4b",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-로버스트 에메랄드 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-로버스트 에메랄드 펄.webp",
+            "allowedConfigurations": [
+              "2.5 HEV 9인승|캘리그래피",
+              "2.5 HEV 9인승 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-575",
             "name": "쉬머링 실버 메탈릭",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-쉬머링 실버 메탈릭.webp"
+            "image": "images/vehicles/현대/팰리세이드-쉬머링 실버 메탈릭.webp",
+            "allowedConfigurations": [
+              "2.5 HEV 9인승|익스클루시브",
+              "2.5 HEV 9인승|H-Pick",
+              "2.5 HEV 9인승|캘리그래피",
+              "2.5 HEV 9인승 AWD|익스클루시브",
+              "2.5 HEV 9인승 AWD|H-Pick",
+              "2.5 HEV 9인승 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-576",
             "name": "어비스 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-어비스 블랙 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-어비스 블랙 펄.webp",
+            "allowedConfigurations": [
+              "2.5 HEV 9인승|익스클루시브",
+              "2.5 HEV 9인승|H-Pick",
+              "2.5 HEV 9인승|캘리그래피",
+              "2.5 HEV 9인승|하이루프",
+              "2.5 HEV 9인승 AWD|익스클루시브",
+              "2.5 HEV 9인승 AWD|H-Pick",
+              "2.5 HEV 9인승 AWD|캘리그래피",
+              "2.5 HEV 9인승 AWD|하이루프"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피",
+              "하이루프"
+            ]
           },
           {
             "id": "paint-577",
             "name": "에코트로닉 그레이 펄",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-에코트로닉 그레이 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-에코트로닉 그레이 펄.webp",
+            "allowedConfigurations": [
+              "2.5 HEV 9인승|익스클루시브",
+              "2.5 HEV 9인승|H-Pick",
+              "2.5 HEV 9인승|캘리그래피",
+              "2.5 HEV 9인승 AWD|익스클루시브",
+              "2.5 HEV 9인승 AWD|H-Pick",
+              "2.5 HEV 9인승 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-578",
             "name": "캐스트 아이언 브라운 펄",
             "hex": "#755548",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-캐스트 아이언 브라운 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-캐스트 아이언 브라운 펄.webp",
+            "allowedConfigurations": [
+              "2.5 HEV 9인승|익스클루시브",
+              "2.5 HEV 9인승|H-Pick",
+              "2.5 HEV 9인승|캘리그래피",
+              "2.5 HEV 9인승 AWD|익스클루시브",
+              "2.5 HEV 9인승 AWD|H-Pick",
+              "2.5 HEV 9인승 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피"
+            ]
           },
           {
             "id": "paint-579",
             "name": "크리미 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-크리미 화이트 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-크리미 화이트 펄.webp",
+            "surcharge": 90000,
+            "allowedConfigurations": [
+              "2.5 HEV 9인승|익스클루시브",
+              "2.5 HEV 9인승|H-Pick",
+              "2.5 HEV 9인승|캘리그래피",
+              "2.5 HEV 9인승|하이루프",
+              "2.5 HEV 9인승 AWD|익스클루시브",
+              "2.5 HEV 9인승 AWD|H-Pick",
+              "2.5 HEV 9인승 AWD|캘리그래피",
+              "2.5 HEV 9인승 AWD|하이루프"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피",
+              "하이루프"
+            ]
           },
           {
             "id": "paint-580",
             "name": "클래지 블루 펄",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/팰리세이드-클래지 블루 펄.webp"
+            "image": "images/vehicles/현대/팰리세이드-클래지 블루 펄.webp",
+            "allowedConfigurations": [
+              "2.5 HEV 9인승|익스클루시브",
+              "2.5 HEV 9인승|H-Pick",
+              "2.5 HEV 9인승|캘리그래피",
+              "2.5 HEV 9인승 AWD|익스클루시브",
+              "2.5 HEV 9인승 AWD|H-Pick",
+              "2.5 HEV 9인승 AWD|캘리그래피"
+            ],
+            "allowedTrims": [
+              "익스클루시브",
+              "H-Pick",
+              "캘리그래피"
+            ]
           }
         ]
       },
@@ -1922,21 +3939,141 @@ const vehicleCatalog = [
             "name": "슬레이트 브라운",
             "hex": "#755548",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/포터2-슬레이트 브라운.webp"
+            "image": "images/vehicles/현대/포터2-슬레이트 브라운.webp",
+            "allowedConfigurations": [
+              "2.5 LPG 슈퍼캡|초장축 스마트 M/T",
+              "2.5 LPG 슈퍼캡|초장축 스마트",
+              "2.5 LPG 슈퍼캡|초장축 모던 M/T",
+              "2.5 LPG 슈퍼캡|초장축 모던",
+              "2.5 LPG 슈퍼캡|초장축 프리미엄 M/T",
+              "2.5 LPG 슈퍼캡|초장축 프리미엄",
+              "2.5 LPG 슈퍼캡 4WD|장축 스마트",
+              "2.5 LPG 슈퍼캡 4WD|장축 모던",
+              "2.5 LPG 슈퍼캡 4WD|장축 프리미엄",
+              "2.5 LPG 더블캡|초장축 스마트 M/T",
+              "2.5 LPG 더블캡|초장축 스마트",
+              "2.5 LPG 더블캡|초장축 모던 M/T",
+              "2.5 LPG 더블캡|초장축 모던",
+              "2.5 LPG 더블캡|초장축 프리미엄 M/T",
+              "2.5 LPG 더블캡|초장축 프리미엄",
+              "2.5 LPG 더블캡 4WD|장축 스마트",
+              "2.5 LPG 더블캡 4WD|장축 모던",
+              "2.5 LPG 더블캡 4WD|장축 프리미엄",
+              "2.5 LPG 일반캡|초장축 스마트 M/T",
+              "2.5 LPG 일반캡|초장축 스마트",
+              "2.5 LPG 일반캡|초장축 모던 M/T",
+              "2.5 LPG 일반캡|초장축 모던",
+              "2.5 LPG 일반캡|초장축 프리미엄 M/T",
+              "2.5 LPG 일반캡|초장축 프리미엄",
+              "2.5 LPG 일반캡 4WD|장축 스마트",
+              "2.5 LPG 일반캡 4WD|장축 모던",
+              "2.5 LPG 일반캡 4WD|장축 프리미엄"
+            ],
+            "allowedTrims": [
+              "초장축 스마트 M/T",
+              "초장축 스마트",
+              "초장축 모던 M/T",
+              "초장축 모던",
+              "초장축 프리미엄 M/T",
+              "초장축 프리미엄",
+              "장축 스마트",
+              "장축 모던",
+              "장축 프리미엄"
+            ]
           },
           {
             "id": "paint-476",
             "name": "오닉스 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/포터2-오닉스 블루.webp"
+            "image": "images/vehicles/현대/포터2-오닉스 블루.webp",
+            "allowedConfigurations": [
+              "2.5 LPG 슈퍼캡|초장축 스마트 M/T",
+              "2.5 LPG 슈퍼캡|초장축 스마트",
+              "2.5 LPG 슈퍼캡|초장축 모던 M/T",
+              "2.5 LPG 슈퍼캡|초장축 모던",
+              "2.5 LPG 슈퍼캡|초장축 프리미엄 M/T",
+              "2.5 LPG 슈퍼캡|초장축 프리미엄",
+              "2.5 LPG 슈퍼캡 4WD|장축 스마트",
+              "2.5 LPG 슈퍼캡 4WD|장축 모던",
+              "2.5 LPG 슈퍼캡 4WD|장축 프리미엄",
+              "2.5 LPG 더블캡|초장축 스마트 M/T",
+              "2.5 LPG 더블캡|초장축 스마트",
+              "2.5 LPG 더블캡|초장축 모던 M/T",
+              "2.5 LPG 더블캡|초장축 모던",
+              "2.5 LPG 더블캡|초장축 프리미엄 M/T",
+              "2.5 LPG 더블캡|초장축 프리미엄",
+              "2.5 LPG 더블캡 4WD|장축 스마트",
+              "2.5 LPG 더블캡 4WD|장축 모던",
+              "2.5 LPG 더블캡 4WD|장축 프리미엄",
+              "2.5 LPG 일반캡|초장축 스마트 M/T",
+              "2.5 LPG 일반캡|초장축 스마트",
+              "2.5 LPG 일반캡|초장축 모던 M/T",
+              "2.5 LPG 일반캡|초장축 모던",
+              "2.5 LPG 일반캡|초장축 프리미엄 M/T",
+              "2.5 LPG 일반캡|초장축 프리미엄",
+              "2.5 LPG 일반캡 4WD|장축 스마트",
+              "2.5 LPG 일반캡 4WD|장축 모던",
+              "2.5 LPG 일반캡 4WD|장축 프리미엄"
+            ],
+            "allowedTrims": [
+              "초장축 스마트 M/T",
+              "초장축 스마트",
+              "초장축 모던 M/T",
+              "초장축 모던",
+              "초장축 프리미엄 M/T",
+              "초장축 프리미엄",
+              "장축 스마트",
+              "장축 모던",
+              "장축 프리미엄"
+            ]
           },
           {
             "id": "paint-477",
             "name": "크리미 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/포터2-크리미 화이트.webp"
+            "image": "images/vehicles/현대/포터2-크리미 화이트.webp",
+            "allowedConfigurations": [
+              "2.5 LPG 슈퍼캡|초장축 스마트 M/T",
+              "2.5 LPG 슈퍼캡|초장축 스마트",
+              "2.5 LPG 슈퍼캡|초장축 모던 M/T",
+              "2.5 LPG 슈퍼캡|초장축 모던",
+              "2.5 LPG 슈퍼캡|초장축 프리미엄 M/T",
+              "2.5 LPG 슈퍼캡|초장축 프리미엄",
+              "2.5 LPG 슈퍼캡 4WD|장축 스마트",
+              "2.5 LPG 슈퍼캡 4WD|장축 모던",
+              "2.5 LPG 슈퍼캡 4WD|장축 프리미엄",
+              "2.5 LPG 더블캡|초장축 스마트 M/T",
+              "2.5 LPG 더블캡|초장축 스마트",
+              "2.5 LPG 더블캡|초장축 모던 M/T",
+              "2.5 LPG 더블캡|초장축 모던",
+              "2.5 LPG 더블캡|초장축 프리미엄 M/T",
+              "2.5 LPG 더블캡|초장축 프리미엄",
+              "2.5 LPG 더블캡 4WD|장축 스마트",
+              "2.5 LPG 더블캡 4WD|장축 모던",
+              "2.5 LPG 더블캡 4WD|장축 프리미엄",
+              "2.5 LPG 일반캡|초장축 스마트 M/T",
+              "2.5 LPG 일반캡|초장축 스마트",
+              "2.5 LPG 일반캡|초장축 모던 M/T",
+              "2.5 LPG 일반캡|초장축 모던",
+              "2.5 LPG 일반캡|초장축 프리미엄 M/T",
+              "2.5 LPG 일반캡|초장축 프리미엄",
+              "2.5 LPG 일반캡 4WD|장축 스마트",
+              "2.5 LPG 일반캡 4WD|장축 모던",
+              "2.5 LPG 일반캡 4WD|장축 프리미엄"
+            ],
+            "allowedTrims": [
+              "초장축 스마트 M/T",
+              "초장축 스마트",
+              "초장축 모던 M/T",
+              "초장축 모던",
+              "초장축 프리미엄 M/T",
+              "초장축 프리미엄",
+              "장축 스마트",
+              "장축 모던",
+              "장축 프리미엄"
+            ]
           }
         ]
       },
@@ -1957,21 +4094,45 @@ const vehicleCatalog = [
             "name": "슬레이트 브라운",
             "hex": "#755548",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/포터2 ev-슬레이트 브라운.webp"
+            "image": "images/vehicles/현대/포터2 ev-슬레이트 브라운.webp",
+            "allowedConfigurations": [
+              "180Ah 슈퍼캡|초장축 스마트 스페셜",
+              "180Ah 슈퍼캡|초장축 프리미엄 스페셜"
+            ],
+            "allowedTrims": [
+              "초장축 스마트 스페셜",
+              "초장축 프리미엄 스페셜"
+            ]
           },
           {
             "id": "paint-473",
             "name": "오닉스 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/포터2 ev-오닉스 블루.webp"
+            "image": "images/vehicles/현대/포터2 ev-오닉스 블루.webp",
+            "allowedConfigurations": [
+              "180Ah 슈퍼캡|초장축 스마트 스페셜",
+              "180Ah 슈퍼캡|초장축 프리미엄 스페셜"
+            ],
+            "allowedTrims": [
+              "초장축 스마트 스페셜",
+              "초장축 프리미엄 스페셜"
+            ]
           },
           {
             "id": "paint-474",
             "name": "크리미 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/현대/포터2 ev-크리미 화이트.webp"
+            "image": "images/vehicles/현대/포터2 ev-크리미 화이트.webp",
+            "allowedConfigurations": [
+              "180Ah 슈퍼캡|초장축 스마트 스페셜",
+              "180Ah 슈퍼캡|초장축 프리미엄 스페셜"
+            ],
+            "allowedTrims": [
+              "초장축 스마트 스페셜",
+              "초장축 프리미엄 스페셜"
+            ]
           }
         ]
       }
@@ -2000,112 +4161,250 @@ const vehicleCatalog = [
             "name": "마칼루 그레이 매트",
             "hex": "#515355",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-마칼루 그레이 매트.webp"
+            "image": "images/vehicles/제네시스/GV90-마칼루 그레이 매트.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-592",
             "name": "마칼루 그레이",
             "hex": "#343434",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-마칼루 그레이.webp"
+            "image": "images/vehicles/제네시스/GV90-마칼루 그레이.webp",
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-593",
             "name": "마테호른 화이트",
             "hex": "#d2d5d4",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-마테호른 화이트.webp"
+            "image": "images/vehicles/제네시스/GV90-마테호른 화이트.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-594",
             "name": "모나쉬 실버",
             "hex": "#a4a4a4",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-모나쉬 실버.webp"
+            "image": "images/vehicles/제네시스/GV90-모나쉬 실버.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-595",
             "name": "바에나 그린",
             "hex": "#31432f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-바에나 그린.webp"
+            "image": "images/vehicles/제네시스/GV90-바에나 그린.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-596",
             "name": "벨라 버건디",
             "hex": "#5d2e34",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-벨라 버건디.webp"
+            "image": "images/vehicles/제네시스/GV90-벨라 버건디.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-597",
             "name": "비크 블랙",
             "hex": "#292929",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-비크 블랙.webp"
+            "image": "images/vehicles/제네시스/GV90-비크 블랙.webp",
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-598",
             "name": "세빌 실버",
             "hex": "#70706e",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-세빌 실버.webp"
+            "image": "images/vehicles/제네시스/GV90-세빌 실버.webp",
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-599",
             "name": "세이셸 베이지",
             "hex": "#dbd6ca",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-세이셸 베이지.webp"
+            "image": "images/vehicles/제네시스/GV90-세이셸 베이지.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-600",
             "name": "소노란 네이비",
             "hex": "#303236",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-소노란 네이비.webp"
+            "image": "images/vehicles/제네시스/GV90-소노란 네이비.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-601",
             "name": "우유니 화이트",
             "hex": "#e6e8ea",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-우유니 화이트.webp"
+            "image": "images/vehicles/제네시스/GV90-우유니 화이트.webp",
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-602",
             "name": "자이푸르 로즈",
             "hex": "#66625f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-자이푸르 로즈.webp"
+            "image": "images/vehicles/제네시스/GV90-자이푸르 로즈.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-603",
             "name": "카디프 그린",
             "hex": "#34403c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-카디프 그린.webp"
+            "image": "images/vehicles/제네시스/GV90-카디프 그린.webp",
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-604",
             "name": "카프리 블루",
             "hex": "#313b51",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-카프리 블루.webp"
+            "image": "images/vehicles/제네시스/GV90-카프리 블루.webp",
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-605",
             "name": "코모 블루",
             "hex": "#79809a",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-코모 블루.webp"
+            "image": "images/vehicles/제네시스/GV90-코모 블루.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           },
           {
             "id": "paint-606",
             "name": "타우포 그레이",
             "hex": "#64666a",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV90-타우포 그레이.webp"
+            "image": "images/vehicles/제네시스/GV90-타우포 그레이.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "EV 123.5kWh|기본모델(7인승)",
+              "EV 123.5kWh|기본모델(6인승)"
+            ],
+            "allowedTrims": [
+              "기본모델(7인승)",
+              "기본모델(6인승)"
+            ]
           }
         ]
       },
@@ -2131,70 +4430,131 @@ const vehicleCatalog = [
             "name": "마칼루 그레이 매트",
             "hex": "#2A2F36",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G70-마칼루 그레이 매트.webp"
+            "image": "images/vehicles/제네시스/G70-마칼루 그레이 매트.webp",
+            "surcharge": 690000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-317",
             "name": "마칼루 그레이",
             "hex": "#23282E",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G70-마칼루 그레이.webp"
+            "image": "images/vehicles/제네시스/G70-마칼루 그레이.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-318",
             "name": "바트나 그레이",
             "hex": "#999894",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G70-바트나 그레이.webp"
+            "image": "images/vehicles/제네시스/G70-바트나 그레이.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-319",
             "name": "본드 실버",
             "hex": "#929191",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G70-본드 실버.webp"
+            "image": "images/vehicles/제네시스/G70-본드 실버.webp",
+            "surcharge": 690000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-320",
             "name": "비크 블랙",
             "hex": "#0D0D0D",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G70-비크 블랙.webp"
+            "image": "images/vehicles/제네시스/G70-비크 블랙.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-321",
             "name": "세빌 실버",
             "hex": "#767676",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G70-세빌 실버.webp"
+            "image": "images/vehicles/제네시스/G70-세빌 실버.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-322",
             "name": "우유니 화이트",
             "hex": "#F5F5F5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G70-우유니 화이트.webp"
+            "image": "images/vehicles/제네시스/G70-우유니 화이트.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-323",
             "name": "카프리 블루",
             "hex": "#102142",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G70-카프리 블루.webp"
+            "image": "images/vehicles/제네시스/G70-카프리 블루.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-324",
             "name": "태즈먼 블루",
             "hex": "#102D41",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G70-태즈먼 블루.webp"
+            "image": "images/vehicles/제네시스/G70-태즈먼 블루.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           }
         ]
       },
       {
         "name": "G80",
         "detailModels": [
-           {
+          {
             "name": "2.5 가솔린 터보",
             "trims": [
               "기본모델"
@@ -2214,56 +4574,111 @@ const vehicleCatalog = [
             "name": "마칼루 그레이 매트",
             "hex": "#2A2F36",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80-마칼루 그레이 매트.webp"
+            "image": "images/vehicles/제네시스/G80-마칼루 그레이 매트.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-334",
             "name": "마칼루 그레이",
             "hex": "#23282E",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80-마칼루 그레이.webp"
+            "image": "images/vehicles/제네시스/G80-마칼루 그레이.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-335",
             "name": "바트나 그레이",
             "hex": "#999894",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80-바트나 그레이.webp"
+            "image": "images/vehicles/제네시스/G80-바트나 그레이.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-336",
             "name": "비크 블랙",
             "hex": "#0D0D0D",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80-비크 블랙.webp"
+            "image": "images/vehicles/제네시스/G80-비크 블랙.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델",
+              "2.5 가솔린 터보 AWD|Black"
+            ],
+            "allowedTrims": [
+              "기본모델",
+              "Black"
+            ]
           },
           {
             "id": "paint-337",
             "name": "세레스 블루",
             "hex": "#36424F",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80-세레스 블루.webp"
+            "image": "images/vehicles/제네시스/G80-세레스 블루.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-338",
             "name": "세빌 실버",
             "hex": "#767676",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80-세빌 실버.webp"
+            "image": "images/vehicles/제네시스/G80-세빌 실버.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-339",
             "name": "우유니 화이트",
             "hex": "#F5F5F5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80-우유니 화이트.webp"
+            "image": "images/vehicles/제네시스/G80-우유니 화이트.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-340",
             "name": "태즈먼 블루",
             "hex": "#102D41",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80-태즈먼 블루.webp"
+            "image": "images/vehicles/제네시스/G80-태즈먼 블루.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           }
         ]
       },
@@ -2283,56 +4698,106 @@ const vehicleCatalog = [
             "name": "마칼루 그레이 매트",
             "hex": "#2A2F36",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80 EV-마칼루 그레이 매트.webp"
+            "image": "images/vehicles/제네시스/G80 EV-마칼루 그레이 매트.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "EV 94.5kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-326",
             "name": "마칼루 그레이",
             "hex": "#23282E",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80 EV-마칼루 그레이.webp"
+            "image": "images/vehicles/제네시스/G80 EV-마칼루 그레이.webp",
+            "allowedConfigurations": [
+              "EV 94.5kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-327",
             "name": "마티라 블루",
             "hex": "#10435C",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80 EV-마티라 블루.webp"
+            "image": "images/vehicles/제네시스/G80 EV-마티라 블루.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "EV 94.5kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-328",
             "name": "비크 블랙",
             "hex": "#0D0D0D",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80 EV-비크 블랙.webp"
+            "image": "images/vehicles/제네시스/G80 EV-비크 블랙.webp",
+            "allowedConfigurations": [
+              "EV 94.5kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-329",
             "name": "세빌 실버",
             "hex": "#767676",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80 EV-세빌 실버.webp"
+            "image": "images/vehicles/제네시스/G80 EV-세빌 실버.webp",
+            "allowedConfigurations": [
+              "EV 94.5kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-330",
             "name": "우유니 화이트",
             "hex": "#F5F5F5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80 EV-우유니 화이트.webp"
+            "image": "images/vehicles/제네시스/G80 EV-우유니 화이트.webp",
+            "allowedConfigurations": [
+              "EV 94.5kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-331",
             "name": "카프리 블루",
             "hex": "#102343",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80 EV-카프리 블루.webp"
+            "image": "images/vehicles/제네시스/G80 EV-카프리 블루.webp",
+            "allowedConfigurations": [
+              "EV 94.5kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-332",
             "name": "태즈먼 블루",
             "hex": "#102D41",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G80 EV-태즈먼 블루.webp"
+            "image": "images/vehicles/제네시스/G80 EV-태즈먼 블루.webp",
+            "allowedConfigurations": [
+              "EV 94.5kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           }
         ]
       },
@@ -2372,56 +4837,132 @@ const vehicleCatalog = [
             "name": "마우이 블랙",
             "hex": "#172023",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G90-마우이 블랙.webp"
+            "image": "images/vehicles/제네시스/G90-마우이 블랙.webp",
+            "allowedConfigurations": [
+              "3.5 가솔린 터보|기본모델",
+              "3.5 가솔린 터보 AWD|기본모델",
+              "3.5 가솔린 터보 MHEV|기본모델",
+              "3.5 가솔린 터보 MHEV AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-342",
             "name": "마칼루 그레이 매트",
             "hex": "#292F36",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G90-마칼루 그레이 매트.webp"
+            "image": "images/vehicles/제네시스/G90-마칼루 그레이 매트.webp",
+            "surcharge": 800000,
+            "allowedConfigurations": [
+              "3.5 가솔린 터보|기본모델",
+              "3.5 가솔린 터보 AWD|기본모델",
+              "3.5 가솔린 터보 MHEV|기본모델",
+              "3.5 가솔린 터보 MHEV AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-343",
             "name": "마칼루 그레이",
             "hex": "#2C3036",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G90-마칼루 그레이.webp"
+            "image": "images/vehicles/제네시스/G90-마칼루 그레이.webp",
+            "allowedConfigurations": [
+              "3.5 가솔린 터보|기본모델",
+              "3.5 가솔린 터보 AWD|기본모델",
+              "3.5 가솔린 터보 MHEV|기본모델",
+              "3.5 가솔린 터보 MHEV AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-344",
             "name": "비크 블랙",
             "hex": "#1F1F1F",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G90-비크 블랙.webp"
+            "image": "images/vehicles/제네시스/G90-비크 블랙.webp",
+            "allowedConfigurations": [
+              "3.5 가솔린 터보|기본모델",
+              "3.5 가솔린 터보 AWD|기본모델",
+              "3.5 가솔린 터보 AWD|Black",
+              "3.5 가솔린 터보 MHEV|기본모델",
+              "3.5 가솔린 터보 MHEV AWD|기본모델",
+              "3.5 가솔린 터보 MHEV AWD|Black"
+            ],
+            "allowedTrims": [
+              "기본모델",
+              "Black"
+            ]
           },
           {
             "id": "paint-345",
             "name": "세빌 실버",
             "hex": "#7C7C7C",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G90-세빌 실버.webp"
+            "image": "images/vehicles/제네시스/G90-세빌 실버.webp",
+            "allowedConfigurations": [
+              "3.5 가솔린 터보|기본모델",
+              "3.5 가솔린 터보 AWD|기본모델",
+              "3.5 가솔린 터보 MHEV|기본모델",
+              "3.5 가솔린 터보 MHEV AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-346",
             "name": "우유니 화이트",
             "hex": "#F3F3F3",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G90-우유니 화이트.webp"
+            "image": "images/vehicles/제네시스/G90-우유니 화이트.webp",
+            "allowedConfigurations": [
+              "3.5 가솔린 터보|기본모델",
+              "3.5 가솔린 터보 AWD|기본모델",
+              "3.5 가솔린 터보 MHEV|기본모델",
+              "3.5 가솔린 터보 MHEV AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-347",
             "name": "카프리 블루",
             "hex": "#102445",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G90-카프리 블루.webp"
+            "image": "images/vehicles/제네시스/G90-카프리 블루.webp",
+            "allowedConfigurations": [
+              "3.5 가솔린 터보|기본모델",
+              "3.5 가솔린 터보 AWD|기본모델",
+              "3.5 가솔린 터보 MHEV|기본모델",
+              "3.5 가솔린 터보 MHEV AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-348",
             "name": "태즈먼 블루",
             "hex": "#102D41",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/G90-태즈먼 블루.webp"
+            "image": "images/vehicles/제네시스/G90-태즈먼 블루.webp",
+            "allowedConfigurations": [
+              "3.5 가솔린 터보|기본모델",
+              "3.5 가솔린 터보 AWD|기본모델",
+              "3.5 가솔린 터보 MHEV|기본모델",
+              "3.5 가솔린 터보 MHEV AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           }
         ]
       },
@@ -2453,63 +4994,138 @@ const vehicleCatalog = [
             "name": "마칼루 그레이 매트",
             "hex": "#2c3139",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV60 EV-마칼루 그레이 매트.webp"
+            "image": "images/vehicles/제네시스/GV60 EV-마칼루 그레이 매트.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "스탠다드|기본모델",
+              "스탠다드 AWD|기본모델",
+              "퍼포먼스 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-350",
             "name": "마칼루 그레이",
             "hex": "#2d3138",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV60 EV-마칼루 그레이.webp"
+            "image": "images/vehicles/제네시스/GV60 EV-마칼루 그레이.webp",
+            "allowedConfigurations": [
+              "스탠다드|기본모델",
+              "스탠다드 AWD|기본모델",
+              "퍼포먼스 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-351",
             "name": "마테호른 화이트",
             "hex": "#f2f2f2",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV60 EV-마테호른 화이트.webp"
+            "image": "images/vehicles/제네시스/GV60 EV-마테호른 화이트.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "스탠다드|기본모델",
+              "스탠다드 AWD|기본모델",
+              "퍼포먼스 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-352",
             "name": "세레스 블루 매트",
             "hex": "#283442",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV60 EV-세레스 블루 매트.webp"
+            "image": "images/vehicles/제네시스/GV60 EV-세레스 블루 매트.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "스탠다드|기본모델",
+              "스탠다드 AWD|기본모델",
+              "퍼포먼스 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-353",
             "name": "세레스 블루",
             "hex": "#283442",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV60 EV-세레스 블루.webp"
+            "image": "images/vehicles/제네시스/GV60 EV-세레스 블루.webp",
+            "allowedConfigurations": [
+              "스탠다드|기본모델",
+              "스탠다드 AWD|기본모델",
+              "퍼포먼스 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-354",
             "name": "세빌 실버",
             "hex": "#737373",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV60 EV-세빌 실버.webp"
+            "image": "images/vehicles/제네시스/GV60 EV-세빌 실버.webp",
+            "allowedConfigurations": [
+              "스탠다드|기본모델",
+              "스탠다드 AWD|기본모델",
+              "퍼포먼스 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-355",
             "name": "우유니 화이트",
             "hex": "#f3f3f3",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV60 EV-우유니 화이트.webp"
+            "image": "images/vehicles/제네시스/GV60 EV-우유니 화이트.webp",
+            "allowedConfigurations": [
+              "스탠다드|기본모델",
+              "스탠다드 AWD|기본모델",
+              "퍼포먼스 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-356",
             "name": "트롬소 그린",
             "hex": "#144252",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV60 EV-트롬소 그린.webp"
+            "image": "images/vehicles/제네시스/GV60 EV-트롬소 그린.webp",
+            "allowedConfigurations": [
+              "스탠다드|기본모델",
+              "스탠다드 AWD|기본모델",
+              "퍼포먼스 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-581",
             "name": "비크 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV60 EV-마칼루 그레이.webp"
+            "image": "images/vehicles/제네시스/GV60 EV-마칼루 그레이.webp",
+            "allowedConfigurations": [
+              "스탠다드|기본모델",
+              "스탠다드 AWD|기본모델",
+              "퍼포먼스 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           }
         ]
       },
@@ -2535,63 +5151,128 @@ const vehicleCatalog = [
             "name": "마칼루 그레이 매트",
             "hex": "#2c3139",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70-마칼루 그레이 매트.webp"
+            "image": "images/vehicles/제네시스/GV70-마칼루 그레이 매트.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-367",
             "name": "마칼루 그레이",
             "hex": "#2d3138",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70-마칼루 그레이.webp"
+            "image": "images/vehicles/제네시스/GV70-마칼루 그레이.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-368",
             "name": "마테호른 화이트",
             "hex": "#f2f2f2",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70-마테호른 화이트.webp"
+            "image": "images/vehicles/제네시스/GV70-마테호른 화이트.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-369",
             "name": "베링 블루",
             "hex": "#5c656b",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70-베링 블루.webp"
+            "image": "images/vehicles/제네시스/GV70-베링 블루.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-370",
             "name": "비크 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70-비크 블랙.webp"
+            "image": "images/vehicles/제네시스/GV70-비크 블랙.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-371",
             "name": "세레스 블루",
             "hex": "#283442",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70-세레스 블루.webp"
+            "image": "images/vehicles/제네시스/GV70-세레스 블루.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-372",
             "name": "세빌 실버",
             "hex": "#737373",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70-세빌 실버.webp"
+            "image": "images/vehicles/제네시스/GV70-세빌 실버.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-373",
             "name": "우유니 화이트",
             "hex": "#f3f3f3",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70-우유니 화이트.webp"
+            "image": "images/vehicles/제네시스/GV70-우유니 화이트.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-374",
             "name": "트롬소 그린",
             "hex": "#144252",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70-트롬소 그린.webp"
+            "image": "images/vehicles/제네시스/GV70-트롬소 그린.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           }
         ]
       },
@@ -2611,63 +5292,120 @@ const vehicleCatalog = [
             "name": "마칼루 그레이 매트",
             "hex": "#2c3139",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70 EV-마칼루 그레이 매트.webp"
+            "image": "images/vehicles/제네시스/GV70 EV-마칼루 그레이 매트.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "EV 84kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-358",
             "name": "마칼루 그레이",
             "hex": "#2d3138",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70 EV-마칼루 그레이.webp"
+            "image": "images/vehicles/제네시스/GV70 EV-마칼루 그레이.webp",
+            "allowedConfigurations": [
+              "EV 84kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-359",
             "name": "마테호른 화이트",
             "hex": "#f2f2f2",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70 EV-마테호른 화이트.webp"
+            "image": "images/vehicles/제네시스/GV70 EV-마테호른 화이트.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "EV 84kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-360",
             "name": "비크 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70 EV-비크 블랙.webp"
+            "image": "images/vehicles/제네시스/GV70 EV-비크 블랙.webp",
+            "allowedConfigurations": [
+              "EV 84kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-361",
             "name": "세레스 블루 매트",
             "hex": "#283442",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70 EV-세레스 블루 매트.webp"
+            "image": "images/vehicles/제네시스/GV70 EV-세레스 블루 매트.webp",
+            "surcharge": 700000,
+            "allowedConfigurations": [
+              "EV 84kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-362",
             "name": "세레스 블루",
             "hex": "#283442",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70 EV-세레스 블루.webp"
+            "image": "images/vehicles/제네시스/GV70 EV-세레스 블루.webp",
+            "allowedConfigurations": [
+              "EV 84kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-363",
             "name": "세빌 실버",
             "hex": "#737373",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70 EV-세빌 실버.webp"
+            "image": "images/vehicles/제네시스/GV70 EV-세빌 실버.webp",
+            "allowedConfigurations": [
+              "EV 84kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-364",
             "name": "우유니 화이트",
             "hex": "#f3f3f3",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70 EV-우유니 화이트.webp"
+            "image": "images/vehicles/제네시스/GV70 EV-우유니 화이트.webp",
+            "allowedConfigurations": [
+              "EV 84kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-365",
             "name": "트롬소 그린",
             "hex": "#144252",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV70 EV-트롬소 그린.webp"
+            "image": "images/vehicles/제네시스/GV70 EV-트롬소 그린.webp",
+            "allowedConfigurations": [
+              "EV 84kWh|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           }
         ]
       },
@@ -2694,63 +5432,131 @@ const vehicleCatalog = [
             "name": "마칼루 그레이 매트",
             "hex": "#2c3139",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV80-마칼루 그레이 매트.webp"
+            "image": "images/vehicles/제네시스/GV80-마칼루 그레이 매트.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-376",
             "name": "마칼루 그레이",
             "hex": "#2d3138",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV80-마칼루 그레이.webp"
+            "image": "images/vehicles/제네시스/GV80-마칼루 그레이.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-377",
             "name": "메테호른 화이트",
             "hex": "#f2f2f2",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV80-메테호른 화이트.webp"
+            "image": "images/vehicles/제네시스/GV80-메테호른 화이트.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-378",
             "name": "베링 블루",
             "hex": "#5c656b",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV80-베링 블루.webp"
+            "image": "images/vehicles/제네시스/GV80-베링 블루.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-379",
             "name": "비크 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV80-비크 블랙.webp"
+            "image": "images/vehicles/제네시스/GV80-비크 블랙.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델",
+              "2.5 가솔린 터보 AWD|Black"
+            ],
+            "allowedTrims": [
+              "기본모델",
+              "Black"
+            ]
           },
           {
             "id": "paint-380",
             "name": "세레스 블루 매트",
             "hex": "#283442",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV80-세레스 블루 매트.webp"
+            "image": "images/vehicles/제네시스/GV80-세레스 블루 매트.webp",
+            "surcharge": 1000000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-381",
             "name": "세레스 블루",
             "hex": "#283442",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV80-세레스 블루.webp"
+            "image": "images/vehicles/제네시스/GV80-세레스 블루.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-382",
             "name": "세빌 실버",
             "hex": "#737373",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV80-세빌 실버.webp"
+            "image": "images/vehicles/제네시스/GV80-세빌 실버.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           },
           {
             "id": "paint-383",
             "name": "우유니 화이트",
             "hex": "#f3f3f3",
             "border": "#cfd5dc",
-            "image": "images/vehicles/제네시스/GV80-우유니 화이트.webp"
+            "image": "images/vehicles/제네시스/GV80-우유니 화이트.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|기본모델",
+              "2.5 가솔린 터보 AWD|기본모델"
+            ],
+            "allowedTrims": [
+              "기본모델"
+            ]
           }
         ]
       }
@@ -2796,49 +5602,163 @@ const vehicleCatalog = [
             "name": "셰일 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev3-셰일 그레이.webp"
+            "image": "images/vehicles/기아/ev3-셰일 그레이.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-82",
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev3-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/ev3-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-83",
             "name": "아이보리 매트 실버",
             "hex": "#a9a59f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev3-아이보리 매트 실버.webp"
+            "image": "images/vehicles/기아/ev3-아이보리 매트 실버.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-84",
             "name": "아이보리 실버",
             "hex": "#a9a59f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev3-아이보리 실버.webp"
+            "image": "images/vehicles/기아/ev3-아이보리 실버.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-85",
             "name": "어벤쳐린 그린",
             "hex": "#476454",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev3-어벤쳐린 그린.webp"
+            "image": "images/vehicles/기아/ev3-어벤쳐린 그린.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-86",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev3-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/ev3-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-87",
             "name": "프로스트 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev3-프로스트 블루.webp"
+            "image": "images/vehicles/기아/ev3-프로스트 블루.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           }
         ]
       },
@@ -2876,56 +5796,170 @@ const vehicleCatalog = [
             "name": "마그마 레드",
             "hex": "#2e1216",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev4-마그마 레드.webp"
+            "image": "images/vehicles/기아/ev4-마그마 레드.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-89",
             "name": "모닝 헤이즈",
             "hex": "#788b87",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev4-모닝 헤이즈.webp"
+            "image": "images/vehicles/기아/ev4-모닝 헤이즈.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-90",
             "name": "셰일 그레이",
             "hex": "#474747",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev4-셰일 그레이.webp"
+            "image": "images/vehicles/기아/ev4-셰일 그레이.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-91",
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev4-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/ev4-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-92",
             "name": "아이보리 매트 실버",
             "hex": "#c6c5bc",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev4-아이보리 매트 실버.webp"
+            "image": "images/vehicles/기아/ev4-아이보리 매트 실버.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-93",
             "name": "아이보리 실버",
             "hex": "#c6c5bc",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev4-아이보리 실버.webp"
+            "image": "images/vehicles/기아/ev4-아이보리 실버.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-94",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev4-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/ev4-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           }
         ]
       },
       {
         "name": "EV5",
         "detailModels": [
-         {
+          {
             "name": "Standard",
             "trims": [
               "에어",
@@ -2956,63 +5990,197 @@ const vehicleCatalog = [
             "name": "그래비티 그레이",
             "hex": "#535353",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev5-그래비티 그레이.webp"
+            "image": "images/vehicles/기아/ev5-그래비티 그레이.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-96",
             "name": "다크 오션 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev5-다크 오션 블루.webp"
+            "image": "images/vehicles/기아/ev5-다크 오션 블루.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-97",
             "name": "마그마 레드",
             "hex": "#a92b31",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev5-마그마 레드.webp"
+            "image": "images/vehicles/기아/ev5-마그마 레드.webp",
+            "allowedConfigurations": [
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-98",
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev5-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/ev5-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-99",
             "name": "아이보리 실버",
             "hex": "#b4b1a9",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev5-아이보리 실버.webp"
+            "image": "images/vehicles/기아/ev5-아이보리 실버.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-100",
             "name": "아이스버그 그린",
             "hex": "#7c8e92",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev5-아이스버그 그린.webp"
+            "image": "images/vehicles/기아/ev5-아이스버그 그린.webp",
+            "allowedConfigurations": [
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-101",
             "name": "아이스버그 매트 그린",
             "hex": "#7c8e92",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev5-아이스버그 매트 그린.webp"
+            "image": "images/vehicles/기아/ev5-아이스버그 매트 그린.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-102",
             "name": "퓨전 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev5-퓨전 블랙.webp"
+            "image": "images/vehicles/기아/ev5-퓨전 블랙.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-103",
             "name": "프로스트 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev5-프로스트 블루.webp"
+            "image": "images/vehicles/기아/ev5-프로스트 블루.webp",
+            "allowedConfigurations": [
+              "Standard|에어",
+              "Standard|어스",
+              "Standard|GT-Line",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           }
         ]
       },
@@ -3052,63 +6220,190 @@ const vehicleCatalog = [
             "name": "글래시어",
             "hex": "#d5d6d1",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev6-글래시어.webp"
+            "image": "images/vehicles/기아/ev6-글래시어.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-105",
             "name": "런웨이 레드",
             "hex": "#a92b31",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev6-런웨이 레드.webp"
+            "image": "images/vehicles/기아/ev6-런웨이 레드.webp",
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-106",
             "name": "문스케이프 매트 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev6-문스케이프 매트 그레이.webp"
+            "image": "images/vehicles/기아/ev6-문스케이프 매트 그레이.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스"
+            ]
           },
           {
             "id": "paint-107",
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev6-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/ev6-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-108",
             "name": "아이보리 매트 실버",
             "hex": "#b4b4b4",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev6-아이보리 매트 실버.webp"
+            "image": "images/vehicles/기아/ev6-아이보리 매트 실버.webp",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스"
+            ]
           },
           {
             "id": "paint-109",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev6-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/ev6-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range|GT-Line",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-110",
             "name": "요트 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev6-요트 블루.webp"
+            "image": "images/vehicles/기아/ev6-요트 블루.webp",
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스"
+            ]
           },
           {
             "id": "paint-111",
             "name": "인터스텔라 그레이",
             "hex": "#606263",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev6-인터스텔라 그레이.webp"
+            "image": "images/vehicles/기아/ev6-인터스텔라 그레이.webp",
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스"
+            ]
           }
         ]
       },
       {
         "name": "EV9",
         "detailModels": [
-         {
+          {
             "name": "Standard",
             "trims": [
               "라이트",
@@ -3140,49 +6435,177 @@ const vehicleCatalog = [
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev9-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/ev9-스노우 화이트 펄.webp",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-113",
             "name": "아이보리 매트 실버",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev9-아이보리 매트 실버.webp"
+            "image": "images/vehicles/기아/ev9-아이보리 매트 실버.webp",
+            "surcharge": 490000,
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-114",
             "name": "아이스버그 그린",
             "hex": "#7c9191",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev9-아이스버그 그린.webp"
+            "image": "images/vehicles/기아/ev9-아이스버그 그린.webp",
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-115",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev9-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/ev9-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-116",
             "name": "오션 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev9-오션 블루.webp"
+            "image": "images/vehicles/기아/ev9-오션 블루.webp",
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-117",
             "name": "판테라 메탈",
             "hex": "#45494e",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev9-판테라 메탈.webp"
+            "image": "images/vehicles/기아/ev9-판테라 메탈.webp",
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-118",
             "name": "페블 그레이",
             "hex": "#91999f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/ev9-페블 그레이.webp"
+            "image": "images/vehicles/기아/ev9-페블 그레이.webp",
+            "allowedConfigurations": [
+              "Standard|라이트",
+              "Standard|에어",
+              "Standard|어스",
+              "Long Range|라이트",
+              "Long Range|에어",
+              "Long Range|어스",
+              "Long Range 4WD|라이트",
+              "Long Range 4WD|에어",
+              "Long Range 4WD|어스",
+              "Long Range 4WD|GT-Line"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어",
+              "어스",
+              "GT-Line"
+            ]
           }
         ]
       },
@@ -3206,28 +6629,85 @@ const vehicleCatalog = [
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k5-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/k5-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "2.0 가솔린|스마트 셀렉션",
+              "2.0 가솔린|프레스티지",
+              "2.0 가솔린|베스트 셀렉션",
+              "2.0 가솔린|노블레스",
+              "2.0 가솔린|시그니처"
+            ],
+            "allowedTrims": [
+              "스마트 셀렉션",
+              "프레스티지",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-120",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k5-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/k5-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "2.0 가솔린|스마트 셀렉션",
+              "2.0 가솔린|프레스티지",
+              "2.0 가솔린|베스트 셀렉션",
+              "2.0 가솔린|노블레스",
+              "2.0 가솔린|시그니처"
+            ],
+            "allowedTrims": [
+              "스마트 셀렉션",
+              "프레스티지",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-121",
             "name": "울프 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k5-울프 그레이.webp"
+            "image": "images/vehicles/기아/k5-울프 그레이.webp",
+            "allowedConfigurations": [
+              "2.0 가솔린|스마트 셀렉션",
+              "2.0 가솔린|프레스티지",
+              "2.0 가솔린|베스트 셀렉션",
+              "2.0 가솔린|노블레스",
+              "2.0 가솔린|시그니처"
+            ],
+            "allowedTrims": [
+              "스마트 셀렉션",
+              "프레스티지",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-122",
             "name": "인터스텔라 그레이",
             "hex": "#2a2e32",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k5-인터스텔라 그레이.webp"
+            "image": "images/vehicles/기아/k5-인터스텔라 그레이.webp",
+            "allowedConfigurations": [
+              "2.0 가솔린|스마트 셀렉션",
+              "2.0 가솔린|프레스티지",
+              "2.0 가솔린|베스트 셀렉션",
+              "2.0 가솔린|노블레스",
+              "2.0 가솔린|시그니처"
+            ],
+            "allowedTrims": [
+              "스마트 셀렉션",
+              "프레스티지",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           }
         ]
       },
@@ -3250,28 +6730,77 @@ const vehicleCatalog = [
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k5-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/k5-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "2.0 HEV|프레스티지",
+              "2.0 HEV|베스트 셀렉션",
+              "2.0 HEV|노블레스",
+              "2.0 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-479",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k5-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/k5-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "2.0 HEV|프레스티지",
+              "2.0 HEV|베스트 셀렉션",
+              "2.0 HEV|노블레스",
+              "2.0 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-480",
             "name": "울프 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k5-울프 그레이.webp"
+            "image": "images/vehicles/기아/k5-울프 그레이.webp",
+            "allowedConfigurations": [
+              "2.0 HEV|프레스티지",
+              "2.0 HEV|베스트 셀렉션",
+              "2.0 HEV|노블레스",
+              "2.0 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-481",
             "name": "인터스텔라 그레이",
             "hex": "#2a2e32",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k5-인터스텔라 그레이.webp"
+            "image": "images/vehicles/기아/k5-인터스텔라 그레이.webp",
+            "allowedConfigurations": [
+              "2.0 HEV|프레스티지",
+              "2.0 HEV|베스트 셀렉션",
+              "2.0 HEV|노블레스",
+              "2.0 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           }
         ]
       },
@@ -3295,42 +6824,118 @@ const vehicleCatalog = [
             "name": "문스케이프 매트 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-문스케이프 매트 그레이.webp"
+            "image": "images/vehicles/기아/k8-문스케이프 매트 그레이.webp",
+            "surcharge": 400000,
+            "allowedConfigurations": [
+              "2.5 가솔린|노블레스 라이트",
+              "2.5 가솔린|베스트 셀렉션",
+              "2.5 가솔린|노블레스",
+              "2.5 가솔린|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-124",
             "name": "선셋 베이지",
             "hex": "#b8a88f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-선셋 베이지.webp"
+            "image": "images/vehicles/기아/k8-선셋 베이지.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린|노블레스 라이트",
+              "2.5 가솔린|베스트 셀렉션",
+              "2.5 가솔린|노블레스",
+              "2.5 가솔린|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-125",
             "name": "스노우 화이트 펄",
             "hex": "#d6d6d6",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/k8-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "2.5 가솔린|노블레스 라이트",
+              "2.5 가솔린|베스트 셀렉션",
+              "2.5 가솔린|노블레스",
+              "2.5 가솔린|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-126",
             "name": "아이보리 실버",
             "hex": "#b1b2ad",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-아이보리 실버.webp"
+            "image": "images/vehicles/기아/k8-아이보리 실버.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린|노블레스 라이트",
+              "2.5 가솔린|베스트 셀렉션",
+              "2.5 가솔린|노블레스",
+              "2.5 가솔린|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-127",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/k8-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린|노블레스 라이트",
+              "2.5 가솔린|베스트 셀렉션",
+              "2.5 가솔린|노블레스",
+              "2.5 가솔린|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-482",
             "name": "인터스텔라 그레이",
             "hex": "#1e2328",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-인터스텔라 그레이.webp"
+            "image": "images/vehicles/기아/k8-인터스텔라 그레이.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린|노블레스 라이트",
+              "2.5 가솔린|베스트 셀렉션",
+              "2.5 가솔린|노블레스",
+              "2.5 가솔린|시그니처",
+              "2.5 가솔린|시그니처 블랙"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처",
+              "시그니처 블랙"
+            ]
           }
         ]
       },
@@ -3354,42 +6959,118 @@ const vehicleCatalog = [
             "name": "문스케이프 매트 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-문스케이프 매트 그레이.webp"
+            "image": "images/vehicles/기아/k8-문스케이프 매트 그레이.webp",
+            "surcharge": 400000,
+            "allowedConfigurations": [
+              "1.6 HEV|노블레스 라이트",
+              "1.6 HEV|베스트 셀렉션",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-484",
             "name": "선셋 베이지",
             "hex": "#b8a88f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-선셋 베이지.webp"
+            "image": "images/vehicles/기아/k8-선셋 베이지.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|노블레스 라이트",
+              "1.6 HEV|베스트 셀렉션",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-485",
             "name": "스노우 화이트 펄",
             "hex": "#d6d6d6",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/k8-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "1.6 HEV|노블레스 라이트",
+              "1.6 HEV|베스트 셀렉션",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-486",
             "name": "아이보리 실버",
             "hex": "#b1b2ad",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-아이보리 실버.webp"
+            "image": "images/vehicles/기아/k8-아이보리 실버.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|노블레스 라이트",
+              "1.6 HEV|베스트 셀렉션",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-487",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/k8-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|노블레스 라이트",
+              "1.6 HEV|베스트 셀렉션",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-488",
             "name": "인터스텔라 그레이",
             "hex": "#1e2328",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k8-인터스텔라 그레이.webp"
+            "image": "images/vehicles/기아/k8-인터스텔라 그레이.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|노블레스 라이트",
+              "1.6 HEV|베스트 셀렉션",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|시그니처 블랙"
+            ],
+            "allowedTrims": [
+              "노블레스 라이트",
+              "베스트 셀렉션",
+              "노블레스",
+              "시그니처",
+              "시그니처 블랙"
+            ]
           }
         ]
       },
@@ -3416,35 +7097,81 @@ const vehicleCatalog = [
             "name": "딥 크로마 블루",
             "hex": "#192334",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k9-딥 크로마 블루.webp"
+            "image": "images/vehicles/기아/k9-딥 크로마 블루.webp",
+            "allowedConfigurations": [
+              "3.8 가솔린|플래티넘",
+              "3.8 가솔린 AWD|플래티넘",
+              "3.8 가솔린 AWD|마스터즈"
+            ],
+            "allowedTrims": [
+              "플래티넘",
+              "마스터즈"
+            ]
           },
           {
             "id": "paint-130",
             "name": "스노우 화이트 펄",
             "hex": "#f5f5f5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k9-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/k9-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "3.8 가솔린|플래티넘",
+              "3.8 가솔린 AWD|플래티넘",
+              "3.8 가솔린 AWD|마스터즈"
+            ],
+            "allowedTrims": [
+              "플래티넘",
+              "마스터즈"
+            ]
           },
           {
             "id": "paint-131",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k9-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/k9-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "3.8 가솔린|플래티넘",
+              "3.8 가솔린 AWD|플래티넘",
+              "3.8 가솔린 AWD|마스터즈"
+            ],
+            "allowedTrims": [
+              "플래티넘",
+              "마스터즈"
+            ]
           },
           {
             "id": "paint-132",
             "name": "판테라 메탈",
             "hex": "#2f3432",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k9-판테라 메탈.webp"
+            "image": "images/vehicles/기아/k9-판테라 메탈.webp",
+            "allowedConfigurations": [
+              "3.8 가솔린|플래티넘",
+              "3.8 가솔린 AWD|플래티넘",
+              "3.8 가솔린 AWD|마스터즈"
+            ],
+            "allowedTrims": [
+              "플래티넘",
+              "마스터즈"
+            ]
           },
           {
             "id": "paint-133",
             "name": "페블 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/k9-페블 그레이.webp"
+            "image": "images/vehicles/기아/k9-페블 그레이.webp",
+            "allowedConfigurations": [
+              "3.8 가솔린|플래티넘",
+              "3.8 가솔린 AWD|플래티넘",
+              "3.8 가솔린 AWD|마스터즈"
+            ],
+            "allowedTrims": [
+              "플래티넘",
+              "마스터즈"
+            ]
           }
         ]
       },
@@ -3470,21 +7197,42 @@ const vehicleCatalog = [
             "name": "스틸 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/PV5 카고-스틸 그레이.webp"
+            "image": "images/vehicles/기아/PV5 카고-스틸 그레이.webp",
+            "allowedConfigurations": [
+              "Standard|Basic",
+              "Long Range|Basic"
+            ],
+            "allowedTrims": [
+              "Basic"
+            ]
           },
           {
             "id": "paint-135",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/PV5 카고-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/PV5 카고-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "Standard|Basic",
+              "Long Range|Basic"
+            ],
+            "allowedTrims": [
+              "Basic"
+            ]
           },
           {
             "id": "paint-136",
             "name": "클리어 화이트",
             "hex": "#d3d3d3",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/PV5 카고-클리어 화이트.webp"
+            "image": "images/vehicles/기아/PV5 카고-클리어 화이트.webp",
+            "allowedConfigurations": [
+              "Standard|Basic",
+              "Long Range|Basic"
+            ],
+            "allowedTrims": [
+              "Basic"
+            ]
           }
         ]
       },
@@ -3506,35 +7254,86 @@ const vehicleCatalog = [
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/니로-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/니로-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-138",
             "name": "스틸 그레이",
             "hex": "#494b4d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/니로-스틸 그레이.webp"
+            "image": "images/vehicles/기아/니로-스틸 그레이.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-139",
             "name": "시티스케이프 그린",
             "hex": "#38504f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/니로-시티스케이프 그린.webp"
+            "image": "images/vehicles/기아/니로-시티스케이프 그린.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-140",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/니로-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/니로-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처"
+            ]
           },
           {
             "id": "paint-141",
             "name": "인터스텔라 그레이",
             "hex": "#2e3032",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/니로-인터스텔라 그레이.webp"
+            "image": "images/vehicles/기아/니로-인터스텔라 그레이.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처"
+            ]
           }
         ]
       },
@@ -3555,35 +7354,76 @@ const vehicleCatalog = [
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/니로-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/니로-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "EV 64.8kWh|에어",
+              "EV 64.8kWh|어스"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스"
+            ]
           },
           {
             "id": "paint-490",
             "name": "스틸 그레이",
             "hex": "#494b4d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/니로-스틸 그레이.webp"
+            "image": "images/vehicles/기아/니로-스틸 그레이.webp",
+            "allowedConfigurations": [
+              "EV 64.8kWh|에어",
+              "EV 64.8kWh|어스"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스"
+            ]
           },
           {
             "id": "paint-491",
             "name": "시티스케이프 그린",
             "hex": "#38504f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/니로-시티스케이프 그린.webp"
+            "image": "images/vehicles/기아/니로-시티스케이프 그린.webp",
+            "allowedConfigurations": [
+              "EV 64.8kWh|에어",
+              "EV 64.8kWh|어스"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스"
+            ]
           },
           {
             "id": "paint-492",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/니로-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/니로-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "EV 64.8kWh|에어",
+              "EV 64.8kWh|어스"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스"
+            ]
           },
           {
             "id": "paint-493",
             "name": "인터스텔라 그레이",
             "hex": "#2e3032",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/니로-인터스텔라 그레이.webp"
+            "image": "images/vehicles/기아/니로-인터스텔라 그레이.webp",
+            "allowedConfigurations": [
+              "EV 64.8kWh|에어",
+              "EV 64.8kWh|어스"
+            ],
+            "allowedTrims": [
+              "에어",
+              "어스"
+            ]
           }
         ]
       },
@@ -3622,42 +7462,150 @@ const vehicleCatalog = [
             "name": "밀키 베이지",
             "hex": "#a1a098",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이-밀키 베이지.webp"
+            "image": "images/vehicles/기아/레이-밀키 베이지.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린|X-Line",
+              "1.0 가솔린 1인승 밴|트렌디",
+              "1.0 가솔린 1인승 밴|프레스티지",
+              "1.0 가솔린 1인승 밴|프레스티지 스페셜",
+              "1.0 가솔린 2인승 밴|트렌디",
+              "1.0 가솔린 2인승 밴|프레스티지",
+              "1.0 가솔린 2인승 밴|프레스티지 스페셜"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line",
+              "프레스티지 스페셜"
+            ]
           },
           {
             "id": "paint-143",
             "name": "아스트로 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이-아스트로 그레이.webp"
+            "image": "images/vehicles/기아/레이-아스트로 그레이.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린 1인승 밴|트렌디",
+              "1.0 가솔린 1인승 밴|프레스티지",
+              "1.0 가솔린 1인승 밴|프레스티지 스페셜",
+              "1.0 가솔린 2인승 밴|트렌디",
+              "1.0 가솔린 2인승 밴|프레스티지",
+              "1.0 가솔린 2인승 밴|프레스티지 스페셜"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "프레스티지 스페셜"
+            ]
           },
           {
             "id": "paint-144",
             "name": "아쿠아 민트",
             "hex": "#9bc2be",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이-아쿠아 민트.webp"
+            "image": "images/vehicles/기아/레이-아쿠아 민트.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린|X-Line",
+              "1.0 가솔린 1인승 밴|트렌디",
+              "1.0 가솔린 1인승 밴|프레스티지",
+              "1.0 가솔린 1인승 밴|프레스티지 스페셜",
+              "1.0 가솔린 2인승 밴|트렌디",
+              "1.0 가솔린 2인승 밴|프레스티지",
+              "1.0 가솔린 2인승 밴|프레스티지 스페셜"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line",
+              "프레스티지 스페셜"
+            ]
           },
           {
             "id": "paint-145",
             "name": "어드벤쳐러스 그린",
             "hex": "#405253",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이-어드벤쳐러스 그린.webp"
+            "image": "images/vehicles/기아/레이-어드벤쳐러스 그린.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린 1인승 밴|트렌디",
+              "1.0 가솔린 1인승 밴|프레스티지",
+              "1.0 가솔린 1인승 밴|프레스티지 스페셜",
+              "1.0 가솔린 2인승 밴|트렌디",
+              "1.0 가솔린 2인승 밴|프레스티지",
+              "1.0 가솔린 2인승 밴|프레스티지 스페셜"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "프레스티지 스페셜"
+            ]
           },
           {
             "id": "paint-146",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/레이-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린 1인승 밴|트렌디",
+              "1.0 가솔린 1인승 밴|프레스티지",
+              "1.0 가솔린 1인승 밴|프레스티지 스페셜",
+              "1.0 가솔린 2인승 밴|트렌디",
+              "1.0 가솔린 2인승 밴|프레스티지",
+              "1.0 가솔린 2인승 밴|프레스티지 스페셜"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "프레스티지 스페셜"
+            ]
           },
           {
             "id": "paint-147",
             "name": "클리어 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이-클리어 화이트.webp"
+            "image": "images/vehicles/기아/레이-클리어 화이트.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린|X-Line",
+              "1.0 가솔린 1인승 밴|트렌디",
+              "1.0 가솔린 1인승 밴|프레스티지",
+              "1.0 가솔린 1인승 밴|프레스티지 스페셜",
+              "1.0 가솔린 2인승 밴|트렌디",
+              "1.0 가솔린 2인승 밴|프레스티지",
+              "1.0 가솔린 2인승 밴|프레스티지 스페셜"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line",
+              "프레스티지 스페셜"
+            ]
           }
         ]
       },
@@ -3692,42 +7640,114 @@ const vehicleCatalog = [
             "name": "밀키 베이지",
             "hex": "#a1a098",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이ev-밀키 베이지.webp"
+            "image": "images/vehicles/기아/레이ev-밀키 베이지.webp",
+            "allowedConfigurations": [
+              "EV 35.2kWh|라이트",
+              "EV 35.2kWh|에어",
+              "EV 35.2kWh 1인승 밴|라이트",
+              "EV 35.2kWh 1인승 밴|에어",
+              "EV 35.2kWh 2인승 밴|라이트",
+              "EV 35.2kWh 2인승 밴|에어"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어"
+            ]
           },
           {
             "id": "paint-149",
             "name": "아스트로 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이ev-아스트로 그레이.webp"
+            "image": "images/vehicles/기아/레이ev-아스트로 그레이.webp",
+            "allowedConfigurations": [
+              "EV 35.2kWh|라이트",
+              "EV 35.2kWh|에어",
+              "EV 35.2kWh 1인승 밴|라이트",
+              "EV 35.2kWh 1인승 밴|에어",
+              "EV 35.2kWh 2인승 밴|라이트",
+              "EV 35.2kWh 2인승 밴|에어"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어"
+            ]
           },
           {
             "id": "paint-150",
             "name": "아쿠아 민트",
             "hex": "#9bc2be",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이ev-아쿠아 민트.webp"
+            "image": "images/vehicles/기아/레이ev-아쿠아 민트.webp",
+            "allowedConfigurations": [
+              "EV 35.2kWh|라이트",
+              "EV 35.2kWh|에어",
+              "EV 35.2kWh 1인승 밴|라이트",
+              "EV 35.2kWh 1인승 밴|에어",
+              "EV 35.2kWh 2인승 밴|라이트",
+              "EV 35.2kWh 2인승 밴|에어"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어"
+            ]
           },
           {
             "id": "paint-151",
             "name": "어드벤쳐러스 그린",
             "hex": "#405253",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이ev-어드벤쳐러스 그린.webp"
+            "image": "images/vehicles/기아/레이ev-어드벤쳐러스 그린.webp",
+            "allowedConfigurations": [
+              "EV 35.2kWh|라이트",
+              "EV 35.2kWh|에어",
+              "EV 35.2kWh 1인승 밴|라이트",
+              "EV 35.2kWh 1인승 밴|에어",
+              "EV 35.2kWh 2인승 밴|라이트",
+              "EV 35.2kWh 2인승 밴|에어"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어"
+            ]
           },
           {
             "id": "paint-152",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이ev-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/레이ev-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "EV 35.2kWh|라이트",
+              "EV 35.2kWh|에어",
+              "EV 35.2kWh 1인승 밴|라이트",
+              "EV 35.2kWh 1인승 밴|에어",
+              "EV 35.2kWh 2인승 밴|라이트",
+              "EV 35.2kWh 2인승 밴|에어"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어"
+            ]
           },
           {
             "id": "paint-153",
             "name": "클리어 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/레이ev-클리어 화이트.webp"
+            "image": "images/vehicles/기아/레이ev-클리어 화이트.webp",
+            "allowedConfigurations": [
+              "EV 35.2kWh|라이트",
+              "EV 35.2kWh|에어",
+              "EV 35.2kWh 1인승 밴|라이트",
+              "EV 35.2kWh 1인승 밴|에어",
+              "EV 35.2kWh 2인승 밴|라이트",
+              "EV 35.2kWh 2인승 밴|에어"
+            ],
+            "allowedTrims": [
+              "라이트",
+              "에어"
+            ]
           }
         ]
       },
@@ -3757,49 +7777,147 @@ const vehicleCatalog = [
             "name": "밀키 베이지",
             "hex": "#b6b5ac",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/모닝-밀키 베이지.webp"
+            "image": "images/vehicles/기아/모닝-밀키 베이지.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린|GT-Line",
+              "1.0 가솔린 밴|트렌디",
+              "1.0 가솔린 밴|프레스티지"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-155",
             "name": "스파클링 실버",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/모닝-스파클링 실버.webp"
+            "image": "images/vehicles/기아/모닝-스파클링 실버.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린|GT-Line",
+              "1.0 가솔린 밴|트렌디",
+              "1.0 가솔린 밴|프레스티지"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-156",
             "name": "시그널 레드",
             "hex": "#a92b31",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/모닝-시그널 레드.webp"
+            "image": "images/vehicles/기아/모닝-시그널 레드.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린|GT-Line",
+              "1.0 가솔린 밴|트렌디",
+              "1.0 가솔린 밴|프레스티지"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-157",
             "name": "아스트로 그레이",
             "hex": "#686868",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/모닝-아스트로 그레이.webp"
+            "image": "images/vehicles/기아/모닝-아스트로 그레이.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린|GT-Line",
+              "1.0 가솔린 밴|트렌디",
+              "1.0 가솔린 밴|프레스티지"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-158",
             "name": "어드벤쳐러스 그린",
             "hex": "#405253",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/모닝-어드벤쳐러스 그린.webp"
+            "image": "images/vehicles/기아/모닝-어드벤쳐러스 그린.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린|GT-Line",
+              "1.0 가솔린 밴|트렌디",
+              "1.0 가솔린 밴|프레스티지"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-159",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/모닝-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/모닝-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린|GT-Line",
+              "1.0 가솔린 밴|트렌디",
+              "1.0 가솔린 밴|프레스티지"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "GT-Line"
+            ]
           },
           {
             "id": "paint-160",
             "name": "클리어 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/모닝-클리어 화이트.webp"
+            "image": "images/vehicles/기아/모닝-클리어 화이트.webp",
+            "allowedConfigurations": [
+              "1.0 가솔린|트렌디",
+              "1.0 가솔린|프레스티지",
+              "1.0 가솔린|시그니처",
+              "1.0 가솔린|GT-Line",
+              "1.0 가솔린 밴|트렌디",
+              "1.0 가솔린 밴|프레스티지"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "GT-Line"
+            ]
           }
         ]
       },
@@ -3947,21 +8065,192 @@ const vehicleCatalog = [
             "name": "진감청",
             "hex": "#284582",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/봉고3-진감청.webp"
+            "image": "images/vehicles/기아/봉고3-진감청.webp",
+            "allowedConfigurations": [
+              "LPG 킹캡 초장축 2WD M/T|L 라이트",
+              "LPG 킹캡 초장축 2WD M/T|L 기본형",
+              "LPG 킹캡 초장축 2WD M/T|GL 기본형",
+              "LPG 킹캡 초장축 2WD M/T|GLS 기본형",
+              "LPG 킹캡 초장축 2WD A/T|L 라이트",
+              "LPG 킹캡 초장축 2WD A/T|L 기본형",
+              "LPG 킹캡 초장축 2WD A/T|스마트셀렉션 스마트",
+              "LPG 킹캡 초장축 2WD A/T|GL 기본형",
+              "LPG 킹캡 초장축 2WD A/T|GLS 기본형",
+              "LPG 킹캡 장축 4WD M/T|GL 라이트",
+              "LPG 킹캡 장축 4WD M/T|GL 기본형",
+              "LPG 킹캡 장축 4WD M/T|GLS 기본형",
+              "LPG 더블캡 초장축 2WD M/T|L 라이트",
+              "LPG 더블캡 초장축 2WD M/T|L 기본형",
+              "LPG 더블캡 초장축 2WD M/T|GL 기본형",
+              "LPG 더블캡 초장축 2WD M/T|GLS 기본형",
+              "LPG 더블캡 초장축 2WD A/T|L 라이트",
+              "LPG 더블캡 초장축 2WD A/T|L 기본형",
+              "LPG 더블캡 초장축 2WD A/T|GL 기본형",
+              "LPG 더블캡 초장축 2WD A/T|GLS 기본형",
+              "LPG 더블캡 장축 4WD M/T|GL 라이트",
+              "LPG 더블캡 장축 4WD M/T|GL 기본형",
+              "LPG 더블캡 장축 4WD M/T|GLS 플러스",
+              "LPG 표준캡 초장축 2WD M/T|L 라이트",
+              "LPG 표준캡 초장축 2WD M/T|L 기본형",
+              "LPG 표준캡 초장축 2WD M/T|GL 기본형",
+              "LPG 표준캡 초장축 2WD M/T|GLS 기본형",
+              "LPG 표준캡 초장축 2WD A/T|L 라이트",
+              "LPG 표준캡 초장축 2WD A/T|L 기본형",
+              "LPG 표준캡 초장축 2WD A/T|GL 기본형",
+              "LPG 표준캡 초장축 2WD A/T|GLS 기본형",
+              "LPG 표준캡 장축 4WD M/T|GL 라이트",
+              "LPG 표준캡 장축 4WD M/T|GL 기본형",
+              "LPG 표준캡 장축 4WD M/T|GLS 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD A/T|1.2톤 스마트셀렉션 스마트",
+              "1.2톤 LPG 킹캡 초장축 2WD A/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD A/T|1.2톤 GLS 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD M/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD M/T|1.2톤 GLS 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD M/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD M/T|1.2톤 GLS 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD A/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD A/T|1.2톤 GLS 기본형"
+            ],
+            "allowedTrims": [
+              "L 라이트",
+              "L 기본형",
+              "GL 기본형",
+              "GLS 기본형",
+              "스마트셀렉션 스마트",
+              "GL 라이트",
+              "GLS 플러스",
+              "1.2톤 스마트셀렉션 스마트",
+              "1.2톤 GL 기본형",
+              "1.2톤 GLS 기본형"
+            ]
           },
           {
             "id": "paint-162",
             "name": "클리어 화이트",
             "hex": "#e1e2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/봉고3-클리어 화이트.webp"
+            "image": "images/vehicles/기아/봉고3-클리어 화이트.webp",
+            "allowedConfigurations": [
+              "LPG 킹캡 초장축 2WD M/T|L 라이트",
+              "LPG 킹캡 초장축 2WD M/T|L 기본형",
+              "LPG 킹캡 초장축 2WD M/T|GL 기본형",
+              "LPG 킹캡 초장축 2WD M/T|GLS 기본형",
+              "LPG 킹캡 초장축 2WD A/T|L 라이트",
+              "LPG 킹캡 초장축 2WD A/T|L 기본형",
+              "LPG 킹캡 초장축 2WD A/T|스마트셀렉션 스마트",
+              "LPG 킹캡 초장축 2WD A/T|GL 기본형",
+              "LPG 킹캡 초장축 2WD A/T|GLS 기본형",
+              "LPG 킹캡 장축 4WD M/T|GL 라이트",
+              "LPG 킹캡 장축 4WD M/T|GL 기본형",
+              "LPG 킹캡 장축 4WD M/T|GLS 기본형",
+              "LPG 더블캡 초장축 2WD M/T|L 라이트",
+              "LPG 더블캡 초장축 2WD M/T|L 기본형",
+              "LPG 더블캡 초장축 2WD M/T|GL 기본형",
+              "LPG 더블캡 초장축 2WD M/T|GLS 기본형",
+              "LPG 더블캡 초장축 2WD A/T|L 라이트",
+              "LPG 더블캡 초장축 2WD A/T|L 기본형",
+              "LPG 더블캡 초장축 2WD A/T|GL 기본형",
+              "LPG 더블캡 초장축 2WD A/T|GLS 기본형",
+              "LPG 더블캡 장축 4WD M/T|GL 라이트",
+              "LPG 더블캡 장축 4WD M/T|GL 기본형",
+              "LPG 더블캡 장축 4WD M/T|GLS 플러스",
+              "LPG 표준캡 초장축 2WD M/T|L 라이트",
+              "LPG 표준캡 초장축 2WD M/T|L 기본형",
+              "LPG 표준캡 초장축 2WD M/T|GL 기본형",
+              "LPG 표준캡 초장축 2WD M/T|GLS 기본형",
+              "LPG 표준캡 초장축 2WD A/T|L 라이트",
+              "LPG 표준캡 초장축 2WD A/T|L 기본형",
+              "LPG 표준캡 초장축 2WD A/T|GL 기본형",
+              "LPG 표준캡 초장축 2WD A/T|GLS 기본형",
+              "LPG 표준캡 장축 4WD M/T|GL 라이트",
+              "LPG 표준캡 장축 4WD M/T|GL 기본형",
+              "LPG 표준캡 장축 4WD M/T|GLS 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD A/T|1.2톤 스마트셀렉션 스마트",
+              "1.2톤 LPG 킹캡 초장축 2WD A/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD A/T|1.2톤 GLS 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD M/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD M/T|1.2톤 GLS 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD M/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD M/T|1.2톤 GLS 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD A/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD A/T|1.2톤 GLS 기본형"
+            ],
+            "allowedTrims": [
+              "L 라이트",
+              "L 기본형",
+              "GL 기본형",
+              "GLS 기본형",
+              "스마트셀렉션 스마트",
+              "GL 라이트",
+              "GLS 플러스",
+              "1.2톤 스마트셀렉션 스마트",
+              "1.2톤 GL 기본형",
+              "1.2톤 GLS 기본형"
+            ]
           },
           {
             "id": "paint-163",
             "name": "퓨어 베이지",
             "hex": "#b7b2a6",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/봉고3-퓨어 베이지.webp"
+            "image": "images/vehicles/기아/봉고3-퓨어 베이지.webp",
+            "allowedConfigurations": [
+              "LPG 킹캡 초장축 2WD M/T|L 라이트",
+              "LPG 킹캡 초장축 2WD M/T|L 기본형",
+              "LPG 킹캡 초장축 2WD M/T|GL 기본형",
+              "LPG 킹캡 초장축 2WD M/T|GLS 기본형",
+              "LPG 킹캡 초장축 2WD A/T|L 라이트",
+              "LPG 킹캡 초장축 2WD A/T|L 기본형",
+              "LPG 킹캡 초장축 2WD A/T|스마트셀렉션 스마트",
+              "LPG 킹캡 초장축 2WD A/T|GL 기본형",
+              "LPG 킹캡 초장축 2WD A/T|GLS 기본형",
+              "LPG 킹캡 장축 4WD M/T|GL 라이트",
+              "LPG 킹캡 장축 4WD M/T|GL 기본형",
+              "LPG 킹캡 장축 4WD M/T|GLS 기본형",
+              "LPG 더블캡 초장축 2WD M/T|L 라이트",
+              "LPG 더블캡 초장축 2WD M/T|L 기본형",
+              "LPG 더블캡 초장축 2WD M/T|GL 기본형",
+              "LPG 더블캡 초장축 2WD M/T|GLS 기본형",
+              "LPG 더블캡 초장축 2WD A/T|L 라이트",
+              "LPG 더블캡 초장축 2WD A/T|L 기본형",
+              "LPG 더블캡 초장축 2WD A/T|GL 기본형",
+              "LPG 더블캡 초장축 2WD A/T|GLS 기본형",
+              "LPG 더블캡 장축 4WD M/T|GL 라이트",
+              "LPG 더블캡 장축 4WD M/T|GL 기본형",
+              "LPG 더블캡 장축 4WD M/T|GLS 플러스",
+              "LPG 표준캡 초장축 2WD M/T|L 라이트",
+              "LPG 표준캡 초장축 2WD M/T|L 기본형",
+              "LPG 표준캡 초장축 2WD M/T|GL 기본형",
+              "LPG 표준캡 초장축 2WD M/T|GLS 기본형",
+              "LPG 표준캡 초장축 2WD A/T|L 라이트",
+              "LPG 표준캡 초장축 2WD A/T|L 기본형",
+              "LPG 표준캡 초장축 2WD A/T|GL 기본형",
+              "LPG 표준캡 초장축 2WD A/T|GLS 기본형",
+              "LPG 표준캡 장축 4WD M/T|GL 라이트",
+              "LPG 표준캡 장축 4WD M/T|GL 기본형",
+              "LPG 표준캡 장축 4WD M/T|GLS 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD A/T|1.2톤 스마트셀렉션 스마트",
+              "1.2톤 LPG 킹캡 초장축 2WD A/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD A/T|1.2톤 GLS 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD M/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 킹캡 초장축 2WD M/T|1.2톤 GLS 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD M/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD M/T|1.2톤 GLS 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD A/T|1.2톤 GL 기본형",
+              "1.2톤 LPG 표준캡 초장축 2WD A/T|1.2톤 GLS 기본형"
+            ],
+            "allowedTrims": [
+              "L 라이트",
+              "L 기본형",
+              "GL 기본형",
+              "GLS 기본형",
+              "스마트셀렉션 스마트",
+              "GL 라이트",
+              "GLS 플러스",
+              "1.2톤 스마트셀렉션 스마트",
+              "1.2톤 GL 기본형",
+              "1.2톤 GLS 기본형"
+            ]
           }
         ]
       },
@@ -3993,42 +8282,139 @@ const vehicleCatalog = [
             "name": "그래비티 그레이",
             "hex": "#313538",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-그래비티 그레이.webp"
+            "image": "images/vehicles/기아/셀토스-그래비티 그레이.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|트렌디",
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|트렌디",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-165",
             "name": "스노우 화이트 펄",
             "hex": "#d4d6d6",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/셀토스-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|트렌디",
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|트렌디",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-166",
             "name": "아이보리 실버",
             "hex": "#b8b7ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-아이보리 실버.webp"
+            "image": "images/vehicles/기아/셀토스-아이보리 실버.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|트렌디",
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|트렌디",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-167",
             "name": "아이스버그 그린",
             "hex": "#536362",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-아이스버그 그린.webp"
+            "image": "images/vehicles/기아/셀토스-아이스버그 그린.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|트렌디",
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|트렌디",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-168",
             "name": "퓨전 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-퓨전 블랙.webp"
+            "image": "images/vehicles/기아/셀토스-퓨전 블랙.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|트렌디",
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|트렌디",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-169",
             "name": "프로스트 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-프로스트 블루.webp"
+            "image": "images/vehicles/기아/셀토스-프로스트 블루.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|트렌디",
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|트렌디",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           }
         ]
       },
@@ -4051,42 +8437,115 @@ const vehicleCatalog = [
             "name": "그래비티 그레이",
             "hex": "#313538",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-그래비티 그레이.webp"
+            "image": "images/vehicles/기아/셀토스-그래비티 그레이.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-495",
             "name": "스노우 화이트 펄",
             "hex": "#d4d6d6",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/셀토스-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-496",
             "name": "아이보리 실버",
             "hex": "#b8b7ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-아이보리 실버.webp"
+            "image": "images/vehicles/기아/셀토스-아이보리 실버.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-497",
             "name": "아이스버그 그린",
             "hex": "#536362",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-아이스버그 그린.webp"
+            "image": "images/vehicles/기아/셀토스-아이스버그 그린.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-498",
             "name": "퓨전 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-퓨전 블랙.webp"
+            "image": "images/vehicles/기아/셀토스-퓨전 블랙.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-499",
             "name": "프로스트 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/셀토스-프로스트 블루.webp"
+            "image": "images/vehicles/기아/셀토스-프로스트 블루.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|트렌디",
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line"
+            ],
+            "allowedTrims": [
+              "트렌디",
+              "프레스티지",
+              "시그니처",
+              "X-Line"
+            ]
           }
         ]
       },
@@ -4099,7 +8558,7 @@ const vehicleCatalog = [
               "프레스티지",
               "노블레스",
               "시그니처",
-              "시그니처 X-Line"
+              "X-Line"
             ]
           },
           {
@@ -4108,7 +8567,7 @@ const vehicleCatalog = [
               "프레스티지",
               "노블레스",
               "시그니처",
-              "시그니처 X-Line"
+              "X-Line"
             ]
           }
         ],
@@ -4118,42 +8577,126 @@ const vehicleCatalog = [
             "name": "그래비티 그레이",
             "hex": "#454b4d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-그래비티 그레이.webp"
+            "image": "images/vehicles/기아/스포티지-그래비티 그레이.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|노블레스",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|노블레스",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-171",
             "name": "베스타 블루",
             "hex": "#283c59",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-베스타 블루.webp"
+            "image": "images/vehicles/기아/스포티지-베스타 블루.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-172",
             "name": "스노우 화이트 펄",
             "hex": "#f0f0ee",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/스포티지-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|노블레스",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|노블레스",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-173",
             "name": "울프 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-울프 그레이.webp"
+            "image": "images/vehicles/기아/스포티지-울프 그레이.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|노블레스",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|노블레스",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-174",
             "name": "퓨전 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-퓨전 블랙.webp"
+            "image": "images/vehicles/기아/스포티지-퓨전 블랙.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|노블레스",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|노블레스",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-175",
             "name": "헤리티지 블루",
             "hex": "#728fa2",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-헤리티지 블루.webp"
+            "image": "images/vehicles/기아/스포티지-헤리티지 블루.webp",
+            "allowedConfigurations": [
+              "1.6 가솔린 터보|프레스티지",
+              "1.6 가솔린 터보|노블레스",
+              "1.6 가솔린 터보|시그니처",
+              "1.6 가솔린 터보|X-Line",
+              "1.6 가솔린 터보 AWD|프레스티지",
+              "1.6 가솔린 터보 AWD|노블레스",
+              "1.6 가솔린 터보 AWD|시그니처",
+              "1.6 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           }
         ]
       },
@@ -4166,7 +8709,7 @@ const vehicleCatalog = [
               "프레스티지",
               "노블레스",
               "시그니처",
-              "시그니처 X-Line"
+              "X-Line"
             ]
           },
           {
@@ -4175,7 +8718,7 @@ const vehicleCatalog = [
               "프레스티지",
               "노블레스",
               "시그니처",
-              "시그니처 X-Line"
+              "X-Line"
             ]
           }
         ],
@@ -4185,42 +8728,126 @@ const vehicleCatalog = [
             "name": "그래비티 그레이",
             "hex": "#454b4d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-그래비티 그레이.webp"
+            "image": "images/vehicles/기아/스포티지-그래비티 그레이.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|노블레스",
+              "1.6 HEV AWD|시그니처",
+              "1.6 HEV AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-501",
             "name": "베스타 블루",
             "hex": "#283c59",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-베스타 블루.webp"
+            "image": "images/vehicles/기아/스포티지-베스타 블루.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-502",
             "name": "스노우 화이트 펄",
             "hex": "#f0f0ee",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/스포티지-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|노블레스",
+              "1.6 HEV AWD|시그니처",
+              "1.6 HEV AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-503",
             "name": "울프 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-울프 그레이.webp"
+            "image": "images/vehicles/기아/스포티지-울프 그레이.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|노블레스",
+              "1.6 HEV AWD|시그니처",
+              "1.6 HEV AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-504",
             "name": "퓨전 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-퓨전 블랙.webp"
+            "image": "images/vehicles/기아/스포티지-퓨전 블랙.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|노블레스",
+              "1.6 HEV AWD|시그니처",
+              "1.6 HEV AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-505",
             "name": "헤리티지 블루",
             "hex": "#728fa2",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/스포티지-헤리티지 블루.webp"
+            "image": "images/vehicles/기아/스포티지-헤리티지 블루.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|노블레스",
+              "1.6 HEV AWD|시그니처",
+              "1.6 HEV AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           }
         ]
       },
@@ -4252,35 +8879,116 @@ const vehicleCatalog = [
             "name": "볼캐닉 샌드 브라운",
             "hex": "#a7a5a3",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/쏘렌토-볼캐닉 샌드 브라운.webp"
+            "image": "images/vehicles/기아/쏘렌토-볼캐닉 샌드 브라운.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|프레스티지",
+              "2.5 가솔린 터보|노블레스",
+              "2.5 가솔린 터보|시그니처",
+              "2.5 가솔린 터보|X-Line",
+              "2.5 가솔린 터보 AWD|프레스티지",
+              "2.5 가솔린 터보 AWD|노블레스",
+              "2.5 가솔린 터보 AWD|시그니처",
+              "2.5 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-177",
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/쏘렌토-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/쏘렌토-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|프레스티지",
+              "2.5 가솔린 터보|노블레스",
+              "2.5 가솔린 터보|시그니처",
+              "2.5 가솔린 터보|X-Line",
+              "2.5 가솔린 터보 AWD|프레스티지",
+              "2.5 가솔린 터보 AWD|노블레스",
+              "2.5 가솔린 터보 AWD|시그니처",
+              "2.5 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-178",
             "name": "시티스케이프 그린",
             "hex": "#5b6964",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/쏘렌토-시티스케이프 그린.webp"
+            "image": "images/vehicles/기아/쏘렌토-시티스케이프 그린.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|프레스티지",
+              "2.5 가솔린 터보|노블레스",
+              "2.5 가솔린 터보|시그니처",
+              "2.5 가솔린 터보|X-Line",
+              "2.5 가솔린 터보 AWD|프레스티지",
+              "2.5 가솔린 터보 AWD|노블레스",
+              "2.5 가솔린 터보 AWD|시그니처",
+              "2.5 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-179",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/쏘렌토-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/쏘렌토-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|프레스티지",
+              "2.5 가솔린 터보|노블레스",
+              "2.5 가솔린 터보|시그니처",
+              "2.5 가솔린 터보|X-Line",
+              "2.5 가솔린 터보 AWD|프레스티지",
+              "2.5 가솔린 터보 AWD|노블레스",
+              "2.5 가솔린 터보 AWD|시그니처",
+              "2.5 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-180",
             "name": "인터스텔라 그레이",
             "hex": "#36383a",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/쏘렌토-인터스텔라 그레이.webp"
+            "image": "images/vehicles/기아/쏘렌토-인터스텔라 그레이.webp",
+            "allowedConfigurations": [
+              "2.5 가솔린 터보|프레스티지",
+              "2.5 가솔린 터보|노블레스",
+              "2.5 가솔린 터보|시그니처",
+              "2.5 가솔린 터보|X-Line",
+              "2.5 가솔린 터보 AWD|프레스티지",
+              "2.5 가솔린 터보 AWD|노블레스",
+              "2.5 가솔린 터보 AWD|시그니처",
+              "2.5 가솔린 터보 AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           }
         ]
       },
@@ -4312,35 +9020,116 @@ const vehicleCatalog = [
             "name": "볼캐닉 샌드 브라운",
             "hex": "#a7a5a3",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/쏘렌토-볼캐닉 샌드 브라운.webp"
+            "image": "images/vehicles/기아/쏘렌토-볼캐닉 샌드 브라운.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|노블레스",
+              "1.6 HEV AWD|시그니처",
+              "1.6 HEV AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-507",
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/쏘렌토-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/쏘렌토-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|노블레스",
+              "1.6 HEV AWD|시그니처",
+              "1.6 HEV AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-508",
             "name": "시티스케이프 그린",
             "hex": "#5b6964",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/쏘렌토-시티스케이프 그린.webp"
+            "image": "images/vehicles/기아/쏘렌토-시티스케이프 그린.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|노블레스",
+              "1.6 HEV AWD|시그니처",
+              "1.6 HEV AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-509",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/쏘렌토-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/쏘렌토-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|노블레스",
+              "1.6 HEV AWD|시그니처",
+              "1.6 HEV AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           },
           {
             "id": "paint-510",
             "name": "인터스텔라 그레이",
             "hex": "#36383a",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/쏘렌토-인터스텔라 그레이.webp"
+            "image": "images/vehicles/기아/쏘렌토-인터스텔라 그레이.webp",
+            "allowedConfigurations": [
+              "1.6 HEV|프레스티지",
+              "1.6 HEV|노블레스",
+              "1.6 HEV|시그니처",
+              "1.6 HEV|X-Line",
+              "1.6 HEV AWD|프레스티지",
+              "1.6 HEV AWD|노블레스",
+              "1.6 HEV AWD|시그니처",
+              "1.6 HEV AWD|X-Line"
+            ],
+            "allowedTrims": [
+              "프레스티지",
+              "노블레스",
+              "시그니처",
+              "X-Line"
+            ]
           }
         ]
       },
@@ -4372,28 +9161,91 @@ const vehicleCatalog = [
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/카니발-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/카니발-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "3.5 가솔린 7인승|노블레스",
+              "3.5 가솔린 7인승|아웃도어",
+              "3.5 가솔린 7인승|시그니처",
+              "3.5 가솔린 7인승|X-Line",
+              "3.5 가솔린 9인승|프레스티지",
+              "3.5 가솔린 9인승|노블레스",
+              "3.5 가솔린 9인승|시그니처",
+              "3.5 가솔린 9인승|X-Line"
+            ],
+            "allowedTrims": [
+              "노블레스",
+              "아웃도어",
+              "시그니처",
+              "X-Line",
+              "프레스티지"
+            ]
           },
           {
             "id": "paint-182",
             "name": "아이보리 실버",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/카니발-아이보리 실버.webp"
+            "image": "images/vehicles/기아/카니발-아이보리 실버.webp",
+            "allowedConfigurations": [
+              "3.5 가솔린 7인승|노블레스",
+              "3.5 가솔린 7인승|아웃도어",
+              "3.5 가솔린 7인승|시그니처",
+              "3.5 가솔린 9인승|프레스티지",
+              "3.5 가솔린 9인승|노블레스",
+              "3.5 가솔린 9인승|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스",
+              "아웃도어",
+              "시그니처",
+              "프레스티지"
+            ]
           },
           {
             "id": "paint-183",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/카니발-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/카니발-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "3.5 가솔린 7인승|노블레스",
+              "3.5 가솔린 7인승|아웃도어",
+              "3.5 가솔린 7인승|시그니처",
+              "3.5 가솔린 7인승|X-Line",
+              "3.5 가솔린 9인승|프레스티지",
+              "3.5 가솔린 9인승|노블레스",
+              "3.5 가솔린 9인승|시그니처",
+              "3.5 가솔린 9인승|X-Line"
+            ],
+            "allowedTrims": [
+              "노블레스",
+              "아웃도어",
+              "시그니처",
+              "X-Line",
+              "프레스티지"
+            ]
           },
           {
             "id": "paint-184",
             "name": "판테라 메탈",
             "hex": "#505354",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/카니발-판테라 메탈.webp"
+            "image": "images/vehicles/기아/카니발-판테라 메탈.webp",
+            "allowedConfigurations": [
+              "3.5 가솔린 7인승|노블레스",
+              "3.5 가솔린 7인승|아웃도어",
+              "3.5 가솔린 7인승|시그니처",
+              "3.5 가솔린 9인승|프레스티지",
+              "3.5 가솔린 9인승|노블레스",
+              "3.5 가솔린 9인승|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스",
+              "아웃도어",
+              "시그니처",
+              "프레스티지"
+            ]
           }
         ]
       },
@@ -4425,28 +9277,91 @@ const vehicleCatalog = [
             "name": "스노우 화이트 펄",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/카니발-스노우 화이트 펄.webp"
+            "image": "images/vehicles/기아/카니발-스노우 화이트 펄.webp",
+            "surcharge": 80000,
+            "allowedConfigurations": [
+              "1.6 HEV 7인승|노블레스",
+              "1.6 HEV 7인승|아웃도어",
+              "1.6 HEV 7인승|시그니처",
+              "1.6 HEV 7인승|X-Line",
+              "1.6 HEV 9인승|프레스티지",
+              "1.6 HEV 9인승|노블레스",
+              "1.6 HEV 9인승|시그니처",
+              "1.6 HEV 9인승|X-Line"
+            ],
+            "allowedTrims": [
+              "노블레스",
+              "아웃도어",
+              "시그니처",
+              "X-Line",
+              "프레스티지"
+            ]
           },
           {
             "id": "paint-512",
             "name": "아이보리 실버",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/카니발-아이보리 실버.webp"
+            "image": "images/vehicles/기아/카니발-아이보리 실버.webp",
+            "allowedConfigurations": [
+              "1.6 HEV 7인승|노블레스",
+              "1.6 HEV 7인승|아웃도어",
+              "1.6 HEV 7인승|시그니처",
+              "1.6 HEV 9인승|프레스티지",
+              "1.6 HEV 9인승|노블레스",
+              "1.6 HEV 9인승|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스",
+              "아웃도어",
+              "시그니처",
+              "프레스티지"
+            ]
           },
           {
             "id": "paint-513",
             "name": "오로라 블랙 펄",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/카니발-오로라 블랙 펄.webp"
+            "image": "images/vehicles/기아/카니발-오로라 블랙 펄.webp",
+            "allowedConfigurations": [
+              "1.6 HEV 7인승|노블레스",
+              "1.6 HEV 7인승|아웃도어",
+              "1.6 HEV 7인승|시그니처",
+              "1.6 HEV 7인승|X-Line",
+              "1.6 HEV 9인승|프레스티지",
+              "1.6 HEV 9인승|노블레스",
+              "1.6 HEV 9인승|시그니처",
+              "1.6 HEV 9인승|X-Line"
+            ],
+            "allowedTrims": [
+              "노블레스",
+              "아웃도어",
+              "시그니처",
+              "X-Line",
+              "프레스티지"
+            ]
           },
           {
             "id": "paint-514",
             "name": "판테라 메탈",
             "hex": "#505354",
             "border": "#cfd5dc",
-            "image": "images/vehicles/기아/카니발-판테라 메탈.webp"
+            "image": "images/vehicles/기아/카니발-판테라 메탈.webp",
+            "allowedConfigurations": [
+              "1.6 HEV 7인승|노블레스",
+              "1.6 HEV 7인승|아웃도어",
+              "1.6 HEV 7인승|시그니처",
+              "1.6 HEV 9인승|프레스티지",
+              "1.6 HEV 9인승|노블레스",
+              "1.6 HEV 9인승|시그니처"
+            ],
+            "allowedTrims": [
+              "노블레스",
+              "아웃도어",
+              "시그니처",
+              "프레스티지"
+            ]
           }
         ]
       }
@@ -4483,28 +9398,72 @@ const vehicleCatalog = [
             "name": "그랜드 화이트",
             "hex": "#fefefb",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/렉스턴 뉴 아레나-그랜드 화이트.webp"
+            "image": "images/vehicles/KGM/렉스턴 뉴 아레나-그랜드 화이트.webp",
+            "allowedConfigurations": [
+              "2.2 디젤|프리미엄",
+              "2.2 디젤|노블레스",
+              "2.2 디젤 4WD|프리미엄",
+              "2.2 디젤 4WD|노블레스",
+              "2.2 디젤 4WD|써밋"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "노블레스",
+              "써밋"
+            ]
           },
           {
             "id": "paint-21",
             "name": "마블 그레이",
             "hex": "#3e4044",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/렉스턴 뉴 아레나-마블 그레이.webp"
+            "image": "images/vehicles/KGM/렉스턴 뉴 아레나-마블 그레이.webp",
+            "allowedConfigurations": [
+              "2.2 디젤|프리미엄",
+              "2.2 디젤|노블레스",
+              "2.2 디젤 4WD|프리미엄",
+              "2.2 디젤 4WD|노블레스",
+              "2.2 디젤 4WD|써밋"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "노블레스",
+              "써밋"
+            ]
           },
           {
             "id": "paint-22",
             "name": "스페이스 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/렉스턴 뉴 아레나-스페이스 블랙.webp"
+            "image": "images/vehicles/KGM/렉스턴 뉴 아레나-스페이스 블랙.webp",
+            "allowedConfigurations": [
+              "2.2 디젤|프리미엄",
+              "2.2 디젤|노블레스",
+              "2.2 디젤 4WD|프리미엄",
+              "2.2 디젤 4WD|노블레스",
+              "2.2 디젤 4WD|써밋"
+            ],
+            "allowedTrims": [
+              "프리미엄",
+              "노블레스",
+              "써밋"
+            ]
           },
           {
             "id": "paint-23",
             "name": "실키 화이트 펄",
             "hex": "#fefefb",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/렉스턴 뉴 아레나-실키 화이트 펄.webp"
+            "image": "images/vehicles/KGM/렉스턴 뉴 아레나-실키 화이트 펄.webp",
+            "surcharge": 100000,
+            "allowedConfigurations": [
+              "2.2 디젤|노블레스",
+              "2.2 디젤 4WD|노블레스"
+            ],
+            "allowedTrims": [
+              "노블레스"
+            ]
           }
         ]
       },
@@ -4542,49 +9501,161 @@ const vehicleCatalog = [
             "name": "그랜드 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘-그랜드 화이트.webp"
+            "image": "images/vehicles/KGM/무쏘-그랜드 화이트.webp",
+            "allowedConfigurations": [
+              "2.0 가솔린 터보|M5",
+              "2.0 가솔린 터보|M7",
+              "2.0 가솔린 터보|M9",
+              "2.0 가솔린 터보 4WD|M5",
+              "2.0 가솔린 터보 4WD|M7",
+              "2.0 가솔린 터보 4WD|M9",
+              "2.0 가솔린 터보 롱 데크 4WD|M5",
+              "2.0 가솔린 터보 롱 데크 4WD|M7",
+              "2.0 가솔린 터보 롱 데크 4WD|M9"
+            ],
+            "allowedTrims": [
+              "M5",
+              "M7",
+              "M9"
+            ]
           },
           {
             "id": "paint-25",
             "name": "마블 그레이",
             "hex": "#4a4c50",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘-마블 그레이.webp"
+            "image": "images/vehicles/KGM/무쏘-마블 그레이.webp",
+            "allowedConfigurations": [
+              "2.0 가솔린 터보|M5",
+              "2.0 가솔린 터보|M7",
+              "2.0 가솔린 터보|M9",
+              "2.0 가솔린 터보 4WD|M5",
+              "2.0 가솔린 터보 4WD|M7",
+              "2.0 가솔린 터보 4WD|M9",
+              "2.0 가솔린 터보 롱 데크 4WD|M5",
+              "2.0 가솔린 터보 롱 데크 4WD|M7",
+              "2.0 가솔린 터보 롱 데크 4WD|M9"
+            ],
+            "allowedTrims": [
+              "M5",
+              "M7",
+              "M9"
+            ]
           },
           {
             "id": "paint-26",
             "name": "샌드스톤 베이지",
             "hex": "#b8a88f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘-샌드스톤 베이지.webp"
+            "image": "images/vehicles/KGM/무쏘-샌드스톤 베이지.webp",
+            "allowedConfigurations": [
+              "2.0 가솔린 터보|M5",
+              "2.0 가솔린 터보|M7",
+              "2.0 가솔린 터보|M9",
+              "2.0 가솔린 터보 4WD|M5",
+              "2.0 가솔린 터보 4WD|M7",
+              "2.0 가솔린 터보 4WD|M9",
+              "2.0 가솔린 터보 롱 데크 4WD|M5",
+              "2.0 가솔린 터보 롱 데크 4WD|M7",
+              "2.0 가솔린 터보 롱 데크 4WD|M9"
+            ],
+            "allowedTrims": [
+              "M5",
+              "M7",
+              "M9"
+            ]
           },
           {
             "id": "paint-27",
             "name": "스모크 토프",
             "hex": "#77695f",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘-스모크 토프.webp"
+            "image": "images/vehicles/KGM/무쏘-스모크 토프.webp",
+            "allowedConfigurations": [
+              "2.0 가솔린 터보|M5",
+              "2.0 가솔린 터보|M7",
+              "2.0 가솔린 터보|M9",
+              "2.0 가솔린 터보 4WD|M5",
+              "2.0 가솔린 터보 4WD|M7",
+              "2.0 가솔린 터보 4WD|M9",
+              "2.0 가솔린 터보 롱 데크 4WD|M5",
+              "2.0 가솔린 터보 롱 데크 4WD|M7",
+              "2.0 가솔린 터보 롱 데크 4WD|M9"
+            ],
+            "allowedTrims": [
+              "M5",
+              "M7",
+              "M9"
+            ]
           },
           {
             "id": "paint-28",
             "name": "스페이스 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘-스페이스 블랙.webp"
+            "image": "images/vehicles/KGM/무쏘-스페이스 블랙.webp",
+            "allowedConfigurations": [
+              "2.0 가솔린 터보|M5",
+              "2.0 가솔린 터보|M7",
+              "2.0 가솔린 터보|M9",
+              "2.0 가솔린 터보 4WD|M5",
+              "2.0 가솔린 터보 4WD|M7",
+              "2.0 가솔린 터보 4WD|M9",
+              "2.0 가솔린 터보 롱 데크 4WD|M5",
+              "2.0 가솔린 터보 롱 데크 4WD|M7",
+              "2.0 가솔린 터보 롱 데크 4WD|M9"
+            ],
+            "allowedTrims": [
+              "M5",
+              "M7",
+              "M9"
+            ]
           },
           {
             "id": "paint-29",
             "name": "아마조니아 그린",
             "hex": "#697a72",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘-아마조니아 그린.webp"
+            "image": "images/vehicles/KGM/무쏘-아마조니아 그린.webp",
+            "allowedConfigurations": [
+              "2.0 가솔린 터보|M5",
+              "2.0 가솔린 터보|M7",
+              "2.0 가솔린 터보|M9",
+              "2.0 가솔린 터보 4WD|M5",
+              "2.0 가솔린 터보 4WD|M7",
+              "2.0 가솔린 터보 4WD|M9",
+              "2.0 가솔린 터보 롱 데크 4WD|M5",
+              "2.0 가솔린 터보 롱 데크 4WD|M7",
+              "2.0 가솔린 터보 롱 데크 4WD|M9"
+            ],
+            "allowedTrims": [
+              "M5",
+              "M7",
+              "M9"
+            ]
           },
           {
             "id": "paint-30",
             "name": "울트라 마린",
             "hex": "#244073",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘-울트라 마린.webp"
+            "image": "images/vehicles/KGM/무쏘-울트라 마린.webp",
+            "allowedConfigurations": [
+              "2.0 가솔린 터보|M5",
+              "2.0 가솔린 터보|M7",
+              "2.0 가솔린 터보|M9",
+              "2.0 가솔린 터보 4WD|M5",
+              "2.0 가솔린 터보 4WD|M7",
+              "2.0 가솔린 터보 4WD|M9",
+              "2.0 가솔린 터보 롱 데크 4WD|M5",
+              "2.0 가솔린 터보 롱 데크 4WD|M7",
+              "2.0 가솔린 터보 롱 데크 4WD|M9"
+            ],
+            "allowedTrims": [
+              "M5",
+              "M7",
+              "M9"
+            ]
           }
         ]
       },
@@ -4612,35 +9683,76 @@ const vehicleCatalog = [
             "name": "그랜드 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘ev-그랜드 화이트.webp"
+            "image": "images/vehicles/KGM/무쏘ev-그랜드 화이트.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|MX",
+              "EV 80.6kWh|블랙 엣지",
+              "EV 80.6kWh AWD|MX",
+              "EV 80.6kWh AWD|블랙 엣지"
+            ],
+            "allowedTrims": [
+              "MX",
+              "블랙 엣지"
+            ]
           },
           {
             "id": "paint-32",
             "name": "마블 그레이",
             "hex": "#46474c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘ev-마블 그레이.webp"
+            "image": "images/vehicles/KGM/무쏘ev-마블 그레이.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|MX",
+              "EV 80.6kWh AWD|MX"
+            ],
+            "allowedTrims": [
+              "MX"
+            ]
           },
           {
             "id": "paint-33",
             "name": "스페이스 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘ev-스페이스 블랙.webp"
+            "image": "images/vehicles/KGM/무쏘ev-스페이스 블랙.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|MX",
+              "EV 80.6kWh|블랙 엣지",
+              "EV 80.6kWh AWD|MX",
+              "EV 80.6kWh AWD|블랙 엣지"
+            ],
+            "allowedTrims": [
+              "MX",
+              "블랙 엣지"
+            ]
           },
           {
             "id": "paint-34",
             "name": "아마조니아 그린",
             "hex": "#697a72",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘ev-아마조니아 그린.webp"
+            "image": "images/vehicles/KGM/무쏘ev-아마조니아 그린.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|MX",
+              "EV 80.6kWh AWD|MX"
+            ],
+            "allowedTrims": [
+              "MX"
+            ]
           },
           {
             "id": "paint-35",
             "name": "울트라 마린",
             "hex": "#244073",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/무쏘ev-울트라 마린.webp"
+            "image": "images/vehicles/KGM/무쏘ev-울트라 마린.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|MX",
+              "EV 80.6kWh AWD|MX"
+            ],
+            "allowedTrims": [
+              "MX"
+            ]
           }
         ]
       },
@@ -4666,49 +9778,98 @@ const vehicleCatalog = [
             "name": "그랜드 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언-그랜드 화이트.webp"
+            "image": "images/vehicles/KGM/액티언-그랜드 화이트.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|S8",
+              "1.5 가솔린 터보 AWD|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-44",
             "name": "댄디 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언-댄디 블루.webp"
+            "image": "images/vehicles/KGM/액티언-댄디 블루.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|S8",
+              "1.5 가솔린 터보 AWD|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-45",
             "name": "라떼 그레이지",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언-라떼 그레이지.webp"
+            "image": "images/vehicles/KGM/액티언-라떼 그레이지.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|S8",
+              "1.5 가솔린 터보 AWD|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-46",
             "name": "스칼렛 그로브",
             "hex": "#7f3038",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언-스칼렛 그로브.webp"
+            "image": "images/vehicles/KGM/액티언-스칼렛 그로브.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|S8",
+              "1.5 가솔린 터보 AWD|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-47",
             "name": "스페이스 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언-스페이스 블랙.webp"
+            "image": "images/vehicles/KGM/액티언-스페이스 블랙.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|S8",
+              "1.5 가솔린 터보 AWD|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-48",
             "name": "포레스트 그린",
             "hex": "#476454",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언-포레스트 그린.webp"
+            "image": "images/vehicles/KGM/액티언-포레스트 그린.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|S8",
+              "1.5 가솔린 터보 AWD|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-49",
             "name": "플라즈마 섀도우",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언-플라즈마 섀도우.webp"
+            "image": "images/vehicles/KGM/액티언-플라즈마 섀도우.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|S8",
+              "1.5 가솔린 터보 AWD|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           }
         ]
       },
@@ -4728,49 +9889,91 @@ const vehicleCatalog = [
             "name": "그랜드 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언 하이브리드-그랜드 화이트.webp"
+            "image": "images/vehicles/KGM/액티언 하이브리드-그랜드 화이트.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-37",
             "name": "댄디 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언 하이브리드-댄디 블루.webp"
+            "image": "images/vehicles/KGM/액티언 하이브리드-댄디 블루.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-38",
             "name": "라떼 그레이지",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언 하이브리드-라떼 그레이지.webp"
+            "image": "images/vehicles/KGM/액티언 하이브리드-라떼 그레이지.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-39",
             "name": "스칼렛 그로브",
             "hex": "#7f3038",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언 하이브리드-스칼렛 그로브.webp"
+            "image": "images/vehicles/KGM/액티언 하이브리드-스칼렛 그로브.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-40",
             "name": "스페이스 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언 하이브리드-스페이스 블랙.webp"
+            "image": "images/vehicles/KGM/액티언 하이브리드-스페이스 블랙.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-41",
             "name": "포레스트 그린",
             "hex": "#476454",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언 하이브리드-포레스트 그린.webp"
+            "image": "images/vehicles/KGM/액티언 하이브리드-포레스트 그린.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           },
           {
             "id": "paint-42",
             "name": "플라즈마 섀도우",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/액티언 하이브리드-플라즈마 섀도우.webp"
+            "image": "images/vehicles/KGM/액티언 하이브리드-플라즈마 섀도우.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|S8"
+            ],
+            "allowedTrims": [
+              "S8"
+            ]
           }
         ]
       },
@@ -4811,70 +10014,192 @@ const vehicleCatalog = [
             "name": "그랜드 화이트 원톤",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스-그랜드 화이트 원톤.webp"
+            "image": "images/vehicles/KGM/토레스-그랜드 화이트 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|T5",
+              "1.5 가솔린 터보|T7",
+              "1.5 가솔린 터보 4WD|T5",
+              "1.5 가솔린 터보 4WD|T7",
+              "1.5 가솔린 터보 밴|TV5",
+              "1.5 가솔린 터보 밴|TV7",
+              "1.5 가솔린 터보 밴 4WD|TV7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-61",
             "name": "그랜드 화이트 투톤",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스-그랜드 화이트 투톤.webp"
+            "image": "images/vehicles/KGM/토레스-그랜드 화이트 투톤.webp",
+            "surcharge": 500000,
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|T7",
+              "1.5 가솔린 터보 4WD|T7"
+            ],
+            "allowedTrims": [
+              "T7"
+            ]
           },
           {
             "id": "paint-62",
             "name": "댄디 블루 원톤",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스-댄디 블루 원톤.webp"
+            "image": "images/vehicles/KGM/토레스-댄디 블루 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|T5",
+              "1.5 가솔린 터보|T7",
+              "1.5 가솔린 터보 4WD|T5",
+              "1.5 가솔린 터보 4WD|T7",
+              "1.5 가솔린 터보 밴|TV5",
+              "1.5 가솔린 터보 밴|TV7",
+              "1.5 가솔린 터보 밴 4WD|TV7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-63",
             "name": "라떼 그레이지 원톤",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스-라떼 그레이지 원톤.webp"
+            "image": "images/vehicles/KGM/토레스-라떼 그레이지 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|T5",
+              "1.5 가솔린 터보|T7",
+              "1.5 가솔린 터보 4WD|T5",
+              "1.5 가솔린 터보 4WD|T7",
+              "1.5 가솔린 터보 밴|TV5",
+              "1.5 가솔린 터보 밴|TV7",
+              "1.5 가솔린 터보 밴 4WD|TV7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-64",
             "name": "라떼 그레이지 투톤",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스-라떼 그레이지 투톤.webp"
+            "image": "images/vehicles/KGM/토레스-라떼 그레이지 투톤.webp",
+            "surcharge": 500000,
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|T7",
+              "1.5 가솔린 터보 4WD|T7"
+            ],
+            "allowedTrims": [
+              "T7"
+            ]
           },
           {
             "id": "paint-65",
             "name": "스페이스 블랙 원톤",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스-스페이스 블랙 원톤.webp"
+            "image": "images/vehicles/KGM/토레스-스페이스 블랙 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|T5",
+              "1.5 가솔린 터보|T7",
+              "1.5 가솔린 터보 4WD|T5",
+              "1.5 가솔린 터보 4WD|T7",
+              "1.5 가솔린 터보 밴|TV5",
+              "1.5 가솔린 터보 밴|TV7",
+              "1.5 가솔린 터보 밴 4WD|TV7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-66",
             "name": "포레스트 그린 원톤",
             "hex": "#476454",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스-포레스트 그린 원톤.webp"
+            "image": "images/vehicles/KGM/토레스-포레스트 그린 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|T5",
+              "1.5 가솔린 터보|T7",
+              "1.5 가솔린 터보 4WD|T5",
+              "1.5 가솔린 터보 4WD|T7",
+              "1.5 가솔린 터보 밴|TV5",
+              "1.5 가솔린 터보 밴|TV7",
+              "1.5 가솔린 터보 밴 4WD|TV7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-67",
             "name": "포레스트 그린 투톤",
             "hex": "#476454",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스-포레스트 그린 투톤.webp"
+            "image": "images/vehicles/KGM/토레스-포레스트 그린 투톤.webp",
+            "surcharge": 500000,
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|T7",
+              "1.5 가솔린 터보 4WD|T7"
+            ],
+            "allowedTrims": [
+              "T7"
+            ]
           },
           {
             "id": "paint-68",
             "name": "플라즈마 섀도우 원톤",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스-플라즈마 섀도우 원톤.webp"
+            "image": "images/vehicles/KGM/토레스-플라즈마 섀도우 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|T5",
+              "1.5 가솔린 터보|T7",
+              "1.5 가솔린 터보 4WD|T5",
+              "1.5 가솔린 터보 4WD|T7",
+              "1.5 가솔린 터보 밴|TV5",
+              "1.5 가솔린 터보 밴|TV7",
+              "1.5 가솔린 터보 밴 4WD|TV7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-69",
             "name": "플라즈마 섀도우 투톤",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스-플라즈마 섀도우 투톤.webp"
+            "image": "images/vehicles/KGM/토레스-플라즈마 섀도우 투톤.webp",
+            "surcharge": 500000,
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|T7",
+              "1.5 가솔린 터보 4WD|T7"
+            ],
+            "allowedTrims": [
+              "T7"
+            ]
           }
         ]
       },
@@ -4895,70 +10220,146 @@ const vehicleCatalog = [
             "name": "그랜드 화이트 원톤",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스 하이브리드-그랜드 화이트 원톤.webp"
+            "image": "images/vehicles/KGM/토레스 하이브리드-그랜드 화이트 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|T5",
+              "1.5 HEV|T7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7"
+            ]
           },
           {
             "id": "paint-51",
             "name": "그랜드 화이트 투톤",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스 하이브리드-그랜드 화이트 투톤.webp"
+            "image": "images/vehicles/KGM/토레스 하이브리드-그랜드 화이트 투톤.webp",
+            "surcharge": 500000,
+            "allowedConfigurations": [
+              "1.5 HEV|T7"
+            ],
+            "allowedTrims": [
+              "T7"
+            ]
           },
           {
             "id": "paint-52",
             "name": "댄디 블루 원톤",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스 하이브리드-댄디 블루 원톤.webp"
+            "image": "images/vehicles/KGM/토레스 하이브리드-댄디 블루 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|T5",
+              "1.5 HEV|T7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7"
+            ]
           },
           {
             "id": "paint-53",
             "name": "라떼 그레이지 원톤",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스 하이브리드-라떼 그레이지 원톤.webp"
+            "image": "images/vehicles/KGM/토레스 하이브리드-라떼 그레이지 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|T5",
+              "1.5 HEV|T7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7"
+            ]
           },
           {
             "id": "paint-54",
             "name": "라떼 그레이지 투톤",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스 하이브리드-라떼 그레이지 투톤.webp"
+            "image": "images/vehicles/KGM/토레스 하이브리드-라떼 그레이지 투톤.webp",
+            "surcharge": 500000,
+            "allowedConfigurations": [
+              "1.5 HEV|T7"
+            ],
+            "allowedTrims": [
+              "T7"
+            ]
           },
           {
             "id": "paint-55",
             "name": "스페이스 블랙 원톤",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스 하이브리드-스페이스 블랙 원톤.webp"
+            "image": "images/vehicles/KGM/토레스 하이브리드-스페이스 블랙 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|T5",
+              "1.5 HEV|T7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7"
+            ]
           },
           {
             "id": "paint-56",
             "name": "포레스트 그린 원톤",
             "hex": "#476454",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스 하이브리드-포레스트 그린 원톤.webp"
+            "image": "images/vehicles/KGM/토레스 하이브리드-포레스트 그린 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|T5",
+              "1.5 HEV|T7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7"
+            ]
           },
           {
             "id": "paint-57",
             "name": "포레스트 그린 투톤",
             "hex": "#476454",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스 하이브리드-포레스트 그린 투톤.webp"
+            "image": "images/vehicles/KGM/토레스 하이브리드-포레스트 그린 투톤.webp",
+            "surcharge": 500000,
+            "allowedConfigurations": [
+              "1.5 HEV|T7"
+            ],
+            "allowedTrims": [
+              "T7"
+            ]
           },
           {
             "id": "paint-58",
             "name": "플라즈마 섀도우 원톤",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스 하이브리드-플라즈마 섀도우 원톤.webp"
+            "image": "images/vehicles/KGM/토레스 하이브리드-플라즈마 섀도우 원톤.webp",
+            "allowedConfigurations": [
+              "1.5 HEV|T5",
+              "1.5 HEV|T7"
+            ],
+            "allowedTrims": [
+              "T5",
+              "T7"
+            ]
           },
           {
             "id": "paint-59",
             "name": "플라즈마 섀도우 투톤",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스 하이브리드-플라즈마 섀도우 투톤.webp"
+            "image": "images/vehicles/KGM/토레스 하이브리드-플라즈마 섀도우 투톤.webp",
+            "surcharge": 500000,
+            "allowedConfigurations": [
+              "1.5 HEV|T7"
+            ],
+            "allowedTrims": [
+              "T7"
+            ]
           }
         ]
       },
@@ -4986,42 +10387,114 @@ const vehicleCatalog = [
             "name": "그랜드 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스ev-그랜드 화이트.webp"
+            "image": "images/vehicles/KGM/토레스ev-그랜드 화이트.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|E5",
+              "EV 80.6kWh|E7",
+              "EV 80.6kWh 밴|TV5",
+              "EV 80.6kWh 밴|TV7"
+            ],
+            "allowedTrims": [
+              "E5",
+              "E7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-71",
             "name": "댄디 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스ev-댄디 블루.webp"
+            "image": "images/vehicles/KGM/토레스ev-댄디 블루.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|E5",
+              "EV 80.6kWh|E7",
+              "EV 80.6kWh 밴|TV5",
+              "EV 80.6kWh 밴|TV7"
+            ],
+            "allowedTrims": [
+              "E5",
+              "E7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-72",
             "name": "라떼 그레이지",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스ev-라떼 그레이지.webp"
+            "image": "images/vehicles/KGM/토레스ev-라떼 그레이지.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|E5",
+              "EV 80.6kWh|E7",
+              "EV 80.6kWh 밴|TV5",
+              "EV 80.6kWh 밴|TV7"
+            ],
+            "allowedTrims": [
+              "E5",
+              "E7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-73",
             "name": "스페이스 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스ev-스페이스 블랙.webp"
+            "image": "images/vehicles/KGM/토레스ev-스페이스 블랙.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|E5",
+              "EV 80.6kWh|E7",
+              "EV 80.6kWh 밴|TV5",
+              "EV 80.6kWh 밴|TV7"
+            ],
+            "allowedTrims": [
+              "E5",
+              "E7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-74",
             "name": "포레스트 그린",
             "hex": "#476454",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스ev-포레스트 그린.webp"
+            "image": "images/vehicles/KGM/토레스ev-포레스트 그린.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|E5",
+              "EV 80.6kWh|E7",
+              "EV 80.6kWh 밴|TV5",
+              "EV 80.6kWh 밴|TV7"
+            ],
+            "allowedTrims": [
+              "E5",
+              "E7",
+              "TV5",
+              "TV7"
+            ]
           },
           {
             "id": "paint-75",
             "name": "플라즈마 섀도우",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/토레스ev-플라즈마 섀도우.webp"
+            "image": "images/vehicles/KGM/토레스ev-플라즈마 섀도우.webp",
+            "allowedConfigurations": [
+              "EV 80.6kWh|E5",
+              "EV 80.6kWh|E7",
+              "EV 80.6kWh 밴|TV5",
+              "EV 80.6kWh 밴|TV7"
+            ],
+            "allowedTrims": [
+              "E5",
+              "E7",
+              "TV5",
+              "TV7"
+            ]
           }
         ]
       },
@@ -5042,35 +10515,70 @@ const vehicleCatalog = [
             "name": "그랜드 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/티볼리-그랜드 화이트.webp"
+            "image": "images/vehicles/KGM/티볼리-그랜드 화이트.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|V5",
+              "1.5 가솔린 터보|V7"
+            ],
+            "allowedTrims": [
+              "V5",
+              "V7"
+            ]
           },
           {
             "id": "paint-77",
             "name": "댄디 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/티볼리-댄디 블루.webp"
+            "image": "images/vehicles/KGM/티볼리-댄디 블루.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|V5",
+              "1.5 가솔린 터보|V7"
+            ],
+            "allowedTrims": [
+              "V5",
+              "V7"
+            ]
           },
           {
             "id": "paint-78",
             "name": "라떼 그레이지",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/티볼리-라떼 그레이지.webp"
+            "image": "images/vehicles/KGM/티볼리-라떼 그레이지.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|V5",
+              "1.5 가솔린 터보|V7"
+            ],
+            "allowedTrims": [
+              "V5",
+              "V7"
+            ]
           },
           {
             "id": "paint-79",
             "name": "스페이스 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/티볼리-스페이스 블랙.webp"
+            "image": "images/vehicles/KGM/티볼리-스페이스 블랙.webp",
+            "allowedConfigurations": [
+              "1.5 가솔린 터보|V5",
+              "1.5 가솔린 터보|V7"
+            ],
+            "allowedTrims": [
+              "V5",
+              "V7"
+            ]
           },
           {
             "id": "paint-80",
             "name": "아이언 메탈",
             "hex": "#68686a",
             "border": "#cfd5dc",
-            "image": "images/vehicles/KGM/티볼리-아이언 메탈.webp"
+            "image": "images/vehicles/KGM/티볼리-아이언 메탈.webp",
+            "allowedConfigurations": [],
+            "allowedTrims": [],
+            "availabilityStatus": "confirmation-required"
           }
         ]
       }
@@ -5090,17 +10598,13 @@ const vehicleCatalog = [
             "trims": [
               "Techno",
               "Iconic",
-              "Esprit Alpine",
-              "Escapade 파노라마 선루프 버전",
-              "Escapade 루프박스 버전"
+              "Esprit Alpine"
             ]
           },
           {
             "name": "2.0 가솔린 4WD",
             "trims": [
-              "Iconic",
-              "Escapade 파노라마 선루프 버전",
-              "Escapade 루프박스 버전"
+              "Iconic"
             ]
           }
         ],
@@ -5110,42 +10614,102 @@ const vehicleCatalog = [
             "name": "메탈릭 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-메탈릭 블랙.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-메탈릭 블랙.webp",
+            "allowedTrims": [
+              "Techno",
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "2.0 가솔린|Techno",
+              "2.0 가솔린|Iconic",
+              "2.0 가솔린|Esprit Alpine",
+              "2.0 가솔린 4WD|Iconic"
+            ]
           },
           {
             "id": "paint-186",
             "name": "미네랄 코퍼",
             "hex": "#9d6550",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-미네랄 코퍼.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-미네랄 코퍼.webp",
+            "allowedTrims": [],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 200000,
+            "allowedConfigurations": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-187",
             "name": "새틴 어반 그레이",
             "hex": "#3b3f42",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-새틴 어반 그레이.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-새틴 어반 그레이.webp",
+            "allowedTrims": [],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 500000,
+            "allowedConfigurations": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-188",
             "name": "새틴 유니버스 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-새틴 유니버스 화이트.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-새틴 유니버스 화이트.webp",
+            "allowedTrims": [
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 500000,
+            "allowedConfigurations": [
+              "2.0 가솔린|Iconic",
+              "2.0 가솔린|Esprit Alpine",
+              "2.0 가솔린 4WD|Iconic"
+            ]
           },
           {
             "id": "paint-189",
             "name": "어반 그레이",
             "hex": "#2e3034",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-어반 그레이.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-어반 그레이.webp",
+            "allowedTrims": [
+              "Techno",
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "2.0 가솔린|Techno",
+              "2.0 가솔린|Iconic",
+              "2.0 가솔린|Esprit Alpine",
+              "2.0 가솔린 4WD|Iconic"
+            ]
           },
           {
             "id": "paint-190",
             "name": "클라우드 펄",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-클라우드 펄.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-클라우드 펄.webp",
+            "allowedTrims": [
+              "Techno",
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 300000,
+            "allowedConfigurations": [
+              "2.0 가솔린|Techno",
+              "2.0 가솔린|Iconic",
+              "2.0 가솔린|Esprit Alpine",
+              "2.0 가솔린 4WD|Iconic"
+            ]
           }
         ]
       },
@@ -5158,8 +10722,7 @@ const vehicleCatalog = [
               "Techno",
               "Iconic",
               "Esprit Alpine",
-              "Escapade 파노라마 선루프 버전",
-              "Escapade 루프박스 버전"
+              "Esprit Alpine étoile"
             ]
           }
         ],
@@ -5169,42 +10732,103 @@ const vehicleCatalog = [
             "name": "메탈릭 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-메탈릭 블랙.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-메탈릭 블랙.webp",
+            "allowedTrims": [
+              "Techno",
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.5 HEV|Techno",
+              "1.5 HEV|Iconic",
+              "1.5 HEV|Esprit Alpine"
+            ]
           },
           {
             "id": "paint-583",
             "name": "미네랄 코퍼",
             "hex": "#9d6550",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-미네랄 코퍼.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-미네랄 코퍼.webp",
+            "allowedTrims": [],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 200000,
+            "allowedConfigurations": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-584",
             "name": "새틴 어반 그레이",
             "hex": "#3b3f42",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-새틴 어반 그레이.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-새틴 어반 그레이.webp",
+            "allowedTrims": [],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 500000,
+            "allowedConfigurations": [],
+            "availabilityStatus": "confirmation-required"
           },
           {
             "id": "paint-585",
             "name": "새틴 유니버스 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-새틴 유니버스 화이트.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-새틴 유니버스 화이트.webp",
+            "allowedTrims": [
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 500000,
+            "allowedConfigurations": [
+              "1.5 HEV|Iconic",
+              "1.5 HEV|Esprit Alpine"
+            ]
           },
           {
             "id": "paint-586",
             "name": "어반 그레이",
             "hex": "#2e3034",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-어반 그레이.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-어반 그레이.webp",
+            "allowedTrims": [
+              "Techno",
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.5 HEV|Techno",
+              "1.5 HEV|Iconic",
+              "1.5 HEV|Esprit Alpine"
+            ]
           },
           {
             "id": "paint-587",
             "name": "클라우드 펄",
             "hex": "#9da5ae",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/그랑콜레오스-클라우드 펄.webp"
+            "image": "images/vehicles/르노/그랑콜레오스-클라우드 펄.webp",
+            "allowedTrims": [
+              "Techno",
+              "Iconic",
+              "Esprit Alpine",
+              "Esprit Alpine étoile"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surcharge": 300000,
+            "surchargeByTrim": {
+              "1.5 HEV|Esprit Alpine étoile": 0
+            },
+            "allowedConfigurations": [
+              "1.5 HEV|Techno",
+              "1.5 HEV|Iconic",
+              "1.5 HEV|Esprit Alpine",
+              "1.5 HEV|Esprit Alpine étoile"
+            ]
           }
         ]
       },
@@ -5224,21 +10848,42 @@ const vehicleCatalog = [
             "name": "메탈릭 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/아르카나-메탈릭 블랙.webp"
+            "image": "images/vehicles/르노/아르카나-메탈릭 블랙.webp",
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.6 가솔린|Iconic"
+            ],
+            "allowedTrims": [
+              "Iconic"
+            ]
           },
           {
             "id": "paint-192",
             "name": "어반 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/아르카나-어반 그레이.webp"
+            "image": "images/vehicles/르노/아르카나-어반 그레이.webp",
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.6 가솔린|Iconic"
+            ],
+            "allowedTrims": [
+              "Iconic"
+            ]
           },
           {
             "id": "paint-193",
             "name": "클라우드 펄",
             "hex": "#fafafc",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/아르카나-클라우드 펄.webp"
+            "image": "images/vehicles/르노/아르카나-클라우드 펄.webp",
+            "surcharge": 150000,
+            "allowedConfigurations": [
+              "1.6 가솔린|Iconic"
+            ],
+            "allowedTrims": [
+              "Iconic"
+            ]
           }
         ]
       },
@@ -5258,21 +10903,42 @@ const vehicleCatalog = [
             "name": "메탈릭 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/아르카나-메탈릭 블랙.webp"
+            "image": "images/vehicles/르노/아르카나-메탈릭 블랙.webp",
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.6 HEV|Iconic"
+            ],
+            "allowedTrims": [
+              "Iconic"
+            ]
           },
           {
             "id": "paint-589",
             "name": "어반 그레이",
             "hex": "#7e858d",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/아르카나-어반 그레이.webp"
+            "image": "images/vehicles/르노/아르카나-어반 그레이.webp",
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.6 HEV|Iconic"
+            ],
+            "allowedTrims": [
+              "Iconic"
+            ]
           },
           {
             "id": "paint-590",
             "name": "클라우드 펄",
             "hex": "#fafafc",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/아르카나-클라우드 펄.webp"
+            "image": "images/vehicles/르노/아르카나-클라우드 펄.webp",
+            "surcharge": 150000,
+            "allowedConfigurations": [
+              "1.6 HEV|Iconic"
+            ],
+            "allowedTrims": [
+              "Iconic"
+            ]
           }
         ]
       },
@@ -5285,7 +10951,7 @@ const vehicleCatalog = [
               "Techno",
               "Iconic",
               "Esprit Alpine",
-              "Esprit Alpine 1955"
+              "Noir Edition"
             ]
           }
         ],
@@ -5295,35 +10961,97 @@ const vehicleCatalog = [
             "name": "메탈릭 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/필랑트-메탈릭 블랙.webp"
+            "image": "images/vehicles/르노/필랑트-메탈릭 블랙.webp",
+            "allowedTrims": [
+              "Techno",
+              "Iconic",
+              "Esprit Alpine",
+              "Noir Edition"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "allowedConfigurations": [
+              "1.5 HEV|Techno",
+              "1.5 HEV|Iconic",
+              "1.5 HEV|Esprit Alpine",
+              "1.5 HEV|Noir Edition"
+            ]
           },
           {
             "id": "paint-195",
             "name": "새틴 유니버스 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/필랑트-새틴 유니버스 화이트.webp"
+            "image": "images/vehicles/르노/필랑트-새틴 유니버스 화이트.webp",
+            "surcharge": 500000,
+            "allowedTrims": [
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surchargeByTrim": {
+              "1.5 HEV|Iconic": 0
+            },
+            "allowedConfigurations": [
+              "1.5 HEV|Iconic",
+              "1.5 HEV|Esprit Alpine"
+            ]
           },
           {
             "id": "paint-196",
             "name": "새틴 포레스트 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/필랑트-새틴 포레스트 블랙.webp"
+            "image": "images/vehicles/르노/필랑트-새틴 포레스트 블랙.webp",
+            "surcharge": 500000,
+            "allowedTrims": [
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "surchargeByTrim": {
+              "1.5 HEV|Iconic": 0
+            },
+            "allowedConfigurations": [
+              "1.5 HEV|Iconic",
+              "1.5 HEV|Esprit Alpine"
+            ]
           },
           {
             "id": "paint-197",
             "name": "어반 그레이",
             "hex": "#34383b",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/필랑트-어반 그레이.webp"
+            "image": "images/vehicles/르노/필랑트-어반 그레이.webp",
+            "allowedTrims": [
+              "Techno",
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "allowedConfigurations": [
+              "1.5 HEV|Techno",
+              "1.5 HEV|Iconic",
+              "1.5 HEV|Esprit Alpine"
+            ]
           },
           {
             "id": "paint-198",
             "name": "클라우드 펄",
             "hex": "#d0d2d6",
             "border": "#cfd5dc",
-            "image": "images/vehicles/르노/필랑트-클라우드 펄.webp"
+            "image": "images/vehicles/르노/필랑트-클라우드 펄.webp",
+            "surcharge": 300000,
+            "allowedTrims": [
+              "Techno",
+              "Iconic",
+              "Esprit Alpine"
+            ],
+            "imageNote": "트림별 차이가 있을 수 있습니다.",
+            "allowedConfigurations": [
+              "1.5 HEV|Techno",
+              "1.5 HEV|Iconic",
+              "1.5 HEV|Esprit Alpine"
+            ]
           }
         ]
       }
@@ -5349,159 +11077,165 @@ const vehicleCatalog = [
           }
         ],
         "paints": [
-  {
-    "id": "paint-263",
-    "name": "모던 블랙",
-    "hex": "#17191c",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트랙스 RS-모던 블랙.webp",
-    "representativeTrim": "RS",
-    "allowedTrims": [
-      "LS DELUXE",
-      "Redline",
-      "ACTIV",
-      "RS"
-    ],
-    "trimImages": {
-      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-모던 블랙.webp",
-      "Redline": "images/vehicles/쉐보레/트랙스 Redline-모던 블랙.webp",
-      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-모던 블랙.webp",
-      "RS": "images/vehicles/쉐보레/트랙스 RS-모던 블랙.webp"
-    },
-    "legacyIds": [
-      "paint-trax-ls-deluxe-modern-black",
-      "paint-trax-redline-modern-black",
-      "paint-trax-activ-modern-black"
-    ],
-    "imagesByTrim": {
-      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-모던 블랙.webp",
-      "Redline": "images/vehicles/쉐보레/트랙스 Redline-모던 블랙.webp",
-      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-모던 블랙.webp",
-      "RS": "images/vehicles/쉐보레/트랙스 RS-모던 블랙.webp"
-    }
-  },
-  {
-    "id": "paint-265",
-    "name": "스털링 그레이",
-    "hex": "#7e858d",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트랙스 RS-스털링 그레이.webp",
-    "representativeTrim": "RS",
-    "allowedTrims": [
-      "LS DELUXE",
-      "Redline",
-      "ACTIV",
-      "RS"
-    ],
-    "trimImages": {
-      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-스털링 그레이.webp",
-      "Redline": "images/vehicles/쉐보레/트랙스 Redline-스털링 그레이.webp",
-      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-스털링 그레이.webp",
-      "RS": "images/vehicles/쉐보레/트랙스 RS-스털링 그레이.webp"
-    },
-    "legacyIds": [
-      "paint-trax-ls-deluxe-sterling-grey",
-      "paint-trax-redline-sterling-grey",
-      "paint-trax-activ-sterling-grey"
-    ],
-    "imagesByTrim": {
-      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-스털링 그레이.webp",
-      "Redline": "images/vehicles/쉐보레/트랙스 Redline-스털링 그레이.webp",
-      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-스털링 그레이.webp",
-      "RS": "images/vehicles/쉐보레/트랙스 RS-스털링 그레이.webp"
-    }
-  },
-  {
-    "id": "paint-267",
-    "name": "퓨어 화이트",
-    "hex": "#e6eef2",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트랙스 RS-퓨어 화이트.webp",
-    "representativeTrim": "RS",
-    "allowedTrims": [
-      "LS DELUXE",
-      "Redline",
-      "ACTIV",
-      "RS"
-    ],
-    "trimImages": {
-      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-퓨어 화이트.webp",
-      "Redline": "images/vehicles/쉐보레/트랙스 Redline-퓨어 화이트.webp",
-      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-퓨어 화이트.webp",
-      "RS": "images/vehicles/쉐보레/트랙스 RS-퓨어 화이트.webp"
-    },
-    "legacyIds": [
-      "paint-trax-ls-deluxe-pure-white",
-      "paint-trax-redline-pure-white",
-      "paint-trax-activ-pure-white"
-    ],
-    "imagesByTrim": {
-      "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-퓨어 화이트.webp",
-      "Redline": "images/vehicles/쉐보레/트랙스 Redline-퓨어 화이트.webp",
-      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-퓨어 화이트.webp",
-      "RS": "images/vehicles/쉐보레/트랙스 RS-퓨어 화이트.webp"
-    }
-  },
-  {
-    "id": "paint-264",
-    "name": "모카치노 베이지",
-    "hex": "#e7e2dd",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트랙스 RS-모카치노 베이지.webp",
-    "representativeTrim": "RS",
-    "allowedTrims": [
-      "ACTIV",
-      "RS"
-    ],
-    "trimImages": {
-      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-모카치노 베이지.webp",
-      "RS": "images/vehicles/쉐보레/트랙스 RS-모카치노 베이지.webp"
-    },
-    "legacyIds": [
-      "paint-trax-activ-mochaccino-beige"
-    ],
-    "imagesByTrim": {
-      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-모카치노 베이지.webp",
-      "RS": "images/vehicles/쉐보레/트랙스 RS-모카치노 베이지.webp"
-    }
-  },
-  {
-    "id": "paint-trax-activ-pistachio-khaki",
-    "name": "피스타치오 카키",
-    "hex": "#485b3f",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트랙스 ACTIV-피스타치오 카키.webp",
-    "representativeTrim": "ACTIV",
-    "allowedTrims": [
-      "ACTIV"
-    ],
-    "trimImages": {
-      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-피스타치오 카키.webp"
-    },
-    "legacyIds": [],
-    "imagesByTrim": {
-      "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-피스타치오 카키.webp"
-    }
-  },
-  {
-    "id": "paint-266",
-    "name": "칠리페퍼 레드",
-    "hex": "#a92b31",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트랙스 RS-칠리페퍼 레드.webp",
-    "representativeTrim": "RS",
-    "allowedTrims": [
-      "RS"
-    ],
-    "trimImages": {
-      "RS": "images/vehicles/쉐보레/트랙스 RS-칠리페퍼 레드.webp"
-    },
-    "legacyIds": [],
-    "imagesByTrim": {
-      "RS": "images/vehicles/쉐보레/트랙스 RS-칠리페퍼 레드.webp"
-    }
-  }
-]
+          {
+            "id": "paint-263",
+            "name": "모던 블랙",
+            "hex": "#17191c",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트랙스 RS-모던 블랙.webp",
+            "representativeTrim": "RS",
+            "allowedTrims": [
+              "LS DELUXE",
+              "Redline",
+              "ACTIV",
+              "RS"
+            ],
+            "trimImages": {
+              "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-모던 블랙.webp",
+              "Redline": "images/vehicles/쉐보레/트랙스 Redline-모던 블랙.webp",
+              "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-모던 블랙.webp",
+              "RS": "images/vehicles/쉐보레/트랙스 RS-모던 블랙.webp"
+            },
+            "legacyIds": [
+              "paint-trax-ls-deluxe-modern-black",
+              "paint-trax-redline-modern-black",
+              "paint-trax-activ-modern-black"
+            ],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.2 가솔린|LS DELUXE",
+              "1.2 가솔린|Redline",
+              "1.2 가솔린|ACTIV",
+              "1.2 가솔린|RS"
+            ]
+          },
+          {
+            "id": "paint-265",
+            "name": "스털링 그레이",
+            "hex": "#7e858d",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트랙스 RS-스털링 그레이.webp",
+            "representativeTrim": "RS",
+            "allowedTrims": [
+              "LS DELUXE",
+              "Redline",
+              "ACTIV",
+              "RS"
+            ],
+            "trimImages": {
+              "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-스털링 그레이.webp",
+              "Redline": "images/vehicles/쉐보레/트랙스 Redline-스털링 그레이.webp",
+              "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-스털링 그레이.webp",
+              "RS": "images/vehicles/쉐보레/트랙스 RS-스털링 그레이.webp"
+            },
+            "legacyIds": [
+              "paint-trax-ls-deluxe-sterling-grey",
+              "paint-trax-redline-sterling-grey",
+              "paint-trax-activ-sterling-grey"
+            ],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.2 가솔린|LS DELUXE",
+              "1.2 가솔린|Redline",
+              "1.2 가솔린|ACTIV",
+              "1.2 가솔린|RS"
+            ]
+          },
+          {
+            "id": "paint-267",
+            "name": "퓨어 화이트",
+            "hex": "#e6eef2",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트랙스 RS-퓨어 화이트.webp",
+            "representativeTrim": "RS",
+            "allowedTrims": [
+              "LS DELUXE",
+              "Redline",
+              "ACTIV",
+              "RS"
+            ],
+            "trimImages": {
+              "LS DELUXE": "images/vehicles/쉐보레/트랙스 LS DELUXE-퓨어 화이트.webp",
+              "Redline": "images/vehicles/쉐보레/트랙스 Redline-퓨어 화이트.webp",
+              "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-퓨어 화이트.webp",
+              "RS": "images/vehicles/쉐보레/트랙스 RS-퓨어 화이트.webp"
+            },
+            "legacyIds": [
+              "paint-trax-ls-deluxe-pure-white",
+              "paint-trax-redline-pure-white",
+              "paint-trax-activ-pure-white"
+            ],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.2 가솔린|LS DELUXE",
+              "1.2 가솔린|Redline",
+              "1.2 가솔린|ACTIV",
+              "1.2 가솔린|RS"
+            ]
+          },
+          {
+            "id": "paint-264",
+            "name": "모카치노 베이지",
+            "hex": "#e7e2dd",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트랙스 RS-모카치노 베이지.webp",
+            "representativeTrim": "RS",
+            "allowedTrims": [
+              "ACTIV",
+              "RS"
+            ],
+            "trimImages": {
+              "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-모카치노 베이지.webp",
+              "RS": "images/vehicles/쉐보레/트랙스 RS-모카치노 베이지.webp"
+            },
+            "legacyIds": [
+              "paint-trax-activ-mochaccino-beige"
+            ],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.2 가솔린|ACTIV",
+              "1.2 가솔린|RS"
+            ]
+          },
+          {
+            "id": "paint-trax-activ-pistachio-khaki",
+            "name": "피스타치오 카키",
+            "hex": "#485b3f",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트랙스 ACTIV-피스타치오 카키.webp",
+            "representativeTrim": "ACTIV",
+            "allowedTrims": [
+              "ACTIV"
+            ],
+            "trimImages": {
+              "ACTIV": "images/vehicles/쉐보레/트랙스 ACTIV-피스타치오 카키.webp"
+            },
+            "legacyIds": [],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.2 가솔린|ACTIV"
+            ]
+          },
+          {
+            "id": "paint-266",
+            "name": "칠리페퍼 레드",
+            "hex": "#a92b31",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트랙스 RS-칠리페퍼 레드.webp",
+            "representativeTrim": "RS",
+            "allowedTrims": [
+              "RS"
+            ],
+            "trimImages": {
+              "RS": "images/vehicles/쉐보레/트랙스 RS-칠리페퍼 레드.webp"
+            },
+            "legacyIds": [],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.2 가솔린|RS"
+            ]
+          }
+        ]
       },
       {
         "name": "트레일블레이저",
@@ -5509,7 +11243,7 @@ const vehicleCatalog = [
           {
             "name": "1.35 가솔린",
             "trims": [
-              "PREMIER",
+              "Premier",
               "RS"
             ]
           },
@@ -5521,129 +11255,140 @@ const vehicleCatalog = [
           }
         ],
         "paints": [
-  {
-    "id": "paint-268",
-    "name": "마리나 블루",
-    "hex": "#55b7e9",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트레일블레이저 RS-마리나 블루.webp",
-    "representativeTrim": "RS",
-    "allowedTrims": [
-      "RS"
-    ],
-    "trimImages": {
-      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-마리나 블루.webp"
-    },
-    "legacyIds": [],
-    "imagesByTrim": {
-      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-마리나 블루.webp"
-    }
-  },
-  {
-    "id": "paint-269",
-    "name": "모던 블랙",
-    "hex": "#17191c",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트레일블레이저 RS-모던 블랙.webp",
-    "representativeTrim": "RS",
-    "allowedTrims": [
-      "Premier",
-      "RS"
-    ],
-    "trimImages": {
-      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-모던 블랙.webp",
-      "Premier": "images/vehicles/쉐보레/트레일블레이저 PREMIER-모던 블랙.webp"
-    },
-    "legacyIds": [
-      "paint-trailblazer-premier-modern-black"
-    ],
-    "imagesByTrim": {
-      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-모던 블랙.webp",
-      "PREMIER": "images/vehicles/쉐보레/트레일블레이저 PREMIER-모던 블랙.webp"
-    }
-  },
-  {
-    "id": "paint-270",
-    "name": "모카치노 베이지",
-    "hex": "#e7e2dd",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트레일블레이저 RS-모카치노 베이지.webp",
-    "representativeTrim": "RS",
-    "allowedTrims": [
-      "RS"
-    ],
-    "trimImages": {
-      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-모카치노 베이지.webp"
-    },
-    "legacyIds": [],
-    "imagesByTrim": {
-      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-모카치노 베이지.webp"
-    }
-  },
-  {
-    "id": "paint-271",
-    "name": "스노우 화이트 펄",
-    "hex": "#f5f5f2",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트레일블레이저 RS-스노우 화이트 펄.webp",
-    "representativeTrim": "RS",
-    "allowedTrims": [
-      "RS"
-    ],
-    "trimImages": {
-      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-스노우 화이트 펄.webp"
-    },
-    "legacyIds": [],
-    "imagesByTrim": {
-      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-스노우 화이트 펄.webp"
-    }
-  },
-  {
-    "id": "paint-272",
-    "name": "스털링 그레이",
-    "hex": "#4f5454",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트레일블레이저 RS-스털링 그레이.webp",
-    "representativeTrim": "RS",
-    "allowedTrims": [
-      "Premier",
-      "RS"
-    ],
-    "trimImages": {
-      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-스털링 그레이.webp",
-      "Premier": "images/vehicles/쉐보레/트레일블레이저 PREMIER-스털링 그레이.webp"
-    },
-    "legacyIds": [
-      "paint-trailblazer-premier-sterling-grey"
-    ],
-    "imagesByTrim": {
-      "RS": "images/vehicles/쉐보레/트레일블레이저 RS-스털링 그레이.webp",
-      "PREMIER": "images/vehicles/쉐보레/트레일블레이저 PREMIER-스털링 그레이.webp"
-    }
-  },
-  {
-    "id": "paint-trailblazer-premier-pure-white",
-    "name": "퓨어 화이트",
-    "hex": "#ffffff",
-    "border": "#cfd5dc",
-    "image": "images/vehicles/쉐보레/트레일블레이저 PREMIER-퓨어 화이트.webp",
-    "representativeTrim": "Premier",
-    "allowedTrims": [
-      "Premier"
-    ],
-    "trimImages": {
-      "Premier": "images/vehicles/쉐보레/트레일블레이저 PREMIER-퓨어 화이트.webp"
-    },
-    "legacyIds": [],
-    "imagesByTrim": {
-      "PREMIER": "images/vehicles/쉐보레/트레일블레이저 PREMIER-퓨어 화이트.webp"
-    }
-  }
-]
+          {
+            "id": "paint-268",
+            "name": "마리나 블루",
+            "hex": "#55b7e9",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트레일블레이저 RS-마리나 블루.webp",
+            "representativeTrim": "RS",
+            "allowedTrims": [
+              "RS"
+            ],
+            "trimImages": {
+              "RS": "images/vehicles/쉐보레/트레일블레이저 RS-마리나 블루.webp"
+            },
+            "legacyIds": [],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.35 가솔린|RS",
+              "1.35 가솔린 AWD|RS"
+            ]
+          },
+          {
+            "id": "paint-269",
+            "name": "모던 블랙",
+            "hex": "#17191c",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트레일블레이저 RS-모던 블랙.webp",
+            "representativeTrim": "RS",
+            "allowedTrims": [
+              "Premier",
+              "RS"
+            ],
+            "trimImages": {
+              "RS": "images/vehicles/쉐보레/트레일블레이저 RS-모던 블랙.webp",
+              "Premier": "images/vehicles/쉐보레/트레일블레이저 PREMIER-모던 블랙.webp"
+            },
+            "legacyIds": [
+              "paint-trailblazer-premier-modern-black"
+            ],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.35 가솔린|Premier",
+              "1.35 가솔린|RS",
+              "1.35 가솔린 AWD|RS"
+            ]
+          },
+          {
+            "id": "paint-270",
+            "name": "모카치노 베이지",
+            "hex": "#e7e2dd",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트레일블레이저 RS-모카치노 베이지.webp",
+            "representativeTrim": "RS",
+            "allowedTrims": [
+              "RS"
+            ],
+            "trimImages": {
+              "RS": "images/vehicles/쉐보레/트레일블레이저 RS-모카치노 베이지.webp"
+            },
+            "legacyIds": [],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.35 가솔린|RS",
+              "1.35 가솔린 AWD|RS"
+            ]
+          },
+          {
+            "id": "paint-271",
+            "name": "스노우 화이트 펄",
+            "hex": "#f5f5f2",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트레일블레이저 RS-스노우 화이트 펄.webp",
+            "representativeTrim": "RS",
+            "allowedTrims": [
+              "RS"
+            ],
+            "trimImages": {
+              "RS": "images/vehicles/쉐보레/트레일블레이저 RS-스노우 화이트 펄.webp"
+            },
+            "legacyIds": [],
+            "surcharge": 150000,
+            "allowedConfigurations": [
+              "1.35 가솔린|RS",
+              "1.35 가솔린 AWD|RS"
+            ]
+          },
+          {
+            "id": "paint-272",
+            "name": "스털링 그레이",
+            "hex": "#4f5454",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트레일블레이저 RS-스털링 그레이.webp",
+            "representativeTrim": "RS",
+            "allowedTrims": [
+              "Premier",
+              "RS"
+            ],
+            "trimImages": {
+              "RS": "images/vehicles/쉐보레/트레일블레이저 RS-스털링 그레이.webp",
+              "Premier": "images/vehicles/쉐보레/트레일블레이저 PREMIER-스털링 그레이.webp"
+            },
+            "legacyIds": [
+              "paint-trailblazer-premier-sterling-grey"
+            ],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.35 가솔린|Premier",
+              "1.35 가솔린|RS",
+              "1.35 가솔린 AWD|RS"
+            ]
+          },
+          {
+            "id": "paint-trailblazer-premier-pure-white",
+            "name": "퓨어 화이트",
+            "hex": "#ffffff",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/쉐보레/트레일블레이저 PREMIER-퓨어 화이트.webp",
+            "representativeTrim": "Premier",
+            "allowedTrims": [
+              "Premier"
+            ],
+            "trimImages": {
+              "Premier": "images/vehicles/쉐보레/트레일블레이저 PREMIER-퓨어 화이트.webp"
+            },
+            "legacyIds": [],
+            "surcharge": 0,
+            "allowedConfigurations": [
+              "1.35 가솔린|Premier"
+            ]
+          }
+        ]
       }
     ]
   },
- {
+  {
     "name": "BMW",
     "short": "BMW",
     "market": "import",
@@ -5832,7 +11577,7 @@ const vehicleCatalog = [
           }
         ]
       },
-            {
+      {
         "name": "5시리즈",
         "detailModels": [
           {
@@ -5934,8 +11679,7 @@ const vehicleCatalog = [
             "hex": "#222222",
             "border": "#cfd5dc",
             "image": "images/vehicles/BMW/7시리즈-블랙 사파이어 메탈릭.webp"
-          }
-          ,
+          },
           {
             "id": "paint-bmw-7-oxide-gray",
             "name": "옥사이드 그레이 메탈릭",
@@ -6426,7 +12170,7 @@ const vehicleCatalog = [
           }
         ]
       },
-         {
+      {
         "name": "X3",
         "detailModels": [
           {
@@ -6526,7 +12270,7 @@ const vehicleCatalog = [
           }
         ]
       },
-            {
+      {
         "name": "X5",
         "detailModels": [
           {
@@ -6945,7 +12689,7 @@ const vehicleCatalog = [
           }
         ]
       },
-     {
+      {
         "name": "E클래스 익스클루시브",
         "detailModels": [
           {
@@ -8208,74 +13952,74 @@ const vehicleCatalog = [
         ]
       },
       {
-  "name": "CLE AMG 카브리올레",
-  "detailModels": [
-    {
-      "name": "CLE 200",
-      "trims": [
-        "AMG Line"
-      ]
-    }
-  ],
-  "paints": [
- {
-      "id": "paint-benz-cle-amg-cabriolet-spectral-blue-v2",
-      "name": "스펙트럴 블루",
-      "hex": "#315d88",
-      "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-스펙트럴 블루.webp"
-    },
-    {
-      "id": "paint-benz-cle-amg-cabriolet-sun-yellow-v2",
-      "name": "썬 옐로우",
-      "hex": "#d5aa39",
-      "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-썬 옐로우.webp"
-    },
-    {
-      "id": "paint-benz-cle-amg-cabriolet-obsidian-black-v2",
-      "name": "옵시디안 블랙",
-      "hex": "#17191c",
-      "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-옵시디안 블랙.webp"
-    },
-    {
-      "id": "paint-benz-cle-amg-cabriolet-manufaktur-graphite-grey-magno-v2",
-      "name": "MANUFAKTUR 그라파이트 그레이 마그노",
-      "hex": "#4f5254",
-      "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 그라파이트 그레이 마그노.webp"
-    },
-    {
-      "id": "paint-benz-cle-amg-cabriolet-manufaktur-spectral-blue-magno-v2",
-      "name": "MANUFAKTUR 스펙트럴 블루 마그노",
-      "hex": "#2e5377",
-      "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 스펙트럴 블루 마그노.webp"
-    },
-    {
-      "id": "paint-benz-cle-amg-cabriolet-manufaktur-alpine-grey-v2",
-      "name": "MANUFAKTUR 알파인 그레이",
-      "hex": "#929393",
-      "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 알파인 그레이.webp"
-    },
-    {
-      "id": "paint-benz-cle-amg-cabriolet-manufaktur-opalite-white-v2",
-      "name": "MANUFAKTUR 오팔라이트 화이트",
-      "hex": "#ececea",
-      "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 오팔라이트 화이트.webp"
-    },
-    {
-      "id": "paint-benz-cle-amg-cabriolet-manufaktur-patagonia-red-bright-v2",
-      "name": "MANUFAKTUR 파타고니아 레드 브라이트",
-      "hex": "#a92b31",
-      "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 파타고니아 레드 브라이트.webp"
-    }
-  ]
-},
+        "name": "CLE AMG 카브리올레",
+        "detailModels": [
+          {
+            "name": "CLE 200",
+            "trims": [
+              "AMG Line"
+            ]
+          }
+        ],
+        "paints": [
+          {
+            "id": "paint-benz-cle-amg-cabriolet-spectral-blue-v2",
+            "name": "스펙트럴 블루",
+            "hex": "#315d88",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/CLE AMG 카브리올레-스펙트럴 블루.webp"
+          },
+          {
+            "id": "paint-benz-cle-amg-cabriolet-sun-yellow-v2",
+            "name": "썬 옐로우",
+            "hex": "#d5aa39",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/CLE AMG 카브리올레-썬 옐로우.webp"
+          },
+          {
+            "id": "paint-benz-cle-amg-cabriolet-obsidian-black-v2",
+            "name": "옵시디안 블랙",
+            "hex": "#17191c",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/CLE AMG 카브리올레-옵시디안 블랙.webp"
+          },
+          {
+            "id": "paint-benz-cle-amg-cabriolet-manufaktur-graphite-grey-magno-v2",
+            "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+            "hex": "#4f5254",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 그라파이트 그레이 마그노.webp"
+          },
+          {
+            "id": "paint-benz-cle-amg-cabriolet-manufaktur-spectral-blue-magno-v2",
+            "name": "MANUFAKTUR 스펙트럴 블루 마그노",
+            "hex": "#2e5377",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 스펙트럴 블루 마그노.webp"
+          },
+          {
+            "id": "paint-benz-cle-amg-cabriolet-manufaktur-alpine-grey-v2",
+            "name": "MANUFAKTUR 알파인 그레이",
+            "hex": "#929393",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 알파인 그레이.webp"
+          },
+          {
+            "id": "paint-benz-cle-amg-cabriolet-manufaktur-opalite-white-v2",
+            "name": "MANUFAKTUR 오팔라이트 화이트",
+            "hex": "#ececea",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 오팔라이트 화이트.webp"
+          },
+          {
+            "id": "paint-benz-cle-amg-cabriolet-manufaktur-patagonia-red-bright-v2",
+            "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+            "hex": "#a92b31",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 파타고니아 레드 브라이트.webp"
+          }
+        ]
+      },
       {
         "name": "CLE AMG 쿠페",
         "detailModels": [
@@ -9156,7 +14900,7 @@ const vehicleCatalog = [
     "market": "import",
     "ownBackground": true,
     "cars": [
-            {
+      {
         "name": "A3",
         "detailModels": [
           {
@@ -9530,7 +15274,7 @@ const vehicleCatalog = [
           }
         ]
       },
-            {
+      {
         "name": "Q5",
         "detailModels": [
           {
@@ -10953,7 +16697,7 @@ const vehicleCatalog = [
             "name": "P400 MHEV",
             "trims": [
               "Outbound",
-              "X-Dynamic HSE",
+              "X-Dynamic HSE"
             ]
           }
         ],
@@ -11002,7 +16746,6 @@ const vehicleCatalog = [
           }
         ]
       }
-      
     ]
   },
   {
@@ -12058,7 +17801,7 @@ const vehicleCatalog = [
   function openTrimDetailModal(trimName) {
     if (!trimName || state.step !== 2 || !state.trim) return;
     const modelGroup = availableModelGroups().find(group => group.name === state.trim);
-    if (!modelGroup || !modelGroup.trims.includes(trimName)) return;
+    if (!modelGroup || !modelGroup.trims.includes(trimName) || !isTrimAvailableForPaint(trimName, currentPaint(), modelGroup.name)) return;
 
     const descriptionKey = [state.brandName, state.carName, state.trim, trimName].join("|");
     // 국산차는 원본 트림별 데이터, 수입차는 등록된 세부모델/트림 또는 참고 기능 순서로 검색.
@@ -12471,34 +18214,104 @@ const vehicleCatalog = [
     return electricNames.includes(carName);
   }
 
+  // 할부 완성본과 동일한 색상·트림 선택 조건 (세부옵션 기능은 포함하지 않음).
   function currentPaints() {
     return currentVehicle()?.paints || [];
   }
 
-  // 트림별 차량 사진이 등록된 색상은 해당 색상에서 실제 제공되는 트림만 노출합니다.
-  function availableModelGroups() {
+  function currentPaint() {
+    return currentPaints().find(paint => paint.id === state.paintId || paint.legacyIds?.includes(state.paintId)) || null;
+  }
+
+  function paintDisplayName(paint) {
+    return paint ? `${paint.name}${paint.trimLabel ? ` (${paint.trimLabel})` : ""}` : "";
+  }
+
+  function getPaintSurcharge(paint = currentPaint()) {
+    const trimKey = `${state.trim || ""}|${state.subTrim || ""}`;
+    const value = paint?.surchargeByTrim?.[trimKey] ?? paint?.surcharge ?? 0;
+    return typeof value === "number" && Number.isFinite(value) && value > 0 ? value : 0;
+  }
+
+  function paintChoiceHtml(paint = currentPaint()) {
+    const surcharge = getPaintSurcharge(paint);
+    return `${paintDisplayName(paint) || "색상을 선택해 주세요"}${surcharge ? `<span class="paint-surcharge">(+${surcharge.toLocaleString("ko-KR")}원)</span>` : ""}`;
+  }
+
+  function paintImageTrim(paint = currentPaint()) {
+    if (!paint?.trimImages) return "";
+    return paint.trimImages[state.subTrim] ? state.subTrim : (paint.representativeTrim || Object.keys(paint.trimImages)[0] || "");
+  }
+
+  function paintImagePath(paint = currentPaint()) {
+    return paint?.trimImages?.[paintImageTrim(paint)] || paint?.imagesByTrim?.[state.subTrim] || paint?.image || "";
+  }
+
+  function getPaintConfigurations(paint = currentPaint()) {
+    const all = (currentVehicle()?.detailModels || []).flatMap(group => group.trims.map(trim => `${group.name}|${trim}`));
+    if (Array.isArray(paint?.allowedConfigurations)) return all.filter(key => paint.allowedConfigurations.includes(key));
+    if (Array.isArray(paint?.allowedTrims)) return all.filter(key => paint.allowedTrims.includes(key.split("|")[1]));
+    if (paint?.imagesByTrim) return all.filter(key => Object.hasOwn(paint.imagesByTrim, key.split("|")[1]));
+    return all;
+  }
+
+  function hasPaintTrimRestrictions() {
+    const paints = currentPaints();
+    if (!paints.length) return false;
+    const all = getPaintConfigurations(null).join("\n");
+    const first = getPaintConfigurations(paints[0]).join("\n");
+    return first !== all || paints.some(paint => getPaintConfigurations(paint).join("\n") !== first);
+  }
+
+  function paintTrimGuideHtml(paint = currentPaint()) {
+    if (!hasPaintTrimRestrictions()) return "";
+    if (!paint) return "<span>색상을 선택하면 가능한 트림을 안내합니다.</span>";
+    const configurations = getPaintConfigurations(paint);
+    if (!configurations.length) return "<span>현재 판매 트림 확인이 필요한 색상입니다.</span>";
+    const all = getPaintConfigurations(null);
+    const trims = [...new Set(configurations.map(key => key.split("|")[1]))];
     const groups = currentVehicle()?.detailModels || [];
-    const images = currentPaint()?.imagesByTrim;
-    if (!images) return groups;
-    return groups.map(group => ({
-      ...group,
-      trims: group.trims.filter(trim => Object.hasOwn(images, trim))
-    })).filter(group => group.trims.length);
+    const variesByModel = groups.some(group => group.trims.some(trim => trims.includes(trim) && !configurations.includes(`${group.name}|${trim}`)));
+    const excludedTrims = [...new Set(groups.flatMap(group => group.trims))].filter(trim => !trims.includes(trim));
+    const compactExclusion = !variesByModel && trims.length > 3 && excludedTrims.length && excludedTrims.length < trims.length;
+    const trimLabel = configurations.length === all.length ? "전체 트림" : compactExclusion ? `${excludedTrims.join(" · ")} 외 전체` : trims.join(" · ");
+    const notice = variesByModel ? "세부모델별 적용 트림 확인" : paint.imageNote || (paint.trimImages ? "트림별 이미지가 다를 수 있습니다." : "");
+    return `<span title="선택 가능: ${trims.join(" · ")}">선택 가능: ${trimLabel}</span>${notice ? `<span>${notice}</span>` : ""}`;
+  }
+
+  function isTrimAvailableForPaint(trim, paint = currentPaint(), modelName = state.trim) {
+    if (!paint) return true;
+    if (Array.isArray(paint.allowedConfigurations)) {
+      return modelName ? paint.allowedConfigurations.includes(`${modelName}|${trim}`)
+        : paint.allowedConfigurations.some(key => key.split("|")[1] === trim);
+    }
+    if (Array.isArray(paint.allowedTrims)) return paint.allowedTrims.includes(trim);
+    if (paint.imagesByTrim) return Object.hasOwn(paint.imagesByTrim, trim);
+    return true;
+  }
+
+  function isModelAvailableForPaint(group, paint = currentPaint()) {
+    return Boolean(group?.trims?.some(trim => isTrimAvailableForPaint(trim, paint, group.name)));
+  }
+
+  function availableModelGroups() {
+    // 선택 불가 모델은 화면에서 비활성화해 다른 색상에서는 가능함을 알립니다.
+    return currentVehicle()?.detailModels || [];
   }
 
   function reconcilePaintTrim() {
-    if (!currentPaint()?.imagesByTrim) return;
+    const paint = currentPaint();
+    if (paint && state.paintId !== paint.id) state.paintId = paint.id;
+    if (!paint) return;
     const group = availableModelGroups().find(item => item.name === state.trim);
-    if (!group) {
-      state.trim = "";
+    const incompatibleModel = Boolean(state.trim && (!group || !isModelAvailableForPaint(group, paint)));
+    const incompatibleTrim = Boolean(state.subTrim && (!group || !isTrimAvailableForPaint(state.subTrim, paint, state.trim)));
+    if (incompatibleModel) state.trim = "";
+    if (incompatibleModel || incompatibleTrim) {
       state.subTrim = "";
-    } else if (!group.trims.includes(state.subTrim)) {
-      state.subTrim = "";
+      state.maxReachedStep = Math.min(state.maxReachedStep, 2);
+      if (state.step > 2) state.step = 2;
     }
-  }
-
-  function currentPaint() {
-    return currentPaints().find(paint => paint.id === state.paintId) || null;
   }
 
   function isTwoTonePaint(paint) {
@@ -12515,10 +18328,8 @@ const vehicleCatalog = [
 
 
   function currentCarImage() {
-    const paints = currentPaints();
-    const selectedPaint = currentPaint();
-    const paint = selectedPaint || paints[0];
-    const imagePath = paint?.imagesByTrim?.[state.subTrim] || paint?.image || fallbackImage;
+    const selectedPaint = currentPaint() || currentPaints()[0];
+    const imagePath = paintImagePath(selectedPaint) || fallbackImage;
     return assetUrl(imagePath);
   }
 
@@ -12550,7 +18361,8 @@ const vehicleCatalog = [
       state.paintId = "";
     }
 
-    if (state.paintId && !currentPaints().some(paint => paint.id === state.paintId)) {
+    if (currentPaint()) state.paintId = currentPaint().id;
+    if (state.paintId && !currentPaint()) {
       state.paintId = "";
     }
   }
@@ -12567,7 +18379,8 @@ const vehicleCatalog = [
         <div>
           <small>선택 차량</small>
           <strong>${brand.name} ${state.carName}</strong>
-          <span class="selected-vehicle-paint">${paint ? paint.name : "상담 후 결정"}</span>
+          <span class="selected-vehicle-paint">${paintDisplayName(paint) || "상담 후 결정"}</span>
+          ${paint?.trimImages ? `<span class="selected-vehicle-image-note">${paintImageTrim(paint)} ${paint.trimImages[state.subTrim] ? "트림 이미지" : "기준 이미지"}</span>` : paint?.imageNote ? `<span class="selected-vehicle-image-note">${paint.imageNote}</span>` : ""}
           ${state.trim || state.subTrim ? `<span class="selected-vehicle-trim">${state.trim}${state.subTrim ? ` · ${state.subTrim}` : ""}</span>` : ""}
         </div>
       </div>
@@ -12671,23 +18484,24 @@ const vehicleCatalog = [
         <div class="wizard-car-card car-adjust ${!state.carName ? "is-empty sequential-hidden" : ""} ${brand?.ownBackground ? "has-own-background" : ""} ${state.brandName === "테슬라" ? "is-tesla" : ""} ${state.brandName === "제네시스" ? "is-genesis" : ""} ${state.brandName === "기아" ? "is-kia" : ""} ${state.brandName === "기아" && state.carName === "봉고3" ? "is-kia-bongo3" : ""}" data-brand="${state.brandName || ""}" data-car="${state.carName || ""}">
           ${carImageMarkup}
 
-          <div class="paint-block ${!state.carName ? "is-disabled-block" : "has-monthly-discount"}" data-option-section="paint">
+          <div class="paint-block ${!state.carName ? "is-disabled-block" : "has-monthly-discount"} ${hasPaintTrimRestrictions() ? "has-trim-guide" : ""} ${getPaintSurcharge(paint) ? "has-paint-surcharge" : ""}" data-option-section="paint">
             <div class="paint-label">
               <span class="paint-label-title"><b>4</b> 외장 색상${state.carName ? `<em>${paints.length}개</em>` : ""}</span>
+              <small class="paint-surcharge--header" data-paint-surcharge-amount ${getPaintSurcharge(paint) ? "" : "hidden"}>${getPaintSurcharge(paint) ? `추가금 +${getPaintSurcharge(paint).toLocaleString("ko-KR")}원` : ""}</small>
               ${state.carName ? `<small class="paint-swipe-guide">좌우로 넘겨보세요</small>` : ""}
             </div>
             ${state.carName ? `
               <div class="wizard-paints">
                 ${paints.map(item => `
                   <button class="${item.id === state.paintId ? "active" : ""}" type="button"
-                    data-paint="${item.id}" aria-label="${item.name}" aria-pressed="${item.id === state.paintId ? "true" : "false"}">
+                    data-paint="${item.id}" aria-label="${paintDisplayName(item)}" title="${paintDisplayName(item)}" aria-pressed="${item.id === state.paintId ? "true" : "false"}">
                     <i style="${paintSwatchStyle(item)}"></i>
                   </button>
                 `).join("")}
               </div>
               <div class="chosen-paint">
-                <strong>${paint ? paint.name : "색상을 선택해 주세요"}</strong>
-                ${["아반떼", "아반떼 하이브리드", "트랙스 크로스오버", "트레일블레이저"].includes(state.carName) ? "" : (paint?.imagesByTrim ? `<small>선택 가능: ${Object.keys(paint.imagesByTrim).join(", ")}<br>${state.subTrim || Object.keys(paint.imagesByTrim)[0]} 트림 이미지</small>` : "")}
+                <strong>${paintChoiceHtml(paint)}</strong>
+                ${hasPaintTrimRestrictions() ? `<div class="paint-trim-guide" data-paint-trim-guide>${paintTrimGuideHtml(paint)}</div>` : ""}
               </div>
               <div class="monthly-discount-sticker" role="note" aria-label="${discountMonth}월 할인율 최대 ${discountRate}%">
                 <img class="monthly-discount-sticker__megaphone" src="images/discount-megaphone.png?v=20261028-match-ref-02" alt="" aria-hidden="true" width="52" height="64">
@@ -12730,7 +18544,7 @@ const vehicleCatalog = [
 
               return `
                 <section class="engine-model-card ${isActive ? "active" : ""}">
-                  <button class="engine-model-main" type="button" data-engine-model="${group.name}">
+                  <button class="engine-model-main" type="button" data-engine-model="${group.name}" ${!isModelAvailableForPaint(group) ? 'disabled aria-disabled="true"' : ""}>
                     <strong>${group.name}</strong>
                     <span class="radio-ui ${isActive ? "checked" : ""}" aria-hidden="true"></span>
                   </button>
@@ -12738,7 +18552,7 @@ const vehicleCatalog = [
                   ${isActive ? `
                     <div class="sub-trim-list" data-option-section="sub-trim">
                       ${group.trims.map(item => `
-                        <button class="sub-trim-item ${item === state.subTrim ? "active" : ""}" type="button" data-sub-trim="${item}" ${ENABLE_TRIM_DETAIL_POPUP ? 'aria-haspopup="dialog" aria-controls="trimDetailModal"' : ''} aria-pressed="${item === state.subTrim}">
+                        <button class="sub-trim-item ${item === state.subTrim ? "active" : ""}" type="button" data-sub-trim="${item}" ${!isTrimAvailableForPaint(item, currentPaint(), group.name) ? 'disabled aria-disabled="true"' : ""} ${ENABLE_TRIM_DETAIL_POPUP ? 'aria-haspopup="dialog" aria-controls="trimDetailModal"' : ''} aria-pressed="${item === state.subTrim}">
                           <span class="radio-ui ${item === state.subTrim ? "checked" : ""}" aria-hidden="true"></span>
                           <strong>${item}</strong>
                         </button>
@@ -12823,7 +18637,8 @@ const vehicleCatalog = [
         <div class="estimate-summary">
           <h3>선택한 견적 조건</h3>
           <dl>
-            <div><dt>차량</dt><dd>${state.brandName && state.carName ? `${state.brandName} ${state.carName}` : "상담 후 결정"} · ${currentPaint()?.name || "상담 후 결정"}</dd></div>
+            <div><dt>차량</dt><dd>${state.brandName && state.carName ? `${state.brandName} ${state.carName}` : "상담 후 결정"} · ${paintDisplayName(currentPaint()) || "상담 후 결정"}</dd></div>
+            ${getPaintSurcharge() ? `<div><dt>외장 색상 추가금</dt><dd>+${getPaintSurcharge().toLocaleString("ko-KR")}원</dd></div>` : ""}
             <div><dt>세부모델</dt><dd>${state.trim || "상담 후 결정"}${state.subTrim ? ` · ${state.subTrim}` : ""}</dd></div>
             <div><dt>이용조건</dt><dd>${state.usage || "상담 후 결정"} · ${state.initialCost || "상담 후 결정"}${!["초기비용 0원", "상담 후 결정"].includes(state.initialCost) && state.rate ? ` ${state.rate}` : ""}</dd></div>
             <div><dt>주행거리</dt><dd>${state.mileage || "상담 후 결정"}</dd></div>
@@ -12909,7 +18724,8 @@ const vehicleCatalog = [
     const pendingText = "상담 후 결정";
     const brandText = state.brandName || pendingText;
     const carText = state.carName || pendingText;
-    const colorText = paint?.name || pendingText;
+    const colorText = paintDisplayName(paint) || pendingText;
+    const colorSurcharge = getPaintSurcharge(paint);
     const modelText = state.trim
       ? `${state.trim}${state.subTrim ? ` · ${state.subTrim}` : ""}`
       : pendingText;
@@ -12949,6 +18765,7 @@ const vehicleCatalog = [
               <div><dt>브랜드</dt><dd>${brandText}</dd></div>
               <div><dt>차량</dt><dd>${carText}</dd></div>
               <div><dt>외장 색상</dt><dd>${colorText}</dd></div>
+              ${colorSurcharge ? `<div><dt>외장 색상 추가금</dt><dd>+${colorSurcharge.toLocaleString("ko-KR")}원</dd></div>` : ""}
               <div><dt>세부 모델</dt><dd>${modelText}</dd></div>
               <div><dt>이용 방식</dt><dd>${usageText}</dd></div>
               <div><dt>초기비용</dt><dd>${initialCostText}</dd></div>
@@ -13049,9 +18866,7 @@ const vehicleCatalog = [
     consultButton.hidden = !shouldShowConsultButton;
     consultButton.textContent = "바로 견적신청";
     actions.classList.toggle("has-consult-button", shouldShowConsultButton);
-    nextButton.innerHTML = state.step === 4
-      ? `견적신청 ${arrowIcon()}`
-      : `다음 단계 ${arrowIcon()}`;
+    nextButton.innerHTML = `${["세부모델 선택", "이용조건 선택", "정보 입력", "견적신청"][state.step - 1]} ${arrowIcon()}`;
 
     bindStepEvents();
 
@@ -13388,10 +19203,9 @@ const vehicleCatalog = [
         if (!nextPaint || state.paintId === nextPaintId) return;
 
         state.paintId = nextPaintId;
-        if (nextPaint.imagesByTrim) {
-          render({ preserveScroll: true });
-          return;
-        }
+        const previousTrim = state.trim;
+        const previousSubTrim = state.subTrim;
+        reconcilePaintTrim();
 
         const paintButtons = content.querySelectorAll("[data-paint]");
         paintButtons.forEach(item => {
@@ -13401,18 +19215,36 @@ const vehicleCatalog = [
         });
 
         const chosenPaintName = content.querySelector(".chosen-paint strong");
-        if (chosenPaintName) chosenPaintName.textContent = nextPaint.name;
+        if (chosenPaintName) chosenPaintName.innerHTML = paintChoiceHtml(nextPaint);
+        const paintPrice = getPaintSurcharge(nextPaint);
+        const priceLabel = content.querySelector("[data-paint-surcharge-amount]");
+        if (priceLabel) {
+          priceLabel.hidden = !paintPrice;
+          priceLabel.textContent = paintPrice ? `추가금 +${paintPrice.toLocaleString("ko-KR")}원` : "";
+        }
+        content.querySelector(".paint-block")?.classList.toggle("has-paint-surcharge", paintPrice > 0);
+        const guide = content.querySelector("[data-paint-trim-guide]");
+        if (guide) {
+          guide.hidden = !hasPaintTrimRestrictions();
+          guide.innerHTML = paintTrimGuideHtml(nextPaint);
+        }
+
+        // 색상 변경으로 기존 트림이 무효화된 경우 진행 단계를 다시 계산합니다.
+        if (state.trim !== previousTrim || state.subTrim !== previousSubTrim) {
+          render({ preserveScroll: true });
+          return;
+        }
 
         const vehicleImage = content.querySelector(".wizard-car-image img");
         if (!vehicleImage) return;
-
         const nextImage = new Image();
         nextImage.decoding = "async";
         nextImage.onload = () => {
-          vehicleImage.src = assetUrl(nextPaint.image);
+          if (state.paintId !== nextPaintId || !vehicleImage.isConnected) return;
+          vehicleImage.src = assetUrl(paintImagePath(nextPaint));
           vehicleImage.alt = `${state.brandName} ${state.carName} ${nextPaint.name}`;
         };
-        nextImage.src = assetUrl(nextPaint.image);
+        nextImage.src = assetUrl(paintImagePath(nextPaint));
       });
     });
 
@@ -13438,6 +19270,8 @@ const vehicleCatalog = [
 
     content.querySelectorAll("[data-engine-model]").forEach(button => {
       button.addEventListener("click", () => {
+        const group = availableModelGroups().find(item => item.name === button.dataset.engineModel);
+        if (!isModelAvailableForPaint(group)) return;
         state.trim = button.dataset.engineModel;
         state.subTrim = "";
         render();
@@ -13643,7 +19477,7 @@ const vehicleCatalog = [
     // 이전 견적 전송 과정에서 잠긴 버튼 상태까지 완전히 초기화합니다.
     nextButton.disabled = false;
     nextButton.classList.remove("is-submitting");
-    nextButton.innerHTML = `다음 단계 ${arrowIcon()}`;
+    nextButton.innerHTML = `세부모델 선택 ${arrowIcon()}`;
     actions.hidden = false;
     indicator.hidden = false;
 
@@ -13937,6 +19771,10 @@ const vehicleCatalog = [
         showValidation("트림을 선택해 주세요.");
         return false;
       }
+      if (!isTrimAvailableForPaint(state.subTrim, currentPaint(), state.trim)) {
+        showValidation("선택한 외장 색상에서 이용할 수 없는 트림입니다.");
+        return false;
+      }
       return true;
     }
 
@@ -14047,7 +19885,9 @@ const vehicleCatalog = [
       vehicleType: state.market === "domestic" ? "국산차" : "수입차",
       brand: state.brandName || pendingText,
       vehicle: state.carName || pendingText,
-      exteriorColor: paint?.name || pendingText,
+      exteriorColor: paint ? `${paint.name}${getPaintSurcharge(paint) ? ` (추가금 +${getPaintSurcharge(paint).toLocaleString("ko-KR")}원)` : ""}` : pendingText,
+      exteriorColorName: paint?.name || pendingText,
+      exteriorColorSurcharge: getPaintSurcharge(paint),
       model: state.trim || pendingText,
       trim: getTrimTextForMail(state.subTrim || pendingText),
       usageType: state.usage || pendingText,
@@ -14175,6 +20015,14 @@ const vehicleCatalog = [
   });
 
   consultButton?.addEventListener("click", () => {
+    moveToConsultStep();
+  });
+
+  document.getElementById("mobileEstimateButton")?.addEventListener("click", () => {
+    if (state.step === 4 || state.submitted) {
+      scrollToEstimate();
+      return;
+    }
     moveToConsultStep();
   });
 

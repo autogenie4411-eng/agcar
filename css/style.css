@@ -13105,3 +13105,90 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
         grid-template-areas: "paint-label" "paint-swatches" "paint-choice" "paint-discount";
     }
 }
+
+/* ===== 할부 완성본과 동기화: 유료 외장색 및 트림별 색상 제한 ===== */
+.wizard-car-card .chosen-paint .paint-surcharge {
+    margin-left: 5px;
+    color: #3267ff;
+    font-size: inherit;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.paint-surcharge--header { display: none; }
+.wizard-car-card .paint-trim-guide {
+    padding-top: 4px;
+    overflow-wrap: anywhere;
+    min-width: 0;
+}
+.wizard-car-card .paint-trim-guide span {
+    display: block;
+    color: #7a8493;
+    font-size: 11px;
+    line-height: 1.45;
+    font-weight: 400;
+}
+.wizard-car-card .paint-trim-guide span + span {
+    margin-top: 2px;
+}
+.step-two .engine-model-main:disabled,
+.step-two .sub-trim-item:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+.selected-vehicle .selected-vehicle-image-note {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    color: #7a8493;
+    line-height: 1.5;
+}
+@media (max-width: 600px) {
+    .wizard-car-card .chosen-paint .paint-surcharge { display: none; }
+    .wizard-car-card .paint-label .paint-surcharge--header:not([hidden]) {
+        display: block;
+        margin-left: auto;
+        color: #3267ff;
+        font-size: 11px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+    .wizard-car-card .paint-block.has-paint-surcharge .paint-swipe-guide { display: none; }
+    .wizard-car-card .paint-trim-guide span { font-size: 10px; }
+}
+
+/* 트림 안내 문구가 기존 할인 배지를 밀어내지 않도록 높이를 제한합니다. */
+.wizard-car-card[data-brand] .paint-block.has-monthly-discount.has-trim-guide {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "paint-label paint-label" "paint-swatches paint-swatches" "paint-choice paint-discount";
+}
+.wizard-car-card[data-brand] .paint-block.has-monthly-discount.has-trim-guide .chosen-paint {
+    height: 79px;
+    min-height: 0;
+    padding: 11px 0 0;
+    box-sizing: border-box;
+    gap: 0;
+    overflow: hidden;
+}
+.wizard-car-card[data-brand] .paint-block.has-trim-guide .paint-trim-guide {
+    margin-top: auto;
+}
+.wizard-car-card[data-brand] .paint-block.has-trim-guide .paint-trim-guide span:first-child {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.wizard-car-card[data-brand] .paint-block.has-trim-guide .paint-trim-guide span + span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@media (max-width: 600px) {
+    .wizard-car-card[data-brand] .paint-block.has-monthly-discount.has-trim-guide .chosen-paint {
+        height: 56px;
+        padding-top: 8px;
+    }
+    .wizard-car-card[data-brand] .paint-block.has-trim-guide .paint-trim-guide span {
+        line-height: 1.25;
+    }
+}

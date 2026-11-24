@@ -70,6 +70,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css?v=20261120-installment-colors">
 <style id="c26-marquee-critical">.c26-partners,.c26-marquees,.c26-marquee{overflow-x:hidden!important}.c26-marquee{scrollbar-width:none!important}.c26-marquee::-webkit-scrollbar{display:none!important}.c26-marquees.c26-marquees--active .c26-marquee__track{animation:none!important}</style>
+    <link rel="stylesheet" href="css/mobile-actions.css?v=20261124-icon-bounds">
 </head>
 <body>
 
@@ -349,7 +350,7 @@
           <div class="wizard-actions__group" id="actionGroup">
             <button class="consult-button" id="consultButton" type="button" hidden>바로 견적신청</button>
             <button class="next-button" id="nextButton" type="button">
-              다음 단계
+              세부모델 선택
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14M14 7l5 5-5 5"></path>
               </svg>
@@ -617,10 +618,32 @@
   else runCorporateMarquee();
 })();
 </script>
+
+  <nav class="mobile-contact-bar" aria-label="견적 신청 및 전화상담">
+    <button class="mobile-contact-bar__estimate" id="mobileEstimateButton" type="button">
+      <!-- ViewBox follows the PNG's visible alpha bounds, excluding transparent padding. -->
+      <svg class="mobile-contact-bar__icon" viewBox="17 11 122 128" width="28" height="28" aria-hidden="true" focusable="false">
+        <image href="images/quote.png" width="144" height="144"/>
+      </svg>
+      <span class="mobile-contact-bar__copy">
+        <strong>바로 견적신청</strong>
+        <small>내 조건에 맞는 견적</small>
+      </span>
+    </button>
+    <a class="mobile-contact-bar__phone" href="tel:1600-3481" aria-label="전화상담 1600-3481로 전화 연결">
+      <svg class="mobile-contact-bar__icon" viewBox="175 196 862 886" width="28" height="28" aria-hidden="true" focusable="false">
+        <image href="images/phone.png?v=20261124-v2" width="1254" height="1254"/>
+      </svg>
+      <span class="mobile-contact-bar__copy">
+        <strong>전화상담</strong>
+        <small>1600-3481</small>
+      </span>
+    </a>
+  </nav>
   <script src="js/traffic-tracker.js?v=20261118-attribution-v2"></script>
 
   <script src="js/trim-reference-data.js?v=20261120-chevy-trim-fixed-02"></script>
-  <script src="js/script.js?v=20261120-installment-colors"></script>
+  <script src="js/script.js?v=20261124-mobile-contact-v3"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/reviews.js?v=20261106-agcar-review-loop-01"></script>
 
