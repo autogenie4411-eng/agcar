@@ -18504,7 +18504,7 @@ const vehicleCatalog = [
                 ${hasPaintTrimRestrictions() ? `<div class="paint-trim-guide" data-paint-trim-guide>${paintTrimGuideHtml(paint)}</div>` : ""}
               </div>
               <div class="monthly-discount-sticker" role="note" aria-label="${discountMonth}월 할인율 최대 ${discountRate}%">
-                <img class="monthly-discount-sticker__megaphone" src="images/discount-megaphone.png?v=20261028-match-ref-02" alt="" aria-hidden="true" width="52" height="64">
+                <img class="monthly-discount-sticker__megaphone" src="images/icons/discount-megaphone.png?v=20261028-match-ref-02" alt="" aria-hidden="true" width="52" height="64">
                 <div class="monthly-discount-sticker__pill">
                   <span class="monthly-discount-sticker__month">${discountMonth}월 할인율</span>
                   <div class="monthly-discount-sticker__details">
@@ -18866,7 +18866,7 @@ const vehicleCatalog = [
     consultButton.hidden = !shouldShowConsultButton;
     consultButton.textContent = "바로 견적신청";
     actions.classList.toggle("has-consult-button", shouldShowConsultButton);
-    nextButton.innerHTML = `${["세부모델 선택", "이용조건 선택", "정보 입력", "견적신청"][state.step - 1]} ${arrowIcon()}`;
+    nextButton.innerHTML = `${state.step === 4 ? "견적신청" : "다음 단계"} ${arrowIcon()}`;
 
     bindStepEvents();
 
@@ -19477,7 +19477,7 @@ const vehicleCatalog = [
     // 이전 견적 전송 과정에서 잠긴 버튼 상태까지 완전히 초기화합니다.
     nextButton.disabled = false;
     nextButton.classList.remove("is-submitting");
-    nextButton.innerHTML = `세부모델 선택 ${arrowIcon()}`;
+    nextButton.innerHTML = `다음 단계 ${arrowIcon()}`;
     actions.hidden = false;
     indicator.hidden = false;
 
