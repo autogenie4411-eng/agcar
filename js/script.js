@@ -17132,12 +17132,8 @@ const vehicleCatalog = [
     - 탭/사이트를 닫았다가 다시 접속하면 새 방문으로 기록
   ========================================================= */
 
-  // 통합차 메인/법인 사이트는 같은 index.html을 사용합니다.
-  // HTML 초기 스크립트가 실제 도메인에 따라 data-site-variant를 설정합니다.
   function getAgcarSiteSource() {
-    // 단일 index.html이 결정한 사이트 구분을 방문로그와 견적 접수에 공통 적용
-    const variant = String(document.documentElement.dataset.siteVariant || "").toLowerCase();
-    return variant === "corporate" ? "법인용" : "통합차";
+    return "통합차";
   }
 
   const AUTOJINI_VISIT_LOGGED_KEY = "autogenie_integrated_visit_logged_v3";
@@ -20123,9 +20119,8 @@ const vehicleCatalog = [
     state.brandName = directVehicle.brandName;
     state.carName = directVehicle.carName;
     state.paintId = "";
-    // 인트로를 건너뛰되, 일반 주소 방문과 로고 초기화 시에는 인트로를 유지합니다.
-    document.documentElement.classList.add("corporate-estimate-started", "vehicle-direct-selected");
-    document.getElementById("corporateIntro")?.setAttribute("aria-hidden", "true");
+    // 차량별 광고 링크로 진입하면 해당 차량이 선택된 상태로 시작합니다.
+    document.documentElement.classList.add("vehicle-direct-selected");
   } else {
     document.documentElement.classList.remove("vehicle-link-loading");
   }

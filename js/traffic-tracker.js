@@ -64,7 +64,13 @@
     const explicitSource = clean(q.get('utm_source')).toLowerCase();
     const googlePaidClick = ['gclid', 'wbraid', 'gbraid'].some(k => known(q.get(k)));
     const naverPaidClick = known(q.get('n_click'));
-    const source = explicitSource || (googlePaidClick ? 'google' : naverPaidClick || known(actual) || isNaver ? 'naver' : isGoogle ? 'google' : refHost ? 'referral' : 'direct');
+    const appRef = /^android-app:\/\/([^/]+)/i.exec(document.referrer || '')?.[1]?.toLowerCase() || '';
+    const socialSource = /(^|\.)(youtube\.com|youtu\.be|youtube-nocookie\.com)$/.test(refHost) || appRef === 'com.google.android.youtube' ? 'youtube'
+      : /(^|\.)instagram\.com$/.test(refHost) || appRef === 'com.instagram.android' ? 'instagram'
+      : /(^|\.)(facebook\.com|fb\.com|fb\.me)$/.test(refHost) || appRef === 'com.facebook.katana' ? 'facebook'
+      : /(^|\.)(kakao\.com|kakaotalk\.com)$/.test(refHost) || appRef === 'com.kakao.talk' ? 'kakao'
+      : /(^|\.)daum\.net$/.test(refHost) ? 'daum' : '';
+    const source = explicitSource || (googlePaidClick ? 'google' : naverPaidClick || known(actual) ? 'naver' : socialSource || (isNaver ? 'naver' : isGoogle ? 'google' : refHost && !isInternal ? 'referral' : 'direct'));
     const medium = clean(q.get('utm_medium')).toLowerCase() || (googlePaidClick || naverPaidClick ? 'cpc' : 'unknown');
     saved = {
       hostname: currentHost,
