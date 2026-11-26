@@ -18224,9 +18224,8 @@ const vehicleCatalog = [
   }
 
   function getPaintSurcharge(paint = currentPaint()) {
-    const trimKey = `${state.trim || ""}|${state.subTrim || ""}`;
-    const value = paint?.surchargeByTrim?.[trimKey] ?? paint?.surcharge ?? 0;
-    return typeof value === "number" && Number.isFinite(value) && value > 0 ? value : 0;
+    // 외장 색상 추가금은 견적 및 화면 표시에서 제외합니다.
+    return 0;
   }
 
   function paintChoiceHtml(paint = currentPaint()) {
