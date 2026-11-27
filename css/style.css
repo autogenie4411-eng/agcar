@@ -13192,3 +13192,18 @@ html[data-site-variant="corporate"]:not(.corporate-estimate-started)
         line-height: 1.25;
     }
 }
+
+
+/* 할부용 국산차 색상·트림 안내 동기화 (수입차 UI 유지) */
+.wizard-car-card[data-brand] .paint-block.domestic-paint-guide.has-monthly-discount.has-trim-guide .chosen-paint { justify-content: flex-start; }
+.wizard-car-card[data-brand] .paint-block.domestic-paint-guide.has-trim-guide .chosen-paint > strong { line-height: 15px; }
+.wizard-car-card[data-brand] .paint-block.domestic-paint-guide.has-trim-guide .paint-trim-guide { padding: 0; border: 0; min-width: 0; }
+.wizard-car-card[data-brand] .paint-block.domestic-paint-guide.has-trim-guide .paint-trim-guide span { font-size: 10.5px; line-height: 13px; }
+.step-two .model-selection-label { display: flex; flex: 1; min-width: 0; align-items: center; justify-content: space-between; gap: 12px; }
+.step-two .paint-unavailable-note { margin-left: auto; color: #667085; font-size: 12px; font-weight: 500; line-height: 1.4; text-align: right; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .wizard-car-card[data-brand] .paint-block.domestic-paint-guide.has-trim-guide .chosen-paint > strong { line-height: 14px; }
+  .wizard-car-card[data-brand] .paint-block.domestic-paint-guide.has-trim-guide .paint-trim-guide span { font-size: 10px; line-height: 11px; }
+  .step-two .model-selection-label { flex-wrap: wrap; gap: 3px 8px; }
+  .step-two .paint-unavailable-note { font-size: 11px; }
+}
