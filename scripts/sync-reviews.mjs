@@ -72,6 +72,8 @@ function reviewMarket(review = {}) {
     'es300','nx','rx','ux','lm','ls','id.4','id.5','atto 3','seal', '씰'
   ];
   const domesticShort = ['k3','k5','k8','k9','ev3','ev4','ev5','ev6','ev9','g70','g80','g90','gv60','gv70','gv80','레이'];
+  // 벤츠 모델의 플러그인 하이브리드/디젤 접미사(e, de, d)까지 정확히 인식합니다.
+  if (/(?:^|[^a-z0-9])(?:[ec]\s*(?:200|220|250|300|350|400|450)|s\s*(?:350|400|450|500|580))\s*-?\s*(?:de|e|d)(?=$|[^a-z0-9])/i.test(titleModel)) return 'import';
   if (importNames.some(name => has(titleModel, name)) || importModels.some(name => has(titleModel, name)) || importShort.some(name => has(titleModel, name))) return 'import';
   if (domesticNames.some(name => has(titleModel, name)) || domesticModels.some(name => has(titleModel, name)) || domesticShort.some(name => has(titleModel, name))) return 'domestic';
   if (importNames.some(name => has(brand, name))) return 'import';
@@ -209,7 +211,7 @@ function guessBrand(text='') {
     '벤틀리','롤스로이스','BYD'
   ];
   const lower = String(text).toLowerCase();
-  return brands.find(b => lower.includes(b.toLowerCase())) || '';
+  return brands.find(b => lower.includes(b.toLowerCase())) || (/(?:^|[^a-z0-9])(?:[ec]\s*(?:200|220|250|300|350|400|450)|s\s*(?:350|400|450|500|580))\s*-?\s*(?:de|e|d)(?=$|[^a-z0-9])/i.test(lower) ? '벤츠' : '');
 }
 
 function isInvalidTitle(value='') {
@@ -904,6 +906,7 @@ try {
   const fresh = [];
   const detailPage = targets.length ? await context.newPage() : null;
   const failed = [];
+  const unclassified = [];
   let errors = 0;
   let detailFetches = 0;
   for (const item of targets) {
@@ -932,7 +935,7 @@ try {
     errors = 0;
     const market = reviewMarket(parsed);
     if (market === 'unknown') {
-      failed.push(id);
+      unclassified.push(id);
       console.warn(`[분류 미확정] ${id}: ${parsed.title} — 저장하지 않고 다음 실행에서 재시도`);
       continue;
     }
@@ -966,6 +969,7 @@ try {
   if (failed.length || detailFetches < targets.length) {
     console.warn(`::warning::상세 수집 미완료 ${failed.length}건, 미시도 ${targets.length - detailFetches}건. 다음 실행에서 다시 확인하세요. ID: ${failed.join(', ')}`);
   }
+  if (unclassified.length) console.warn(`::warning::분류 미확정 ${unclassified.length}건: 다음 실행에서 재시도. ID: ${unclassified.join(', ')}`);
   // 신규/갱신/보관기간 정리 모두 없으면 generatedAt을 포함한 JSON 원본을 그대로 둡니다.
   if (JSON.stringify(archivedReviews) === JSON.stringify(siteReviews)) {
     console.log('후기 내용 변경 없음: 기존 JSON을 그대로 보존합니다.');

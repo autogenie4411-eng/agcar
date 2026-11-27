@@ -60,6 +60,8 @@
       'es300','nx','rx','ux','lm','ls','id.4','id.5','atto 3','seal', '씰'
     ];
     const domesticShort = ['k3','k5','k8','k9','ev3','ev4','ev5','ev6','ev9','g70','g80','g90','gv60','gv70','gv80','레이'];
+    // 벤츠 모델의 플러그인 하이브리드/디젤 접미사(e, de, d)까지 정확히 인식합니다.
+    if (/(?:^|[^a-z0-9])(?:[ec]\s*(?:200|220|250|300|350|400|450)|s\s*(?:350|400|450|500|580))\s*-?\s*(?:de|e|d)(?=$|[^a-z0-9])/i.test(titleModel)) return 'import';
     if (importNames.some(name => has(titleModel, name)) || importModels.some(name => has(titleModel, name)) || importShort.some(name => has(titleModel, name))) return 'import';
     if (domesticNames.some(name => has(titleModel, name)) || domesticModels.some(name => has(titleModel, name)) || domesticShort.some(name => has(titleModel, name))) return 'domestic';
     if (importNames.some(name => has(brand, name))) return 'import';
