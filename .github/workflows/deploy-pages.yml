@@ -36,17 +36,51 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p data
-          if git fetch --no-tags --depth=1 origin refs/heads/review-data:refs/remotes/origin/review-data; then
+          # 통신 실패를 브랜치 미생성으로 오인해 오래된 번들로 배포하지 않습니다.
+          if git ls-remote --exit-code --heads origin refs/heads/review-data > /tmp/autogenie-review-branch; then
+            git fetch --no-tags --depth=1 origin refs/heads/review-data:refs/remotes/origin/review-data
             git show refs/remotes/origin/review-data:data/reviews.json > /tmp/autogenie-site-reviews.json
             mv /tmp/autogenie-site-reviews.json data/reviews.json
             echo 'Loaded this repository review-data branch; main push did not replace reviews.'
           else
-            if [ "$REQUIRE_REVIEWS" = 'true' ]; then
-              echo 'Required review-data archive could not be fetched.' >&2
+            status=$?
+            if [ "$status" -ne 2 ] || [ "$REQUIRE_REVIEWS" = 'true' ]; then
+              echo 'Could not restore the review archive; stopping deployment to preserve the live website.' >&2
               exit 1
             fi
-            echo 'No review-data branch yet: using the bundled reviews.json until the first manual sync.'
+            echo 'No review-data branch yet: using the bundled reviews.json until the first sync.'
           fi
+      - name: Setup Node.js for review snapshot
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate reviews and embed last known good snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const payload = JSON.parse(fs.readFileSync('data/reviews.json', 'utf8'));
+          const reviews = payload.reviews;
+          if (!Array.isArray(reviews) || reviews.length === 0 || (payload.count !== undefined && payload.count !== reviews.length)) {
+            throw new Error('Empty or incomplete review archive: deployment blocked');
+          }
+          const ids = new Set();
+          for (const review of reviews) {
+            const id = String(review?.id ?? '');
+            if (!id || ids.has(id) || typeof review.title !== 'string' || !review.title.trim() || typeof review.date !== 'string' || !review.date.trim()) {
+              throw new Error('Invalid or duplicate review: deployment blocked');
+            }
+            ids.add(id);
+          }
+          const html = fs.readFileSync('index.html', 'utf8');
+          const marker = /(<script type="application\/json" id="autogenieReviewSnapshot">)[\s\S]*?(<\/script>)/g;
+          if ([...html.matchAll(marker)].length !== 1) throw new Error('Missing or duplicate review snapshot marker');
+          // JSON 내부의 </script> 등은 HTML 태그로 해석되지 않도록 이스케이프합니다.
+          const snapshot = JSON.stringify(payload).replace(/</g, '\\u003c');
+          fs.writeFileSync('index.html', html.replace(marker, (_, open, close) => open + snapshot + close), 'utf8');
+          console.log(`Embedded ${reviews.length} verified reviews in the same Pages artifact.`);
+          NODE
       - name: Exclude repository-only files from published website
         shell: bash
         run: |

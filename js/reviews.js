@@ -225,6 +225,10 @@
   const SOURCE_CACHE_TTL = 30 * 60 * 1000;
   const LOCAL_FRESH_DAYS = 14; // 오래된 JSON을 최신 후기처럼 먼저 노출하지 않는다.
 
+  // 같은 도메인의 다른 견적서 경로와 캐시가 섞이지 않도록 경로별로 분리합니다.
+  const REVIEW_ARCHIVE_CACHE_KEY = `autogenie-review-archive-v1:${new URL('.', location.href).pathname}`;
+  let activeReviewArchive = null;
+  let reviewArchiveSignature = '';
   let renderedReviews = [];
   let allReviews = [];
   let reviewDialogView = '';
@@ -1025,6 +1029,8 @@
     }
 
     section.hidden = false;
+    // 새 카드가 확정된 경우에만 기존 Swiper를 정리합니다. 실패한 요청은 DOM을 건드리지 않습니다.
+    destroyReviewSwiper();
     track.innerHTML = reviews.length ? carouselCardMarkup(reviews) : `<article class="review-card review-card--loading"><div class="review-card__body"><strong>최근 3개월 동안 등록된 출고 후기가 없습니다.</strong><p>전체 후기 보기에서 이전 출고 사례를 확인해 보세요.</p></div></article>`;
     bindImageFallbacks();
 
@@ -1210,35 +1216,83 @@
     }
   }
 
-  async function loadReviews() {
-    let localItems = [];
+  function validateReviewArchive(payload) {
+    if (!payload || !Array.isArray(payload.reviews) || !payload.reviews.length) return null;
+    const items = payload.reviews;
+    if (payload.count !== undefined && payload.count !== items.length) return null;
+    const ids = new Set();
+    for (const item of items) {
+      const id = String(item?.id ?? '');
+      if (!id || ids.has(id) || typeof item.title !== 'string' || !item.title.trim() || !parseReviewDate(item.date)) return null;
+      ids.add(id);
+    }
+    return payload;
+  }
+
+  function readEmbeddedReviewArchive() {
     try {
-      const response = await fetch(`data/reviews.json?v=${Date.now()}`, { cache: 'no-store' });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const payload = await response.json();
-      localItems = Array.isArray(payload) ? payload : payload.reviews || [];
-    } catch (error) {
-      console.warn('reviews.json을 불러오지 못했습니다.', error);
+      return validateReviewArchive(JSON.parse(document.getElementById('autogenieReviewSnapshot')?.textContent || 'null'));
+    } catch { return null; }
+  }
+
+  function readLastGoodReviewArchive() {
+    try {
+      return validateReviewArchive(JSON.parse(localStorage.getItem(REVIEW_ARCHIVE_CACHE_KEY) || 'null'));
+    } catch { return null; }
+  }
+
+  function saveLastGoodReviewArchive(payload) {
+    try {
+      const serialized = JSON.stringify(payload);
+      // 큰 상세 HTML 때문에 브라우저 저장 한도를 넘겨도 배포본 내장 데이터로 정상 표시합니다.
+      if (serialized.length <= 2_000_000) localStorage.setItem(REVIEW_ARCHIVE_CACHE_KEY, serialized);
+    } catch { /* 저장소 차단/용량 초과 시 내장 스냅샷을 사용 */ }
+  }
+
+  function archiveRevision(payload) {
+    return Date.parse(payload?.generatedAt || '') || 0;
+  }
+
+  function applyReviewArchive(payload) {
+    if (!payload) return false;
+    // 배포 전환 중 이전 JSON이 응답하더라도 최신 정상 후기를 되돌리지 않습니다.
+    if (activeReviewArchive && archiveRevision(payload) < archiveRevision(activeReviewArchive)) return false;
+    const prepared = prepareReviews(payload.reviews);
+    if (allReviews.length && !prepared.length) return false;
+    if (renderedReviews.length && !rollingReviews(prepared).length) return false;
+    const signature = JSON.stringify(payload.reviews);
+    if (signature !== reviewArchiveSignature) {
+      renderReviewList(payload.reviews);
+      reviewArchiveSignature = signature;
+    }
+    activeReviewArchive = payload;
+    saveLastGoodReviewArchive(payload);
+    return true;
+  }
+
+  async function loadReviews() {
+    // 네트워크 요청을 기다리지 않고, 현재 배포본 또는 더 최신의 마지막 정상 아카이브부터 표시합니다.
+    const embedded = readEmbeddedReviewArchive();
+    const cached = readLastGoodReviewArchive();
+    const first = cached && (!embedded || archiveRevision(cached) > archiveRevision(embedded)) ? cached : embedded;
+    const second = first === cached ? embedded : cached;
+    if (!applyReviewArchive(first) && !applyReviewArchive(second)) {
+      renderReviewList(FALLBACK_REVIEWS);
     }
 
-    // GitHub Actions가 갱신한 reviews.json을 최우선으로 표시한다.
-    // 다만 첫 배포/네트워크 오류/Actions 실행 전처럼 JSON을 읽지 못한 경우에도
-    // 후기 영역 자체가 사라지지 않도록 기존 확보 후기(FALLBACK)를 즉시 표시한다.
-    const localReviews = prepareReviews(localItems);
-    const reviews = localReviews.length ? localReviews : prepareReviews(FALLBACK_REVIEWS);
-
-    if (reviews.length) {
-      renderReviewList(reviews);
-    } else {
-      section.hidden = hiddenAfterBrandSelection;
-      allReviews = [];
-      destroyReviewSwiper();
-      track.innerHTML = `<article class="review-card review-card--loading">
-        <div class="review-card__body">
-          <strong>출고 후기를 준비하고 있습니다.</strong>
-          <p>다음 자동 갱신에서 최신 후기가 표시됩니다.</p>
-        </div>
-      </article>`;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10000);
+    try {
+      const response = await fetch(`data/reviews.json?v=${Date.now()}`, { cache: 'no-store', signal: controller.signal });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const payload = validateReviewArchive(await response.json());
+      if (!payload) throw new Error('유효하지 않은 후기 아카이브');
+      // 성공한 최신 데이터만 교체. 같은 내용이면 Swiper와 현재 카드를 유지합니다.
+      applyReviewArchive(payload);
+    } catch (error) {
+      console.warn('후기 갱신 실패: 기존 정상 후기를 유지합니다.', error);
+    } finally {
+      clearTimeout(timer);
     }
   }
 
